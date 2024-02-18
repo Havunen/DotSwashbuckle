@@ -355,6 +355,12 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal(3, schema.Properties["StringWithMinMaxLength"].MaxLength);
             Assert.Equal(1, schema.Properties["ArrayWithMinMaxLength"].MinItems);
             Assert.Equal(3, schema.Properties["ArrayWithMinMaxLength"].MaxItems);
+
+            Assert.Equal(1, schema.Properties["ArrayWithLength"].MinItems);
+            Assert.Equal(3, schema.Properties["ArrayWithLength"].MaxItems);
+            Assert.Equal(1, schema.Properties["StringWithLength"].MinLength);
+            Assert.Equal(3, schema.Properties["StringWithLength"].MaxLength);
+
             Assert.Equal(1, schema.Properties["IntWithRange"].Minimum);
             Assert.Equal(10, schema.Properties["IntWithRange"].Maximum);
             Assert.Equal("^[3-6]?\\d{12,15}$", schema.Properties["StringWithRegularExpression"].Pattern);

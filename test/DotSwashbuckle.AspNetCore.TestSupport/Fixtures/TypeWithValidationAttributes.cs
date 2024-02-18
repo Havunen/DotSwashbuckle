@@ -13,6 +13,12 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
         [MinLength(1), MaxLength(3)]
         public string[] ArrayWithMinMaxLength { get; set; }
 
+        [Length(1, 3)]
+        public string[] ArrayWithLength { get; set; }
+
+        [Length(1, 3)]
+        public string StringWithLength { get; set; }
+
         [Range(1, 10)]
         public int IntWithRange { get; set; }
 

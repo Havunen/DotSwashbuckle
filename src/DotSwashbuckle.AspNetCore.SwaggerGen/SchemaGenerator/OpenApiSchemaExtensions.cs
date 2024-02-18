@@ -16,6 +16,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 if (attribute is DataTypeAttribute dataTypeAttribute)
                     ApplyDataTypeAttribute(schema, dataTypeAttribute);
 
+                else if (attribute is LengthAttribute lengthAttribute)
+                    ApplyLengthAttribute(schema, lengthAttribute);
+
                 else if (attribute is MinLengthAttribute minLengthAttribute)
                     ApplyMinLengthAttribute(schema, minLengthAttribute);
 
@@ -110,6 +113,20 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             if (formats.TryGetValue(dataTypeAttribute.DataType, out string format))
             {
                 schema.Format = format;
+            }
+        }
+
+        private static void ApplyLengthAttribute(OpenApiSchema schema, LengthAttribute lengthAttribute)
+        {
+            if (schema.Type == "array")
+            {
+                schema.MinItems = lengthAttribute.MinimumLength;
+                schema.MaxItems = lengthAttribute.MaximumLength;
+            }
+            else
+            {
+                schema.MinLength = lengthAttribute.MinimumLength;
+                schema.MaxLength = lengthAttribute.MaximumLength;
             }
         }
 
