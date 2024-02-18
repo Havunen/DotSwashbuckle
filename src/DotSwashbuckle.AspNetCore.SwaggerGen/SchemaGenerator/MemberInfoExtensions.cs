@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public static class MemberInfoExtensions
     {
-        private const string NullableAttributeFullTypeName = "System.Runtime.CompilerServices.NullableAttribute";
-        private const string NullableFlagsFieldName = "NullableFlags";
-        private const string NullableContextAttributeFullTypeName = "System.Runtime.CompilerServices.NullableContextAttribute";
-        private const string FlagFieldName = "Flag";
-
         public static ICollection<object> GetInlineAndMetadataAttributes(this MemberInfo memberInfo)
         {
             var attributes = memberInfo.GetCustomAttributes(true)
@@ -48,9 +44,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return memberInfo.GetNullableFallbackValue();
             }
 
-            if (nullableAttribute.GetType().GetField(NullableFlagsFieldName) is FieldInfo field &&
-                field.GetValue(nullableAttribute) is byte[] flags &&
-                flags.Length >= 1 && flags[0] == 1)
+            if (nullableAttribute.NullableFlags.Length >= 1 && nullableAttribute.NullableFlags[0] == 1)
             {
                 return true;
             }
@@ -73,9 +67,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return memberInfo.GetNullableFallbackValue();
             }
 
-            if (nullableAttribute.GetType().GetField(NullableFlagsFieldName) is FieldInfo field &&
-                field.GetValue(nullableAttribute) is byte[] flags &&
-                flags.Length == 3 && flags[2] == 1)
+            if (nullableAttribute.NullableFlags.Length == 3 && nullableAttribute.NullableFlags[2] == 1)
             {
                 return true;
             }
@@ -83,13 +75,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return false;
         }
 
-        private static object GetNullableAttribute(this MemberInfo memberInfo)
+        private static NullableAttribute GetNullableAttribute(this MemberInfo memberInfo)
         {
-            var nullableAttribute = memberInfo.GetCustomAttributes()
-                .Where(attr => string.Equals(attr.GetType().FullName, NullableAttributeFullTypeName, StringComparison.Ordinal))
-                .FirstOrDefault();
-
-            return nullableAttribute;
+            return memberInfo.GetCustomAttribute<NullableAttribute>();
         }
 
         private static bool GetNullableFallbackValue(this MemberInfo memberInfo)
@@ -98,25 +86,30 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 ? new Type[] { memberInfo.DeclaringType, memberInfo.DeclaringType.DeclaringType }
                 : new Type[] { memberInfo.DeclaringType };
 
+            // https://github.com/dotnet/roslyn/blob/main/docs/features/nullable-metadata.md
+            // Check NullableContextAttribute first
             foreach (var declaringType in declaringTypes)
             {
-                var attributes = (IEnumerable<object>)declaringType.GetCustomAttributes(false);
+                var attributes = declaringType.GetCustomAttributes(true);
 
-                var nullableContext = attributes
-                .Where(attr => string.Equals(attr.GetType().FullName, NullableContextAttributeFullTypeName, StringComparison.Ordinal))
-                .FirstOrDefault();
+                // NullableContextAttribute is optional
+                var nullableContextAttribute = (NullableContextAttribute)attributes.FirstOrDefault(a => a is NullableContextAttribute);
 
-                if (nullableContext != null)
+                if (nullableContextAttribute != null)
                 {
-                    if (nullableContext.GetType().GetField(FlagFieldName) is FieldInfo field &&
-                    field.GetValue(nullableContext) is byte flag && flag == 1)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return nullableContextAttribute.Flag == 1;
+                }
+            }
+
+            // Next check NullableAttribute
+            foreach (var declaringType in declaringTypes)
+            {
+                var attributes = declaringType.GetCustomAttributes(true);
+                var nullableAttribute = (NullableAttribute)attributes.FirstOrDefault(a => a is NullableAttribute);
+
+                if (nullableAttribute != null)
+                {
+                    return nullableAttribute.NullableFlags.Length >= 1 && nullableAttribute.NullableFlags[0] == 1;
                 }
             }
 

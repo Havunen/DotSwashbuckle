@@ -8,6 +8,7 @@
     <IsUnitTestProject>false</IsUnitTestProject>
     <IsTestProject>false</IsTestProject>
     <DefineTrace>true</DefineTrace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

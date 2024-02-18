@@ -354,6 +354,36 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         }
 
         [Fact]
+        public void GenerateSchema_NestedRecords_RecordTypeWithNonNestedChild_NullableCheck()
+        {
+            var schemaRepository = new SchemaRepository();
+
+            Subject(
+                (options) => options.SupportNonNullableReferenceTypes = true
+            ).GenerateSchema(typeof(RecordTypeWithNonNestedChild), schemaRepository);
+
+            var schema = schemaRepository.Schemas[nameof(RecordChild)];
+
+            Assert.False(schema.Properties[nameof(RecordChild.NonNullable)].Nullable);
+            Assert.True(schema.Properties[nameof(RecordChild.Nullable)].Nullable);
+        }
+
+        [Fact]
+        public void GenerateSchema_NestedRecords_RecordTypeWithNestedChild_NullableCheck()
+        {
+            var schemaRepository = new SchemaRepository();
+
+            Subject(
+                (options) => options.SupportNonNullableReferenceTypes = true
+            ).GenerateSchema(typeof(RecordTypeWithNestedChild), schemaRepository);
+
+            var schema = schemaRepository.Schemas[nameof(RecordTypeWithNestedChild.NestedChild)];
+
+            Assert.False(schema.Properties[nameof(RecordTypeWithNestedChild.NestedChild.NonNullable)].Nullable);
+            Assert.True(schema.Properties[nameof(RecordTypeWithNestedChild.NestedChild.Nullable)].Nullable);
+        }
+
+        [Fact]
         public void GenerateSchema_SetsReadOnlyAndWriteOnlyFlags_IfPropertyIsRestricted()
         {
             var schemaRepository = new SchemaRepository();

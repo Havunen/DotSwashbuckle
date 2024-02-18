@@ -28,6 +28,7 @@ namespace Basic
 
             services.AddSwaggerGen(c =>
             {
+                c.SupportNonNullableReferenceTypes();
                 c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
@@ -78,7 +79,10 @@ namespace Basic
                 {
                     c.SerializeAsV2 = true;
                 });
+                endpoints.MapPost("/requestWithNestedChild", (Requests.RequestWithNestedChild request) => "ok");
+                endpoints.MapPost("/requestWithNonNestedChild", (Requests.RequestWithNonNestedChild request) => "ok");
             });
+
 
             var supportedCultures = new[]
             {
@@ -101,6 +105,17 @@ namespace Basic
                 c.RoutePrefix = ""; // serve the UI at root
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1 Docs");
             });
+        }
+
+        public class Requests
+        {
+            public record RequestWithNestedChild(RequestWithNestedChild.NestedChild Child)
+            {
+                public record NestedChild(string NonNullable, string? Nullable);
+            }
+
+            public record RequestWithNonNestedChild(Child Child);
+            public record Child(string NonNullable, string? Nullable);
         }
     }
 }
