@@ -117,7 +117,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
                 { "%(HeadContent)", _options.HeadContent },
                 { "%(ConfigObject)", JsonSerializer.Serialize(_options.ConfigObject, _jsonSerializerOptions) },
                 { "%(OAuthConfigObject)", JsonSerializer.Serialize(_options.OAuthConfigObject, _jsonSerializerOptions) },
-                { "%(Interceptors)", JsonSerializer.Serialize(_options.Interceptors) },
+                { "%(Interceptors)", JsonSerializer.Serialize(_options.Interceptors, _jsonSerializerOptions) },
             };
         }
     }
