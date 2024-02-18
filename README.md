@@ -31,7 +31,7 @@ Change the csproj nuget reference
 
 ```patch
 -<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-+<PackageReference Include="DotSwashbuckle.AspNetCore" Version="2.0.0" />
++<PackageReference Include="DotSwashbuckle.AspNetCore" Version="3.0.0" />
 ```
 
 Uninstall the swashbuckle CLI tool
@@ -43,7 +43,7 @@ dotnet tool uninstall --global Swashbuckle.AspNetCore.Cli
 Install DotSwashbuckle CLI tool
 
 ```
-dotnet tool install --global --version 2.0.0 DotSwashbuckle.AspNetCore.Cli
+dotnet tool install --global --version 3.0.0 DotSwashbuckle.AspNetCore.Cli
 ```
 
 # Benchmark
@@ -65,8 +65,8 @@ WarmupCount=2
 1. Install the standard Nuget package into your ASP.NET Core application.
 
     ```
-    Package Manager : Install-Package DotSwashbuckle.AspNetCore -Version 2.0.0
-    CLI : dotnet add package --version 2.0.0 DotSwashbuckle.AspNetCore
+    Package Manager : Install-Package DotSwashbuckle.AspNetCore -Version 3.0.0
+    CLI : dotnet add package --version 3.0.0 DotSwashbuckle.AspNetCore
     ```
 
 2. In the `ConfigureServices` method of `Startup.cs`, register the Swagger generator, defining one or more Swagger documents.
@@ -142,8 +142,8 @@ If you're using **System.Text.Json (STJ)**, then the setup described above will 
 If you're using **Newtonsoft**, then you'll need to install a separate package and explicitly opt-in to ensure that *Newtonsoft* settings/attributes are automatically honored by the Swagger generator:
 
 ```
-Package Manager : Install-Package DotSwashbuckle.AspNetCore.Newtonsoft -Version 2.0.0
-CLI : dotnet add package --version 2.0.0 DotSwashbuckle.AspNetCore.Newtonsoft
+Package Manager : Install-Package DotSwashbuckle.AspNetCore.Newtonsoft -Version 3.0.0
+CLI : dotnet add package --version 3.0.0 DotSwashbuckle.AspNetCore.Newtonsoft
 ```
 
 ```csharp
