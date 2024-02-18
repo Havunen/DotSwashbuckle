@@ -11,7 +11,7 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/Havunen/DotSwashbuckle.git</RepositoryUrl>
 		<ContinuousIntegrationBuild Condition="'$(APPVEYOR)' == 'True'">true</ContinuousIntegrationBuild>
-		<VersionPrefix>3.0.0</VersionPrefix>
+		<VersionPrefix>3.0.1</VersionPrefix>
 		<LangVersion>12</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>

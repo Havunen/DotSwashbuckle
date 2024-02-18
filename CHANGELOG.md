@@ -1,3 +1,7 @@
+# v3.0.1
+- Adds support for required property modifiers. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2764
+- DotSwashbuckle dependencies are now defined with open version to allow applications update them
+
 # v3.0.0
 - Adds support for using `<remarks>` on schema XML comments.
 When using `<remarks>` on a class, it will be used as the description for the schema.
