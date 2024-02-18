@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <Description>Abstractions for DotSwashbuckle.AspNetCore.Filters</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <PackageTags>swagger;documentation;discovery;help;webapi;aspnet;aspnetcore;annotations</PackageTags>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+  </PropertyGroup>
+  
+</Project>

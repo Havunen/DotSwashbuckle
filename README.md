@@ -2,6 +2,7 @@
 |--------------|
 |* DotSwashbuckle supports only .NET 8 and newer versions |
 |* All credits for this project goes to [domaindrivendev](https://github.com/domaindrivendev) and [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
+|* All credits for DotSwashbuckle.AspNetCore.Filters goes to [mattfrear](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters.git)
 
 DotSwashbuckle
 =========

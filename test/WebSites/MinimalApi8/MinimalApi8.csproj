@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MinimalApi8</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.ReDoc\DotSwashbuckle.AspNetCore.ReDoc.csproj" />
     <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Swagger\DotSwashbuckle.AspNetCore.Swagger.csproj" />
     <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
     <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerUI\DotSwashbuckle.AspNetCore.SwaggerUI.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Annotations\DotSwashbuckle.AspNetCore.Annotations.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Filters\DotSwashbuckle.AspNetCore.Filters.csproj" />
   </ItemGroup>
+
 </Project>
