@@ -44,9 +44,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         {
             var modelMetadata = apiParameter.ModelMetadata;
 
-            return (modelMetadata?.ContainerType != null)
-                ? modelMetadata.ContainerType.GetProperty(modelMetadata.PropertyName)
-                : null;
+            return modelMetadata?.ContainerType?.GetProperty(modelMetadata.PropertyName);
         }
 
         public static IEnumerable<object> CustomAttributes(this ApiParameterDescription apiParameter)

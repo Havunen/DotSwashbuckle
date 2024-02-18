@@ -16,6 +16,7 @@ using Xunit;
 using DotSwashbuckle.AspNetCore.TestSupport;
 using Microsoft.OpenApi.Any;
 using DotSwashbuckle.AspNetCore.TestSupport.Fixtures;
+using Swashbuckle.AspNetCore.SwaggerGen.Test.SchemaGenerator;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -775,6 +776,34 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal("string", propertySchema.Type);
             Assert.Equal(expectedEnumAsJson, propertySchema.Enum.Select(openApiAny => openApiAny.ToJson()));
             Assert.Equal(expectedDefaultAsJson, propertySchema.Default.ToJson());
+        }
+
+        [Theory]
+        [InlineData(typeof(IntEnum), "integer", "int32", false, "2", "4", "8")]
+        [InlineData(typeof(LongEnum), "integer", "int64", false, "2", "4", "8")]
+        [InlineData(typeof(IntEnum?), "integer", "int32", true, "2", "4", "8")]
+        [InlineData(typeof(LongEnum?), "integer", "int64", true, "2", "4", "8")]
+        public void GenerateSchema_GeneratesReferencedEnumSchema_IfEnumOrNullableEnumType_WorksWithJsonSerializerContext(
+            Type type,
+            string expectedSchemaType,
+            string expectedFormat,
+            bool expectedNullable,
+            params string[] expectedEnumAsJson
+        )
+        {
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = Subject(
+                configureSerializer: c => { c.TypeInfoResolver = CustomJsonSerializerContext.Default; }
+            ).GenerateSchema(type, schemaRepository);
+
+            Assert.NotNull(referenceSchema.Reference);
+            var schema = schemaRepository.Schemas[referenceSchema.Reference.Id];
+            Assert.Equal(expectedSchemaType, schema.Type);
+            Assert.Equal(expectedFormat, schema.Format);
+            Assert.NotNull(schema.Enum);
+            Assert.Equal(expectedEnumAsJson, schema.Enum.Select(openApiAny => openApiAny.ToJson()));
+            Assert.Equal(expectedNullable, schema.Nullable);
         }
 
         [Fact]
