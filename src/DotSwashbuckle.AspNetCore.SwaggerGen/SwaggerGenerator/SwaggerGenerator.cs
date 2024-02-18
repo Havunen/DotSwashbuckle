@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.OpenApi.Models;
 using DotSwashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Http.Metadata;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
@@ -212,7 +213,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     Parameters = GenerateParameters(apiDescription, schemaRepository),
                     RequestBody = GenerateRequestBody(apiDescription, schemaRepository),
                     Responses = GenerateResponses(apiDescription, schemaRepository),
-                    Deprecated = apiDescription.CustomAttributes().OfType<ObsoleteAttribute>().Any()
+                    Deprecated = apiDescription.CustomAttributes().OfType<ObsoleteAttribute>().Any(),
+                    Summary = GenerateSummary(apiDescription),
+                    Description = GenerateDescription(apiDescription),
                 };
 
                 apiDescription.TryGetMethodInfo(out MethodInfo methodInfo);
@@ -230,6 +233,30 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     message: $"Failed to generate Operation for action - {apiDescription.ActionDescriptor.DisplayName}. See inner exception",
                     innerException: ex);
             }
+        }
+
+        private string GenerateSummary(ApiDescription apiDescription)
+        {
+            string operationSummary = apiDescription
+                .ActionDescriptor
+                ?.EndpointMetadata
+                ?.OfType<IEndpointSummaryMetadata>()
+                .Select(s => s.Summary)
+                .LastOrDefault();
+
+            return operationSummary;
+        }
+
+        private string GenerateDescription(ApiDescription apiDescription)
+        {
+            string operationDescription = apiDescription
+                .ActionDescriptor
+                ?.EndpointMetadata
+                ?.OfType<IEndpointDescriptionMetadata>()
+                .Select(s => s.Description)
+                .LastOrDefault();
+
+            return operationDescription;
         }
 
         private OpenApiOperation GenerateOpenApiOperationFromMetadata(ApiDescription apiDescription, SchemaRepository schemaRepository)
