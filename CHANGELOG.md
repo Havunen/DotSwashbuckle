@@ -1,3 +1,8 @@
+# v3.0.2
+- Fixes an issue where nullable is not defined for primitive response type schema https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2731
+- Fixes an issue where nested record types nullable does not get generated correctly https://github.com/Havunen/DotSwashbuckle/commit/ab7e8e681888034fa9157565eaf45ec18703849b
+- Adds support for Length attribute https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2756
+
 # v3.0.1
 - Adds support for required property modifiers. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2764
 - DotSwashbuckle dependencies are now defined with open version to allow applications update them
