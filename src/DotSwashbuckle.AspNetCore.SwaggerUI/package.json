@@ -1,6 +1,6 @@
 {
   "name": "dotswashbuckle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "swagger-ui-dist": "4.15.5"

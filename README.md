@@ -19,15 +19,15 @@ Once you have an API that can describe itself in Swagger, you've opened the trea
 
 # Compatibility #
 
-DotSwashbuckle v1.0.1 is only compatible with .NET 8 or newer version
+DotSwashbuckle v1.0.2 is only compatible with .NET 8 or newer version
 
 # Getting Started #
 
 1. Install the standard Nuget package into your ASP.NET Core application.
 
     ```
-    Package Manager : Install-Package DotSwashbuckle.AspNetCore -Version 1.0.1
-    CLI : dotnet add package --version 1.0.1 DotSwashbuckle.AspNetCore
+    Package Manager : Install-Package DotSwashbuckle.AspNetCore -Version 1.0.2
+    CLI : dotnet add package --version 1.0.2 DotSwashbuckle.AspNetCore
     ```
 
 2. In the `ConfigureServices` method of `Startup.cs`, register the Swagger generator, defining one or more Swagger documents.
@@ -103,8 +103,8 @@ If you're using **System.Text.Json (STJ)**, then the setup described above will 
 If you're using **Newtonsoft**, then you'll need to install a separate package and explicitly opt-in to ensure that *Newtonsoft* settings/attributes are automatically honored by the Swagger generator:
 
 ```
-Package Manager : Install-Package DotSwashbuckle.AspNetCore.Newtonsoft -Version 1.0.1
-CLI : dotnet add package --version 1.0.1 DotSwashbuckle.AspNetCore.Newtonsoft
+Package Manager : Install-Package DotSwashbuckle.AspNetCore.Newtonsoft -Version 1.0.2
+CLI : dotnet add package --version 1.0.2 DotSwashbuckle.AspNetCore.Newtonsoft
 ```
 
 ```csharp
