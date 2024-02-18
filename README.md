@@ -4,7 +4,7 @@
 |* All credits for this project goes to [domaindrivendev](https://github.com/domaindrivendev) and [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 |* All credits for DotSwashbuckle.AspNetCore.Filters goes to [mattfrear](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters.git)
 
-<img width="250" alt="DotSwashbuckleLogo" title="Inferno" src="https://raw.githubusercontent.com/Havunen/DotSwashbuckle/main/DotSwashbuckleLogo.png"/>
+<img width="250" alt="DotSwashbuckleLogo" title="Inferno" src="https://raw.githubusercontent.com/Havunen/DotSwashbuckle/master/DotSwashbuckleLogo.png"/>
 
 DotSwashbuckle
 =========
