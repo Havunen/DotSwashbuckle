@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public class SchemaGeneratorOptions
     {
+        private static Dictionary<Assembly, Type[]> AssemblyTypeCache = new();
+
         public SchemaGeneratorOptions()
         {
             CustomTypeMappings = new Dictionary<Type, Func<OpenApiSchema>>();
@@ -54,7 +57,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         private IEnumerable<Type> DefaultSubTypesSelector(Type baseType)
         {
-            return baseType.Assembly.GetTypes().Where(type => type.IsSubclassOf(baseType));
+            if (!AssemblyTypeCache.TryGetValue(baseType.Assembly, out var types))
+            {
+                types = baseType.Assembly.GetTypes();
+                AssemblyTypeCache[baseType.Assembly] = types;
+            }
+
+            return types.Where(type => type.IsSubclassOf(baseType));
         }
 
         private string DefaultDiscriminatorNameSelector(Type baseType)

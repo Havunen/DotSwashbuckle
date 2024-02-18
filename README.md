@@ -44,6 +44,20 @@ Install DotSwashbuckle CLI tool
 dotnet tool install --global --version 1.0.2 DotSwashbuckle.AspNetCore.Cli
 ```
 
+# Benchmark
+
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3085/23H2/2023Update/SunValley3)
+AMD Ryzen 9 5950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2
+  Job-TZWOBL : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2
+
+WarmupCount=2
+
+| Method                | Mean     | Error   | StdDev  | Gen0      | Gen1      | Allocated |
+|---------------------- |---------:|--------:|--------:|----------:|----------:|----------:|
+| DotSwashbuckleOpenApi | 508.8 ms | 9.81 ms | 8.69 ms | 9000.0000 | 4000.0000 | 159.36 MB |
+
 # Getting Started #
 
 1. Install the standard Nuget package into your ASP.NET Core application.
