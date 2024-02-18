@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Csv" Version="2.0.93" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.13" />
     <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
