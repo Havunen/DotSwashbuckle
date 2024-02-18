@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DotSwashbuckle.AspNetCore.ReDoc.snk</AssemblyOriginatorKeyFile>
     <Description>Middleware to expose an embedded version of ReDoc from an ASP.NET Core application</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <PackageTags>swagger;documentation;discovery;help;webapi;aspnet;aspnetcore;redoc</PackageTags>
-    <SignAssembly Condition="'$(OS)'=='Windows_NT'">true</SignAssembly>
     <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
 
