@@ -8,6 +8,7 @@ When `<summary>` is defined alone it is used as description for the schema.
 - Fixes an issue where UniqueItems is not set true for `IReadOnlySet<T>` 
 - Adds support for `WithSummary` and `WithDescription` metadata
 - Improve performance of IsRequiredSpecified method
+- Fixes an issue where query string parameters crash OpenApi path generation `System.ArgumentException: Literal sections cannot contain the '?' character.`
 
 # v2.0.0
 
