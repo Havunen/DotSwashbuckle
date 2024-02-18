@@ -8,6 +8,7 @@ DotSwashbuckle
 
 [![Build status](https://ci.appveyor.com/api/projects/status/vy1e8ls17sx6fuwv?svg=true)](https://ci.appveyor.com/project/Havunen/dotswashbuckle)
 
+[![Nuget](https://img.shields.io/nuget/v/dotswashbuckle.aspnetcore)](https://www.nuget.org/packages/dotswashbuckle.aspnetcore/)
 
 [Swagger](http://swagger.io) tooling for APIs built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
 
