@@ -22,6 +22,27 @@ Once you have an API that can describe itself in Swagger, you've opened the trea
 
 DotSwashbuckle v1.0.2 is only compatible with .NET 8 or newer version
 
+# Migrating from Swashbuckle
+
+Change the csproj nuget reference 
+
+```patch
+-<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
++<PackageReference Include="DotSwashbuckle.AspNetCore" Version="1.0.2" />
+```
+
+Uninstall the swashbuckle CLI tool
+
+```
+dotnet tool uninstall --global Swashbuckle.AspNetCore.Cli
+```
+
+Install DotSwashbuckle CLI tool
+
+```
+dotnet tool install --global --version 1.0.2 DotSwashbuckle.AspNetCore.Cli
+```
+
 # Getting Started #
 
 1. Install the standard Nuget package into your ASP.NET Core application.
