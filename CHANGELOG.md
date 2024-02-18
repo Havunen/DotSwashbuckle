@@ -10,6 +10,9 @@ When `<summary>` is defined alone it is used as description for the schema.
 - Improve performance of IsRequiredSpecified method
 - Fixes an issue where query string parameters crash OpenApi path generation `System.ArgumentException: Literal sections cannot contain the '?' character.`
 
+## Breaking Changes
+- `ReDoc` has been renamed to `Redoc`, this applies to all methods and types. Including the Nuget package name `DotSwashbuckle.AspNetCore.Redoc`
+
 # v2.0.0
 
 - XML comments parsing performance has been improved
