@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Xml.XPath;
-using DotSwashbuckle.AspNetCore.SwaggerGen.Utils;
+using System.Collections.Generic;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
-    public class XmlCommentsSchemaFilter : ISchemaFilter
+    public class XmlCommentsSchemaFilter(
+        IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
+    ) : ISchemaFilter
     {
-        private readonly XPathNavigator _xmlNavigator;
-
-        public XmlCommentsSchemaFilter(XPathDocument xmlDoc)
-        {
-            _xmlNavigator = xmlDoc.CreateNavigator();
-        }
 
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
@@ -28,30 +23,34 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private void ApplyTypeTags(OpenApiSchema schema, Type type)
         {
             var typeMemberName = XmlCommentsNodeNameHelper.GetMemberNameForType(type);
-            var typeSummaryNode = _xmlNavigator.SelectSingleNode($"/doc/members/member[@name='{typeMemberName}']/summary");
 
-            if (typeSummaryNode != null)
+            if (!xmlMemberDescriptors.TryGetValue(typeMemberName, out var xmlCommentDescriptor))
             {
-                schema.Description = XmlCommentsTextHelper.Humanize(typeSummaryNode.InnerXml);
+                return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
+            {
+                schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
             }
         }
 
         private void ApplyMemberTags(OpenApiSchema schema, SchemaFilterContext context)
         {
             var fieldOrPropertyMemberName = XmlCommentsNodeNameHelper.GetMemberNameForFieldOrProperty(context.MemberInfo);
-            var fieldOrPropertyNode = _xmlNavigator.SelectSingleNode($"/doc/members/member[@name='{fieldOrPropertyMemberName}']");
 
-            if (fieldOrPropertyNode == null) return;
+            if (!xmlMemberDescriptors.TryGetValue(fieldOrPropertyMemberName, out var xmlCommentDescriptor))
+            {
+                return;
+            }
 
-            var summaryNode = fieldOrPropertyNode.SelectSingleNode("summary");
-            if (summaryNode != null)
-                schema.Description = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml);
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
+                schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
 
-            var exampleNode = fieldOrPropertyNode.SelectSingleNode("example");
-            if (exampleNode != null)
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Example))
             {
                 schema.Example = ExampleParser.ParseNodeExample(
-                    exampleNode.ToString(),
+                    xmlCommentDescriptor.Example,
                     schema,
                     context.SchemaRepository
                 );

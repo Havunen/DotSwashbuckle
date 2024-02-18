@@ -1,25 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
-using System.Xml.XPath;
+using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
-    public class XmlCommentsOperationFilter : IOperationFilter
+    public class XmlCommentsOperationFilter(
+        IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
+    ) : IOperationFilter
     {
-        private readonly XPathNavigator _xmlNavigator;
-
-        public XmlCommentsOperationFilter(XPathDocument xmlDoc)
-        {
-            _xmlNavigator = xmlDoc.CreateNavigator();
-        }
 
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             if (context.MethodInfo == null) return;
 
             // If method is from a constructed generic type, look for comments from the generic type method
-            var targetMethod = context.MethodInfo.DeclaringType.IsConstructedGenericType
+            var targetMethod = context.MethodInfo.DeclaringType?.IsConstructedGenericType == true
                 ? context.MethodInfo.GetUnderlyingGenericTypeMethod()
                 : context.MethodInfo;
 
@@ -32,39 +29,44 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private void ApplyControllerTags(OpenApiOperation operation, Type controllerType)
         {
             var typeMemberName = XmlCommentsNodeNameHelper.GetMemberNameForType(controllerType);
-            var responseNodes = _xmlNavigator.Select($"/doc/members/member[@name='{typeMemberName}']/response");
-            ApplyResponseTags(operation, responseNodes);
+
+            if (!xmlMemberDescriptors.TryGetValue(typeMemberName, out var xmlCommentDescriptor))
+            {
+                return;
+            }
+
+            ApplyResponseTags(operation, xmlCommentDescriptor);
         }
 
         private void ApplyMethodTags(OpenApiOperation operation, MethodInfo methodInfo)
         {
             var methodMemberName = XmlCommentsNodeNameHelper.GetMemberNameForMethod(methodInfo);
-            var methodNode = _xmlNavigator.SelectSingleNode($"/doc/members/member[@name='{methodMemberName}']");
 
-            if (methodNode == null) return;
+            if (!xmlMemberDescriptors.TryGetValue(methodMemberName, out var xmlCommentDescriptor))
+            {
+                return;
+            }
 
-            var summaryNode = methodNode.SelectSingleNode("summary");
-            if (summaryNode != null)
-                operation.Summary = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml);
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
+                operation.Summary = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
 
-            var remarksNode = methodNode.SelectSingleNode("remarks");
-            if (remarksNode != null)
-                operation.Description = XmlCommentsTextHelper.Humanize(remarksNode.InnerXml);
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Remarks))
+                operation.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Remarks);
 
-            var responseNodes = methodNode.Select("response");
-            ApplyResponseTags(operation, responseNodes);
+            ApplyResponseTags(operation, xmlCommentDescriptor);
         }
 
-        private void ApplyResponseTags(OpenApiOperation operation, XPathNodeIterator responseNodes)
+        private void ApplyResponseTags(OpenApiOperation operation, XmlCommentDescriptor xmlCommentDescriptor)
         {
-            while (responseNodes.MoveNext())
-            {
-                var code = responseNodes.Current.GetAttribute("code", "");
-                var response = operation.Responses.ContainsKey(code)
-                    ? operation.Responses[code]
-                    : operation.Responses[code] = new OpenApiResponse();
+            if (xmlCommentDescriptor.Responses == null) return;
 
-                response.Description = XmlCommentsTextHelper.Humanize(responseNodes.Current.InnerXml);
+            foreach (var xmlResponse in xmlCommentDescriptor.Responses)
+            {
+                var response = operation.Responses.ContainsKey(xmlResponse.Code)
+                    ? operation.Responses[xmlResponse.Code]
+                    : operation.Responses[xmlResponse.Code] = new OpenApiResponse();
+
+                response.Description = XmlCommentsTextHelper.Humanize(xmlResponse.Description);
             }
         }
     }

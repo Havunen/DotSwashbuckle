@@ -7,6 +7,7 @@ using Xunit;
 using DotSwashbuckle.AspNetCore.TestSupport;
 using System.Collections.Generic;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -112,10 +113,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         }
         private XmlCommentsRequestBodyFilter Subject()
         {
-            using (var xmlComments = File.OpenText(typeof(FakeControllerWithXmlComments).Assembly.GetName().Name + ".xml"))
-            {
-                return new XmlCommentsRequestBodyFilter(new XPathDocument(xmlComments));
-            }
+            return new XmlCommentsRequestBodyFilter(SwaggerGenOptionsExtensions.ParseXmlCommentDescriptors($"{typeof(FakeControllerWithXmlComments).Assembly.GetName().Name}.xml"));
         }
     }
 }

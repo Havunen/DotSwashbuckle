@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.XPath;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Authentication;
+using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -419,24 +423,24 @@ namespace Microsoft.Extensions.DependencyInjection
         /// Inject human-friendly descriptions for Operations, Parameters and Schemas based on XML Comment files
         /// </summary>
         /// <param name="swaggerGenOptions"></param>
-        /// <param name="xmlDocFactory">A factory method that returns XML Comments as an XPathDocument</param>
+        /// <param name="parseXmlMemberInfo">A factory method that returns XML Comments as an XPathDocument</param>
         /// <param name="includeControllerXmlComments">
         /// Flag to indicate if controller XML comments (i.e. summary) should be used to assign Tag descriptions.
         /// Don't set this flag if you're customizing the default tag for operations via TagActionsBy.
         /// </param>
         public static void IncludeXmlComments(
             this SwaggerGenOptions swaggerGenOptions,
-            Func<XPathDocument> xmlDocFactory,
+            Func<IReadOnlyDictionary<string, XmlCommentDescriptor>> parseXmlMemberInfo,
             bool includeControllerXmlComments = false)
         {
-            var xmlDoc = xmlDocFactory();
-            swaggerGenOptions.ParameterFilter<XmlCommentsParameterFilter>(xmlDoc);
-            swaggerGenOptions.RequestBodyFilter<XmlCommentsRequestBodyFilter>(xmlDoc);
-            swaggerGenOptions.OperationFilter<XmlCommentsOperationFilter>(xmlDoc);
-            swaggerGenOptions.SchemaFilter<XmlCommentsSchemaFilter>(xmlDoc);
+            var xmlMembers = parseXmlMemberInfo();
+            swaggerGenOptions.ParameterFilter<XmlCommentsParameterFilter>(xmlMembers);
+            swaggerGenOptions.RequestBodyFilter<XmlCommentsRequestBodyFilter>(xmlMembers);
+            swaggerGenOptions.OperationFilter<XmlCommentsOperationFilter>(xmlMembers);
+            swaggerGenOptions.SchemaFilter<XmlCommentsSchemaFilter>(xmlMembers);
 
             if (includeControllerXmlComments)
-                swaggerGenOptions.DocumentFilter<XmlCommentsDocumentFilter>(xmlDoc);
+                swaggerGenOptions.DocumentFilter<XmlCommentsDocumentFilter>(xmlMembers);
         }
 
         /// <summary>
@@ -453,9 +457,135 @@ namespace Microsoft.Extensions.DependencyInjection
             string filePath,
             bool includeControllerXmlComments = false)
         {
-            swaggerGenOptions.IncludeXmlComments(() => new XPathDocument(filePath), includeControllerXmlComments);
+            swaggerGenOptions.IncludeXmlComments(
+                () => ParseXmlCommentDescriptors(filePath),
+                includeControllerXmlComments
+            );
         }
 
+        private static string ReadInnerValueAsString(XmlReader xmlReader, string endBlock)
+        {
+            var sb = new StringBuilder();
+            xmlReader.Read();
+
+            while (!xmlReader.EOF && xmlReader.ReadState == ReadState.Interactive)
+            {
+                if (xmlReader.NodeType == XmlNodeType.EndElement &&
+                    xmlReader.Name.Equals(endBlock, StringComparison.Ordinal))
+                {
+                    break;
+                }
+
+                switch (xmlReader.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        sb.Append(xmlReader.ReadInnerXml());
+                        break;
+                    case XmlNodeType.Text:
+                    case XmlNodeType.CDATA:
+                        sb.Append(xmlReader.Value);
+                        break;
+                    default:
+                        break;
+                }
+
+                xmlReader.Read();
+            }
+
+            return sb.ToString();
+        }
+
+        public static IReadOnlyDictionary<string, XmlCommentDescriptor> ParseXmlCommentDescriptors(string filePath)
+        {
+            var xmlReader = XmlReader.Create(filePath, new XmlReaderSettings()
+            {
+                CheckCharacters = false,
+                IgnoreWhitespace = true,
+
+            });
+            var xmlMembers = new Dictionary<string, XmlCommentDescriptor>(StringComparer.Ordinal);
+
+            xmlReader.MoveToContent();
+            xmlReader.Read();
+
+            while (!xmlReader.EOF && xmlReader.ReadState == ReadState.Interactive)
+            {
+                // corrected for bug noted by Wes below...
+                if (xmlReader.NodeType == XmlNodeType.Element && xmlReader.Name.Equals("member", StringComparison.Ordinal))
+                {
+                    var xmlComment = new XmlCommentDescriptor();
+                    var memberName = xmlReader.GetAttribute("name");
+
+                    if (memberName == null)
+                    {
+                        continue;
+                    }
+
+                    xmlReader.Read();
+                    while (
+                        !xmlReader.EOF &&
+                        xmlReader.ReadState == ReadState.Interactive &&
+                        !(xmlReader.NodeType == XmlNodeType.EndElement &&
+                          xmlReader.Name.Equals("member", StringComparison.Ordinal))
+                    )
+                    {
+                        if (xmlReader.NodeType == XmlNodeType.Element)
+                        {
+                            switch (xmlReader.Name)
+                            {
+                                case "summary":
+                                    xmlComment.Summary = ReadInnerValueAsString(xmlReader, "summary");
+                                    break;
+                                case "remarks":
+                                    xmlComment.Remarks = ReadInnerValueAsString(xmlReader, "remarks");
+                                    break;
+                                case "example":
+                                    xmlComment.Example = ReadInnerValueAsString(xmlReader, "example");
+                                    break;
+                                case "param":
+                                    xmlComment.Params ??= [];
+
+                                    xmlComment.Params.Add(
+                                        new XmlParam()
+                                        {
+                                            Example = xmlReader.GetAttribute("example"),
+                                            Name = xmlReader.GetAttribute("name"),
+                                            Value = ReadInnerValueAsString(xmlReader, "param")
+                                        }
+                                    );
+                                    break;
+                                case "response":
+                                    xmlComment.Responses ??= [];
+
+                                    xmlComment.Responses.Add(
+                                        new XmlResponse()
+                                        {
+                                            Code = xmlReader.GetAttribute("code"),
+                                            Description = ReadInnerValueAsString(xmlReader, "response")
+                                        }
+                                    );
+                                    break;
+                                default:
+                                    xmlReader.Read();
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            xmlReader.Read();
+                        }
+                    }
+
+                    xmlMembers.Add(memberName, xmlComment);
+                }
+                else
+                {
+                    xmlReader.Read();
+                }
+            }
+
+            return xmlMembers;
+        }
         /// <summary>
         /// Generate polymorphic schemas (i.e. "oneOf") based on discovered subtypes.
         /// Deprecated: Use the \"UseOneOfForPolymorphism\" and \"UseAllOfForInheritance\" settings instead

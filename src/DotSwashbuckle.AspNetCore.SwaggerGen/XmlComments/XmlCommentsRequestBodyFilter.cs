@@ -1,18 +1,15 @@
-﻿using System.Reflection;
-using System.Xml.XPath;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
-    public class XmlCommentsRequestBodyFilter : IRequestBodyFilter
+    public class XmlCommentsRequestBodyFilter(
+        IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
+    ) : IRequestBodyFilter
     {
-        private readonly XPathNavigator _xmlNavigator;
-
-        public XmlCommentsRequestBodyFilter(XPathDocument xmlDoc)
-        {
-            _xmlNavigator = xmlDoc.CreateNavigator();
-        }
 
         public void Apply(OpenApiRequestBody requestBody, RequestBodyFilterContext context)
         {
@@ -38,24 +35,26 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private void ApplyPropertyTags(OpenApiRequestBody requestBody, RequestBodyFilterContext context, PropertyInfo propertyInfo)
         {
             var propertyMemberName = XmlCommentsNodeNameHelper.GetMemberNameForFieldOrProperty(propertyInfo);
-            var propertyNode = _xmlNavigator.SelectSingleNode($"/doc/members/member[@name='{propertyMemberName}']");
 
-            if (propertyNode == null) return;
-
-            var summaryNode = propertyNode.SelectSingleNode("summary");
-            if (summaryNode != null)
-                requestBody.Description = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml);
-
-            var exampleNode = propertyNode.SelectSingleNode("example");
-            if (exampleNode == null) return;
-
-            foreach (var mediaType in requestBody.Content.Values)
+            if (!xmlMemberDescriptors.TryGetValue(propertyMemberName, out var xmlCommentDescriptor))
             {
-                mediaType.Example = ExampleParser.ParseNodeExample(
-                    exampleNode.ToString(),
-                    mediaType.Schema,
-                    context.SchemaRepository
-                );
+                return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
+                requestBody.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
+
+
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Example))
+            {
+                foreach (var mediaType in requestBody.Content.Values)
+                {
+                    mediaType.Example = ExampleParser.ParseNodeExample(
+                        xmlCommentDescriptor.Example,
+                        mediaType.Schema,
+                        context.SchemaRepository
+                    );
+                }
             }
         }
 
@@ -64,22 +63,30 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             if (!(parameterInfo.Member is MethodInfo methodInfo)) return;
 
             // If method is from a constructed generic type, look for comments from the generic type method
-            var targetMethod = methodInfo.DeclaringType.IsConstructedGenericType
+            var targetMethod = methodInfo.DeclaringType?.IsConstructedGenericType == true
                 ? methodInfo.GetUnderlyingGenericTypeMethod()
                 : methodInfo;
 
             if (targetMethod == null) return;
 
             var methodMemberName = XmlCommentsNodeNameHelper.GetMemberNameForMethod(targetMethod);
-            var paramNode = _xmlNavigator.SelectSingleNode(
-                $"/doc/members/member[@name='{methodMemberName}']/param[@name='{parameterInfo.Name}']");
+
+            if (!xmlMemberDescriptors.TryGetValue(methodMemberName, out var xmlCommentDesc))
+            {
+                return;
+            }
+
+            var paramNode = xmlCommentDesc.Params?.FirstOrDefault(p => string.Equals(p.Name, parameterInfo.Name));
 
             if (paramNode != null)
             {
-                requestBody.Description = XmlCommentsTextHelper.Humanize(paramNode.InnerXml);
+                requestBody.Description = XmlCommentsTextHelper.Humanize(paramNode.Value);
 
-                var example = paramNode.GetAttribute("example", "");
-                if (string.IsNullOrEmpty(example)) return;
+                var example = paramNode.Example;
+                if (string.IsNullOrWhiteSpace(example))
+                {
+                    return;
+                }
 
                 foreach (var mediaType in requestBody.Content.Values)
                 {

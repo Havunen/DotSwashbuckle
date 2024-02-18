@@ -1,20 +1,15 @@
-﻿using System.Reflection;
-using System.Xml.XPath;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
-    public class XmlCommentsParameterFilter : IParameterFilter
+    public class XmlCommentsParameterFilter(
+        IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
+    ) : IParameterFilter
     {
-        private XPathNavigator _xmlNavigator;
-
-        public XmlCommentsParameterFilter(XPathDocument xmlDoc)
-        {
-            _xmlNavigator = xmlDoc.CreateNavigator();
-        }
-
         public void Apply(OpenApiParameter parameter, ParameterFilterContext context)
         {
             if (context.PropertyInfo != null)
@@ -30,25 +25,26 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private void ApplyPropertyTags(OpenApiParameter parameter, ParameterFilterContext context)
         {
             var propertyMemberName = XmlCommentsNodeNameHelper.GetMemberNameForFieldOrProperty(context.PropertyInfo);
-            var propertyNode = _xmlNavigator.SelectSingleNode($"/doc/members/member[@name='{propertyMemberName}']");
 
-            if (propertyNode == null) return;
-
-            var summaryNode = propertyNode.SelectSingleNode("summary");
-            if (summaryNode != null)
+            if (!xmlMemberDescriptors.TryGetValue(propertyMemberName, out var xmlCommentDesc))
             {
-                parameter.Description = XmlCommentsTextHelper.Humanize(summaryNode.InnerXml);
+                return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(xmlCommentDesc.Summary))
+            {
+                parameter.Description = XmlCommentsTextHelper.Humanize(xmlCommentDesc.Summary);
                 parameter.Schema.Description = null; // no need to duplicate
             }
 
-            var exampleNode = propertyNode.SelectSingleNode("example");
-            if (exampleNode == null) return;
-
-            parameter.Example = ExampleParser.ParseNodeExample(
-                exampleNode.ToString(),
-                parameter.Schema,
-                context.SchemaRepository
-            );
+            if (!string.IsNullOrWhiteSpace(xmlCommentDesc.Example))
+            {
+                parameter.Example = ExampleParser.ParseNodeExample(
+                    xmlCommentDesc.Example,
+                    parameter.Schema,
+                    context.SchemaRepository
+                );
+            }
         }
 
         private void ApplyParamTags(OpenApiParameter parameter, ParameterFilterContext context)
@@ -56,25 +52,29 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             if (!(context.ParameterInfo.Member is MethodInfo methodInfo)) return;
 
             // If method is from a constructed generic type, look for comments from the generic type method
-            var targetMethod = methodInfo.DeclaringType.IsConstructedGenericType
+            var targetMethod = methodInfo.DeclaringType?.IsConstructedGenericType == true
                 ? methodInfo.GetUnderlyingGenericTypeMethod()
                 : methodInfo;
 
             if (targetMethod == null) return;
 
             var methodMemberName = XmlCommentsNodeNameHelper.GetMemberNameForMethod(targetMethod);
-            var paramNode = _xmlNavigator.SelectSingleNode(
-                $"/doc/members/member[@name='{methodMemberName}']/param[@name='{context.ParameterInfo.Name}']");
+
+            if (!xmlMemberDescriptors.TryGetValue(methodMemberName, out var xmlCommentDesc))
+            {
+                return;
+            }
+
+            var paramNode = xmlCommentDesc.Params?.FirstOrDefault(p => string.Equals(p.Name, context.ParameterInfo.Name));
 
             if (paramNode != null)
             {
-                parameter.Description = XmlCommentsTextHelper.Humanize(paramNode.InnerXml);
+                parameter.Description = XmlCommentsTextHelper.Humanize(paramNode.Value);
 
-                var example = paramNode.GetAttribute("example", "");
-                if (string.IsNullOrEmpty(example)) return;
+                if (string.IsNullOrWhiteSpace(paramNode.Example)) return;
 
                 parameter.Example = ExampleParser.ParseNodeExample(
-                    example,
+                    paramNode.Example,
                     parameter.Schema,
                     context.SchemaRepository
                 );

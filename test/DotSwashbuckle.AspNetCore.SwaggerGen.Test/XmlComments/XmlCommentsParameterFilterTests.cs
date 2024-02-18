@@ -3,6 +3,7 @@ using System.Xml.XPath;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using DotSwashbuckle.AspNetCore.TestSupport;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
@@ -94,10 +95,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         private XmlCommentsParameterFilter Subject()
         {
-            using (var xmlComments = File.OpenText(typeof(FakeControllerWithXmlComments).Assembly.GetName().Name + ".xml"))
-            {
-                return new XmlCommentsParameterFilter(new XPathDocument(xmlComments));
-            }
+            return new XmlCommentsParameterFilter((SwaggerGenOptionsExtensions.ParseXmlCommentDescriptors($"{typeof(FakeControllerWithXmlComments).Assembly.GetName().Name}.xml")));
         }
     }
 }
