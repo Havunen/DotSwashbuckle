@@ -82,7 +82,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             Type underlyingType,
             DataType dataType,
             string dataFormat = null,
-            IEnumerable<object> enumValues = null,
             Type arrayItemType = null,
             Type dictionaryValueType = null,
             IEnumerable<string> dictionaryKeys = null,
