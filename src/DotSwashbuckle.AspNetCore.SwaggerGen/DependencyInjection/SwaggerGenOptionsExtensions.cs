@@ -479,17 +479,18 @@ namespace Microsoft.Extensions.DependencyInjection
                 switch (xmlReader.NodeType)
                 {
                     case XmlNodeType.Element:
-                        sb.Append(xmlReader.ReadInnerXml());
+
+                        sb.Append(xmlReader.ReadOuterXml());
                         break;
                     case XmlNodeType.Text:
                     case XmlNodeType.CDATA:
                         sb.Append(xmlReader.Value);
+                        xmlReader.Read();
                         break;
                     default:
+                        xmlReader.Read();
                         break;
                 }
-
-                xmlReader.Read();
             }
 
             return sb.ToString();
