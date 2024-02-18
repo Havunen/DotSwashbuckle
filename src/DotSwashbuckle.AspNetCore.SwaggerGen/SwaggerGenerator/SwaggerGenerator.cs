@@ -504,7 +504,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             IEnumerable<ApiParameterDescription> formParameters,
             SchemaRepository schemaRepository)
         {
-            var properties = new Dictionary<string, OpenApiSchema>();
+            var properties = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal);
             var requiredPropertyNames = new List<string>();
 
             foreach (var formParameter in formParameters)
@@ -601,7 +601,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             };
         }
 
-        private static readonly Dictionary<string, OperationType> OperationTypeMap = new Dictionary<string, OperationType>
+        private static readonly Dictionary<string, OperationType> OperationTypeMap = new Dictionary<string, OperationType>(StringComparer.Ordinal)
         {
             { "GET", OperationType.Get },
             { "PUT", OperationType.Put },

@@ -142,7 +142,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
         public string ValidatorUrl { get; set; } = null;
 
         [JsonExtensionData]
-        public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>();
+        public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>(StringComparer.Ordinal);
     }
 
     public class UrlDescriptor

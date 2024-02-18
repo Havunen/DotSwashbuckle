@@ -36,7 +36,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     }
@@ -72,7 +72,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     }
@@ -126,7 +126,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             var actionDescriptor = new ActionDescriptor
             {
                 EndpointMetadata = new List<object>() { new EndpointNameMetadata("SomeEndpointName") },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -163,7 +163,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         }
                     }
                 },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -196,7 +196,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         {
                             ["200"] = new()
                             {
-                                Content = new Dictionary<string, OpenApiMediaType>()
+                                Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                                 {
                                     ["application/someMediaType"] = new() 
                                 }
@@ -204,7 +204,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         }
                     }
                 },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -252,14 +252,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         OperationId = "OperationIdSetInMetadata",
                         RequestBody = new()
                         {
-                            Content = new Dictionary<string, OpenApiMediaType>()
+                            Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                             {
                                 ["application/someMediaType"] = new()
                             }
                         }
                     }
                 },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -315,7 +315,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         }
                     }
                 },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -355,7 +355,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             var actionDescriptor = new ActionDescriptor
             {
                 EndpointMetadata = null,
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -524,7 +524,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
             var actionDescriptor = new ActionDescriptor
             {
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = "Foo",
                 }
@@ -872,7 +872,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -903,7 +903,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -927,7 +927,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -947,7 +947,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             var actionDescriptor = new ActionDescriptor
             {
                 EndpointMetadata = new List<object>() { new TagsAttribute("Some", "Tags", "Here") },
-                RouteValues = new Dictionary<string, string>
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
                 {
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
@@ -978,7 +978,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1021,7 +1021,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1043,7 +1043,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 apiDescriptions: new ApiDescription[] { },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1067,11 +1067,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 apiDescriptions: new ApiDescription[] { },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
-                    SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>
+                    SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>(StringComparer.Ordinal)
                     {
                         ["basic"] = new OpenApiSecurityScheme { Type = SecuritySchemeType.Http, Scheme = "basic" }
                     }
@@ -1099,7 +1099,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1128,7 +1128,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1164,7 +1164,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1201,7 +1201,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1231,7 +1231,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1257,7 +1257,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                 apiDescriptions: new ApiDescription[] { },
                 options: new SwaggerGeneratorOptions
                 {
-                    SwaggerDocs = new Dictionary<string, OpenApiInfo>
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
@@ -1291,7 +1291,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         private static readonly SwaggerGeneratorOptions DefaultOptions = new SwaggerGeneratorOptions
         {
-            SwaggerDocs = new Dictionary<string, OpenApiInfo>
+            SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
             {
                 ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
             }

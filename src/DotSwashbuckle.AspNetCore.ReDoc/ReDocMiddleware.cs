@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -108,7 +109,7 @@ namespace DotSwashbuckle.AspNetCore.ReDoc
 
         private IDictionary<string, string> GetIndexArguments()
         {
-            return new Dictionary<string, string>()
+            return new Dictionary<string, string>(StringComparer.Ordinal)
             {
                 { "%(DocumentTitle)", _options.DocumentTitle },
                 { "%(HeadContent)", _options.HeadContent },

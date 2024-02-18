@@ -262,7 +262,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 RequestBody = new OpenApiRequestBody
                 {
                     Required = true,
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                     {
                         [ "text/plain" ] = new OpenApiMediaType()
                     }
@@ -294,7 +294,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
             {
                 RequestBody = new OpenApiRequestBody
                 {
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                     {
                         [ "application/json" ] = new OpenApiMediaType()
                     }
@@ -326,7 +326,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
             {
                 RequestBody = new OpenApiRequestBody
                 {
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                     {
                         [ "application/json" ] = new OpenApiMediaType
                         {
@@ -370,7 +370,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 },
                 Components = new OpenApiComponents
                 {
-                    Schemas = new Dictionary<string, OpenApiSchema>()
+                    Schemas = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal)
                 }
             };
         }

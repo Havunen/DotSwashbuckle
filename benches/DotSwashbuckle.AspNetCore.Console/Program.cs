@@ -5,7 +5,7 @@ namespace DotSwashbuckle.AspNetCore.Console;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var serviceProvider = AssemblyServiceProvider.GetServiceProvider(
             AssemblyLoadContext.Default.LoadFromAssemblyPath(
@@ -15,7 +15,7 @@ public class Program
 
         for (var i = 0; i < 1000; i++)
         {
-            DotSwashbuckleGenerator.CreateSwaggerDoc(
+            await DotSwashbuckleGenerator.CreateSwaggerDoc(
                 serviceProvider,
                 false,
                 true

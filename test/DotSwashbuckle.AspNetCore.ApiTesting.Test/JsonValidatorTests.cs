@@ -3,6 +3,7 @@ using Xunit;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System;
 
 namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
 {
@@ -433,7 +434,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
             var openApiSchema = new OpenApiSchema
             {
                 Type = "object",
-                Properties = new Dictionary<string, OpenApiSchema>
+                Properties = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal)
                 {
                     [ "id" ] = new OpenApiSchema { Type = propertySchemaType }
                 }
@@ -606,7 +607,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
             {
                 Components = new OpenApiComponents
                 {
-                    Schemas = new Dictionary<string, OpenApiSchema>
+                    Schemas = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal)
                     {
                         ["ref"] = new OpenApiSchema { Type = "number" }
                     }

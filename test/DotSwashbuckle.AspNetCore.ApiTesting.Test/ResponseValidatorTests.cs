@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -50,7 +51,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 {
                     [ "201" ] = new OpenApiResponse
                     {
-                        Headers = new Dictionary<string, OpenApiHeader>
+                        Headers = new Dictionary<string, OpenApiHeader>(StringComparer.Ordinal)
                         {
                             [ "test-header" ] = new OpenApiHeader
                             {
@@ -94,7 +95,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 {
                     [ "201" ] = new OpenApiResponse
                     {
-                        Headers = new Dictionary<string, OpenApiHeader>
+                        Headers = new Dictionary<string, OpenApiHeader>(StringComparer.Ordinal)
                         {
                             [ "test-header" ] = new OpenApiHeader
                             {
@@ -135,7 +136,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 {
                     [ "200" ] = new OpenApiResponse
                     {
-                        Content = new Dictionary<string, OpenApiMediaType>
+                        Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                         {
                             ["text/plain"] = new OpenApiMediaType()
                         }
@@ -168,7 +169,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 {
                     [ "200" ] = new OpenApiResponse
                     {
-                        Content = new Dictionary<string, OpenApiMediaType>
+                        Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                         {
                             ["application/json"] = new OpenApiMediaType()
                         }
@@ -201,7 +202,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 {
                     [ "200" ] = new OpenApiResponse
                     {
-                        Content = new Dictionary<string, OpenApiMediaType>
+                        Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                         {
                             ["application/json"] = new OpenApiMediaType
                             {
@@ -245,7 +246,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                 },
                 Components = new OpenApiComponents
                 {
-                    Schemas = new Dictionary<string, OpenApiSchema>()
+                    Schemas = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal)
                 }
             };
         }

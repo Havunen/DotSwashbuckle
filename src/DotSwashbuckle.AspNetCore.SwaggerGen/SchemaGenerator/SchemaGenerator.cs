@@ -345,7 +345,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             var schema = new OpenApiSchema
             {
                 Type = "object",
-                Properties = new Dictionary<string, OpenApiSchema>(),
+                Properties = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal),
                 Required = new SortedSet<string>(),
                 AdditionalPropertiesAllowed = false
             };

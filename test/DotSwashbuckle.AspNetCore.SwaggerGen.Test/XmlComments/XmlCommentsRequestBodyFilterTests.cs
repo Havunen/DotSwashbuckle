@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Xunit;
 using DotSwashbuckle.AspNetCore.TestSupport;
 using System.Collections.Generic;
+using System;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -16,7 +17,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var requestBody = new OpenApiRequestBody
             {
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                 {
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }
@@ -42,7 +43,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var requestBody = new OpenApiRequestBody
             {
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                 {
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }
@@ -68,7 +69,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var requestBody = new OpenApiRequestBody
             {
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                 {
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }
@@ -92,7 +93,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var requestBody = new OpenApiRequestBody
             {
-                Content = new Dictionary<string, OpenApiMediaType>
+                Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                 {
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }

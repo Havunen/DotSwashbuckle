@@ -64,7 +64,7 @@ namespace OAuth2Integration
                         {
                             AuthorizationUrl = new Uri("/auth-server/connect/authorize", UriKind.Relative),
                             TokenUrl = new Uri("/auth-server/connect/token", UriKind.Relative),
-                            Scopes = new Dictionary<string, string>
+                            Scopes = new Dictionary<string, string>(StringComparer.Ordinal)
                             {
                                 { "readAccess", "Access read operations" },
                                 { "writeAccess", "Access write operations" }

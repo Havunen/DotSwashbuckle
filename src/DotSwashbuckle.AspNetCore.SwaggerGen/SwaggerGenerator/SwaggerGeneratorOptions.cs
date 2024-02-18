@@ -13,7 +13,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
     {
         public SwaggerGeneratorOptions()
         {
-            SwaggerDocs = new Dictionary<string, OpenApiInfo>();
+            SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal);
             DocInclusionPredicate = DefaultDocInclusionPredicate;
             OperationIdSelector = DefaultOperationIdSelector;
             TagsSelector = DefaultTagsSelector;
@@ -21,7 +21,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             SecuritySchemesSelector = null;
             SchemaComparer = StringComparer.Ordinal;
             Servers = new List<OpenApiServer>();
-            SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>();
+            SecuritySchemes = new Dictionary<string, OpenApiSecurityScheme>(StringComparer.Ordinal);
             SecurityRequirements = new List<OpenApiSecurityRequirement>();
             ParameterFilters = new List<IParameterFilter>();
             RequestBodyFilters = new List<IRequestBodyFilter>();

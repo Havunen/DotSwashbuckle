@@ -134,7 +134,7 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
                 .Select(CreateParameterDescriptor)
                 .ToList();
 
-            var routeValues = new Dictionary<string, string>
+            var routeValues = new Dictionary<string, string>(StringComparer.Ordinal)
             {
                 ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
             };

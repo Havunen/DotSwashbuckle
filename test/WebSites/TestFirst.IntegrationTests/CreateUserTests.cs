@@ -24,14 +24,14 @@ namespace TestFirst.IntegrationTests
                 Tags = new List<OpenApiTag> { new OpenApiTag {  Name = "Users" } },
                 RequestBody = new OpenApiRequestBody
                 {
-                    Content = new Dictionary<string, OpenApiMediaType>
+                    Content = new Dictionary<string, OpenApiMediaType>(StringComparer.Ordinal)
                     {
                         [ "application/json" ] = new OpenApiMediaType
                         {
                             Schema = new OpenApiSchema
                             {
                                 Type = "object",
-                                Properties = new Dictionary<string, OpenApiSchema>
+                                Properties = new Dictionary<string, OpenApiSchema>(StringComparer.Ordinal)
                                 {
                                     [ "email" ] = new OpenApiSchema {  Type = "string" },
                                     [ "password" ] = new OpenApiSchema {  Type = "string" },
@@ -47,7 +47,7 @@ namespace TestFirst.IntegrationTests
                     [ "201" ] = new OpenApiResponse
                     {
                         Description = "User created",
-                        Headers = new Dictionary<string, OpenApiHeader>
+                        Headers = new Dictionary<string, OpenApiHeader>(StringComparer.Ordinal)
                         {
                             [ "Location" ] = new OpenApiHeader
                             {

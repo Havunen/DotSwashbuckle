@@ -109,6 +109,6 @@ namespace DotSwashbuckle.AspNetCore.ReDoc
         public bool SortPropsAlphabetically { get; set; } = false;
 
         [JsonExtensionData]
-        public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>();
+        public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>(StringComparer.Ordinal);
     }
 }

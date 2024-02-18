@@ -24,9 +24,9 @@ namespace DotSwashbuckle.AspNetCore.Benchmark
         }
 
         [Benchmark]
-        public string DotSwashbuckleOpenApiV2()
+        public async Task<string> DotSwashbuckleOpenApiV2()
         {
-            return DotSwashbuckleGenerator.CreateSwaggerDoc(
+            return await DotSwashbuckleGenerator.CreateSwaggerDoc(
                 assemblyProviders["Basic.dll"],
                 false,
                 true

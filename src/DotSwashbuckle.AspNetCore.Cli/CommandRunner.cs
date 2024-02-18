@@ -17,8 +17,8 @@ namespace DotSwashbuckle.AspNetCore.Cli
         {
             CommandName = commandName;
             CommandDescription = commandDescription;
-            _argumentDescriptors = new Dictionary<string, string>();
-            _optionDescriptors = new Dictionary<string, OptionDescriptor>();
+            _argumentDescriptors = new Dictionary<string, string>(StringComparer.Ordinal);
+            _optionDescriptors = new Dictionary<string, OptionDescriptor>(StringComparer.Ordinal);
             _runFunc = (namedArgs) => { return 1; }; // noop
             _subRunners = new List<CommandRunner>();
             _output = output;
@@ -70,7 +70,7 @@ namespace DotSwashbuckle.AspNetCore.Cli
 
         private bool TryParseArgs(IEnumerable<string> args, out IDictionary<string, string> namedArgs)
         {
-            namedArgs = new Dictionary<string, string>();
+            namedArgs = new Dictionary<string, string>(StringComparer.Ordinal);
             var argsQueue = new Queue<string>(args);
 
             // Process options first

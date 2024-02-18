@@ -14,6 +14,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.StaticFiles;
 using System.Linq;
+using System;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerUI
 {
@@ -110,7 +111,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
 
         private IDictionary<string, string> GetIndexArguments()
         {
-            return new Dictionary<string, string>()
+            return new Dictionary<string, string>(StringComparer.Ordinal)
             {
                 { "%(DocumentTitle)", _options.DocumentTitle },
                 { "%(HeadContent)", _options.HeadContent },

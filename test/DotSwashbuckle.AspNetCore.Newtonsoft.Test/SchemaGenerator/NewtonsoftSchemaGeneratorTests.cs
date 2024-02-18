@@ -651,7 +651,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
                 Assert.NotNull(schema.Discriminator);
                 Assert.Equal("$type", schema.Discriminator.PropertyName);
                 Assert.Equal(
-                    expected: new Dictionary<string, string>
+                    expected: new Dictionary<string, string>(StringComparer.Ordinal)
                     {
                         [string.Format(expectedDiscriminatorMappingKeyFormat, "BaseType")] = "#/components/schemas/BaseType",
                         [string.Format(expectedDiscriminatorMappingKeyFormat, "SubType1")] = "#/components/schemas/SubType1",
