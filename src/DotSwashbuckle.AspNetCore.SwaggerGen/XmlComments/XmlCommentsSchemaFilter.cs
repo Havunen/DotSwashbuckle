@@ -29,9 +29,21 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return;
             }
 
+            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Remarks))
+            {
+                schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Remarks);
+            }
+
             if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
             {
-                schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
+                if (schema.Description == null)
+                {
+                    schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
+                }
+                else
+                {
+                    schema.Title = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
+                }
             }
         }
 

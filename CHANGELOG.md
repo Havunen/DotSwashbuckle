@@ -1,3 +1,9 @@
+# v3.0.0
+- Add support for using `<remarks>` on schema XML comments.
+When using `<remarks>` on a class, it will be used as the description for the schema.
+When there is also `<summary>` defined, the `<summary>` will be used as the title for the schema.
+When `<summary>` is defined alone it is used as description for the schema.
+
 # v2.0.0
 
 - XML comments parsing performance has been improved

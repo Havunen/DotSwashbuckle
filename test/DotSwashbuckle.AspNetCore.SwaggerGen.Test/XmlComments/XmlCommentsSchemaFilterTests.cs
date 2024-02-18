@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Xml.XPath;
 using System.IO;
+using DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures;
 using Microsoft.OpenApi.Models;
 using Xunit;
 using DotSwashbuckle.AspNetCore.TestSupport;
@@ -12,11 +13,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
     public class XmlCommentsSchemaFilterTests
     {
         [Theory]
-        [InlineData(typeof(XmlAnnotatedType), "Summary for XmlAnnotatedType")]
-        [InlineData(typeof(XmlAnnotatedType.NestedType), "Summary for NestedType")]
-        [InlineData(typeof(XmlAnnotatedGenericType<int, string>), "Summary for XmlAnnotatedGenericType")]
+        [InlineData(typeof(XmlAnnotatedType), null, "Summary for XmlAnnotatedType")]
+        [InlineData(typeof(XmlAnnotatedType.NestedType), null, "Summary for NestedType")]
+        [InlineData(typeof(XmlAnnotatedGenericType<int, string>), null, "Summary for XmlAnnotatedGenericType")]
+        [InlineData(typeof(XmlAnnotatedSummaryRemarks), "Summary for XmlRemarkAnnotatedType", "Remarks for XmlRemarkAnnotatedType")]
+        [InlineData(typeof(XmlAnnotatedSummary), null, "Summary for XmlRemarkAnnotatedType")]
+        [InlineData(typeof(XmlAnnotatedRemarks), null, "Remarks for XmlRemarkAnnotatedType")]
         public void Apply_SetsDescription_FromTypeSummaryTag(
             Type type,
+            string expectedTitle,
             string expectedDescription)
         {
             var schema = new OpenApiSchema { };
@@ -24,6 +29,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
             Subject().Apply(schema, filterContext);
 
+            Assert.Equal(expectedTitle, schema.Title);
             Assert.Equal(expectedDescription, schema.Description);
         }
 

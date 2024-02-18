@@ -43,6 +43,24 @@
             <response code="200">Description for 200 response</response>
             <response code="400">Description for 400 response</response>
         </member>
+        <member name="T:DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures.XmlAnnotatedSummaryRemarks">
+            <summary>
+            Summary for XmlRemarkAnnotatedType
+            </summary>
+            <remarks>
+            Remarks for XmlRemarkAnnotatedType
+            </remarks>
+        </member>
+        <member name="T:DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures.XmlAnnotatedSummary">
+            <summary>
+            Summary for XmlRemarkAnnotatedType
+            </summary>
+        </member>
+        <member name="T:DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures.XmlAnnotatedRemarks">
+            <remarks>
+            Remarks for XmlRemarkAnnotatedType
+            </remarks>
+        </member>
         <member name="T:DotSwashbuckle.AspNetCore.SwaggerGen.Test.XmlAnnotatedGenericType`2">
             <summary>
             Summary for XmlAnnotatedGenericType
