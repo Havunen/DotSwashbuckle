@@ -580,6 +580,20 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         }
 
         [Fact]
+        public void GenerateSchema_UseAllOfForPolymorphism_StackOverflow()
+        {
+            var subject = Subject(configureGenerator: c =>
+            {
+                c.UseOneOfForPolymorphism = true;
+            });
+            var schemaRepository = new SchemaRepository();
+
+            subject.GenerateSchema(typeof(AndConditionModel), schemaRepository);
+            subject.GenerateSchema(typeof(OrConditionModel), schemaRepository);
+            subject.GenerateSchema(typeof(GroupConditionModel), schemaRepository);
+        }
+
+        [Fact]
         public void GenerateSchema_SupportsOption_UseAllOfToExtendReferenceSchemas()
         {
             var subject = Subject(
@@ -670,7 +684,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
                 configureGenerator: c => { c.UseInlineDefinitionsForEnums = true; },
                 configureSerializer: c =>
                 {
-                    var stringEnumConverter = (camelCaseText) ? new StringEnumConverter(new CamelCaseNamingStrategy(), false) : new StringEnumConverter();
+                    var stringEnumConverter = camelCaseText ? new StringEnumConverter(new CamelCaseNamingStrategy(), false) : new StringEnumConverter();
                     c.Converters.Add(stringEnumConverter);
                 }
             );

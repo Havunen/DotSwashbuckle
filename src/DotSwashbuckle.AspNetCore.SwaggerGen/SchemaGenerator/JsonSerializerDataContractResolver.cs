@@ -157,7 +157,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
                     return
                         (property.IsPubliclyReadable() || property.IsPubliclyWritable()) &&
-                        !(property.GetIndexParameters().Any()) &&
+                        !property.GetIndexParameters().Any() &&
                         !(property.HasAttribute<JsonIgnoreAttribute>() && isIgnoredViaAttribute) &&
                         !(_serializerOptions.IgnoreReadOnlyProperties && !property.IsPubliclyWritable());
                 })
@@ -184,7 +184,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 var deserializationConstructor = propertyInfo.DeclaringType?.GetConstructors()
                     .OrderBy(c =>
                     {
-                        if (c.GetCustomAttribute<System.Text.Json.Serialization.JsonConstructorAttribute>() != null) return 1;
+                        if (c.GetCustomAttribute<JsonConstructorAttribute>() != null) return 1;
                         if (c.GetParameters().Length == 0) return 2;
                         return 3;
                     })
@@ -201,7 +201,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 dataProperties.Add(
                     new DataProperty(
                         name: name,
-                        isRequired: false,
+                        isRequired: propertyInfo.GetCustomAttribute<JsonRequiredAttribute>() != null,
                         isNullable: propertyInfo.PropertyType.IsReferenceOrNullableType(),
                         isReadOnly: propertyInfo.IsPubliclyReadable() && !propertyInfo.IsPubliclyWritable() && !isDeserializedViaConstructor,
                         isWriteOnly: propertyInfo.IsPubliclyWritable() && !propertyInfo.IsPubliclyReadable(),

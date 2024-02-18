@@ -100,7 +100,7 @@ namespace DotSwashbuckle.AspNetCore.Cli
                         ? Path.Combine(Directory.GetCurrentDirectory(), arg1)
                         : null;
 
-                    using (var streamWriter = (outputPath != null ? File.CreateText(outputPath) : Console.Out))
+                    using (var streamWriter = outputPath != null ? File.CreateText(outputPath) : Console.Out)
                     {
                         IOpenApiWriter writer;
                         if (namedArgs.ContainsKey("--yaml"))

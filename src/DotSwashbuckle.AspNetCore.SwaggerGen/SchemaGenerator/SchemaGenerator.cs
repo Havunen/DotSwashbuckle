@@ -71,8 +71,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     var requiredAttribute = customAttributes.OfType<RequiredAttribute>().FirstOrDefault();
                     var hasRequiredMemberAttribute = customAttributes.OfType<RequiredMemberAttribute>().Any();
                     schema.Nullable = _generatorOptions.SupportNonNullableReferenceTypes
-                        ? dataProperty.IsNullable && (requiredAttribute == null && !hasRequiredMemberAttribute) && !memberInfo.IsNonNullableReferenceType()
-                        : dataProperty.IsNullable && (requiredAttribute == null && !hasRequiredMemberAttribute);
+                        ? dataProperty.IsNullable && requiredAttribute == null && !hasRequiredMemberAttribute && !memberInfo.IsNonNullableReferenceType()
+                        : dataProperty.IsNullable && requiredAttribute == null && !hasRequiredMemberAttribute;
 
                     schema.ReadOnly = dataProperty.IsReadOnly;
                     schema.WriteOnly = dataProperty.IsWriteOnly;

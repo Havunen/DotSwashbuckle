@@ -83,7 +83,7 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
             {
                 var openApiDocument = new OpenApiStreamReader().Read(contentStream, out OpenApiDiagnostic diagnostic);
                 var example = openApiDocument.Components.Schemas["Product"].Example as OpenApiObject;
-                var price = (example["price"] as OpenApiDouble);
+                var price = example["price"] as OpenApiDouble;
                 Assert.NotNull(price);
                 Assert.Equal(14.37, price.Value);
             }

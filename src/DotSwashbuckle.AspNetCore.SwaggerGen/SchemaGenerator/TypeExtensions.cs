@@ -28,12 +28,12 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 .Union(type.GetInterfaces())
                 .FirstOrDefault(i => i.IsConstructedGenericType && i.GetGenericTypeDefinition() == genericType);
 
-            return (constructedType != null);
+            return constructedType != null;
         }
 
         public static bool IsReferenceOrNullableType(this Type type)
         {
-            return (!type.IsValueType || Nullable.GetUnderlyingType(type) != null);
+            return !type.IsValueType || Nullable.GetUnderlyingType(type) != null;
         }
 
         public static object GetDefaultValue(this Type type)

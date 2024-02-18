@@ -95,7 +95,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         private XmlCommentsParameterFilter Subject()
         {
-            return new XmlCommentsParameterFilter((SwaggerGenOptionsExtensions.ParseXmlCommentDescriptors($"{typeof(FakeControllerWithXmlComments).Assembly.GetName().Name}.xml")));
+            return new XmlCommentsParameterFilter(SwaggerGenOptionsExtensions.ParseXmlCommentDescriptors($"{typeof(FakeControllerWithXmlComments).Assembly.GetName().Name}.xml"));
         }
     }
 }

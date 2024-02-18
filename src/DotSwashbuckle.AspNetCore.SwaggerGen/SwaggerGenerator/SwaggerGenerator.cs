@@ -333,7 +333,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             var applicableApiParameters = apiDescription.ParameterDescriptions
                 .Where(apiParam =>
                 {
-                    return (!apiParam.IsFromBody() && !apiParam.IsFromForm())
+                    return !apiParam.IsFromBody() && !apiParam.IsFromForm()
                         && (!apiParam.CustomAttributes().OfType<BindNeverAttribute>().Any())
                         && (apiParam.ModelMetadata == null || apiParam.ModelMetadata.IsBindingAllowed);
                 });

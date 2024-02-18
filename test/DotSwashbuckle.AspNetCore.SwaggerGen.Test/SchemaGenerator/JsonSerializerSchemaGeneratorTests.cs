@@ -765,7 +765,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var subject = Subject(
                 configureGenerator: c => { c.UseInlineDefinitionsForEnums = true; },
-                configureSerializer: c => { c.Converters.Add(new JsonStringEnumConverter(namingPolicy: (camelCaseText ? JsonNamingPolicy.CamelCase : null), true)); }
+                configureSerializer: c => { c.Converters.Add(new JsonStringEnumConverter(namingPolicy: camelCaseText ? JsonNamingPolicy.CamelCase : null, true)); }
             );
             var schemaRepository = new SchemaRepository();
 
@@ -804,6 +804,20 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.NotNull(schema.Enum);
             Assert.Equal(expectedEnumAsJson, schema.Enum.Select(openApiAny => openApiAny.ToJson()));
             Assert.Equal(expectedNullable, schema.Nullable);
+        }
+
+        [Fact]
+        public void JsonPropertyRequired_ShouldBeRequired_InSchema()
+        {
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = Subject().GenerateSchema(typeof(OrganizationCustomExchangeRatesDto), schemaRepository);
+
+            Assert.NotNull(referenceSchema.Reference);
+            var schema = schemaRepository.Schemas[referenceSchema.Reference.Id];
+
+            Assert.Equal(3, schema.Properties.Count);
+            Assert.Equal(3, schema.Required.Count);
         }
 
         [Fact]

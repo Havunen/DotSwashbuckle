@@ -12,7 +12,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
             memberInfo = jsonProperty.DeclaringType?.GetMember(jsonProperty.UnderlyingName)
                 .FirstOrDefault();
 
-            return (memberInfo != null);
+            return memberInfo != null;
         }
     }
 }

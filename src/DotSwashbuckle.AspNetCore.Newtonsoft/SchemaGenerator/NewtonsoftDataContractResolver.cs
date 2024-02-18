@@ -159,7 +159,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                 dataProperties.Add(
                     new DataProperty(
                         name: jsonProperty.PropertyName,
-                        isRequired: (required == Required.Always || required == Required.AllowNull),
+                        isRequired: required == Required.Always || required == Required.AllowNull,
                         isNullable: (required == Required.AllowNull || required == Required.Default) && jsonProperty.PropertyType.IsReferenceOrNullableType(),
                         isReadOnly: jsonProperty.Readable && !jsonProperty.Writable && !isSetViaConstructor,
                         isWriteOnly: jsonProperty.Writable && !jsonProperty.Readable,

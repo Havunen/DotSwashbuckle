@@ -85,7 +85,7 @@ namespace DotSwashbuckle.AspNetCore.Cli
                 if (!optionDescriptor.IsFlag && (!argsQueue.Any() || argsQueue.Peek().StartsWith("--")))
                     return false;
 
-                namedArgs.Add(name, (!optionDescriptor.IsFlag ? argsQueue.Dequeue() : null));
+                namedArgs.Add(name, !optionDescriptor.IsFlag ? argsQueue.Dequeue() : null);
             }
 
             // Process required args - ensure corresponding values are provided
