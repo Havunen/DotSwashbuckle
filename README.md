@@ -4,6 +4,8 @@
 |* All credits for this project goes to [domaindrivendev](https://github.com/domaindrivendev) and [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 |* All credits for DotSwashbuckle.AspNetCore.Filters goes to [mattfrear](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters.git)
 
+<img width="250" alt="DotSwashbuckleLogo" title="Inferno" src="https://raw.githubusercontent.com/Havunen/DotSwashbuckle/main/DotSwashbuckleLogo.png"/>
+
 DotSwashbuckle
 =========
 
@@ -11,7 +13,7 @@ DotSwashbuckle
 
 [![Nuget](https://img.shields.io/nuget/v/dotswashbuckle.aspnetcore)](https://www.nuget.org/packages/dotswashbuckle.aspnetcore/)
 
-[Swagger](http://swagger.io) tooling for APIs built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
+[Swagger](http://swagger.io) tooling for APIs built with .NET 8. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
 
 In addition to its [Swagger 2.0 and OpenAPI 3.0](http://swagger.io/specification/) generator, DotSwashbuckle also provides an embedded version of the awesome [swagger-ui](https://github.com/swagger-api/swagger-ui) that's powered by the generated Swagger JSON. This means you can complement your API with living documentation that's always in sync with the latest code. Best of all, it requires minimal coding and maintenance, allowing you to focus on building an awesome API.
 
