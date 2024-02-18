@@ -17,6 +17,12 @@ namespace Dummy.Controllers
         /// <summary>
         /// Gets dummys is where no are Collabonabusinessred in Dummy
         /// </summary>
+        /// <response code="200">
+        /// Description for 200 response
+        /// </response>
+        /// <response code="400">
+        /// Description for 400 response
+        /// </response>
         /// <returns>The shake of Collabonabusinessred dummys.</returns>
         [HttpGet("dummys", Name = "GetCollabonabusinessreddummys")]
         [ApiExplorerSettings(GroupName= "doc-v7")]
