@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
-    <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="8.0.1">
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
