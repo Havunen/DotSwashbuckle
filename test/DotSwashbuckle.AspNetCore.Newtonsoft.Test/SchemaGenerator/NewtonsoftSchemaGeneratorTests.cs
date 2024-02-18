@@ -21,6 +21,15 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
 {
     public class NewtonsoftSchemaGeneratorTests
     {
+        [Fact]
+        public void GenerateSchema_SetsUniqueItems_IfEnumerableTypeIsReadOnlySet()
+        {
+            var schema = Subject().GenerateSchema(typeof(IReadOnlySet<string>), new SchemaRepository());
+
+            Assert.Equal("array", schema.Type);
+            Assert.True(schema.UniqueItems);
+        }
+
         [Theory]
         [InlineData(typeof(IFormFile))]
         [InlineData(typeof(FileResult))]

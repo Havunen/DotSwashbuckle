@@ -293,7 +293,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private OpenApiSchema CreateArraySchema(DataContract dataContract, SchemaRepository schemaRepository)
         {
             var hasUniqueItems = dataContract.UnderlyingType.IsConstructedFrom(typeof(ISet<>), out _)
-                || dataContract.UnderlyingType.IsConstructedFrom(typeof(KeyedCollection<,>), out _);
+                || dataContract.UnderlyingType.IsConstructedFrom(typeof(KeyedCollection<,>), out _)
+                || dataContract.UnderlyingType.IsConstructedFrom(typeof(IReadOnlySet<>), out _);
 
             return new OpenApiSchema
             {
