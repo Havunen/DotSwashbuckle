@@ -13,9 +13,9 @@ namespace DotSwashbuckle.AspNetCore.Cli
     // the various entry point flavors. The final model *does not* have an explicit CreateHost entry point and thus inverts the typical flow where the
     // execute Main and we wait for events to fire in order to access the appropriate state.
     // This is what allows top level statements to work, but getting the IServiceProvider is slightly more complex.
-    internal class HostingApplication
+    public class HostingApplication
     {
-        internal static IServiceProvider GetServiceProvider(Assembly assembly)
+        public static IServiceProvider GetServiceProvider(Assembly assembly)
         {
             // We're disabling the default server and the console host lifetime. This will disable:
             // 1. Listening on ports

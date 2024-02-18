@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.Cli\DotSwashbuckle.AspNetCore.Cli.csproj" />
+    <ProjectReference Include="..\..\test\WebSites\Basic\Basic.csproj" />
+    <ProjectReference Include="..\DotSwashbuckle.AspNetCore.Cli.Benchmark\DotSwashbuckle.AspNetCore.Cli.Benchmark.csproj" />
+  </ItemGroup>
+
+</Project>
