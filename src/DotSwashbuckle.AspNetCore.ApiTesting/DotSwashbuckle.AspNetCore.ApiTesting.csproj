@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.6.13" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.13" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.*" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.*" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.*" />
   </ItemGroup>
 
 </Project>
