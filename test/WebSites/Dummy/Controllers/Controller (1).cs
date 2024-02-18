@@ -2,7 +2,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using DotSwashbuckle.AspNetCore.Annotations;
+using Microsoft.AspNetCore.Http;
 
 namespace Dummy.Controllers
 {
@@ -39,6 +42,16 @@ namespace Dummy.Controllers
         )
         {
             throw new NotImplementedException();
+        }
+
+        [Route("intnull")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpGet]
+        [SwaggerOperation(OperationId = "IntNull")]
+        [SwaggerResponse(200, "nullable int", typeof(Nullable<int>))]  //this makes no diffrence
+        public async Task<ActionResult<Nullable<int>>> IntNull([FromQuery] Dictionary<string, DateTime> test)
+        {
+            return this.Ok(null);
         }
     }
 }

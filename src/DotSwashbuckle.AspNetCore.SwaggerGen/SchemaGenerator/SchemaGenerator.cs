@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlTypes;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -48,11 +49,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             MemberInfo memberInfo,
             DataProperty dataProperty = null)
         {
-            var dataContract = GetDataContractFor(modelType);
+            var (dataContract, isNullable) = GetDataContractFor(modelType);
 
             var schema = _generatorOptions.UseOneOfForPolymorphism && IsBaseTypeWithKnownTypesDefined(dataContract, out var knownTypesDataContracts)
-                ? GeneratePolymorphicSchema(dataContract, schemaRepository, knownTypesDataContracts)
-                : GenerateConcreteSchema(dataContract, schemaRepository);
+                ? GeneratePolymorphicSchema(schemaRepository, knownTypesDataContracts)
+                : GenerateConcreteSchema(dataContract, schemaRepository, isNullable);
 
             if (_generatorOptions.UseAllOfToExtendReferenceSchemas && schema.Reference != null)
             {
@@ -111,11 +112,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             ParameterInfo parameterInfo,
             ApiParameterRouteInfo routeInfo)
         {
-            var dataContract = GetDataContractFor(modelType);
+            var (dataContract, isNullable) = GetDataContractFor(modelType);
 
             var schema = _generatorOptions.UseOneOfForPolymorphism && IsBaseTypeWithKnownTypesDefined(dataContract, out var knownTypesDataContracts)
-                ? GeneratePolymorphicSchema(dataContract, schemaRepository, knownTypesDataContracts)
-                : GenerateConcreteSchema(dataContract, schemaRepository);
+                ? GeneratePolymorphicSchema(schemaRepository, knownTypesDataContracts)
+                : GenerateConcreteSchema(dataContract, schemaRepository, isNullable);
 
             if (_generatorOptions.UseAllOfToExtendReferenceSchemas && schema.Reference != null)
             {
@@ -151,11 +152,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         private OpenApiSchema GenerateSchemaForType(Type modelType, SchemaRepository schemaRepository, bool isEffectiveTypeNeeded = true)
         {
-            var dataContract = GetDataContractFor(modelType, isEffectiveTypeNeeded);
+            var (dataContract, isNullable) = GetDataContractFor(modelType, isEffectiveTypeNeeded);
 
             var schema = _generatorOptions.UseOneOfForPolymorphism && IsBaseTypeWithKnownTypesDefined(dataContract, out var knownTypesDataContracts)
-                ? GeneratePolymorphicSchema(dataContract, schemaRepository, knownTypesDataContracts)
-                : GenerateConcreteSchema(dataContract, schemaRepository);
+                ? GeneratePolymorphicSchema(schemaRepository, knownTypesDataContracts)
+                : GenerateConcreteSchema(dataContract, schemaRepository, isNullable);
 
             if (schema.Reference == null)
             {
@@ -165,13 +166,28 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return schema;
         }
 
-        private DataContract GetDataContractFor(Type modelType, bool isEffectiveTypeNeeded = true)
+        private (DataContract dataContract, bool isNullable) GetDataContractFor(Type modelType, bool isEffectiveTypeNeeded = true)
         {
-            var effectiveType = isEffectiveTypeNeeded ? Nullable.GetUnderlyingType(modelType) ?? modelType : modelType;
-            return _serializerDataContractResolver.GetDataContractForType(effectiveType);
+            Type effectiveType = null;
+            var isNullable = false;
+
+            if (isEffectiveTypeNeeded)
+            {
+                effectiveType = Nullable.GetUnderlyingType(modelType);
+                isNullable = effectiveType != null;
+                effectiveType ??= modelType;
+            }
+
+            effectiveType ??= modelType;
+
+
+            return (
+                _serializerDataContractResolver.GetDataContractForType(effectiveType),
+                isNullable
+            );
         }
 
-        private bool IsBaseTypeWithKnownTypesDefined(DataContract dataContract, out IEnumerable<DataContract> knownTypesDataContracts)
+        private bool IsBaseTypeWithKnownTypesDefined(DataContract dataContract, out IEnumerable<(DataContract dataContract, bool isNullable)> knownTypesDataContracts)
         {
             knownTypesDataContracts = null;
 
@@ -192,19 +208,26 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         }
 
         private OpenApiSchema GeneratePolymorphicSchema(
-            DataContract dataContract,
             SchemaRepository schemaRepository,
-            IEnumerable<DataContract> knownTypesDataContracts)
+            IEnumerable<(DataContract, bool)> knownTypesDataContracts)
         {
             return new OpenApiSchema
             {
                 OneOf = knownTypesDataContracts
-                    .Select(allowedTypeDataContract => GenerateConcreteSchema(allowedTypeDataContract, schemaRepository))
+                    .Select(dataContractNullableTuple => GenerateConcreteSchema(
+                        dataContractNullableTuple.Item1,
+                        schemaRepository,
+                        dataContractNullableTuple.Item2
+                    ))
                     .ToList()
             };
         }
 
-        private OpenApiSchema GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+        private OpenApiSchema GenerateConcreteSchema(
+            DataContract dataContract,
+            SchemaRepository schemaRepository,
+            bool isNullable
+        )
         {
             if (TryGetCustomTypeMapping(dataContract.UnderlyingType, out Func<OpenApiSchema> customSchemaFactory))
             {
@@ -226,7 +249,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 case DataType.Number:
                 case DataType.String:
                     {
-                        schemaFactory = () => CreatePrimitiveSchema(dataContract);
+                        schemaFactory = () => CreatePrimitiveSchema(dataContract, isNullable);
                         returnAsReference = dataContract.UnderlyingType.IsEnum && !_generatorOptions.UseInlineDefinitionsForEnums;
                         break;
                     }
@@ -271,13 +294,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 || (modelType.IsConstructedGenericType && _generatorOptions.CustomTypeMappings.TryGetValue(modelType.GetGenericTypeDefinition(), out schemaFactory));
         }
 
-        private OpenApiSchema CreatePrimitiveSchema(DataContract dataContract)
+        private OpenApiSchema CreatePrimitiveSchema(DataContract dataContract, bool isNullable)
         {
             var schema = new OpenApiSchema
             {
                 Type = dataContract.DataType.ToString().ToLower(CultureInfo.InvariantCulture),
                 Format = dataContract.DataFormat,
-                Nullable = Nullable.GetUnderlyingType(dataContract.UnderlyingType) != null
+                Nullable = isNullable || Nullable.GetUnderlyingType(dataContract.UnderlyingType) != null
             };
 
             if (dataContract.UnderlyingType.IsEnum)
@@ -346,9 +369,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             if (_generatorOptions.UseAllOfForInheritance || _generatorOptions.UseOneOfForPolymorphism)
             {
-                if (IsKnownSubType(dataContract, out var baseTypeDataContract))
+                if (IsKnownSubType(dataContract, out var baseTypeDataContractTuple))
                 {
-                    var baseTypeSchema = GenerateConcreteSchema(baseTypeDataContract, schemaRepository);
+                    var baseTypeSchema = GenerateConcreteSchema(
+                        baseTypeDataContractTuple.Item1,
+                        schemaRepository,
+                        baseTypeDataContractTuple.Item2
+                    );
 
                     schema.AllOf.Add(baseTypeSchema);
 
@@ -361,7 +388,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     foreach (var knownTypeDataContract in knownTypesDataContracts)
                     {
                         // Ensure schema is generated for all known types
-                        GenerateConcreteSchema(knownTypeDataContract, schemaRepository);
+                        GenerateConcreteSchema(knownTypeDataContract.dataContract, schemaRepository, knownTypeDataContract.isNullable);
                     }
 
                     if (TryGetDiscriminatorFor(dataContract, schemaRepository, knownTypesDataContracts, out var discriminator))
@@ -403,9 +430,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return schema;
         }
 
-        private bool IsKnownSubType(DataContract dataContract, out DataContract baseTypeDataContract)
+        private bool IsKnownSubType(DataContract dataContract, out (DataContract, bool) baseTypeDataContract)
         {
-            baseTypeDataContract = null;
+            baseTypeDataContract = (null, false);
 
             var baseType = dataContract.UnderlyingType.BaseType;
 
@@ -427,7 +454,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private bool TryGetDiscriminatorFor(
             DataContract dataContract,
             SchemaRepository schemaRepository,
-            IEnumerable<DataContract> knownTypesDataContracts,
+            IEnumerable<(DataContract dataContract, bool isNullable)> knownTypesDataContracts,
             out OpenApiDiscriminator discriminator)
         {
             discriminator = null;
@@ -444,12 +471,16 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             foreach (var knownTypeDataContract in knownTypesDataContracts)
             {
-                var discriminatorValue = _generatorOptions.DiscriminatorValueSelector(knownTypeDataContract.UnderlyingType)
-                    ?? knownTypeDataContract.ObjectTypeNameValue;
+                var discriminatorValue = _generatorOptions.DiscriminatorValueSelector(knownTypeDataContract.dataContract.UnderlyingType)
+                    ?? knownTypeDataContract.dataContract.ObjectTypeNameValue;
 
                 if (discriminatorValue == null) continue;
 
-                discriminator.Mapping.Add(discriminatorValue, GenerateConcreteSchema(knownTypeDataContract, schemaRepository).Reference.ReferenceV3);
+                discriminator.Mapping.Add(discriminatorValue, GenerateConcreteSchema(
+                    knownTypeDataContract.dataContract,
+                    schemaRepository,
+                    knownTypeDataContract.isNullable
+                ).Reference.ReferenceV3);
             }
 
             return true;

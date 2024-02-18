@@ -42,37 +42,40 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         }
 
         [Theory]
-        [InlineData(typeof(byte), "integer", "int32")]
-        [InlineData(typeof(sbyte), "integer", "int32")]
-        [InlineData(typeof(short), "integer", "int32")]
-        [InlineData(typeof(ushort), "integer", "int32")]
-        [InlineData(typeof(int), "integer", "int32")]
-        [InlineData(typeof(uint), "integer", "int32")]
-        [InlineData(typeof(long), "integer", "int64")]
-        [InlineData(typeof(ulong), "integer", "int64")]
-        [InlineData(typeof(float), "number", "float")]
-        [InlineData(typeof(double), "number", "double")]
-        [InlineData(typeof(decimal), "number", "double")]
-        [InlineData(typeof(string), "string", null)]
-        [InlineData(typeof(char), "string", null)]
-        [InlineData(typeof(byte[]), "string", "byte")]
-        [InlineData(typeof(DateTime), "string", "date-time")]
-        [InlineData(typeof(DateTimeOffset), "string", "date-time")]
-        [InlineData(typeof(Guid), "string", "uuid")]
-        [InlineData(typeof(TimeSpan), "string", "date-span")]
-        [InlineData(typeof(Version), "string", null)]
-        [InlineData(typeof(bool?), "boolean", null)]
-        [InlineData(typeof(int?), "integer", "int32")]
-        [InlineData(typeof(DateTime?), "string", "date-time")]
+        [InlineData(typeof(byte), "integer", "int32", false)]
+        [InlineData(typeof(sbyte), "integer", "int32", false)]
+        [InlineData(typeof(short), "integer", "int32", false)]
+        [InlineData(typeof(ushort), "integer", "int32", false)]
+        [InlineData(typeof(int), "integer", "int32", false)]
+        [InlineData(typeof(uint), "integer", "int32", false)]
+        [InlineData(typeof(long), "integer", "int64", false)]
+        [InlineData(typeof(ulong), "integer", "int64", false)]
+        [InlineData(typeof(float), "number", "float", false)]
+        [InlineData(typeof(double), "number", "double", false)]
+        [InlineData(typeof(decimal), "number", "double", false)]
+        [InlineData(typeof(string), "string", null, false)]
+        [InlineData(typeof(char), "string", null, false)]
+        [InlineData(typeof(byte[]), "string", "byte", false)]
+        [InlineData(typeof(DateTime), "string", "date-time", false)]
+        [InlineData(typeof(DateTimeOffset), "string", "date-time", false)]
+        [InlineData(typeof(Guid), "string", "uuid", false)]
+        [InlineData(typeof(TimeSpan), "string", "date-span", false)]
+        [InlineData(typeof(Version), "string", null, false)]
+        [InlineData(typeof(bool?), "boolean", null, true)]
+        [InlineData(typeof(int?), "integer", "int32", true)]
+        [InlineData(typeof(DateTime?), "string", "date-time", true)]
         public void GenerateSchema_GeneratesPrimitiveSchema_IfPrimitiveOrNullablePrimitiveType(
             Type type,
             string expectedSchemaType,
-            string expectedFormat)
+            string expectedFormat,
+            bool expectedNullable
+        )
         {
             var schema = Subject().GenerateSchema(type, new SchemaRepository());
 
             Assert.Equal(expectedSchemaType, schema.Type);
             Assert.Equal(expectedFormat, schema.Format);
+            Assert.Equal(expectedNullable, schema.Nullable);
         }
 
         [Theory]
@@ -276,6 +279,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         [InlineData(typeof(TypeWithNullableProperties), nameof(TypeWithNullableProperties.IntProperty), false)]
         [InlineData(typeof(TypeWithNullableProperties), nameof(TypeWithNullableProperties.StringProperty), true)]
         [InlineData(typeof(TypeWithNullableProperties), nameof(TypeWithNullableProperties.NullableIntProperty), true)]
+        [InlineData(typeof(TypeWithNullableProperties), nameof(TypeWithNullableProperties.SysNullableIntProperty), true)]
         public void GenerateSchema_SetsNullableFlag_IfPropertyIsReferenceOrNullableType(
             Type declaringType,
             string propertyName,
