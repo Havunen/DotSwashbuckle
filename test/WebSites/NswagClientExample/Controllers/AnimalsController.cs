@@ -17,9 +17,9 @@ namespace NSwagClientExample.Controllers
         }
     }
 
-    [SwaggerDiscriminator("animalType")]
-    [SwaggerSubType(typeof(Cat), DiscriminatorValue = "Cat")]
-    [SwaggerSubType(typeof(Dog), DiscriminatorValue = "Dog")]
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "animalType")]
+    [JsonDerivedType(typeof(Cat), "Cat")]
+    [JsonDerivedType(typeof(Dog), "Dog")]
     public class Animal
     {
         public AnimalType AnimalType { get; set; }
