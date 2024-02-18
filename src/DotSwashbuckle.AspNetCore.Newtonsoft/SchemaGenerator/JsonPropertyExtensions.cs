@@ -14,17 +14,5 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
 
             return (memberInfo != null);
         }
-
-        public static bool IsRequiredSpecified(this JsonProperty jsonProperty)
-        {
-            if (!jsonProperty.TryGetMemberInfo(out MemberInfo memberInfo))
-                return false;
-
-            if (memberInfo.GetCustomAttribute<JsonRequiredAttribute>() != null)
-                return true;
-
-            var jsonPropertyAttribute = memberInfo.GetCustomAttribute<JsonPropertyAttribute>();
-            return jsonPropertyAttribute != null && jsonPropertyAttribute.Required != Required.Default;
-        }
     }
 }
