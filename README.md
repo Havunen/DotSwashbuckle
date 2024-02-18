@@ -1,9 +1,13 @@
 | :mega: This is fork of awesome Swashbuckle.AspNetCore! |
 |--------------|
 |* DotSwashbuckle supports only .NET 8 and newer versions |
+|* All credits for this project goes to [domaindrivendev](https://github.com/domaindrivendev) and [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 
 DotSwashbuckle
 =========
+
+[![Build status](https://ci.appveyor.com/api/projects/status/vy1e8ls17sx6fuwv?svg=true)](https://ci.appveyor.com/project/Havunen/dotswashbuckle)
+
 
 [Swagger](http://swagger.io) tooling for APIs built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
 

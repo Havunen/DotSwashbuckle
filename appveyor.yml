@@ -18,3 +18,11 @@ test_script:
 
 artifacts:
 - path: artifacts\*.nupkg
+
+deploy:
+  - provider: NuGet
+    server: https://nuget.pkg.github.com/havunen/index.json
+    artifact: /.nupkg/
+    username: havunen
+    api_key:
+      secure: GRkAgw5f299arx0wPAAQ00oRoOT69X/PB7WtiBWNZgjHf4kxGma2kg545FNJbP/6
