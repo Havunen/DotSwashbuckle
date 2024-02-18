@@ -69,19 +69,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return Enumerable.Empty<object>();
         }
 
-        [Obsolete("Use ParameterInfo(), PropertyInfo() and CustomAttributes() extension methods instead")]
-        internal static void GetAdditionalMetadata(
-            this ApiParameterDescription apiParameter,
-            ApiDescription apiDescription,
-            out ParameterInfo parameterInfo,
-            out PropertyInfo propertyInfo,
-            out IEnumerable<object> parameterOrPropertyAttributes)
-        {
-            parameterInfo = apiParameter.ParameterInfo();
-            propertyInfo = apiParameter.PropertyInfo();
-            parameterOrPropertyAttributes = apiParameter.CustomAttributes();
-        }
-
         internal static bool IsFromPath(this ApiParameterDescription apiParameter)
         {
             return (apiParameter.Source == BindingSource.Path);

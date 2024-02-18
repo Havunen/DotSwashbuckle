@@ -275,20 +275,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 Format = dataContract.DataFormat
             };
 
-            // For backcompat only - EnumValues is obsolete
-#pragma warning disable CS0618 // Type or member is obsolete
-            if (dataContract.EnumValues != null)
-            {
-                schema.Enum = dataContract.EnumValues
-                    .Select(value => JsonSerializer.Serialize(value))
-                    .Distinct()
-                    .Select(valueAsJson => OpenApiAnyFactory.CreateFromJson(valueAsJson))
-                    .ToList();
-
-                return schema;
-            }
-#pragma warning restore CS0618 // Type or member is obsolete
-
             if (dataContract.UnderlyingType.IsEnum)
             {
                 schema.Enum = dataContract.UnderlyingType.GetEnumValues()

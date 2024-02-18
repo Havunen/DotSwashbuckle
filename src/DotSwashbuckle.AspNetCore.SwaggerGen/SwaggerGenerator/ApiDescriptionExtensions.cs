@@ -42,22 +42,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return Enumerable.Empty<object>();
         }
 
-        [Obsolete("Use TryGetMethodInfo() and CustomAttributes() instead")]
-        public static void GetAdditionalMetadata(this ApiDescription apiDescription,
-            out MethodInfo methodInfo,
-            out IEnumerable<object> customAttributes)
-        {
-            if (apiDescription.TryGetMethodInfo(out methodInfo))
-            {
-                customAttributes = methodInfo.GetCustomAttributes(true)
-                    .Union(methodInfo.DeclaringType.GetCustomAttributes(true));
-
-                return;
-            }
-
-            customAttributes = Enumerable.Empty<object>();
-        }
-
         internal static string RelativePathSansParameterConstraints(this ApiDescription apiDescription)
         {
             var routeTemplate = TemplateParser.Parse(apiDescription.RelativePath);

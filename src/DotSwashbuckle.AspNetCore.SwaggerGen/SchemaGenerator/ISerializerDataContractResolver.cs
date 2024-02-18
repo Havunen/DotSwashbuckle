@@ -78,20 +78,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 jsonConverter: jsonConverter);
         }
 
-        [Obsolete("Provide jsonConverter function instead of enumValues")]
-        public static DataContract ForPrimitive(
-            Type underlyingType,
-            DataType dataType,
-            string dataFormat,
-            IEnumerable<object> enumValues)
-        {
-            return new DataContract(
-                underlyingType: underlyingType,
-                dataType: dataType,
-                dataFormat: dataFormat,
-                enumValues: enumValues);
-        }
-
         private DataContract(
             Type underlyingType,
             DataType dataType,
@@ -109,7 +95,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             UnderlyingType = underlyingType;
             DataType = dataType;
             DataFormat = dataFormat;
-            EnumValues = enumValues;
             ArrayItemType = arrayItemType;
             DictionaryValueType = dictionaryValueType;
             DictionaryKeys = dictionaryKeys;
@@ -131,9 +116,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         public string ObjectTypeNameProperty { get; }
         public string ObjectTypeNameValue { get; }
         public Func<object, string> JsonConverter { get; }
-
-        [Obsolete("Use JsonConverter")]
-        public IEnumerable<object> EnumValues { get; }
     }
 
     public enum DataType
