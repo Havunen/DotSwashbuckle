@@ -86,7 +86,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private static object GetNullableAttribute(this MemberInfo memberInfo)
         {
             var nullableAttribute = memberInfo.GetCustomAttributes()
-                .Where(attr => string.Equals(attr.GetType().FullName, NullableAttributeFullTypeName))
+                .Where(attr => string.Equals(attr.GetType().FullName, NullableAttributeFullTypeName, StringComparison.Ordinal))
                 .FirstOrDefault();
 
             return nullableAttribute;
@@ -103,7 +103,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 var attributes = (IEnumerable<object>)declaringType.GetCustomAttributes(false);
 
                 var nullableContext = attributes
-                .Where(attr => string.Equals(attr.GetType().FullName, NullableContextAttributeFullTypeName))
+                .Where(attr => string.Equals(attr.GetType().FullName, NullableContextAttributeFullTypeName, StringComparison.Ordinal))
                 .FirstOrDefault();
 
                 if (nullableContext != null)

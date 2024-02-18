@@ -485,8 +485,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var xmlReader = XmlReader.Create(filePath, new XmlReaderSettings()
             {
                 CheckCharacters = false,
-                IgnoreWhitespace = true,
-
+                IgnoreWhitespace = true
             });
             var xmlMembers = new Dictionary<string, XmlCommentDescriptor>(StringComparer.Ordinal);
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
@@ -76,7 +77,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return;
             }
 
-            var paramNode = xmlCommentDesc.Params?.FirstOrDefault(p => string.Equals(p.Name, parameterInfo.Name));
+            var paramNode = xmlCommentDesc.Params?.FirstOrDefault(p => string.Equals(p.Name, parameterInfo.Name, StringComparison.Ordinal));
 
             if (paramNode != null)
             {

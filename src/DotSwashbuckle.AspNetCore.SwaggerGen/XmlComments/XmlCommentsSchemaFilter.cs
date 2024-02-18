@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
@@ -51,21 +52,41 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         {
             var fieldOrPropertyMemberName = XmlCommentsNodeNameHelper.GetMemberNameForFieldOrProperty(context.MemberInfo);
 
-            if (!xmlMemberDescriptors.TryGetValue(fieldOrPropertyMemberName, out var xmlCommentDescriptor))
+            if (!xmlMemberDescriptors.TryGetValue(fieldOrPropertyMemberName, out var fieldXmlInfo))
             {
                 return;
             }
 
-            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Summary))
-                schema.Description = XmlCommentsTextHelper.Humanize(xmlCommentDescriptor.Summary);
+            if (!string.IsNullOrWhiteSpace(fieldXmlInfo.Summary))
+                schema.Description = XmlCommentsTextHelper.Humanize(fieldXmlInfo.Summary);
 
-            if (!string.IsNullOrWhiteSpace(xmlCommentDescriptor.Example))
+            if (!string.IsNullOrWhiteSpace(fieldXmlInfo.Example))
             {
                 schema.Example = ExampleParser.ParseNodeExample(
-                    xmlCommentDescriptor.Example,
+                    fieldXmlInfo.Example,
                     schema,
                     context.SchemaRepository
                 );
+            }
+            else if (context.MemberInfo.DeclaringType != null)
+            {
+                var declaringType = XmlCommentsNodeNameHelper.GetMemberNameForType(context.MemberInfo.DeclaringType);
+
+                if (!xmlMemberDescriptors.TryGetValue(declaringType, out var declaringTypeXmlInfo))
+                {
+                    return;
+                }
+
+                var paramNode = declaringTypeXmlInfo.Params?.FirstOrDefault(p => string.Equals(p.Name, context.MemberInfo.Name, StringComparison.Ordinal));
+
+                if (paramNode != null && !string.IsNullOrWhiteSpace(paramNode.Example))
+                {
+                    schema.Example = ExampleParser.ParseNodeExample(
+                        paramNode.Example,
+                        schema,
+                        context.SchemaRepository
+                    );
+                }
             }
         }
     }
