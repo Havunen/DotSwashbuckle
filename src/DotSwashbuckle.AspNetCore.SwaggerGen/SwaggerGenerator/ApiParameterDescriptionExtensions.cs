@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -12,12 +11,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public static class ApiParameterDescriptionExtensions
     {
-        private static readonly Type[] RequiredAttributeTypes = new[]
-        {
-            typeof(BindRequiredAttribute),
-            typeof(RequiredAttribute)
-        };
-
         public static bool IsRequiredParameter(this ApiParameterDescription apiParameter)
         {
             // From the OpenAPI spec:
@@ -27,13 +20,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return true;
             }
 
-            // This is the default logic for IsRequired
-            bool IsRequired() => apiParameter.CustomAttributes().Any(attr => RequiredAttributeTypes.Contains(attr.GetType()));
-
             // This is to keep compatibility with MVC controller logic that has existed in the past
             if (apiParameter.ParameterDescriptor is ControllerParameterDescriptor)
             {
-                return IsRequired();
+                // This is the default logic for IsRequired
+                return apiParameter.CustomAttributes().Any(attr => attr is BindRequiredAttribute or RequiredAttribute);
             }
 
             return apiParameter.IsRequired;

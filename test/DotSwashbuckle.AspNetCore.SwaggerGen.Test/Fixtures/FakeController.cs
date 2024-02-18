@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
+    public class CustomRequiredAttribute : RequiredAttribute
+    {
+    }
+
     public class FakeController
     {
         public void ActionWithNoParameters()
@@ -29,6 +33,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         { }
 
         public void ActionWithParameterWithRequiredAttribute([Required]string param)
+        { }
+
+        public void ActionWithParameterWithCustomRequiredAttribute([CustomRequiredAttribute] string param)
         { }
 
         public void ActionWithParameterWithBindRequiredAttribute([BindRequired]string param)

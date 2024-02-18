@@ -483,6 +483,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(nameof(FakeController.ActionWithParameter), false)]
         [InlineData(nameof(FakeController.ActionWithParameterWithRequiredAttribute), true)]
         [InlineData(nameof(FakeController.ActionWithParameterWithBindRequiredAttribute), true)]
+        [InlineData(nameof(FakeController.ActionWithParameterWithCustomRequiredAttribute), true)]
         public void GetSwagger_SetsParameterRequired_IfActionParameterHasRequiredOrBindRequiredAttribute(
             string actionName,
             bool expectedRequired)
