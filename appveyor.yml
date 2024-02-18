@@ -20,15 +20,6 @@ artifacts:
 - path: artifacts\*.nupkg
 
 deploy:
-  - provider: NuGet
-    server: https://nuget.pkg.github.com/havunen/index.json
-    artifact: /.nupkg/
-    username: havunen
-    api_key:
-      
-      
-      
-deploy:
 - provider: NuGet
   server: https://www.nuget.org/api/v2/package
   on:
