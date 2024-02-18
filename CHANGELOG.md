@@ -4,7 +4,8 @@ When using `<remarks>` on a class, it will be used as the description for the sc
 When there is also `<summary>` defined, the `<summary>` will be used as the title for the schema.
 When `<summary>` is defined alone it is used as description for the schema.
 - Add support for defining examples using `SwaggerSchemaAttribute`.
-
+- Adds support for custom Required and Binding attributes
+- Fixes an issue where UniqueItems is not set true for `IReadOnlySet<T>` 
 
 # v2.0.0
 
