@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Text.Json;
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -68,13 +68,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 if (dataProperty != null)
                 {
                     var requiredAttribute = customAttributes.OfType<RequiredAttribute>().FirstOrDefault();
+                    var hasRequiredMemberAttribute = customAttributes.OfType<RequiredMemberAttribute>().Any();
                     schema.Nullable = _generatorOptions.SupportNonNullableReferenceTypes
-                        ? dataProperty.IsNullable && requiredAttribute == null && !memberInfo.IsNonNullableReferenceType()
-                        : dataProperty.IsNullable && requiredAttribute == null;
+                        ? dataProperty.IsNullable && (requiredAttribute == null && !hasRequiredMemberAttribute) && !memberInfo.IsNonNullableReferenceType()
+                        : dataProperty.IsNullable && (requiredAttribute == null && !hasRequiredMemberAttribute);
 
                     schema.ReadOnly = dataProperty.IsReadOnly;
                     schema.WriteOnly = dataProperty.IsWriteOnly;
-                    schema.MinLength = modelType == typeof(string) && requiredAttribute is { AllowEmptyStrings: false } ? 1 : null;
+                    schema.MinLength = modelType == typeof(string) && (hasRequiredMemberAttribute || requiredAttribute is { AllowEmptyStrings: false }) ? 1 : null;
                 }
 
                 var defaultValueAttribute = customAttributes.OfType<DefaultValueAttribute>().FirstOrDefault();
@@ -374,7 +375,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             foreach (var dataProperty in applicableDataProperties)
             {
-                var customAttributes = dataProperty.MemberInfo?.GetInlineAndMetadataAttributes() ?? Enumerable.Empty<object>();
+                var customAttributes = dataProperty.MemberInfo?.GetInlineAndMetadataAttributes() ?? [];
 
                 if (_generatorOptions.IgnoreObsoleteProperties && customAttributes.OfType<ObsoleteAttribute>().Any())
                     continue;
@@ -383,8 +384,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     ? GenerateSchemaForMember(dataProperty.MemberType, schemaRepository, dataProperty.MemberInfo, dataProperty)
                     : GenerateSchemaForType(dataProperty.MemberType, schemaRepository);
 
-                if ((dataProperty.IsRequired || customAttributes.OfType<RequiredAttribute>().Any())
-                    && !schema.Required.Contains(dataProperty.Name))
+                if (
+                    dataProperty.IsRequired ||
+                    customAttributes.OfType<RequiredAttribute>().Any() ||
+                    customAttributes.OfType<RequiredMemberAttribute>().Any()
+                )
                 {
                     schema.Required.Add(dataProperty.Name);
                 }

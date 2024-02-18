@@ -362,9 +362,10 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal(10, schema.Properties["StringWithStringLength"].MaxLength);
             Assert.Equal(1, schema.Properties["StringWithRequired"].MinLength);
             Assert.False(schema.Properties["StringWithRequired"].Nullable);
+            Assert.False(schema.Properties["StringWithRequiredModifier"].Nullable);
             Assert.False(schema.Properties["StringWithRequiredAllowEmptyTrue"].Nullable);
             Assert.Null(schema.Properties["StringWithRequiredAllowEmptyTrue"].MinLength);
-            Assert.Equal(new[] { "StringWithRequired", "StringWithRequiredAllowEmptyTrue" }, schema.Required.ToArray());
+            Assert.Equal(new[] { "StringWithRequired", "StringWithRequiredAllowEmptyTrue", "StringWithRequiredModifier" }, schema.Required.ToArray());
         }
 
         [Fact]

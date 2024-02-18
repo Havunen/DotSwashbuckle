@@ -13,7 +13,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private const string NullableContextAttributeFullTypeName = "System.Runtime.CompilerServices.NullableContextAttribute";
         private const string FlagFieldName = "Flag";
 
-        public static IEnumerable<object> GetInlineAndMetadataAttributes(this MemberInfo memberInfo)
+        public static ICollection<object> GetInlineAndMetadataAttributes(this MemberInfo memberInfo)
         {
             var attributes = memberInfo.GetCustomAttributes(true)
                 .ToList();

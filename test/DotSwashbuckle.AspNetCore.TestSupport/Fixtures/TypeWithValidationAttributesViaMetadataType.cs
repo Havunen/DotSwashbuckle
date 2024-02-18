@@ -22,6 +22,8 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
         public string StringWithRequired { get; set; }
 
         public string StringWithRequiredAllowEmptyTrue { get; set; }
+
+        public string StringWithRequiredModifier { get; set; }
     }
 
     public class MetadataType
@@ -49,5 +51,7 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
 
         [Required(AllowEmptyStrings = true)]
         public string StringWithRequiredAllowEmptyTrue { get; set; }
+
+        public required string StringWithRequiredModifier { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -24,7 +25,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             if (apiParameter.ParameterDescriptor is ControllerParameterDescriptor)
             {
                 // This is the default logic for IsRequired
-                return apiParameter.CustomAttributes().Any(attr => attr is BindRequiredAttribute or RequiredAttribute);
+                return apiParameter.CustomAttributes().Any(attr => attr is BindRequiredAttribute or RequiredAttribute or RequiredMemberAttribute);
             }
 
             return apiParameter.IsRequired;

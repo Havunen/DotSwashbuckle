@@ -27,5 +27,7 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
 
         [Required(AllowEmptyStrings = true)]
         public string StringWithRequiredAllowEmptyTrue { get; set; }
+
+        public required string StringWithRequiredModifier { get; set; }
     }
 }

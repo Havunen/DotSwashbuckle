@@ -350,7 +350,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
             Assert.False(schema.Properties["StringWithRequired"].Nullable);
             Assert.False(schema.Properties["StringWithRequiredAllowEmptyTrue"].Nullable);
             Assert.Null(schema.Properties["StringWithRequiredAllowEmptyTrue"].MinLength);
-            Assert.Equal(new[] { "StringWithRequired", "StringWithRequiredAllowEmptyTrue" }, schema.Required.ToArray());
+            Assert.Equal(new[] { "StringWithRequired", "StringWithRequiredAllowEmptyTrue", "StringWithRequiredModifier" }, schema.Required.ToArray());
         }
 
         [Fact]
