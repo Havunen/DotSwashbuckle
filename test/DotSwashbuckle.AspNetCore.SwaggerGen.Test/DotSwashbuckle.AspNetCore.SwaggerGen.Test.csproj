@@ -3,7 +3,13 @@
   <PropertyGroup>
     <DocumentationFile>DotSwashbuckle.AspNetCore.SwaggerGen.Test.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
+    <LangVersion>12</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+    <IsUnitTestProject>true</IsUnitTestProject>
+    <IsTestProject>true</IsTestProject>
+    <DefineTrace>true</DefineTrace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,7 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <LangVersion>12</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+    <IsUnitTestProject>true</IsUnitTestProject>
+    <IsTestProject>true</IsTestProject>
+    <DefineTrace>true</DefineTrace>
   </PropertyGroup>
 
   <ItemGroup>
