@@ -4,7 +4,7 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IsPackable>true</IsPackable>
-    <LicenseUrl>https://licenses.nuget.org/MIT</LicenseUrl>
+		<LicenseUrl>https://licenses.nuget.org/MIT</LicenseUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Havunen/DotSwashbuckle</PackageProjectUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -12,7 +12,7 @@
 		<RepositoryUrl>https://github.com/Havunen/DotSwashbuckle.git</RepositoryUrl>
 		<VersionPrefix>2.0.0</VersionPrefix>
 		<LangVersion>12</LangVersion>
-    <PackageIcon>icon.png</PackageIcon>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(APPVEYOR)'=='True' AND '$(APPVEYOR_REPO_TAG)'=='false'">
@@ -22,12 +22,12 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
 	</ItemGroup>
-  
-  <ItemGroup>
-    <None Include="..\..\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
