@@ -40,7 +40,7 @@ namespace Microsoft.AspNetCore.Builder
             string pattern = "/swagger/{documentName}/swagger.{json|yaml}",
             Action<SwaggerEndpointOptions> setupAction = null)
         {
-            if (!RoutePatternFactory.Parse(pattern).Parameters.Any(x => x.Name == "documentName"))
+            if (RoutePatternFactory.Parse(pattern).Parameters.All(x => !string.Equals(x.Name, "documentName", StringComparison.Ordinal)))
             {
                 throw new ArgumentException("Pattern must contain '{documentName}' parameter", nameof(pattern));
             }
