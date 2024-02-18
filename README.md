@@ -13,9 +13,9 @@ DotSwashbuckle
 
 [![Nuget](https://img.shields.io/nuget/v/dotswashbuckle.aspnetcore)](https://www.nuget.org/packages/dotswashbuckle.aspnetcore/)
 
-[Swagger](http://swagger.io) tooling for APIs built with .NET 8. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
+[Swagger](https://swagger.io) tooling for APIs built with .NET 8. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.
 
-In addition to its [Swagger 2.0 and OpenAPI 3.0](http://swagger.io/specification/) generator, DotSwashbuckle also provides an embedded version of the awesome [swagger-ui](https://github.com/swagger-api/swagger-ui) that's powered by the generated Swagger JSON. This means you can complement your API with living documentation that's always in sync with the latest code. Best of all, it requires minimal coding and maintenance, allowing you to focus on building an awesome API.
+In addition to its [Swagger 2.0 and OpenAPI 3.0](https://swagger.io/specification/) generator, DotSwashbuckle also provides an embedded version of the awesome [swagger-ui](https://github.com/swagger-api/swagger-ui) that's powered by the generated Swagger JSON. This means you can complement your API with living documentation that's always in sync with the latest code. Best of all, it requires minimal coding and maintenance, allowing you to focus on building an awesome API.
 
 And that's not all ...
 
@@ -598,7 +598,7 @@ c.SwaggerDoc("v1",
         Title = "My API - V1",
         Version = "v1",
         Description = "A sample API to demo DotSwashbuckle",
-        TermsOfService = new Uri("http://tempuri.org/terms"),
+        TermsOfService = new Uri("https://tempuri.org/terms"),
         Contact = new OpenApiContact
         {
             Name = "Joe Developer",
@@ -607,7 +607,7 @@ c.SwaggerDoc("v1",
         License = new OpenApiLicense
         {
             Name = "Apache 2.0",
-            Url = new Uri("http://www.apache.org/licenses/LICENSE-2.0.html")
+            Url = new Uri("https://www.apache.org/licenses/LICENSE-2.0.html")
         }
     }
 );
@@ -693,7 +693,7 @@ If you're using the `SwaggerUI` middleware, you'll need to specify any additiona
 
 ### Omit Obsolete Operations and/or Schema Properties ###
 
-The [Swagger spec](http://swagger.io/specification/) includes a `deprecated` flag for indicating that an operation is deprecated and should be refrained from use. The Swagger generator will automatically set this flag if the corresponding action is decorated with the `ObsoleteAttribute`. However, instead of setting a flag, you can configure the generator to ignore obsolete actions altogether:
+The [Swagger spec](https://swagger.io/specification/) includes a `deprecated` flag for indicating that an operation is deprecated and should be refrained from use. The Swagger generator will automatically set this flag if the corresponding action is decorated with the `ObsoleteAttribute`. However, instead of setting a flag, you can configure the generator to ignore obsolete actions altogether:
 
 ```csharp
 services.AddSwaggerGen(c =>
@@ -754,7 +754,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Customize Operation Tags (e.g. for UI Grouping) ###
 
-The [Swagger spec](http://swagger.io/specification/) allows one or more "tags" to be assigned to an operation. The Swagger generator will assign the controller name as the default tag. This is important to note if you're using the `SwaggerUI` middleware as it uses this value to group operations.
+The [Swagger spec](https://swagger.io/specification/) allows one or more "tags" to be assigned to an operation. The Swagger generator will assign the controller name as the default tag. This is important to note if you're using the `SwaggerUI` middleware as it uses this value to group operations.
 
 You can override the default tag by providing a function that applies tags by convention. For example, the following configuration will tag, and therefore group operations in the UI, by HTTP method:
 
@@ -768,7 +768,7 @@ services.AddSwaggerGen(c =>
 
 ### Change Operation Sort Order (e.g. for UI Sorting) ###
 
-By default, actions are ordered by assigned tag (see above) before they're grouped into the path-centric, nested structure of the [Swagger spec](http://swagger.io/specification). But, you can change the default ordering of actions with a custom sorting strategy:
+By default, actions are ordered by assigned tag (see above) before they're grouped into the path-centric, nested structure of the [Swagger spec](https://swagger.io/specification). But, you can change the default ordering of actions with a custom sorting strategy:
 
 ```csharp
 services.AddSwaggerGen(c =>
@@ -873,7 +873,7 @@ _NOTE: Filter pipelines are DI-aware. That is, you can create filters with const
 
 #### Schema Filters ####
 
-DotSwashbuckle generates a Swagger-flavored [JSONSchema](http://swagger.io/specification/#schemaObject) for every parameter, response and property type that's exposed by your controller actions. Once generated, it passes the schema and type through the list of configured Schema Filters.
+DotSwashbuckle generates a Swagger-flavored [JSONSchema](https://swagger.io/specification/#schemaObject) for every parameter, response and property type that's exposed by your controller actions. Once generated, it passes the schema and type through the list of configured Schema Filters.
 
 The example below adds an AutoRest vendor extension (see https://github.com/Azure/autorest/blob/master/docs/extensions/readme.md#x-ms-enum) to inform the AutoRest tool how enums should be modelled when it generates the API client.
 
@@ -950,7 +950,7 @@ services.AddSwaggerGen(c =>
 ```
 #### Document Filters ####
 
-Once an `OpenApiDocument` has been generated, it too can be passed through a set of pre-configured Document Filters. This gives full control to modify the document however you see fit. To ensure you're still returning valid Swagger JSON, you should have a read through the [specification](http://swagger.io/specification/) before using this filter type.
+Once an `OpenApiDocument` has been generated, it too can be passed through a set of pre-configured Document Filters. This gives full control to modify the document however you see fit. To ensure you're still returning valid Swagger JSON, you should have a read through the [specification](https://swagger.io/specification/) before using this filter type.
 
 The example below provides a description for any tags that are assigned to operations in the document:
 
