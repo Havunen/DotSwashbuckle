@@ -45,7 +45,7 @@ namespace Microsoft.AspNetCore.Builder
                 throw new ArgumentException("Pattern must contain '{documentName}' parameter", nameof(pattern));
             }
 
-            Action<SwaggerOptions> endpointSetupAction = options =>
+            void EndpointSetupAction(SwaggerOptions options)
             {
                 var endpointOptions = new SwaggerEndpointOptions();
 
@@ -54,10 +54,10 @@ namespace Microsoft.AspNetCore.Builder
                 options.RouteTemplate = pattern;
                 options.SerializeAsV2 = endpointOptions.SerializeAsV2;
                 options.PreSerializeFilters.AddRange(endpointOptions.PreSerializeFilters);
-            };
+            }
 
             var pipeline = endpoints.CreateApplicationBuilder()
-                .UseSwagger(endpointSetupAction)
+                .UseSwagger(EndpointSetupAction)
                 .Build();
 
             return endpoints.MapGet(pattern, pipeline);
