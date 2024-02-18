@@ -19,7 +19,7 @@
     <ProjectReference Include="..\WebSites\GenericControllers\GenericControllers.csproj" />
     <ProjectReference Include="..\WebSites\MultipleVersions\MultipleVersions.csproj" />
     <ProjectReference Include="..\WebSites\OAuth2Integration\OAuth2Integration.csproj" />
-    <ProjectReference Include="..\WebSites\ReDoc\ReDoc.csproj" />
+    <ProjectReference Include="..\WebSites\Redoc\Redoc.csproj" />
     <ProjectReference Include="..\WebSites\TestFirst\TestFirst.csproj" />
   </ItemGroup>
 

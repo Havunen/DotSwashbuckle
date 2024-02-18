@@ -7,6 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Swagger\DotSwashbuckle.AspNetCore.Swagger.csproj" />
     <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
-    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.ReDoc\DotSwashbuckle.AspNetCore.ReDoc.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Redoc\DotSwashbuckle.AspNetCore.Redoc.csproj" />
   </ItemGroup>
 </Project>

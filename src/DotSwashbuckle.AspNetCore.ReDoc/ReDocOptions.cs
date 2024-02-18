@@ -4,9 +4,9 @@ using System.IO;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
-namespace DotSwashbuckle.AspNetCore.ReDoc
+namespace DotSwashbuckle.AspNetCore.Redoc
 {
-    public class ReDocOptions
+    public class RedocOptions
     {
         /// <summary>
         /// Gets or sets a route prefix for accessing the redoc page
@@ -16,8 +16,8 @@ namespace DotSwashbuckle.AspNetCore.ReDoc
         /// <summary>
         /// Gets or sets a Stream function for retrieving the redoc page
         /// </summary>
-        public Func<Stream> IndexStream { get; set; } = () => typeof(ReDocOptions).GetTypeInfo().Assembly
-            .GetManifestResourceStream("DotSwashbuckle.AspNetCore.ReDoc.index.html");
+        public Func<Stream> IndexStream { get; set; } = () => typeof(RedocOptions).GetTypeInfo().Assembly
+            .GetManifestResourceStream("DotSwashbuckle.AspNetCore.Redoc.index.html");
 
         /// <summary>
         /// Gets or sets a title for the redoc page

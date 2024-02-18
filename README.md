@@ -191,7 +191,7 @@ Refer to the [routing documentation](https://docs.microsoft.com/en-us/aspnet/cor
 
 DotSwashbuckle consists of multiple components that can be used together or individually depending on your needs. At its core, there's a Swagger generator, middleware to expose it as JSON endpoints, and a packaged version of the [swagger-ui](https://github.com/swagger-api/swagger-ui). These 3 packages can be installed with the `DotSwashbuckle.AspNetCore` "metapackage" and will work together seamlessly (see [Getting Started](#getting-started)) to provide beautiful API docs that are automatically generated from your code.
 
-Additionally, there's add-on packages (CLI tools, [an alternate UI](https://github.com/Rebilly/ReDoc) etc.) that you can optionally install and configure as needed.
+Additionally, there's add-on packages (CLI tools, [an alternate UI](https://github.com/Rebilly/Redoc) etc.) that you can optionally install and configure as needed.
 
 ## "Core" Packages (i.e. installed via DotSwashbuckle.AspNetCore)
 
@@ -207,7 +207,7 @@ Additionally, there's add-on packages (CLI tools, [an alternate UI](https://gith
 |---------|-----------|
 |DotSwashbuckle.AspNetCore.Annotations|Includes a set of custom attributes that can be applied to controllers, actions and models to enrich the generated Swagger|
 |DotSwashbuckle.AspNetCore.Cli|Provides a command line interface for retrieving Swagger directly from a startup assembly, and writing to file|
-|DotSwashbuckle.AspNetCore.ReDoc|Exposes an embedded version of the ReDoc UI (an alternative to swagger-ui)|
+|DotSwashbuckle.AspNetCore.Redoc|Exposes an embedded version of the Redoc UI (an alternative to swagger-ui)|
 
 
 # Configuration & Customization #
@@ -266,10 +266,10 @@ The steps described above will get you up and running with minimal setup. Howeve
     * [Retrieve Swagger Directly from a Startup Assembly](#retrieve-swagger-directly-from-a-startup-assembly)
     * [Use the CLI Tool with a Custom Host Configuration](#use-the-cli-tool-with-a-custom-host-configuration)
 
-* [DotSwashbuckle.AspNetCore.ReDoc](#swashbuckleaspnetcoreredoc)
+* [DotSwashbuckle.AspNetCore.Redoc](#swashbuckleaspnetcoreredoc)
     * [Change Relative Path to the UI](#redoc-change-relative-path-to-the-ui)
     * [Change Document Title](#redoc-change-document-title)
-    * [Apply ReDoc Parameters](#apply-redoc-parameters)
+    * [Apply Redoc Parameters](#apply-redoc-parameters)
     * [Inject Custom CSS](#redoc-inject-custom-css)
     * [Customize index.html](#redoc-customize-indexhtml)
 
@@ -326,7 +326,7 @@ app.UseSwagger(c =>
 
 ### Working with Virtual Directories and Reverse Proxies ###
 
-Virtual directories and reverse proxies can cause issues for applications that generate links and redirects, particularly if the app returns *absolute* URLs based on the `Host` header and other information from the current request. To avoid these issues, DotSwashbuckle uses *relative* URLs where possible, and encourages their use when configuring the SwaggerUI and ReDoc middleware.
+Virtual directories and reverse proxies can cause issues for applications that generate links and redirects, particularly if the app returns *absolute* URLs based on the `Host` header and other information from the current request. To avoid these issues, DotSwashbuckle uses *relative* URLs where possible, and encourages their use when configuring the SwaggerUI and Redoc middleware.
 
 For example, to wire up the SwaggerUI middleware, you provide the URL to one or more OpenAPI/Swagger documents. This is the URL that the swagger-ui, a client-side application, will call to retrieve your API metadata. To ensure this works behind virtual directories and reverse proxies, you should express this relative to the `RoutePrefix` of the swagger-ui itself:
 
@@ -1654,14 +1654,14 @@ public class SwaggerHostFactory
 }
 ```
 
-## DotSwashbuckle.AspNetCore.ReDoc ##
+## DotSwashbuckle.AspNetCore.Redoc ##
 
 <h3 id="redoc-change-relative-path-to-the-ui">Change Relative Path to the UI</h3>
 
-By default, the ReDoc UI will be exposed at "/api-docs". If necessary, you can alter this when enabling the ReDoc middleware:
+By default, the Redoc UI will be exposed at "/api-docs". If necessary, you can alter this when enabling the Redoc middleware:
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     c.RoutePrefix = "docs"
     ...
@@ -1670,22 +1670,22 @@ app.UseReDoc(c =>
 
 <h3 id="redoc-change-document-title">Change Document Title</h3>
 
-By default, the ReDoc UI will have a generic document title. You can alter this when enabling the ReDoc middleware:
+By default, the Redoc UI will have a generic document title. You can alter this when enabling the Redoc middleware:
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     c.DocumentTitle = "My API Docs";
     ...
 }
 ```
 
-### Apply ReDoc Parameters ###
+### Apply Redoc Parameters ###
 
-ReDoc ships with its own set of configuration parameters, all described here https://github.com/Rebilly/ReDoc/blob/master/README.md#redoc-options-object. In DotSwashbuckle, most of these are surfaced through the ReDoc middleware options:
+Redoc ships with its own set of configuration parameters, all described here https://github.com/Rebilly/Redoc/blob/master/README.md#redoc-options-object. In DotSwashbuckle, most of these are surfaced through the Redoc middleware options:
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     c.SpecUrl("/v1/swagger.json");
     c.EnableUntrustedSpec();
@@ -1704,24 +1704,24 @@ app.UseReDoc(c =>
 });
 ```
 
-_Using `c.SpecUrl("/v1/swagger.json")` multiple times within the same `UseReDoc(...)` will not add multiple urls._
+_Using `c.SpecUrl("/v1/swagger.json")` multiple times within the same `UseRedoc(...)` will not add multiple urls._
 
 <h3 id="redoc-inject-custom-css">Inject Custom CSS</h3>
 
 To tweak the look and feel, you can inject additional CSS stylesheets by adding them to your `wwwroot` folder and specifying the relative paths in the middleware options:
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     ...
     c.InjectStylesheet("/redoc/custom.css");
 }
 ```
 
-It is also possible to modify the theme by using the `AdditionalItems` property, see https://github.com/Rebilly/ReDoc/blob/master/README.md#redoc-options-object for more information.
+It is also possible to modify the theme by using the `AdditionalItems` property, see https://github.com/Rebilly/Redoc/blob/master/README.md#redoc-options-object for more information.
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     ...
     c.ConfigObject.AdditionalItems = ...
@@ -1730,14 +1730,14 @@ app.UseReDoc(c =>
 
 <h3 id="redoc-customize-indexhtml">Customize index.html</h3>
 
-To customize the UI beyond the basic options listed above, you can provide your own version of the ReDoc index.html page:
+To customize the UI beyond the basic options listed above, you can provide your own version of the Redoc index.html page:
 
 ```csharp
-app.UseReDoc(c =>
+app.UseRedoc(c =>
 {
     c.IndexStream = () => GetType().Assembly
-        .GetManifestResourceStream("CustomIndex.ReDoc.index.html"); // requires file to be added as an embedded resource
+        .GetManifestResourceStream("CustomIndex.Redoc.index.html"); // requires file to be added as an embedded resource
 });
 ```
 
-_To get started, you should base your custom index.html on the [default version](src/DotSwashbuckle.AspNetCore.ReDoc/index.html)_
+_To get started, you should base your custom index.html on the [default version](src/DotSwashbuckle.AspNetCore.Redoc/index.html)_
