@@ -75,5 +75,8 @@ namespace Dummy.Controllers
         {
             return this.Ok(null);
         }
+
+        [HttpGet("{id}/{name}", Name = "FromRouteTwice")]
+        public async Task Get([FromRoute] int id, [FromRoute] string name) => Ok();
     }
 }

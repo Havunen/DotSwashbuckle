@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Writers;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
@@ -20,15 +23,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         public void RegisterType(Type type, string schemaId)
         {
-            if (_reservedIds.ContainsValue(schemaId))
-            {
-                var conflictingType = _reservedIds.First(entry => entry.Value == schemaId).Key;
-
-                throw new InvalidOperationException(
-                    $"Can't use schemaId \"${schemaId}\" for type \"${type}\". " +
-                    $"The same schemaId is already used for type \"${conflictingType}\"");
-            }
-
             _reservedIds.Add(type, schemaId);
         }
 
@@ -49,12 +43,43 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         public OpenApiSchema AddDefinition(string schemaId, OpenApiSchema schema)
         {
-            Schemas.Add(schemaId, schema);
+            if (Schemas.TryGetValue(schemaId, out var existingSchema))
+            {
+                if (!IsSchemaEqual(schema, existingSchema))
+                {
+                    throw new InvalidOperationException(
+                        $"Can't use schemaId \"${schemaId}\" for schema \"${schema}\". " +
+                        $"The same schemaId is already used for type \"${existingSchema}\"");
+                }
+            }
+            else
+            {
+                Schemas.Add(schemaId, schema);
+            }
+            
 
             return new OpenApiSchema
             {
                 Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = schemaId }
             };
+        }
+
+        // TODO: This method could be optimized by comparing schemas without serializing them to JSON
+        // But it should not be a big deal since it's only called when there's a conflict
+        private static bool IsSchemaEqual(OpenApiSchema a, OpenApiSchema b)
+        {
+            var aJson = SerializeSchemaAsString(a);
+            var bJson = SerializeSchemaAsString(b);
+
+            return string.Equals(aJson, bJson, StringComparison.Ordinal);
+        }
+
+        private static string SerializeSchemaAsString(OpenApiSchema a)
+        {
+            using var textWriter = new StringWriter(CultureInfo.InvariantCulture);
+            var jsonWriter = new OpenApiJsonWriter(textWriter);
+            a.SerializeAsV3(jsonWriter);
+            return textWriter.ToString();
         }
     }
 }

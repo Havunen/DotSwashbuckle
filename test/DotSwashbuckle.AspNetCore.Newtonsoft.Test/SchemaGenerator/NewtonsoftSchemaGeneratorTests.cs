@@ -660,7 +660,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         }
 
         [Fact]
-        public void GenerateSchema_Errors_IfTypesHaveConflictingSchemaIds()
+        public void GenerateSchema_Errors_IfTwoSchemasHaveSameId_And_DifferentProperties()
         {
             var subject = Subject();
             var schemaRepository = new SchemaRepository();
@@ -670,6 +670,16 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
             {
                 subject.GenerateSchema(typeof(TestSupport.Namespace2.ConflictingType), schemaRepository);
             });
+        }
+
+        [Fact]
+        public void GenerateSchema_Pass_WhenTwoSchemasHaveSameId_And_SameProperties()
+        {
+            var subject = Subject();
+            var schemaRepository = new SchemaRepository();
+
+            subject.GenerateSchema(typeof(TestSupport.Namespace3.ConflictingType), schemaRepository);
+            subject.GenerateSchema(typeof(TestSupport.Namespace2.ConflictingType), schemaRepository);
         }
 
         [Theory]

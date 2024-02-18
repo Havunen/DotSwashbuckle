@@ -111,6 +111,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSwashbuckle.AspNetCore.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAppWithHostedService", "test\WebSites\MinimalAppWithHostedService\MinimalAppWithHostedService.csproj", "{C760F65B-5214-4104-99B2-3671D93F6FE2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotSwashbuckleTestBug2679", "test\WebSites\DotSwashbuckleTestBug2679\DotSwashbuckleTestBug2679.csproj", "{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -601,6 +603,18 @@ Global
 		{C760F65B-5214-4104-99B2-3671D93F6FE2}.Release|x64.Build.0 = Release|Any CPU
 		{C760F65B-5214-4104-99B2-3671D93F6FE2}.Release|x86.ActiveCfg = Release|Any CPU
 		{C760F65B-5214-4104-99B2-3671D93F6FE2}.Release|x86.Build.0 = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|x64.Build.0 = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|x64.ActiveCfg = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|x64.Build.0 = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -647,6 +661,7 @@ Global
 		{5AFB39E3-38A6-4061-A0FD-6DCD8A796750} = {DB3F57FC-1472-4F03-B551-43394DA3C5EB}
 		{570CE160-C749-429C-A499-7126DC5B15F6} = {15A55F4A-FC33-4D96-BAAD-FBDCDD96D5F5}
 		{C760F65B-5214-4104-99B2-3671D93F6FE2} = {DB3F57FC-1472-4F03-B551-43394DA3C5EB}
+		{52B31980-FA1B-46CF-B017-B8CE3F61C7A3} = {DB3F57FC-1472-4F03-B551-43394DA3C5EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36FC6A67-247D-4149-8EDD-79FFD1A75F51}
