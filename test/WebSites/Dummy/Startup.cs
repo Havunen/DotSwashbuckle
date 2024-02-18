@@ -9,8 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.Options;
-using Dummy.Swagger;
 
 namespace Dummy
 {
@@ -64,9 +62,6 @@ namespace Dummy
             });
 
             services.AddSwaggerExamples();
-            services.AddSwaggerExamplesFromAssemblyOf<EtsNoticeContractExample>();
-            services.AddSwaggerExamplesFromAssemblyOf<EtsNoticeSummaryExample>();
-            services.AddSwaggerExamplesFromAssemblyOf<EtsCreateProcurementPlanContractExample>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
