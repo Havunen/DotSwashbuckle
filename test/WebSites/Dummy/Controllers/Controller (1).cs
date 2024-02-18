@@ -53,5 +53,27 @@ namespace Dummy.Controllers
         {
             return this.Ok(null);
         }
+
+        public class PageData
+        {
+            private int _page = 1;
+            [FromQuery]
+            public int Page
+            {
+                get => _page;
+            }
+        }
+
+        [HttpGet("complexGet")]
+        public async Task<ActionResult<Nullable<int>>> ComplexIntNullGet(PageData pageData)
+        {
+            return this.Ok(null);
+        }
+
+        [HttpPost("complexPost")]
+        public async Task<ActionResult<Nullable<int>>> ComplexIntNullPost(PageData pageData)
+        {
+            return this.Ok(null);
+        }
     }
 }
