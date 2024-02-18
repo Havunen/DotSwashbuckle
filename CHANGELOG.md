@@ -9,6 +9,7 @@ When `<summary>` is defined alone it is used as description for the schema.
 - Adds support for `WithSummary` and `WithDescription` metadata
 - Improve performance of IsRequiredSpecified method
 - Fixes an issue where query string parameters crash OpenApi path generation `System.ArgumentException: Literal sections cannot contain the '?' character.`
+- For more details see: https://github.com/Havunen/DotSwashbuckle/issues/1
 
 ## Breaking Changes
 - `ReDoc` has been renamed to `Redoc`, this applies to all methods and types. Including the Nuget package name `DotSwashbuckle.AspNetCore.Redoc`
