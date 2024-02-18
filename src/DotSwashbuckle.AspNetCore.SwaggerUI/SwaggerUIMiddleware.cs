@@ -24,7 +24,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
 
         private readonly SwaggerUIOptions _options;
         private readonly StaticFileMiddleware _staticFileMiddleware;
-        private readonly JsonSerializerOptions _jsonSerializerOptions;
+        private readonly SwaggerUISerializerContext _context;
+
 
         public SwaggerUIMiddleware(
             RequestDelegate next,
@@ -36,10 +37,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
 
             _staticFileMiddleware = CreateStaticFileMiddleware(next, hostingEnv, loggerFactory, options);
 
-            _jsonSerializerOptions = new JsonSerializerOptions();
-            _jsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-            _jsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-            _jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false));
+            var jsonSerializerOptions = new JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false));
+            _context = new(jsonSerializerOptions);
         }
 
         public async Task Invoke(HttpContext httpContext)
@@ -48,7 +52,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
             var path = httpContext.Request.Path.Value;
 
             // If the RoutePrefix is requested (with or without trailing slash), redirect to index URL
-            if (httpMethod == "GET" && Regex.IsMatch(path, $"^/?{Regex.Escape(_options.RoutePrefix)}/?$",  RegexOptions.IgnoreCase))
+            if (httpMethod == "GET" && Regex.IsMatch(path, $"^/?{Regex.Escape(_options.RoutePrefix)}/?$", RegexOptions.IgnoreCase))
             {
                 // Use relative redirect to support proxy environments
                 var relativeIndexUrl = string.IsNullOrEmpty(path) || path.EndsWith("/")
@@ -94,31 +98,27 @@ namespace DotSwashbuckle.AspNetCore.SwaggerUI
             response.StatusCode = 200;
             response.ContentType = "text/html;charset=utf-8";
 
-            using (var stream = _options.IndexStream())
+            await using var stream = _options.IndexStream();
+            using var reader = new StreamReader(stream);
+
+            // Inject arguments before writing to response
+            var htmlBuilder = new StringBuilder(await reader.ReadToEndAsync());
+            foreach (var entry in GetIndexArguments())
             {
-                using var reader = new StreamReader(stream);
-
-                // Inject arguments before writing to response
-                var htmlBuilder = new StringBuilder(await reader.ReadToEndAsync());
-                foreach (var entry in GetIndexArguments())
-                {
-                    htmlBuilder.Replace(entry.Key, entry.Value);
-                }
-
-                await response.WriteAsync(htmlBuilder.ToString(), Encoding.UTF8);
+                htmlBuilder.Replace(entry.Key, entry.Value);
             }
+
+            await response.WriteAsync(htmlBuilder.ToString(), Encoding.UTF8);
         }
 
-        private IDictionary<string, string> GetIndexArguments()
-        {
-            return new Dictionary<string, string>(StringComparer.Ordinal)
+        private Dictionary<string, string> GetIndexArguments() =>
+            new(StringComparer.Ordinal)
             {
                 { "%(DocumentTitle)", _options.DocumentTitle },
                 { "%(HeadContent)", _options.HeadContent },
-                { "%(ConfigObject)", JsonSerializer.Serialize(_options.ConfigObject, _jsonSerializerOptions) },
-                { "%(OAuthConfigObject)", JsonSerializer.Serialize(_options.OAuthConfigObject, _jsonSerializerOptions) },
-                { "%(Interceptors)", JsonSerializer.Serialize(_options.Interceptors, _jsonSerializerOptions) },
+                { "%(ConfigObject)", JsonSerializer.Serialize(_options.ConfigObject, _context.ConfigObject) },
+                { "%(OAuthConfigObject)", JsonSerializer.Serialize(_options.OAuthConfigObject, _context.OAuthConfigObject) },
+                { "%(Interceptors)", JsonSerializer.Serialize(_options.Interceptors, _context.InterceptorFunctions) },
             };
-        }
     }
 }
