@@ -7,7 +7,7 @@ When `<summary>` is defined alone it is used as description for the schema.
 - Adds support for custom Required and Binding attributes
 - Fixes an issue where UniqueItems is not set true for `IReadOnlySet<T>` 
 - Adds support for `WithSummary` and `WithDescription` metadata
-
+- Improve performance of IsRequiredSpecified method
 
 # v2.0.0
 
