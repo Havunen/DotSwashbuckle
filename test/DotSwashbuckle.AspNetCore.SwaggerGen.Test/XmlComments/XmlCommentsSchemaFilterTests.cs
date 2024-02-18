@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Xml.XPath;
-using System.IO;
 using DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures;
 using Microsoft.OpenApi.Models;
 using Xunit;
@@ -76,6 +74,17 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithNullExample), "string", "null")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithUri), "string", "\"https://test.com/a?b=1&c=2\"")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.MultiLineSummaryExample), "string", "\"When Number equals 2023/S 106-333284 Then Publication = 333284-2023\"")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.BoolProperty), "boolean", "true")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.IntProperty), "integer", "10")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.LongProperty), "integer", "4294967295")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.FloatProperty), "number", "1.2")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.DoubleProperty), "number", "1.25")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.EnumProperty), "integer", "2")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.GuidProperty), "string", "\"d3966535-2637-48fa-b911-e3c27405ee09\"")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.StringProperty), "string", "\"Example for StringProperty\"")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.ObjectProperty), "object", "{\n  \"prop1\": 1,\n  \"prop2\": \"foobar\"\n}")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.StringPropertyWithNullExample), "string", "null")]
+        [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.StringPropertyWithUri), "string", "\"https://test.com/a?b=1&c=2\"")]
         [UseInvariantCulture]
         public void Apply_SetsExample_FromPropertyExampleTag(
             Type declaringType,
