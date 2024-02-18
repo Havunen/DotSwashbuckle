@@ -1,4 +1,4 @@
-﻿namespace DotSwashbuckle.AspNetCore.Cli.Benchmark;
+﻿namespace DotSwashbuckle.AspNetCore.Console;
 
 public class Program
 {

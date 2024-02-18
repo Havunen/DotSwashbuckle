@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsPublishable>false</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.Cli\DotSwashbuckle.AspNetCore.Cli.csproj" />
+    <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
+    <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.SwaggerUI\DotSwashbuckle.AspNetCore.SwaggerUI.csproj" />
+    <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.Swagger\DotSwashbuckle.AspNetCore.Swagger.csproj" />
+    <ProjectReference Include="..\..\test\WebSites\Basic\Basic.csproj" />
+    <ProjectReference Include="..\DotSwashbuckle.AspNetCore.Benchmark.Logic\DotSwashbuckle.AspNetCore.Benchmark.Logic.csproj" />
+  </ItemGroup>
+
+</Project>
