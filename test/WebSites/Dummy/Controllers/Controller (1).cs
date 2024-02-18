@@ -78,5 +78,20 @@ namespace Dummy.Controllers
 
         [HttpGet("{id}/{name}", Name = "FromRouteTwice")]
         public async Task Get([FromRoute] int id, [FromRoute] string name) => Ok();
+
+        [HttpGet("no/params/here")]
+        public ActionResult<ProductModel> GetProduct(
+            [FromServices] IProductModelRequestService productModelRequest,
+            [FromServices] IProductModelRequestService productModelRequest2,
+            int id
+        )
+        {
+            return this.Ok(null);
+        }
+    }
+
+    public class ProductModel
+    {
+        public string Name { get; set; }
     }
 }
