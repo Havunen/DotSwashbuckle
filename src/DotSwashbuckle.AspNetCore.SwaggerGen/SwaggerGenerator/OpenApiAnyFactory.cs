@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Text.Json;
 using Microsoft.OpenApi.Any;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
@@ -13,7 +14,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
                 return CreateFromJsonElement(jsonElement);
             }
-            catch { }
+            catch {
+                Console.WriteLine("Parsing value " + json + " to JSON schema failed!");
+            }
 
             return null;
         }

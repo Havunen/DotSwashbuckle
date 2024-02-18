@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Xml.XPath;
+using DotSwashbuckle.AspNetCore.SwaggerGen.Utils;
+using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
@@ -48,11 +50,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             var exampleNode = fieldOrPropertyNode.SelectSingleNode("example");
             if (exampleNode != null)
             {
-                var exampleAsJson = (schema.ResolveType(context.SchemaRepository) == "string") && !exampleNode.Value.Equals("null")
-                    ? $"\"{exampleNode.ToString()}\""
-                    : exampleNode.ToString();
-
-                schema.Example = OpenApiAnyFactory.CreateFromJson(exampleAsJson);
+                schema.Example = ExampleParser.ParseNodeExample(
+                    exampleNode.ToString(),
+                    schema,
+                    context.SchemaRepository
+                );
             }
         }
     }

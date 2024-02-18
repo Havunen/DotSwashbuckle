@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Xml.XPath;
+using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 using Microsoft.OpenApi.Models;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
@@ -50,11 +51,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             foreach (var mediaType in requestBody.Content.Values)
             {
-                var exampleAsJson = (mediaType.Schema?.ResolveType(context.SchemaRepository) == "string")
-                    ? $"\"{exampleNode.ToString()}\""
-                    : exampleNode.ToString();
-
-                mediaType.Example = OpenApiAnyFactory.CreateFromJson(exampleAsJson);
+                mediaType.Example = ExampleParser.ParseNodeExample(
+                    exampleNode.ToString(),
+                    mediaType.Schema,
+                    context.SchemaRepository
+                );
             }
         }
 
@@ -82,11 +83,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
                 foreach (var mediaType in requestBody.Content.Values)
                 {
-                    var exampleAsJson = (mediaType.Schema?.ResolveType(context.SchemaRepository) == "string")
-                        ? $"\"{example}\""
-                        : example;
-
-                    mediaType.Example = OpenApiAnyFactory.CreateFromJson(exampleAsJson);
+                    mediaType.Example = ExampleParser.ParseNodeExample(
+                        example,
+                        mediaType.Schema,
+                        context.SchemaRepository
+                    );
                 }
             }
         }
