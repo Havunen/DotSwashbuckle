@@ -5,6 +5,7 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
+using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 
 namespace DotSwashbuckle.AspNetCore.Annotations
 {
@@ -26,11 +27,11 @@ namespace DotSwashbuckle.AspNetCore.Annotations
 
             if (context.MemberInfo != null)
             {
-                ApplyMemberAnnotations(schema, context.MemberInfo);
+                ApplyMemberAnnotations(schema, context.MemberInfo, context);
             }
             else if (context.ParameterInfo != null)
             {
-                ApplyParamAnnotations(schema, context.ParameterInfo);
+                ApplyParamAnnotations(schema, context.ParameterInfo, context);
             }
         }
 
@@ -40,7 +41,7 @@ namespace DotSwashbuckle.AspNetCore.Annotations
                 .FirstOrDefault();
 
             if (schemaAttribute != null)
-                ApplySchemaAttribute(schema, schemaAttribute);
+                ApplySchemaAttribute(schema, schemaAttribute, context);
 
             var schemaFilterAttribute = context.Type.GetCustomAttributes<SwaggerSchemaFilterAttribute>()
                 .FirstOrDefault();
@@ -56,25 +57,37 @@ namespace DotSwashbuckle.AspNetCore.Annotations
             }
         }
 
-        private void ApplyParamAnnotations(OpenApiSchema schema, ParameterInfo parameterInfo)
+        private void ApplyParamAnnotations(
+            OpenApiSchema schema,
+            ParameterInfo parameterInfo,
+            SchemaFilterContext context
+        )
         {
             var schemaAttribute = parameterInfo.GetCustomAttributes<SwaggerSchemaAttribute>()
                 .FirstOrDefault();
 
             if (schemaAttribute != null)
-                ApplySchemaAttribute(schema, schemaAttribute);
+                ApplySchemaAttribute(schema, schemaAttribute, context);
         }
 
-        private void ApplyMemberAnnotations(OpenApiSchema schema, MemberInfo memberInfo)
+        private void ApplyMemberAnnotations(
+            OpenApiSchema schema,
+            MemberInfo memberInfo,
+            SchemaFilterContext context
+        )
         {
             var schemaAttribute = memberInfo.GetCustomAttributes<SwaggerSchemaAttribute>()
                 .FirstOrDefault();
 
             if (schemaAttribute != null)
-                ApplySchemaAttribute(schema, schemaAttribute);
+                ApplySchemaAttribute(schema, schemaAttribute, context);
         }
 
-        private void ApplySchemaAttribute(OpenApiSchema schema, SwaggerSchemaAttribute schemaAttribute)
+        private void ApplySchemaAttribute(
+            OpenApiSchema schema,
+            SwaggerSchemaAttribute schemaAttribute,
+            SchemaFilterContext context
+        )
         {
             if (schemaAttribute.Description != null)
                 schema.Description = schemaAttribute.Description;
@@ -96,6 +109,15 @@ namespace DotSwashbuckle.AspNetCore.Annotations
 
             if (schemaAttribute.Title != null)
                 schema.Title = schemaAttribute.Title;
+
+            if (schemaAttribute.Example != null)
+            {
+                schema.Example = ExampleParser.ParseNodeExample(
+                    schemaAttribute.Example,
+                    schema,
+                    context.SchemaRepository
+                );
+            }
         }
     }
 }

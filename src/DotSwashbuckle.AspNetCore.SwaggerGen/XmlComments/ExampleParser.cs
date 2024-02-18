@@ -5,9 +5,9 @@ using System;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments
 {
-    internal static class ExampleParser
+    public static class ExampleParser
     {
-        internal static IOpenApiAny ParseNodeExample(
+        public static IOpenApiAny ParseNodeExample(
             string example,
             OpenApiSchema schema,
             SchemaRepository schemaRepository

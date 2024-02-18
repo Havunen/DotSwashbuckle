@@ -37,7 +37,7 @@ namespace Dummy.Controllers
     [SwaggerSchema(Required = new[] { "Id" })]
     public class Cart
     {
-        [SwaggerSchema("The cart diamond")]
+        [SwaggerSchema("The cart diamond", Example = "108199")]
         public int Id { get; set; }
 
         public CartType CartType { get; set; }

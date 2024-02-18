@@ -42,6 +42,8 @@ namespace DotSwashbuckle.AspNetCore.Annotations
 
         public string Title { get; set; }
 
+        public string Example { get; set; }
+
         internal bool? ReadOnlyFlag { get; private set; }
 
         internal bool? WriteOnlyFlag { get; private set; }

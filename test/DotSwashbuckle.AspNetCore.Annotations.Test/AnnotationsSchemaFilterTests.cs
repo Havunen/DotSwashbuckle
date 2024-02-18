@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using Xunit;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using Moq;
+using DotSwashbuckle.AspNetCore.TestSupport;
 
 namespace DotSwashbuckle.AspNetCore.Annotations.Test
 {
@@ -14,13 +15,15 @@ namespace DotSwashbuckle.AspNetCore.Annotations.Test
         public void Apply_EnrichesSchemaMetadata_IfTypeDecoratedWithSwaggerSchemaAttribute(Type type)
         {
             var schema = new OpenApiSchema();
-            var context = new SchemaFilterContext(type: type, schemaGenerator: null, schemaRepository: null);
+            schema.Type = "string";
+            var context = new SchemaFilterContext(type: type, schemaGenerator: null, schemaRepository: new SchemaRepository());
 
             Subject().Apply(schema, context);
 
             Assert.Equal($"Description for {type.Name}", schema.Description);
             Assert.Equal(new[] { "StringWithSwaggerSchemaAttribute" }, schema.Required);
             Assert.Equal($"Title for {type.Name}", schema.Title);
+            Assert.Equal($"\"Example for {type.Name}\"", schema.Example.ToJson());
         }
 
         [Fact]
