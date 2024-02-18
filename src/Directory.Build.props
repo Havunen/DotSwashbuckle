@@ -4,7 +4,7 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IsPackable>true</IsPackable>
-		<LicenseUrl>https://github.com/Havunen/DotSwashbuckle/blob/main/LICENSE</LicenseUrl>
+    <LicenseUrl>https://licenses.nuget.org/MIT</LicenseUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Havunen/DotSwashbuckle</PackageProjectUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
