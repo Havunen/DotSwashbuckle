@@ -9,7 +9,7 @@
 DotSwashbuckle
 =========
 
-[![Build status](https://ci.appveyor.com/api/projects/status/vy1e8ls17sx6fuwv?svg=true)](https://ci.appveyor.com/project/Havunen/dotswashbuckle)
+[![Build status](https://ci.appveyor.com/api/projects/status/qaaagswn5ignwgh7?svg=true)](https://ci.appveyor.com/project/Havunen/dotswashbuckle)
 
 [![Nuget](https://img.shields.io/nuget/v/dotswashbuckle.aspnetcore)](https://www.nuget.org/packages/dotswashbuckle.aspnetcore/)
 
