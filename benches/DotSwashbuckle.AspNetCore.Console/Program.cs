@@ -1,15 +1,25 @@
-﻿namespace DotSwashbuckle.AspNetCore.Console;
+﻿using DotSwashbuckle.AspNetCore.Benchmark.Logic;
+using System.Runtime.Loader;
+
+namespace DotSwashbuckle.AspNetCore.Console;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        var benchFile = new OpenApiGenerateJsonBenchmark();
-        benchFile.GlobalSetup();
+        var serviceProvider = AssemblyServiceProvider.GetServiceProvider(
+            AssemblyLoadContext.Default.LoadFromAssemblyPath(
+                Path.Combine(Directory.GetCurrentDirectory(), "Basic.dll")
+            )
+        );
 
-        for (var i = 0; i < 100; i++)
+        for (var i = 0; i < 1000; i++)
         {
-            benchFile.DotSwashbuckleOpenApiV2();
+            DotSwashbuckleGenerator.CreateSwaggerDoc(
+                serviceProvider,
+                false,
+                true
+            );
         }
     }
 }

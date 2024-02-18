@@ -10,6 +10,11 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        if (args.Length > 0)
+        {
+            return;
+        }
+
         var config = new ManualConfig()
         {
             Options = ConfigOptions.DisableOptimizationsValidator | ConfigOptions.DisableLogFile | ConfigOptions.JoinSummary,
