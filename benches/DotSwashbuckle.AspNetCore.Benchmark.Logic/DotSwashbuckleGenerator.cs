@@ -8,12 +8,17 @@ namespace DotSwashbuckle.AspNetCore.Benchmark.Logic
     public class DotSwashbuckleGenerator
     {
 
-        public static async Task<string> CreateSwaggerDoc(IServiceProvider serviceProvider, bool isYaml, bool isV2)
+        public static async Task<string> CreateSwaggerDoc(
+            IServiceProvider serviceProvider,
+            bool isYaml,
+            bool isV2,
+            string documentName
+        )
         {
             // 3) Retrieve Swagger via configured provider
             var swaggerProvider = serviceProvider.GetRequiredService<ISwaggerProvider>();
             var swagger = await swaggerProvider.GetSwaggerAsync(
-                "v1",
+                documentName,
                 null,
                 null
             );

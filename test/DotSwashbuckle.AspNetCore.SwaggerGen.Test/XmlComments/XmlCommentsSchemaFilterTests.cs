@@ -68,6 +68,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.ObjectProperty), "object", "{\n  \"prop1\": 1,\n  \"prop2\": \"foobar\"\n}")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithNullExample), "string", "null")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithUri), "string", "\"https://test.com/a?b=1&c=2\"")]
+        [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.MultiLineSummaryExample), "string", "\"When Number equals 2023/S 106-333284 Then Publication = 333284-2023\"")]
         [UseInvariantCulture]
         public void Apply_SetsExample_FromPropertyExampleTag(
             Type declaringType,

@@ -22,7 +22,7 @@
     <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
     <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.SwaggerUI\DotSwashbuckle.AspNetCore.SwaggerUI.csproj" />
     <ProjectReference Include="..\..\src\DotSwashbuckle.AspNetCore.Swagger\DotSwashbuckle.AspNetCore.Swagger.csproj" />
-    <ProjectReference Include="..\..\test\WebSites\Basic\Basic.csproj" />
+    <ProjectReference Include="..\..\test\WebSites\Dummy\Dummy.csproj" />
     <ProjectReference Include="..\DotSwashbuckle.AspNetCore.Benchmark.Logic\DotSwashbuckle.AspNetCore.Benchmark.Logic.csproj" />
   </ItemGroup>
 

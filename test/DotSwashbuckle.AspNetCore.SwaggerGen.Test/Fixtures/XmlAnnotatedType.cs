@@ -70,6 +70,17 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         public string StringProperty { get; set; }
 
         /// <summary>
+        /// Something
+        /// Else
+        /// Okay
+        /// </summary>
+        /// <example>
+        /// When Number equals 2023/S 106-333284
+        /// Then Publication = 333284-2023
+        /// </example>
+        public string MultiLineSummaryExample { get; set; }
+
+        /// <summary>
         /// Summary for StringPropertyWithUri
         /// </summary>
         /// <example><![CDATA[https://test.com/a?b=1&c=2]]></example>
