@@ -8,6 +8,7 @@ using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public class XmlCommentsDocumentFilter(
+        SwaggerGeneratorOptions options,
         IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
     ) : IDocumentFilter
     {
@@ -16,10 +17,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         {
             // Collect (unique) controller names and types in a dictionary
             var controllerNamesAndTypes = context.ApiDescriptions
-                .Select(apiDesc => apiDesc.ActionDescriptor as ControllerActionDescriptor)
-                .Where(actionDesc => actionDesc != null)
-                .GroupBy(actionDesc => actionDesc.ControllerName)
-                .Select(group => new KeyValuePair<string, Type>(group.Key, group.First().ControllerTypeInfo.AsType()));
+                .Where(apiDesc => apiDesc.ActionDescriptor is ControllerActionDescriptor)
+                .GroupBy(apiDesc => options.TagsSelector(apiDesc).FirstOrDefault())
+                .Select(group => new KeyValuePair<string, Type>(group.Key, ((ControllerActionDescriptor)group.First().ActionDescriptor).ControllerTypeInfo.AsType()));
 
             foreach (var nameAndType in controllerNamesAndTypes)
             {

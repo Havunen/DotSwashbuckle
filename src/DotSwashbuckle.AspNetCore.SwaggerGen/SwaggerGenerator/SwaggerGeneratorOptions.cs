@@ -91,7 +91,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             {
                 return new List<string>(tagsMetadata.Tags);
             }
-            return new[] { apiDescription.ActionDescriptor.RouteValues["controller"] };
+
+            if (apiDescription.ActionDescriptor.RouteValues.TryGetValue("controller", out var controller))
+            {
+                return new[] { controller };
+            }
+
+            return Array.Empty<string>();
         }
 
         private string DefaultSortKeySelector(ApiDescription apiDescription)
