@@ -12,7 +12,7 @@ namespace Microsoft.Extensions.ApiDescriptions
     /// This service will be looked up by name from the service collection when using
     /// the <c>dotnet-getdocument</c> tool from the Microsoft.Extensions.ApiDescription.Server package.
     /// </summary>
-    internal interface IDocumentProvider
+    public interface IDocumentProvider
     {
         IEnumerable<string> GetDocumentNames();
 
