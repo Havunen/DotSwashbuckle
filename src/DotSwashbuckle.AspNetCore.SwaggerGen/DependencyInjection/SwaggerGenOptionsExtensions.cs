@@ -487,6 +487,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 CheckCharacters = false,
                 IgnoreWhitespace = true
             });
+            var membersWithInheritDoc = new List<(string, XmlCommentDescriptor)>();
             var xmlMembers = new Dictionary<string, XmlCommentDescriptor>(StringComparer.Ordinal);
 
             xmlReader.MoveToContent();
@@ -549,6 +550,11 @@ namespace Microsoft.Extensions.DependencyInjection
                                         }
                                     );
                                     break;
+                                case "inheritdoc":
+                                    xmlComment.InheritcDoc = xmlReader.GetAttribute("cref");
+                                    membersWithInheritDoc.Add((memberName, xmlComment));
+                                    xmlReader.Read();
+                                    break;
                                 default:
                                     xmlReader.Read();
                                     break;
@@ -568,7 +574,47 @@ namespace Microsoft.Extensions.DependencyInjection
                 }
             }
 
+            foreach (var (key, xmlComment) in membersWithInheritDoc)
+            {
+                FindFinalNodeWithInheritDoc(xmlComment, key, xmlMembers);
+            }
+
             return xmlMembers;
         }
+
+		private static XmlCommentDescriptor FindFinalNodeWithInheritDoc(
+            XmlCommentDescriptor initialNode,
+            string initialKey,
+            Dictionary<string, XmlCommentDescriptor> xmlMembers
+        )
+		{
+			if (initialNode == null || string.IsNullOrEmpty(initialNode.InheritcDoc))
+			{
+				return initialNode;
+			}
+
+			var currentNode = initialNode;
+            var currentKey = initialKey;
+            var i = 0;
+			while (!string.IsNullOrEmpty(currentNode.InheritcDoc))
+			{
+				if (!xmlMembers.TryGetValue(currentNode.InheritcDoc, out var inheritedNode))
+				{
+					break;
+				}
+
+                currentNode = inheritedNode;
+                xmlMembers[currentKey] = inheritedNode;
+                currentKey = inheritedNode.InheritcDoc;
+
+                // Prevent infinite loop
+                if (i++ > 100)
+                {
+                    return initialNode;
+                }
+			}
+
+			return currentNode;
+		}
     }
 }
