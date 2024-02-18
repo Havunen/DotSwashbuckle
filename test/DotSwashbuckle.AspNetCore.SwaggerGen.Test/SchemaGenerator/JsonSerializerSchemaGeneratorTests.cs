@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using Xunit;
 using DotSwashbuckle.AspNetCore.TestSupport;
 using Microsoft.OpenApi.Any;
+using DotSwashbuckle.AspNetCore.TestSupport.Fixtures;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -155,6 +156,30 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.NotNull(schema.Items);
             Assert.Equal(expectedItemsType, schema.Items.Type);
             Assert.Equal(expectedItemsFormat, schema.Items.Format);
+        }
+
+        [Fact]
+        public void GenerateSchema_GeneratesBaseType_IfGenericInHierarchy()
+        {
+            var subject = Subject(
+                configureGenerator: c => c.UseAllOfForInheritance = true
+            );
+
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = subject.GenerateSchema(typeof(SubTypeOfGeneric), schemaRepository);
+
+            var schema = schemaRepository.Schemas[referenceSchema.Reference.Id];
+            Assert.Equal("object", schema.Type);
+            Assert.Equal(1, schema.AllOf.Count);
+
+            var schema2 = schemaRepository.Schemas[schema.AllOf[0].Reference.Id];
+            Assert.Equal("object", schema2.Type);
+            Assert.Equal(1, schema2.AllOf.Count);
+
+            var schema3 = schemaRepository.Schemas[schema2.AllOf[0].Reference.Id];
+            Assert.Equal("object", schema2.Type);
+            Assert.Equal(0, schema3.AllOf.Count);
         }
 
         [Theory]
