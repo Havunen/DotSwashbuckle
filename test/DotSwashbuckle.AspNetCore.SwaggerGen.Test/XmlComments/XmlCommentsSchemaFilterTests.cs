@@ -74,6 +74,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithNullExample), "string", "null")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithUri), "string", "\"https://test.com/a?b=1&c=2\"")]
         [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.MultiLineSummaryExample), "string", "\"When Number equals 2023/S 106-333284 Then Publication = 333284-2023\"")]
+        [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.QuoteProperty), "string", "\"Test-Test-Test\"")]
+        [InlineData(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.KvpExampleProperty), "string", "{\n  \"someKey\": \"someValue\"\n}")]
         [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.BoolProperty), "boolean", "true")]
         [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.IntProperty), "integer", "10")]
         [InlineData(typeof(XmlAnnotatedRecord), nameof(XmlAnnotatedRecord.LongProperty), "integer", "4294967295")]

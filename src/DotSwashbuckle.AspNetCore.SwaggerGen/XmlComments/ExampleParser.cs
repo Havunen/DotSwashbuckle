@@ -14,13 +14,26 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments
         )
         {
             var resolvedType = schema?.ResolveType(schemaRepository);
-            var shouldBeQuoted = (
+            var isStringSchema = (
                 string.Equals(resolvedType, "string", StringComparison.Ordinal) ||
                 string.Equals(resolvedType, "array", StringComparison.Ordinal)
             ) && !string.Equals(example, "null", StringComparison.Ordinal);
             var exampleValue = WhiteSpaceCleaner.Condense(example);
 
-            return OpenApiAnyFactory.CreateFromJson(shouldBeQuoted ? $"\"{exampleValue}\"" : exampleValue);
+
+            var serializedSchema = OpenApiAnyFactory.CreateFromJson(exampleValue);
+
+            if (serializedSchema != null)
+            {
+                return serializedSchema;
+            }
+
+            if (isStringSchema)
+            {
+                return new OpenApiString(exampleValue);
+            }
+
+            return null;
         }
     }
 }

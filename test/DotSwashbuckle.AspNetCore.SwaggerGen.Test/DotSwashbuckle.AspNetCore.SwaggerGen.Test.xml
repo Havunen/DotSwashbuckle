@@ -269,6 +269,20 @@
             Then Publication = 333284-2023
             </example>
         </member>
+        <member name="P:DotSwashbuckle.AspNetCore.SwaggerGen.Test.XmlAnnotatedType.QuoteProperty">
+            <sumary>
+            For test only
+            </sumary>
+            <value>For test only</value>
+            <example>&quot;Test-Test-Test&quot;</example>
+        </member>
+        <member name="P:DotSwashbuckle.AspNetCore.SwaggerGen.Test.XmlAnnotatedType.KvpExampleProperty">
+            <sumary>
+            For test only
+            </sumary>
+            <value>For test only</value>
+            <example>{"someKey": "someValue"}</example>
+        </member>
         <member name="P:DotSwashbuckle.AspNetCore.SwaggerGen.Test.XmlAnnotatedType.StringPropertyWithUri">
             <summary>
             Summary for StringPropertyWithUri

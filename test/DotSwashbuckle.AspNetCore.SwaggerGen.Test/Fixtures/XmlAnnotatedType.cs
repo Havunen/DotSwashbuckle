@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using DotSwashbuckle.AspNetCore.TestSupport;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
@@ -79,6 +80,22 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         /// Then Publication = 333284-2023
         /// </example>
         public string MultiLineSummaryExample { get; set; }
+
+        /// <sumary>
+        /// For test only
+        /// </sumary>
+        /// <value>For test only</value>
+        /// <example>&quot;Test-Test-Test&quot;</example>
+        [DataMember(Name = "testProperty", EmitDefaultValue = false)]
+        public string QuoteProperty { get; set; }
+
+        /// <sumary>
+        /// For test only
+        /// </sumary>
+        /// <value>For test only</value>
+        /// <example>{"someKey": "someValue"}</example>
+        [DataMember(Name = "testProperty", EmitDefaultValue = false)]
+        public string KvpExampleProperty { get; set; }
 
         /// <summary>
         /// Summary for StringPropertyWithUri
