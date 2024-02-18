@@ -10,7 +10,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/Havunen/DotSwashbuckle.git</RepositoryUrl>
-		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionPrefix>1.0.1</VersionPrefix>
 		<LangVersion>12</LangVersion>
 	</PropertyGroup>
 
