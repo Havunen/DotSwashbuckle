@@ -62,8 +62,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             foreach (var xmlResponse in xmlCommentDescriptor.Responses)
             {
-                var response = operation.Responses.ContainsKey(xmlResponse.Code)
-                    ? operation.Responses[xmlResponse.Code]
+                var response = operation.Responses.TryGetValue(xmlResponse.Code, out var operationResponse)
+                    ? operationResponse
                     : operation.Responses[xmlResponse.Code] = new OpenApiResponse();
 
                 response.Description = XmlCommentsTextHelper.Humanize(xmlResponse.Description);

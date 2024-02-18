@@ -58,9 +58,8 @@ namespace DotSwashbuckle.AspNetCore.Filters
                 // Fallback to setting it on the object in the "definitions"
 
                 string schemaDefinitionName = requestType.SchemaDefinitionName();
-                if (schemaRepository.Schemas.ContainsKey(schemaDefinitionName))
+                if (schemaRepository.Schemas.TryGetValue(schemaDefinitionName, out var schemaDefinition))
                 {
-                    var schemaDefinition = schemaRepository.Schemas[schemaDefinitionName];
                     if (schemaDefinition.Example == null)
                     {
                         schemaDefinition.Example = firstOpenApiExample;

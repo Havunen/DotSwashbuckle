@@ -26,14 +26,12 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     jsonConverter: JsonConverterFunc);
             }
 
-            if (PrimitiveTypesAndFormats.ContainsKey(type))
+            if (PrimitiveTypesAndFormats.TryGetValue(type, out var primitiveTypeAndFormat1))
             {
-                var primitiveTypeAndFormat = PrimitiveTypesAndFormats[type];
-
                 return DataContract.ForPrimitive(
                     underlyingType: type,
-                    dataType: primitiveTypeAndFormat.Item1,
-                    dataFormat: primitiveTypeAndFormat.Item2,
+                    dataType: primitiveTypeAndFormat1.Item1,
+                    dataFormat: primitiveTypeAndFormat1.Item2,
                     jsonConverter: JsonConverterFunc);
             }
 

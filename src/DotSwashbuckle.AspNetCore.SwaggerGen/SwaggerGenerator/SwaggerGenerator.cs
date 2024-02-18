@@ -324,8 +324,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 ? apiParameter.Name.ToCamelCase()
                 : apiParameter.Name;
 
-            var location = (apiParameter.Source != null && ParameterLocationMap.ContainsKey(apiParameter.Source))
-                ? ParameterLocationMap[apiParameter.Source]
+            var location = (apiParameter.Source != null && ParameterLocationMap.TryGetValue(apiParameter.Source, out var value))
+                ? value
                 : ParameterLocation.Query;
 
             var isRequired = apiParameter.IsRequiredParameter();
