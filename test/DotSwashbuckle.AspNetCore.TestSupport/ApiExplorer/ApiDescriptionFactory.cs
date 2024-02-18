@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -45,6 +46,7 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
                     if (parameterDescriptorWithParameterInfo != null)
                     {
                         parameter.ModelMetadata = ModelMetadataFactory.CreateForParameter(parameterDescriptorWithParameterInfo.ParameterInfo);
+                        parameter.Type = parameter.ModelMetadata.ModelType;
                     }
 
                     apiDescription.ParameterDescriptions.Add(parameter);
@@ -67,6 +69,7 @@ namespace DotSwashbuckle.AspNetCore.TestSupport
                     if (methodInfo.ReturnType != null && responseType.StatusCode/100 == 2)
                     {
                         responseType.ModelMetadata = ModelMetadataFactory.CreateForType(methodInfo.ReturnType);
+                        responseType.Type = responseType.ModelMetadata.ModelType;
                     }
 
                     apiDescription.SupportedResponseTypes.Add(responseType);

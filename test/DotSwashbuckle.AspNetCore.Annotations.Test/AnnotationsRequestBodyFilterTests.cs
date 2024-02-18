@@ -54,9 +54,12 @@ namespace DotSwashbuckle.AspNetCore.Annotations.Test
         public void Apply_EnrichesParameterMetadata_IfPropertyDecoratedWithSwaggerRequestBodyAttribute()
         {
             var requestBody = new OpenApiRequestBody();
+            var modelMetaData = ModelMetadataFactory.CreateForProperty(typeof(SwaggerAnnotatedType),
+                nameof(SwaggerAnnotatedType.StringWithSwaggerRequestBodyAttribute));
             var bodyParameterDescription = new ApiParameterDescription
             {
-                ModelMetadata = ModelMetadataFactory.CreateForProperty(typeof(SwaggerAnnotatedType), nameof(SwaggerAnnotatedType.StringWithSwaggerRequestBodyAttribute))
+                ModelMetadata = modelMetaData,
+                Type = modelMetaData.ModelType,
             };
             var context = new RequestBodyFilterContext(bodyParameterDescription, null, null, null);
 

@@ -73,5 +73,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             throw new NotImplementedException();
         }
+
+        [Produces("application/someMediaType")]
+        public void VoidActionWithProducesAttribute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

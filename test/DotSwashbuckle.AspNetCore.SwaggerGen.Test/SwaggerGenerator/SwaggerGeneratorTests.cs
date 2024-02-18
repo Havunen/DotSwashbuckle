@@ -14,6 +14,7 @@ using DotSwashbuckle.AspNetCore.TestSupport;
 using Xunit;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -185,7 +186,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [Fact]
         public void GetSwagger_GenerateProducesSchemas_ForProvidedOpenApiOperation()
         {
-            var methodInfo = typeof(FakeController).GetMethod(nameof(FakeController.ActionWithProducesAttribute));
+            var methodInfo = typeof(FakeController).GetMethod(nameof(FakeController.VoidActionWithProducesAttribute));
             var actionDescriptor = new ActionDescriptor
             {
                 EndpointMetadata = new List<object>()
@@ -210,6 +211,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
                 }
             };
+
             var subject = Subject(
                 apiDescriptions: new[]
                 {
@@ -219,14 +221,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         groupName: "v1",
                         httpMethod: "POST",
                         relativePath: "resource",
-                        supportedResponseTypes: new[]
-                        {
-                            new ApiResponseType()
-                            {
-                                StatusCode = 200,
-                                Type = typeof(TestDto)
-                            }
-                        }),
+                        null
+                    )
                 }
             );
 
@@ -235,9 +231,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal("OperationIdSetInMetadata", document.Paths["/resource"].Operations[OperationType.Post].OperationId);
             var content = Assert.Single(document.Paths["/resource"].Operations[OperationType.Post].Responses["200"].Content);
             Assert.Equal("application/someMediaType", content.Key);
-            Assert.Null(content.Value.Schema.Type);
-            Assert.NotNull(content.Value.Schema.Reference);
-            Assert.Equal("TestDto", content.Value.Schema.Reference.Id);
+            Assert.Null(content.Value.Schema);
         }
 
         [Fact]
@@ -280,7 +274,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             {
                                 Name = "param",
                                 Source = BindingSource.Body,
-                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(TestDto))
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(TestDto)),
+                                Type = typeof(TestDto)
                             }
                         }),
                 }
@@ -335,7 +330,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             new ApiParameterDescription
                             {
                                 Name = "ParameterInMetadata",
-                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(string))
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(string)),
+                                Type = typeof(string)
                             }
                         }),
                 }
@@ -799,7 +795,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             new ApiResponseType
                             {
                                 ApiResponseFormats = new [] { new ApiResponseFormat { MediaType = "application/json" } },
-                                IsDefaultResponse = true
+                                IsDefaultResponse = true,
                             }
 
                         }

@@ -276,7 +276,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 if (apiParameter is not null)
                 {
                     parameter.Schema = GenerateSchema(
-                        apiParameter.ModelMetadata.ModelType,
+                        apiParameter.Type,
                         schemaRepository,
                         apiParameter.PropertyInfo(),
                         apiParameter.ParameterInfo(),
@@ -293,7 +293,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     if (requestParameter is not null)
                     {
                         content.Schema = GenerateSchema(
-                            requestParameter.ModelMetadata.ModelType,
+                            requestParameter.Type,
                             schemaRepository,
                             requestParameter.PropertyInfo(),
                             requestParameter.ParameterInfo());
@@ -359,7 +359,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             var schema = (apiParameter.ModelMetadata != null)
                 ? GenerateSchema(
-                    apiParameter.ModelMetadata.ModelType,
+                    apiParameter.Type,
                     schemaRepository,
                     apiParameter.PropertyInfo(),
                     apiParameter.ParameterInfo(),
@@ -463,7 +463,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             var isRequired = bodyParameter.IsRequiredParameter();
 
             var schema = GenerateSchema(
-                bodyParameter.ModelMetadata.ModelType,
+                bodyParameter.Type,
                 schemaRepository,
                 bodyParameter.PropertyInfo(),
                 bodyParameter.ParameterInfo());
@@ -542,7 +542,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
                 var schema = (formParameter.ModelMetadata != null)
                     ? GenerateSchema(
-                        formParameter.ModelMetadata.ModelType,
+                        formParameter.Type,
                         schemaRepository,
                         formParameter.PropertyInfo(),
                         formParameter.ParameterInfo())
@@ -595,7 +595,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 Description = description,
                 Content = responseContentTypes.ToDictionary(
                     contentType => contentType,
-                    contentType => CreateResponseMediaType(apiResponseType.ModelMetadata, schemaRepository)
+                    contentType => CreateResponseMediaType(apiResponseType.Type, schemaRepository)
                 )
             };
         }
@@ -620,11 +620,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return Enumerable.Empty<string>();
         }
 
-        private OpenApiMediaType CreateResponseMediaType(ModelMetadata modelMetadata, SchemaRepository schemaRespository)
+        private OpenApiMediaType CreateResponseMediaType(Type type, SchemaRepository schemaRespository)
         {
             return new OpenApiMediaType
             {
-                Schema = GenerateSchema(modelMetadata.ModelType, schemaRespository)
+                Schema = GenerateSchema(type, schemaRespository)
             };
         }
 

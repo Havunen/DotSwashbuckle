@@ -75,9 +75,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }
             };
+            var modelMetaData = ModelMetadataFactory.CreateForProperty(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringProperty));
             var bodyParameterDescription = new ApiParameterDescription
             {
-                ModelMetadata = ModelMetadataFactory.CreateForProperty(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringProperty))
+                ModelMetadata = modelMetaData,
+                Type = modelMetaData.ModelType
             };
             var filterContext = new RequestBodyFilterContext(bodyParameterDescription, null, null, null);
 
@@ -99,9 +101,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ["application/json"] = new OpenApiMediaType { Schema = new OpenApiSchema { Type = "string" } }
                 }
             };
+            var modelMetaData = ModelMetadataFactory.CreateForProperty(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithUri));
             var bodyParameterDescription = new ApiParameterDescription
             {
-                ModelMetadata = ModelMetadataFactory.CreateForProperty(typeof(XmlAnnotatedType), nameof(XmlAnnotatedType.StringPropertyWithUri))
+                ModelMetadata = modelMetaData,
+                Type = modelMetaData.ModelType
             };
             var filterContext = new RequestBodyFilterContext(bodyParameterDescription, null, null, null);
 
