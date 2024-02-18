@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using DotSwashbuckle.AspNetCore.SwaggerGen;
 
 namespace OAuth2Integration.ResourceServer.Swagger
 {

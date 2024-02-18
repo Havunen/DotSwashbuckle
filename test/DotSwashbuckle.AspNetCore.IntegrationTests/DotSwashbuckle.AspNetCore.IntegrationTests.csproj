@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DotSwashbuckle.AspNetCore.IntegrationTests.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);8002</NoWarn>
+    <SignAssembly>true</SignAssembly>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebSites\Basic\Basic.csproj" />
+    <ProjectReference Include="..\WebSites\CliExample\CliExample.csproj" />
+    <ProjectReference Include="..\WebSites\ConfigFromFile\ConfigFromFile.csproj" />
+    <ProjectReference Include="..\WebSites\CustomUIConfig\CustomUIConfig.csproj" />
+    <ProjectReference Include="..\WebSites\CustomUIIndex\CustomUIIndex.csproj" />
+    <ProjectReference Include="..\WebSites\GenericControllers\GenericControllers.csproj" />
+    <ProjectReference Include="..\WebSites\MultipleVersions\MultipleVersions.csproj" />
+    <ProjectReference Include="..\WebSites\OAuth2Integration\OAuth2Integration.csproj" />
+    <ProjectReference Include="..\WebSites\ReDoc\ReDoc.csproj" />
+    <ProjectReference Include="..\WebSites\TestFirst\TestFirst.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.6" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.1" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.13" />
+  </ItemGroup>
+
+</Project>

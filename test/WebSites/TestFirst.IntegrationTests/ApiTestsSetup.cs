@@ -1,6 +1,6 @@
 using System.IO;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.ApiTesting;
+using DotSwashbuckle.AspNetCore.ApiTesting;
 using Xunit;
 
 namespace TestFirst.IntegrationTests

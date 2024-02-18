@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+using DotSwashbuckle.AspNetCore.Annotations;
 
 namespace NSwagClientExample.Controllers
 {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+using DotSwashbuckle.AspNetCore.Annotations;
 using Basic.Swagger;
 
 namespace Basic.Controllers

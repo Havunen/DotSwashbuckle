@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using DotSwashbuckle.AspNetCore.SwaggerGen;
 
 namespace Basic.Swagger
 {

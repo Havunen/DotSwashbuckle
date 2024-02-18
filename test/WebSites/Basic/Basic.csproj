@@ -3,13 +3,13 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
-    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.Swagger\Swashbuckle.AspNetCore.Swagger.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.SwaggerGen\Swashbuckle.AspNetCore.SwaggerGen.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.SwaggerUI\Swashbuckle.AspNetCore.SwaggerUI.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.Annotations\Swashbuckle.AspNetCore.Annotations.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Swagger\DotSwashbuckle.AspNetCore.Swagger.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerUI\DotSwashbuckle.AspNetCore.SwaggerUI.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.Annotations\DotSwashbuckle.AspNetCore.Annotations.csproj" />
   </ItemGroup>
 </Project>

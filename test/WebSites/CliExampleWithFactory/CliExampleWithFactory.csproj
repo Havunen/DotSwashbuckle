@@ -1,23 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <DotNetSwaggerPath>$([System.IO.Path]::Combine("..", "..", "..", "src", "Swashbuckle.AspNetCore.Cli", "bin", $(Configuration), $(TargetFramework), "dotnet-swagger.dll"))</DotNetSwaggerPath>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <DotNetSwaggerPath>$([System.IO.Path]::Combine("..", "..", "..", "src", "DotSwashbuckle.AspNetCore.Cli", "bin", $(Configuration), $(TargetFramework), "dotnet-swagger.dll"))</DotNetSwaggerPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.SwaggerGen\Swashbuckle.AspNetCore.SwaggerGen.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.SwaggerUI\Swashbuckle.AspNetCore.SwaggerUI.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.Swagger\Swashbuckle.AspNetCore.Swagger.csproj" />
-    <ProjectReference Include="..\..\..\src\Swashbuckle.AspNetCore.Cli\Swashbuckle.AspNetCore.Cli.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerGen\DotSwashbuckle.AspNetCore.SwaggerGen.csproj" />
+    <ProjectReference Include="..\..\..\src\DotSwashbuckle.AspNetCore.SwaggerUI\DotSwashbuckle.AspNetCore.SwaggerUI.csproj" />
   </ItemGroup>
 
   <!--
-    NOTE: In practice, you would install the CLI as a .NET Core Global Tool (i.e. dotnet tool install Swashbuckle.AspNetCore.Cli)
+    NOTE: In practice, you would install the CLI as a .NET Core Global Tool (i.e. dotnet tool install DotSwashbuckle.AspNetCore.Cli)
     and incorporate it into your build process using the commented out target below
   -->
 
@@ -28,7 +26,7 @@
   -->
 
   <!--
-    HOWEVER ... This example invokes the CLI DLL directly so that its source code can be tested during the Swashbuckle build process
+    HOWEVER ... This example invokes the CLI DLL directly so that its source code can be tested during the DotSwashbuckle build process
   -->
 
   <Target Name="SwaggerToFile" AfterTargets="AfterBuild">

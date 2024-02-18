@@ -33,7 +33,7 @@ namespace Basic
                     {
                         Title = "Test API V1",
                         Version = "v1",
-                        Description = "A sample API for testing Swashbuckle",
+                        Description = "A sample API for testing DotSwashbuckle",
                         TermsOfService = new Uri("http://tempuri.org/terms")
                     }
                 );
