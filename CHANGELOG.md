@@ -1,3 +1,7 @@
+# v3.0.3
+- Adds support for System.Text.Json.RequiredAttribute
+- Fixes an issue where referencing same schema multiple times causes runtime error. https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2679 Instead changed the runtime to throw error if same id path is used for different schemas. for https://github.com/Havunen/DotSwashbuckle/issues/3
+
 # v3.0.2
 - Fixes an issue where nullable is not defined for primitive response type schema https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2731
 - Fixes an issue where nested record types nullable does not get generated correctly https://github.com/Havunen/DotSwashbuckle/commit/ab7e8e681888034fa9157565eaf45ec18703849b
