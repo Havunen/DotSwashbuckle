@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectCapability Remove="TestContainer" />
   </ItemGroup>
 
   <ItemGroup>
