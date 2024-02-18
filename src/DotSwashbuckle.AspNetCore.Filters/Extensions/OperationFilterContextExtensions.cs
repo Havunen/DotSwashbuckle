@@ -21,13 +21,12 @@ namespace DotSwashbuckle.AspNetCore.Filters.Extensions
                 result.AddRange(actionAttributes);
             }
 
-#if NETCOREAPP3_1_OR_GREATER
             if (context.ApiDescription.ActionDescriptor.EndpointMetadata != null)
             {
                 var endpointAttributes = context.ApiDescription.ActionDescriptor.EndpointMetadata.OfType<T>();
                 result.AddRange(endpointAttributes);
             }
-#endif
+
             return result.Distinct();
         }
     }

@@ -31,7 +31,6 @@ namespace Dummy.Controllers
             throw new NotImplementedException();
         }
 
-#if DEBUG
         /// <summary>
         /// Gets dummys from local
         /// </summary>
@@ -42,7 +41,6 @@ namespace Dummy.Controllers
         {
             throw new NotImplementedException();
         }
-#endif
 
         /// <summary>
         /// Gets dummys directed the shake of given ids is where no are Collabonabusinessred or Collabonabusinessred nobody rejecqwe in Dummy

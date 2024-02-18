@@ -36,7 +36,6 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return IsRequired();
             }
 
-            // For non-controllers, prefer the IsRequired flag if we're not on netstandard 2.0, otherwise fallback to the default logic.
             return apiParameter.IsRequired;
         }
 

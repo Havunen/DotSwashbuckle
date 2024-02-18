@@ -104,12 +104,8 @@ namespace DotSwashbuckle.AspNetCore.Filters
         {
             if (contentType.MediaType.Value == "application/json")
             {
-#if NET5_0_OR_GREATER
                 return System.Text.Json.JsonSerializer.Serialize(value,
                     new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web));
-#else
-                return System.Text.Json.JsonSerializer.Serialize(value);
-#endif
             }
 
             throw new FormatterNotFoundException(contentType);
