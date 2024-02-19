@@ -15,6 +15,7 @@ using Xunit;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
+using Microsoft.Extensions.Options;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -35,13 +36,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithNoParameters), groupName: "v2", httpMethod: "POST", relativePath: "resource"),
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -72,13 +73,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         c => nameof(c.ActionWithNoParameters), groupName: "v1", httpMethod: "POST", relativePath: path),
 
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -916,14 +917,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithObsoleteAttribute), groupName: "v1", httpMethod: "GET", relativePath: "resource")
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     IgnoreObsoleteActions = true
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -947,14 +948,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithNoParameters), groupName: "v1", httpMethod: "POST", relativePath: "resource2"),
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     SortKeySelector = (apiDesc) => apiDesc.RelativePath
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -971,14 +972,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithNoParameters), groupName: "v1", httpMethod: "POST", relativePath: "resource"),
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     TagsSelector = (apiDesc) => new[] { apiDesc.RelativePath }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1022,14 +1023,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithNoParameters), groupName: "v1", httpMethod: "POST", relativePath: "resource")
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     ConflictingActionsResolver = (apiDescriptions) => apiDescriptions.First()
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1065,14 +1066,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             }
                         })
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     DescribeAllParametersInCamelCase = true
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1087,7 +1088,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var subject = Subject(
                 apiDescriptions: new ApiDescription[] { },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1097,7 +1098,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         new OpenApiServer { Url = "http://tempuri.org/api" }
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1111,7 +1112,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var subject = Subject(
                 apiDescriptions: new ApiDescription[] { },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1121,7 +1122,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         ["basic"] = new OpenApiSecurityScheme { Type = SecuritySchemeType.Http, Scheme = "basic" }
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1143,14 +1144,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     new AuthenticationScheme("Bearer", null, typeof(IAuthenticationHandler)),
                     new AuthenticationScheme("Cookies", null, typeof(IAuthenticationHandler))
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
                         ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
                     },
                     InferSecuritySchemes = inferSecuritySchemes
-                }
+                })
             );
 
             var document = await subject.GetSwaggerAsync("v1");
@@ -1172,7 +1173,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     new AuthenticationScheme("Bearer", null, typeof(IAuthenticationHandler)),
                     new AuthenticationScheme("Cookies", null, typeof(IAuthenticationHandler))
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1184,7 +1185,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             .ToDictionary(
                                 (authScheme) => authScheme.Name,
                                 (authScheme) => new OpenApiSecurityScheme())
-                }
+                })
             );
 
             var document = await subject.GetSwaggerAsync("v1");
@@ -1208,7 +1209,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             new ApiParameterDescription { Name = "param", Source = BindingSource.Query }
                         })
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1218,7 +1219,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         new TestParameterFilter()
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1245,7 +1246,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             new ApiParameterDescription { Name = "param", Source = BindingSource.Body }
                         })
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1255,7 +1256,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         new TestRequestBodyFilter()
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1275,7 +1276,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     ApiDescriptionFactory.Create<FakeController>(
                         c => nameof(c.ActionWithNoParameters), groupName: "v1", httpMethod: "POST", relativePath: "resource")
                 },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1285,7 +1286,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         new TestOperationFilter()
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1301,7 +1302,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         {
             var subject = Subject(
                 apiDescriptions: new ApiDescription[] { },
-                options: new SwaggerGeneratorOptions
+                options: Options.Create(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
                     {
@@ -1311,7 +1312,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                     {
                         new TestDocumentFilter()
                     }
-                }
+                })
             );
 
             var document = subject.GetSwagger("v1");
@@ -1324,11 +1325,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         private SwaggerGenerator Subject(
             IEnumerable<ApiDescription> apiDescriptions,
-            SwaggerGeneratorOptions options = null,
+            IOptions<SwaggerGeneratorOptions> options = null,
             IEnumerable<AuthenticationScheme> authenticationSchemes = null)
         {
             return new SwaggerGenerator(
-                options ?? DefaultOptions,
+                options ?? Options.Create<SwaggerGeneratorOptions>(DefaultOptions),
                 new FakeApiDescriptionGroupCollectionProvider(apiDescriptions),
                 new SchemaGenerator(new SchemaGeneratorOptions(), new JsonSerializerDataContractResolver(new JsonSerializerOptions())),
                 new FakeAuthenticationSchemeProvider(authenticationSchemes ?? Enumerable.Empty<AuthenticationScheme>())

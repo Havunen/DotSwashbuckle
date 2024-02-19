@@ -343,6 +343,30 @@
             NOTE: Whitespace in these tests is significant and uses a combination of {tabs} and {spaces}
             You should toggle "View White Space" to "on".
         </member>
+        <member name="T:PingController">
+            <summary>
+            Highly contrived example to show how Swashbuckle doesn't pull in XML Doc comments
+            when referenced via the `include` tag.
+            </summary>
+            <remarks>
+            Has 2 methods - one that has the docs inline,
+            and one that has the docs referenced in a separate file.
+            </remarks>
+        </member>
+        <member name="M:PingController.PingEmbedded">
+            <summary>
+            Does a ping.
+            </summary>
+            <returns>Returns a pong.</returns>
+            <remarks>XML doc comments are referenced in the same file.</remarks>
+        </member>
+        <member name="M:PingController.ReferencedPing3">
+            <ReferencedPing>
+    <summary>Does a ping.</summary>
+    <returns>Returns a pong.</returns>
+    <remarks>XML doc comments are included from a separate file.</remarks>
+  </ReferencedPing>
+        </member>
         <member name="P:Swashbuckle.AspNetCore.SwaggerGen.Test.SchemaGenerator.CustomJsonSerializerContext.IntEnum">
             <summary>
             Defines the source generated JSON serialization contract metadata for a given type.

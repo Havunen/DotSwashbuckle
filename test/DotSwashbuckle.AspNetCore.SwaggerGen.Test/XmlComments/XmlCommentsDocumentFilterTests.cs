@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Xunit;
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Options;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 {
@@ -17,7 +18,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(FakeControllerWithRecursiveInheritDoc))]
         public void Apply_SetsTagDescription_FromControllerSummaryTags(Type fakeController)
         {
-            var options = new SwaggerGeneratorOptions();
+            var options = Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions());
             var document = new OpenApiDocument();
             var filterContext = new DocumentFilterContext(
                 new[]
@@ -52,7 +53,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(FakeControllerWithInfiniteLoopInheritDoc))]
         public void Apply_InfiniteLoopOnInheritDoc_StopsAndResultNull(Type fakeController)
         {
-            var options = new SwaggerGeneratorOptions();
+            var options = Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions());
             var document = new OpenApiDocument();
             var filterContext = new DocumentFilterContext(
                 new[]
@@ -86,7 +87,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [Fact]
         public void Uses_Proper_Tag_Name()
         {
-            var options = new SwaggerGeneratorOptions();
+            var options = Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions());
             var document = new OpenApiDocument();
             var expectedTagName = "AliasControllerWithXmlComments";
             var filterContext = new DocumentFilterContext(
@@ -120,7 +121,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal(expectedTagName, document.Tags[0].Name);
             Assert.Equal("Summary for FakeControllerWithXmlComments", document.Tags[0].Description);
         }
-        private XmlCommentsDocumentFilter Subject(SwaggerGeneratorOptions options)
+        private XmlCommentsDocumentFilter Subject(IOptions<SwaggerGeneratorOptions> options)
         {
             return new XmlCommentsDocumentFilter(options, SwaggerGenOptionsExtensions.ParseXmlCommentDescriptors($"{typeof(FakeControllerWithXmlComments).Assembly.GetName().Name}.xml"));
         }

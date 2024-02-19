@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.OpenApi.Models;
 using DotSwashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Http.Metadata;
+using Microsoft.Extensions.Options;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
@@ -22,20 +23,20 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private readonly IAuthenticationSchemeProvider _authenticationSchemeProvider;
 
         public SwaggerGenerator(
-            SwaggerGeneratorOptions options,
+            IOptions<SwaggerGeneratorOptions> generatorOptions,
             IApiDescriptionGroupCollectionProvider apiDescriptionsProvider,
             ISchemaGenerator schemaGenerator)
         {
-            _options = options ?? new SwaggerGeneratorOptions();
+            _options = generatorOptions.Value;
             _apiDescriptionsProvider = apiDescriptionsProvider;
             _schemaGenerator = schemaGenerator;
         }
 
         public SwaggerGenerator(
-            SwaggerGeneratorOptions options,
+            IOptions<SwaggerGeneratorOptions> generatorOptions,
             IApiDescriptionGroupCollectionProvider apiDescriptionsProvider,
             ISchemaGenerator schemaGenerator,
-            IAuthenticationSchemeProvider authenticationSchemeProvider) : this(options, apiDescriptionsProvider, schemaGenerator)
+            IAuthenticationSchemeProvider authenticationSchemeProvider) : this(generatorOptions, apiDescriptionsProvider, schemaGenerator)
         {
             _authenticationSchemeProvider = authenticationSchemeProvider;
         }

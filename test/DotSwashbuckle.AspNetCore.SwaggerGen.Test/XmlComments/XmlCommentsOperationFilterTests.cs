@@ -27,6 +27,26 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         }
 
         [Fact]
+        public void Apply_SetsSummaryAndDescription_FromIncludePathExternalXmlFile()
+        {
+            var visualStudioTest = new PingController();
+            visualStudioTest.ReferencedPing3();
+            var operation = new OpenApiOperation();
+            var methodInfo = typeof(PingController)
+                .GetMethod(nameof(PingController.ReferencedPing3));
+            var apiDescription = ApiDescriptionFactory.Create(methodInfo: methodInfo, groupName: "v1", httpMethod: "POST", relativePath: "resource");
+            var filterContext = new OperationFilterContext(apiDescription, null, null, methodInfo);
+
+
+            Subject().Apply(operation, filterContext);
+
+            // Hovering over visualStudioTest.ReferencedPing3() shows the correct summary and remarks
+            Assert.NotNull(visualStudioTest);
+            Assert.Equal("Does a ping.", operation.Summary);
+            Assert.Equal("XML doc comments are included from a separate file.", operation.Description);
+        }
+
+        [Fact]
         public void Apply_SetsSummaryAndDescription_FromUnderlyingGenericTypeActionSummaryAndRemarksTags()
         {
             var operation = new OpenApiOperation();

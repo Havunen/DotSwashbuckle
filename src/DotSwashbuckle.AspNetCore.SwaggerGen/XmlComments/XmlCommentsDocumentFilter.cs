@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Models;
 using System;
 using DotSwashbuckle.AspNetCore.SwaggerGen.XmlComments;
+using Microsoft.Extensions.Options;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public class XmlCommentsDocumentFilter(
-        SwaggerGeneratorOptions options,
+        IOptions<SwaggerGeneratorOptions> generatorOptions,
         IReadOnlyDictionary<string, XmlCommentDescriptor> xmlMemberDescriptors
     ) : IDocumentFilter
     {
@@ -18,7 +19,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             // Collect (unique) controller names and types in a dictionary
             var controllerNamesAndTypes = context.ApiDescriptions
                 .Where(apiDesc => apiDesc.ActionDescriptor is ControllerActionDescriptor)
-                .GroupBy(apiDesc => options.TagsSelector(apiDesc).FirstOrDefault())
+                .GroupBy(apiDesc => generatorOptions.Value.TagsSelector(apiDesc).FirstOrDefault())
                 .Select(group => new KeyValuePair<string, Type>(group.Key, ((ControllerActionDescriptor)group.First().ActionDescriptor).ControllerTypeInfo.AsType()));
 
             foreach (var nameAndType in controllerNamesAndTypes)

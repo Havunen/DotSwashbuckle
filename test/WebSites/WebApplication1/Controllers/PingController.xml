@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PingController>
+  <ReferencedPing>
+    <summary>Does a ping.</summary>
+    <returns>Returns a pong.</returns>
+    <remarks>XML doc comments are included from a separate file.</remarks>
+  </ReferencedPing>
+</PingController>
