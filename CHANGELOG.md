@@ -1,3 +1,6 @@
+# v3.0.4
+- Fixes an issue where single file AOT .NET 8 project does not start if swagger is registered
+
 # v3.0.3
 - Adds support for System.Text.Json.RequiredAttribute
 - Fixes an issue where referencing same schema multiple times causes runtime error. https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2679 Instead changed the runtime to throw error if same id path is used for different schemas. for https://github.com/Havunen/DotSwashbuckle/issues/3
