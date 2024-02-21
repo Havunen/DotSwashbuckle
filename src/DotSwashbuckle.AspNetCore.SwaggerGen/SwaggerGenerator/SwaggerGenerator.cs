@@ -111,7 +111,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return new Dictionary<string, OpenApiSecurityScheme>(_options.SecuritySchemes);
             }
 
-            var authenticationSchemes = (_authenticationSchemeProvider is not null)
+            var authenticationSchemes = _authenticationSchemeProvider is not null
                 ? await _authenticationSchemeProvider.GetAllSchemesAsync()
                 : Enumerable.Empty<AuthenticationScheme>();
 
@@ -141,7 +141,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return new List<OpenApiServer>(_options.Servers);
             }
 
-            return (host == null && basePath == null)
+            return host == null && basePath == null
                 ? new List<OpenApiServer>()
                 : new List<OpenApiServer> { new OpenApiServer { Url = $"{host}{basePath}" } };
         }
@@ -193,7 +193,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                         group.First().RelativePath,
                         string.Join(",", group.Select(apiDesc => apiDesc.ActionDescriptor.DisplayName))));
 
-                var apiDescription = (group.Count() > 1) ? _options.ConflictingActionsResolver(group) : group.Single();
+                var apiDescription = group.Count() > 1 ? _options.ConflictingActionsResolver(group) : group.Single();
 
                 operations.Add(OperationTypeMap[httpMethod.ToUpper()], GenerateOperation(apiDescription, schemaRepository));
             };
@@ -352,7 +352,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 .Where(apiParam =>
                 {
                     return !apiParam.IsFromBody() && !apiParam.IsFromForm()
-                        && (!apiParam.CustomAttributes().OfType<BindNeverAttribute>().Any())
+                        && !apiParam.CustomAttributes().OfType<BindNeverAttribute>().Any()
                         && (apiParam.ModelMetadata == null || apiParam.ModelMetadata.IsBindingAllowed);
                 });
 
@@ -369,13 +369,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 ? apiParameter.Name.ToCamelCase()
                 : apiParameter.Name;
 
-            var location = (apiParameter.Source != null && ParameterLocationMap.TryGetValue(apiParameter.Source, out var value))
+            var location = apiParameter.Source != null && ParameterLocationMap.TryGetValue(apiParameter.Source, out var value)
                 ? value
                 : ParameterLocation.Query;
 
             var isRequired = apiParameter.IsRequiredParameter();
 
-            var schema = (apiParameter.ModelMetadata != null)
+            var schema = apiParameter.ModelMetadata != null
                 ? GenerateSchema(
                     apiParameter.Type,
                     schemaRepository,
@@ -558,7 +558,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     ? formParameter.Name.ToCamelCase()
                     : formParameter.Name;
 
-                var schema = (formParameter.ModelMetadata != null)
+                var schema = formParameter.ModelMetadata != null
                     ? GenerateSchema(
                         formParameter.Type,
                         schemaRepository,

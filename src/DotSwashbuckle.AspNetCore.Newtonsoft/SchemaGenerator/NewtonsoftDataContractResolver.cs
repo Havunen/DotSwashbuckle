@@ -49,7 +49,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                 var enumValues = jsonContract.UnderlyingType.GetEnumValues();
 
                 //Test to determine if the serializer will treat as string
-                var serializeAsString = (enumValues.Length > 0)
+                var serializeAsString = enumValues.Length > 0
                     && JsonConverterFunc(enumValues.GetValue(0)).StartsWith("\"");
 
                 var primitiveTypeAndFormat = serializeAsString
@@ -108,7 +108,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                 {
                     typeNameProperty = "$type";
 
-                    typeNameValue = (_serializerSettings.TypeNameAssemblyFormatHandling == TypeNameAssemblyFormatHandling.Full)
+                    typeNameValue = _serializerSettings.TypeNameAssemblyFormatHandling == TypeNameAssemblyFormatHandling.Full
                         ? jsonObjectContract.UnderlyingType.AssemblyQualifiedName
                         : $"{jsonObjectContract.UnderlyingType.FullName}, {jsonObjectContract.UnderlyingType.Assembly.GetName().Name}";
                 }

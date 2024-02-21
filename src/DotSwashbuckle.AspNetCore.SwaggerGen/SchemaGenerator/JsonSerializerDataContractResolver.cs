@@ -40,7 +40,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 var enumValues = type.GetEnumValues();
 
                 //Test to determine if the serializer will treat as string
-                var serializeAsString = (enumValues.Length > 0)
+                var serializeAsString = enumValues.Length > 0
                     && JsonConverterFunc(enumValues.GetValue(0)).StartsWith("\"");
 
                 var primitiveTypeAndFormat = serializeAsString

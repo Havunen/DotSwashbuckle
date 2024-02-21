@@ -102,7 +102,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting.Test
                                 Schema = new OpenApiSchema
                                 {
                                     Type = specifiedType,
-                                    Items = (specifiedItemsType != null) ? new OpenApiSchema { Type = specifiedItemsType } : null
+                                    Items = specifiedItemsType != null ? new OpenApiSchema { Type = specifiedItemsType } : null
                                 }
                             }
                         }

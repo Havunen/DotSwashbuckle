@@ -26,15 +26,15 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
             var errorMessagesList = new List<string>();
 
             // maxLength
-            if (schema.MaxLength.HasValue && (stringValue.Length > schema.MaxLength.Value))
+            if (schema.MaxLength.HasValue && stringValue.Length > schema.MaxLength.Value)
                 errorMessagesList.Add($"Path: {instance.Path}. String length is greater than maxLength");
 
             // minLength
-            if (schema.MinLength.HasValue && (stringValue.Length < schema.MinLength.Value))
+            if (schema.MinLength.HasValue && stringValue.Length < schema.MinLength.Value)
                 errorMessagesList.Add($"Path: {instance.Path}. String length is less than minLength");
 
             // pattern
-            if ((schema.Pattern != null) && !Regex.IsMatch(stringValue, schema.Pattern))
+            if (schema.Pattern != null && !Regex.IsMatch(stringValue, schema.Pattern))
                 errorMessagesList.Add($"Path: {instance.Path}. String does not match pattern");
 
             errorMessages = errorMessagesList;

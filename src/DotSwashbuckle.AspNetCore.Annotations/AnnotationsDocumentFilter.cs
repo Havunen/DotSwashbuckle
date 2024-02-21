@@ -42,7 +42,7 @@ namespace DotSwashbuckle.AspNetCore.Annotations
             {
                 Name = controllerName,
                 Description = swaggerTagAttribute.Description,
-                ExternalDocs = (swaggerTagAttribute.ExternalDocsUrl != null)
+                ExternalDocs = swaggerTagAttribute.ExternalDocsUrl != null
                     ? new OpenApiExternalDocs { Url = new Uri(swaggerTagAttribute.ExternalDocsUrl) }
                     : null
             });

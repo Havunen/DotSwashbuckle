@@ -14,13 +14,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             var candidateMethods = genericTypeDefinition.GetMethods()
                 .Where(m =>
                 {
-                    return (m.Name == constructedTypeMethod.Name)
-                        && (m.GetParameters().Length == constructedTypeMethod.GetParameters().Length);
+                    return m.Name == constructedTypeMethod.Name
+                        && m.GetParameters().Length == constructedTypeMethod.GetParameters().Length;
                 });
 
 
             // If inconclusive, just return null
-            return (candidateMethods.Count() == 1) ? candidateMethods.First() : null;
+            return candidateMethods.Count() == 1 ? candidateMethods.First() : null;
         }
     }
 }

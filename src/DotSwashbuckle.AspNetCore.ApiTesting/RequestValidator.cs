@@ -58,7 +58,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
                 .Concat(operationSpec.Parameters)
                 .Select(p =>
                 {
-                    return (p.Reference != null)
+                    return p.Reference != null
                         ? (OpenApiParameter)openApiDocument.ResolveReference(p.Reference)
                         : p;
                 });
@@ -103,7 +103,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
 
                 if (value == null || parameterSpec.Schema == null) continue;
 
-                var schema = (parameterSpec.Schema.Reference != null)
+                var schema = parameterSpec.Schema.Reference != null
                     ? (OpenApiSchema)openApiDocument.ResolveReference(parameterSpec.Schema.Reference)
                     : parameterSpec.Schema;
 
@@ -114,7 +114,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
 
         private void ValidateContent(OpenApiRequestBody requestBodySpec, OpenApiDocument openApiDocument, HttpContent content)
         {
-            requestBodySpec = (requestBodySpec.Reference != null)
+            requestBodySpec = requestBodySpec.Reference != null
                 ? (OpenApiRequestBody)openApiDocument.ResolveReference(requestBodySpec.Reference)
                 : requestBodySpec;
 

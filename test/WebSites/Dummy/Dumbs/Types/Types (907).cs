@@ -55,7 +55,7 @@ public partial class PhysicalAttributeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAttributeID()
     {
-        return (AttributeID != null);
+        return AttributeID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class PhysicalAttributeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePositionruby()
     {
-        return (Positionruby != null);
+        return Positionruby != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class PhysicalAttributeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDescriptionruby()
     {
-        return (Descriptionruby != null);
+        return Descriptionruby != null;
     }
 }
 }

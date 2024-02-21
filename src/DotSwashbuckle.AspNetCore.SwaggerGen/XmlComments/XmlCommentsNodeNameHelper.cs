@@ -40,7 +40,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         public static string GetMemberNameForFieldOrProperty(MemberInfo fieldOrPropertyInfo)
         {
-            var builder = new StringBuilder(((fieldOrPropertyInfo.MemberType & MemberTypes.Field) != 0) ? "F:" : "P:");
+            var builder = new StringBuilder((fieldOrPropertyInfo.MemberType & MemberTypes.Field) != 0 ? "F:" : "P:");
             builder.Append(QualifiedNameFor(fieldOrPropertyInfo.DeclaringType));
             builder.Append($".{fieldOrPropertyInfo.Name}");
 

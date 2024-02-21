@@ -43,7 +43,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
 
             else if (schema.Type == "array")
             {
-                var arrayValue = (schema.Items == null)
+                var arrayValue = schema.Items == null
                     ? stringValue.Split(',')
                     : stringValue.Split(',').Select(itemStringValue =>
                     {

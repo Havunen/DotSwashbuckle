@@ -407,7 +407,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 if (_generatorOptions.IgnoreObsoleteProperties && customAttributes.OfType<ObsoleteAttribute>().Any())
                     continue;
 
-                schema.Properties[dataProperty.Name] = (dataProperty.MemberInfo != null)
+                schema.Properties[dataProperty.Name] = dataProperty.MemberInfo != null
                     ? GenerateSchemaForMember(dataProperty.MemberType, schemaRepository, dataProperty.MemberInfo, dataProperty)
                     : GenerateSchemaForType(dataProperty.MemberType, schemaRepository);
 

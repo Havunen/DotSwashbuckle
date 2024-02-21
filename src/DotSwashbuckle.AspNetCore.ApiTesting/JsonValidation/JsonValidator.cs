@@ -33,7 +33,7 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
             JToken instance,
             out IEnumerable<string> errorMessages)
         {
-            schema = (schema.Reference != null)
+            schema = schema.Reference != null
                 ? (OpenApiSchema)openApiDocument.ResolveReference(schema.Reference)
                 : schema;
 

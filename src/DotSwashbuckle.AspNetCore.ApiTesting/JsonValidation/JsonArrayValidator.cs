@@ -43,15 +43,15 @@ namespace DotSwashbuckle.AspNetCore.ApiTesting
             }
 
             // maxItems
-            if (schema.MaxItems.HasValue && (arrayInstance.Count() > schema.MaxItems.Value))
+            if (schema.MaxItems.HasValue && arrayInstance.Count() > schema.MaxItems.Value)
                 errorMessagesList.Add($"Path: {instance.Path}. Array size is greater than maxItems");
 
             // minItems
-            if (schema.MinItems.HasValue && (arrayInstance.Count() < schema.MinItems.Value))
+            if (schema.MinItems.HasValue && arrayInstance.Count() < schema.MinItems.Value)
                 errorMessagesList.Add($"Path: {instance.Path}. Array size is less than minItems");
 
             // uniqueItems
-            if (schema.UniqueItems.HasValue && (arrayInstance.Count() != arrayInstance.Distinct().Count()))
+            if (schema.UniqueItems.HasValue && arrayInstance.Count() != arrayInstance.Distinct().Count())
                 errorMessagesList.Add($"Path: {instance.Path}. Array does not contain uniqueItems");
 
             errorMessages = errorMessagesList;
