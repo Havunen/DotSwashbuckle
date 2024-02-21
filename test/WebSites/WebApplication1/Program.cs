@@ -37,12 +37,22 @@ var sampleTodos = new Todo[] {
 	new(5, "Clean the car", DateOnly.FromDateTime(DateTime.Now.AddDays(2)))
 };
 
-var todosApi = app.MapGroup("/todos");
-todosApi.MapGet("/", () => sampleTodos);
-todosApi.MapGet("/{id}", (int id) =>
-	sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
-		? Results.Ok(todo)
-		: Results.NotFound());
+app.MapPost("/api/upload", (IFormFile file) =>
+{
+    return TypedResults.Ok(file.FileName);
+});
+
+app.MapPost("/api/upload_with_openapi", (IFormFile file) =>
+    {
+        return TypedResults.Ok(file.FileName);
+    })
+    .WithOpenApi(operation =>
+    {
+        operation.Summary = "summary";
+        operation.Description = "description";
+
+        return operation;
+    });
 
 app.Run();
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -76,6 +77,12 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         [Produces("application/someMediaType")]
         public void VoidActionWithProducesAttribute()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Consumes("multipart/form-data")]
+        public void ActionWithIFormFile(IFormFile file)
         {
             throw new NotImplementedException();
         }

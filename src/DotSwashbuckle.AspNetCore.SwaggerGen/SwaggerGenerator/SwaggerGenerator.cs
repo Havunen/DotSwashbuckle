@@ -290,15 +290,32 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             {
                 foreach (var content in requestContentTypes)
                 {
-                    var requestParameter = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.IsFromBody() || desc.IsFromForm());
-                    if (requestParameter is not null)
+                    var fromBodyParam = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.IsFromBody());
+                    if (fromBodyParam is not null)
                     {
                         content.Schema = GenerateSchema(
-                            requestParameter.Type,
+                            fromBodyParam.Type,
                             schemaRepository,
-                            requestParameter.PropertyInfo(),
-                            requestParameter.ParameterInfo());
+                            fromBodyParam.PropertyInfo(),
+                            fromBodyParam.ParameterInfo());
                     }
+                    else
+                    {
+                        var fromFormParam = apiDescription.ParameterDescriptions.Where(desc => desc.IsFromForm());
+
+                        if (fromFormParam.Any())
+                        {
+                            content.Schema = GenerateSchemaFromFormParameters(
+                                fromFormParam,
+                                schemaRepository
+                            );
+                            content.Encoding = content.Schema.Properties.ToDictionary(
+                                entry => entry.Key,
+                                entry => new OpenApiEncoding { Style = ParameterStyle.Form }
+                            );
+                        }
+                    }
+
                 }
             }
 

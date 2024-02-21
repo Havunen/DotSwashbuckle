@@ -830,11 +830,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                         groupName: "v1",
                         httpMethod: "POST",
                         relativePath: "resource",
-                        supportedResponseTypes: new []
+                        supportedResponseTypes: new[]
                         {
                             new ApiResponseType
                             {
-                                ApiResponseFormats = new [] { new ApiResponseFormat { MediaType = "application/json" } },
+                                ApiResponseFormats = new[] { new ApiResponseFormat { MediaType = "application/json" } },
                                 StatusCode = 200,
                             }
                         })
@@ -845,6 +845,106 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
             var operation = document.Paths["/resource"].Operations[OperationType.Post];
             Assert.Equal(new[] { "application/someMediaType" }, operation.Responses["200"].Content.Keys);
+        }
+
+        [Fact]
+        public void GetSwagger_IFormFile_HasSpecial_Handling()
+        {
+            var subject = Subject(
+                apiDescriptions: new[]
+                {
+                    ApiDescriptionFactory.Create<FakeController>(
+                        c => nameof(c.ActionWithIFormFile),
+                        groupName: "v1",
+                        httpMethod: "POST",
+                        relativePath: "resource",
+                        parameterDescriptions: new []
+                        {
+                            new ApiParameterDescription()
+                            {
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(IFormFile)),
+                                Name = "file",
+                                Source = BindingSource.FormFile,
+                                Type = typeof(IFormFile)
+                            }
+                        }
+                    )
+                }
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+
+            Assert.Single(operation.RequestBody.Content);
+            Assert.Equal("multipart/form-data", operation.RequestBody.Content.Keys.Single());
+            var mediaType = operation.RequestBody.Content["multipart/form-data"];
+            Assert.Equal("object", mediaType.Schema.Type);
+            Assert.Equal("string", mediaType.Schema.Properties["file"].Type);
+            Assert.Equal("binary", mediaType.Schema.Properties["file"].Format);
+            Assert.Single(mediaType.Encoding);
+            Assert.Equal("file", mediaType.Encoding.Keys.Single());
+            Assert.Equal(ParameterStyle.Form, mediaType.Encoding["file"].Style);
+        }
+
+        [Fact]
+        public void GetSwagger_MetaData_IFormFile_HasSpecial_Handling()
+        {
+            var apiDesc = ApiDescriptionFactory.Create<FakeController>(
+                c => nameof(c.ActionWithIFormFile),
+                groupName: "v1",
+                httpMethod: "POST",
+                relativePath: "resource",
+                parameterDescriptions: new[]
+                {
+                    new ApiParameterDescription()
+                    {
+                        ModelMetadata = ModelMetadataFactory.CreateForType(typeof(IFormFile)),
+                        Name = "file",
+                        Source = BindingSource.FormFile,
+                        Type = typeof(IFormFile)
+                    }
+                }
+            );
+            apiDesc.ActionDescriptor.EndpointMetadata = new List<object>()
+            {
+                new OpenApiOperation
+                {
+                    RequestBody = new OpenApiRequestBody
+                    {
+                        Content = new Dictionary<string, OpenApiMediaType>
+                        {
+                            ["multipart/form-data"] = new OpenApiMediaType
+                            {
+                                // These values are null
+                                Schema = null,
+                                Encoding = null
+                            }
+                        }
+                    }
+                }
+            };
+
+            var subject = Subject(
+                apiDescriptions: new[]
+                {
+                    apiDesc
+                }
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+
+            Assert.Single(operation.RequestBody.Content);
+            Assert.Equal("multipart/form-data", operation.RequestBody.Content.Keys.Single());
+            var mediaType = operation.RequestBody.Content["multipart/form-data"];
+            Assert.Equal("object", mediaType.Schema.Type);
+            Assert.Equal("string", mediaType.Schema.Properties["file"].Type);
+            Assert.Equal("binary", mediaType.Schema.Properties["file"].Format);
+            Assert.Single(mediaType.Encoding);
+            Assert.Equal("file", mediaType.Encoding.Keys.Single());
+            Assert.Equal(ParameterStyle.Form, mediaType.Encoding["file"].Style);
         }
 
         [Fact]
