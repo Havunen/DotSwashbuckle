@@ -59,7 +59,7 @@ public partial class TaxbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxAmount()
     {
-        return (TaxAmount != null);
+        return TaxAmount != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class TaxbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCalculationSequenceNumeric()
     {
-        return (CalculationSequenceNumeric != null);
+        return CalculationSequenceNumeric != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class TaxbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRoundingAmount()
     {
-        return (RoundingAmount != null);
+        return RoundingAmount != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class TaxbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxEvidenceIndicabusinessr()
     {
-        return (TaxEvidenceIndicabusinessr != null);
+        return TaxEvidenceIndicabusinessr != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class TaxbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxIncludedIndicabusinessr()
     {
-        return (TaxIncludedIndicabusinessr != null);
+        return TaxIncludedIndicabusinessr != null;
     }
 }
 }

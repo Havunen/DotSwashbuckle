@@ -43,7 +43,7 @@ public partial class WHOAffecqweAreaVisitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVisitDate()
     {
-        return (VisitDate != null);
+        return VisitDate != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class WHOAffecqweAreaVisitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWHOAffecqweAreaPortLocation()
     {
-        return (WHOAffecqweAreaPortLocation != null);
+        return WHOAffecqweAreaPortLocation != null;
     }
 }
 }

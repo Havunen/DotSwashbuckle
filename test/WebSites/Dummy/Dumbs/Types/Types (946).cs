@@ -52,7 +52,7 @@ public partial class PriceshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -60,7 +60,7 @@ public partial class PriceshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGotcharuby()
     {
-        return (Gotcharuby != null);
+        return Gotcharuby != null;
     }
     
     /// <summary>
@@ -68,7 +68,7 @@ public partial class PriceshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePreviousPriceshake()
     {
-        return (PreviousPriceshake != null);
+        return PreviousPriceshake != null;
     }
 }
 }

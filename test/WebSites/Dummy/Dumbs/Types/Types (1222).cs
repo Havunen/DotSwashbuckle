@@ -38,7 +38,7 @@ public partial class StrategicdummypctmvirusTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmHammeryruby()
     {
-        return (dummypctmHammeryruby != null);
+        return dummypctmHammeryruby != null;
     }
 }
 }

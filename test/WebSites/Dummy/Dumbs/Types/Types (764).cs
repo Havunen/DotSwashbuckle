@@ -29,7 +29,7 @@ public partial class NationalityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNationalityID()
     {
-        return (NationalityID != null);
+        return NationalityID != null;
     }
 }
 }

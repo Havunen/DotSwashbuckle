@@ -67,7 +67,7 @@ public partial class WebSiteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class WebSiteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class WebSiteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWebSiteTyperuby()
     {
-        return (WebSiteTyperuby != null);
+        return WebSiteTyperuby != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class WebSiteTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
 }
 }

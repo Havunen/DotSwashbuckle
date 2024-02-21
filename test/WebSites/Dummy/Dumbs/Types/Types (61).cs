@@ -43,7 +43,7 @@ public partial class AppealingPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealingPartyTyperuby()
     {
-        return (AppealingPartyTyperuby != null);
+        return AppealingPartyTyperuby != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class AppealingPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
 }
 }

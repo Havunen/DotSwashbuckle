@@ -43,7 +43,7 @@ public partial class SanitaryMeasureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSanitaryMeasureTyperuby()
     {
-        return (SanitaryMeasureTyperuby != null);
+        return SanitaryMeasureTyperuby != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class SanitaryMeasureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWaterflandDate()
     {
-        return (WaterflandDate != null);
+        return WaterflandDate != null;
     }
 }
 }

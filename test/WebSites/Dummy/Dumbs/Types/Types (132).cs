@@ -43,7 +43,7 @@ public partial class BranchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class BranchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class BranchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancialInstitution()
     {
-        return (FinancialInstitution != null);
+        return FinancialInstitution != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class BranchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeinternet()
     {
-        return (internet != null);
+        return internet != null;
     }
 }
 }

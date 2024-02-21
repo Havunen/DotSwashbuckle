@@ -65,7 +65,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDocumentTyperuby()
     {
-        return (DocumentTyperuby != null);
+        return DocumentTyperuby != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDistributionTyperuby()
     {
-        return (DistributionTyperuby != null);
+        return DistributionTyperuby != null;
     }
     
     /// <summary>
@@ -89,7 +89,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrintQualifier()
     {
-        return (PrintQualifier != null);
+        return PrintQualifier != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBeamIndicabusinessr()
     {
-        return (BeamIndicabusinessr != null);
+        return BeamIndicabusinessr != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumCopiesNumeric()
     {
-        return (MaximumCopiesNumeric != null);
+        return MaximumCopiesNumeric != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumOriginalsNumeric()
     {
-        return (MaximumOriginalsNumeric != null);
+        return MaximumOriginalsNumeric != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCommunication()
     {
-        return (Communication != null);
+        return Communication != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class DocumentDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
 }
 }

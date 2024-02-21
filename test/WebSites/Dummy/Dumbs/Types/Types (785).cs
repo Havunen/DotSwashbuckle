@@ -38,7 +38,7 @@ public partial class dummyPurposeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePurposeruby()
     {
-        return (Purposeruby != null);
+        return Purposeruby != null;
     }
 }
 }

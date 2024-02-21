@@ -70,7 +70,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWebsitSlimeRI()
     {
-        return (WebsitSlimeRI != null);
+        return WebsitSlimeRI != null;
     }
     
     /// <summary>
@@ -78,7 +78,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEndpointID()
     {
-        return (EndpointID != null);
+        return EndpointID != null;
     }
     
     /// <summary>
@@ -86,7 +86,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompanySizeruby()
     {
-        return (CompanySizeruby != null);
+        return CompanySizeruby != null;
     }
     
     /// <summary>
@@ -94,7 +94,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePartyIdentification()
     {
-        return (PartyIdentification != null);
+        return PartyIdentification != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVirtualinternet()
     {
-        return (Virtualinternet != null);
+        return Virtualinternet != null;
     }
     
     /// <summary>
@@ -110,7 +110,7 @@ public partial class CompanyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContact()
     {
-        return (Contact != null);
+        return Contact != null;
     }
 }
 }

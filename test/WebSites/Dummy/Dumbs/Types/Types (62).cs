@@ -29,7 +29,7 @@ public partial class AppealIrregularityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIrregularityTyperuby()
     {
-        return (IrregularityTyperuby != null);
+        return IrregularityTyperuby != null;
     }
 }
 }

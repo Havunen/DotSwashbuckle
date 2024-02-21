@@ -29,7 +29,7 @@ public partial class AppealDecisionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDecisionTyperuby()
     {
-        return (DecisionTyperuby != null);
+        return DecisionTyperuby != null;
     }
 }
 }

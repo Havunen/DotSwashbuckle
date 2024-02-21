@@ -38,7 +38,7 @@ public partial class ReasonTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReasonruby()
     {
-        return (Reasonruby != null);
+        return Reasonruby != null;
     }
 }
 }

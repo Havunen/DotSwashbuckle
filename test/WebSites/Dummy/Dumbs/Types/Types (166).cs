@@ -65,7 +65,7 @@ public partial class CapabilityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCapabilityTyperuby()
     {
-        return (CapabilityTyperuby != null);
+        return CapabilityTyperuby != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class CapabilityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueAmount()
     {
-        return (ValueAmount != null);
+        return ValueAmount != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class CapabilityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueMecha()
     {
-        return (ValueMecha != null);
+        return ValueMecha != null;
     }
     
     /// <summary>
@@ -89,7 +89,7 @@ public partial class CapabilityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class CapabilityTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWebSite()
     {
-        return (WebSite != null);
+        return WebSite != null;
     }
 }
 }

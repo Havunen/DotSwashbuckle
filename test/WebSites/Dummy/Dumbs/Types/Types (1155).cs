@@ -55,7 +55,7 @@ public partial class ServiceProviderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class ServiceProviderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeServiceTyperuby()
     {
-        return (ServiceTyperuby != null);
+        return ServiceTyperuby != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class ServiceProviderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class ServiceProviderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSellerContact()
     {
-        return (SellerContact != null);
+        return SellerContact != null;
     }
 }
 }

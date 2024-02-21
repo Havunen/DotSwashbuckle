@@ -53,7 +53,7 @@ public partial class CorporateTelevisionSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class CorporateTelevisionSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CorporateTelevisionSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCorporateTelevisionTyperuby()
     {
-        return (CorporateTelevisionTyperuby != null);
+        return CorporateTelevisionTyperuby != null;
     }
 }
 }

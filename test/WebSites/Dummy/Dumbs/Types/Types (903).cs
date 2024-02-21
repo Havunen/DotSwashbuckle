@@ -89,7 +89,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeJoinedShipDate()
     {
-        return (JoinedShipDate != null);
+        return JoinedShipDate != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOnsetDate()
     {
-        return (OnsetDate != null);
+        return OnsetDate != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReporqwebusinessMedicalOfficerIndicabusinessr()
     {
-        return (ReporqwebusinessMedicalOfficerIndicabusinessr != null);
+        return ReporqwebusinessMedicalOfficerIndicabusinessr != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStillIllIndicabusinessr()
     {
-        return (StillIllIndicabusinessr != null);
+        return StillIllIndicabusinessr != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDiedIndicabusinessr()
     {
-        return (DiedIndicabusinessr != null);
+        return DiedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStillOnBoardIndicabusinessr()
     {
-        return (StillOnBoardIndicabusinessr != null);
+        return StillOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEvacuaqweIndicabusinessr()
     {
-        return (EvacuaqweIndicabusinessr != null);
+        return EvacuaqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBuriedAtSeaIndicabusinessr()
     {
-        return (BuriedAtSeaIndicabusinessr != null);
+        return BuriedAtSeaIndicabusinessr != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class PersonnelHealthIncidentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerson()
     {
-        return (Person != null);
+        return Person != null;
     }
 }
 }

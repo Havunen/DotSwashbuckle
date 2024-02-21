@@ -41,7 +41,7 @@ public partial class AirTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAircraftID()
     {
-        return (AircraftID != null);
+        return AircraftID != null;
     }
 }
 }

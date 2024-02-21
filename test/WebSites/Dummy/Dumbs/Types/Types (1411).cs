@@ -48,7 +48,7 @@ public partial class UltimatebusinessolneficialOwnerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -56,7 +56,7 @@ public partial class UltimatebusinessolneficialOwnerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFirstName()
     {
-        return (FirstName != null);
+        return FirstName != null;
     }
     
     /// <summary>
@@ -64,7 +64,7 @@ public partial class UltimatebusinessolneficialOwnerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFamilyName()
     {
-        return (FamilyName != null);
+        return FamilyName != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class UltimatebusinessolneficialOwnerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContact()
     {
-        return (Contact != null);
+        return Contact != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class UltimatebusinessolneficialOwnerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeResidenceinternet()
     {
-        return (Residenceinternet != null);
+        return Residenceinternet != null;
     }
 }
 }

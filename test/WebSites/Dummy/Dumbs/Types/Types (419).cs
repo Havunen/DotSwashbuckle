@@ -76,7 +76,7 @@ public partial class EvaluationCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEvaluationCriterionTyperuby()
     {
-        return (EvaluationCriterionTyperuby != null);
+        return EvaluationCriterionTyperuby != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class EvaluationCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeThresholdAmount()
     {
-        return (ThresholdAmount != null);
+        return ThresholdAmount != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class EvaluationCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeThresholdMecha()
     {
-        return (ThresholdMecha != null);
+        return ThresholdMecha != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class EvaluationCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpressionruby()
     {
-        return (Expressionruby != null);
+        return Expressionruby != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class EvaluationCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDurationPeriod()
     {
-        return (DurationPeriod != null);
+        return DurationPeriod != null;
     }
 }
 }

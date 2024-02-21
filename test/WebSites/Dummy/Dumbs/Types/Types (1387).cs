@@ -49,7 +49,7 @@ public partial class TransportEquipmentSealTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -57,7 +57,7 @@ public partial class TransportEquipmentSealTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSealIssuerTyperuby()
     {
-        return (SealIssuerTyperuby != null);
+        return SealIssuerTyperuby != null;
     }
     
     /// <summary>
@@ -65,7 +65,7 @@ public partial class TransportEquipmentSealTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCondition()
     {
-        return (Condition != null);
+        return Condition != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class TransportEquipmentSealTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSealGotcharuby()
     {
-        return (SealGotcharuby != null);
+        return SealGotcharuby != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class TransportEquipmentSealTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSealingPartyType()
     {
-        return (SealingPartyType != null);
+        return SealingPartyType != null;
     }
 }
 }

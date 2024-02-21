@@ -41,7 +41,7 @@ public partial class PartyIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
 }
 }

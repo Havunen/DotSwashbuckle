@@ -135,7 +135,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDate()
     {
-        return (Date != null);
+        return Date != null;
     }
     
     /// <summary>
@@ -143,7 +143,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
     
     /// <summary>
@@ -151,7 +151,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFeeAmount()
     {
-        return (FeeAmount != null);
+        return FeeAmount != null;
     }
     
     /// <summary>
@@ -159,7 +159,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealStageruby()
     {
-        return (AppealStageruby != null);
+        return AppealStageruby != null;
     }
     
     /// <summary>
@@ -167,7 +167,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealStageID()
     {
-        return (AppealStageID != null);
+        return AppealStageID != null;
     }
     
     /// <summary>
@@ -175,7 +175,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealPreviousStageID()
     {
-        return (AppealPreviousStageID != null);
+        return AppealPreviousStageID != null;
     }
     
     /// <summary>
@@ -183,7 +183,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRemedyAmount()
     {
-        return (RemedyAmount != null);
+        return RemedyAmount != null;
     }
     
     /// <summary>
@@ -191,7 +191,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWithdrawnAppealIndicabusinessr()
     {
-        return (WithdrawnAppealIndicabusinessr != null);
+        return WithdrawnAppealIndicabusinessr != null;
     }
     
     /// <summary>
@@ -199,7 +199,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWithdrawnAppealDate()
     {
-        return (WithdrawnAppealDate != null);
+        return WithdrawnAppealDate != null;
     }
     
     /// <summary>
@@ -207,7 +207,7 @@ public partial class AppealGotchaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealProcessingParty()
     {
-        return (AppealProcessingParty != null);
+        return AppealProcessingParty != null;
     }
 }
 }

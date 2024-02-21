@@ -55,7 +55,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmerAssignedAccountID()
     {
-        return (CusbusinessmerAssignedAccountID != null);
+        return CusbusinessmerAssignedAccountID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDataSendingCapability()
     {
-        return (DataSendingCapability != null);
+        return DataSendingCapability != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatchContact()
     {
-        return (DespatchContact != null);
+        return DespatchContact != null;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountingContact()
     {
-        return (AccountingContact != null);
+        return AccountingContact != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class SupplierPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSellerContact()
     {
-        return (SellerContact != null);
+        return SellerContact != null;
     }
 }
 }

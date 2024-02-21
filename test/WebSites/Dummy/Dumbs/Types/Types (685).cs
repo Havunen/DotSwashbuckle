@@ -69,7 +69,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWasteTyperuby()
     {
-        return (WasteTyperuby != null);
+        return WasteTyperuby != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinessbusinessolDeliveredMeasure()
     {
-        return (businessbusinessolDeliveredMeasure != null);
+        return businessbusinessolDeliveredMeasure != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRetainedOnBoardMeasure()
     {
-        return (RetainedOnBoardMeasure != null);
+        return RetainedOnBoardMeasure != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaxDedicaqweboxCapavirtualTrafficMeasure()
     {
-        return (MaxDedicaqweboxCapavirtualTrafficMeasure != null);
+        return MaxDedicaqweboxCapavirtualTrafficMeasure != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class MaritimeWasteTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweGeneraqwSlimentilNextPortMeasure()
     {
-        return (AstimaqweGeneraqwSlimentilNextPortMeasure != null);
+        return AstimaqweGeneraqwSlimentilNextPortMeasure != null;
     }
 }
 }

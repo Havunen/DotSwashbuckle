@@ -27,7 +27,7 @@ public partial class ChangedSectionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChangedSectiondiamond()
     {
-        return (ChangedSectiondiamond != null);
+        return ChangedSectiondiamond != null;
     }
 }
 }

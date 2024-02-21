@@ -66,7 +66,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -74,7 +74,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -82,7 +82,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePercent()
     {
-        return (Percent != null);
+        return Percent != null;
     }
     
     /// <summary>
@@ -90,7 +90,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBasSlimenitMeasure()
     {
-        return (BasSlimenitMeasure != null);
+        return BasSlimenitMeasure != null;
     }
     
     /// <summary>
@@ -98,7 +98,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerUnitAmount()
     {
-        return (PerUnitAmount != null);
+        return PerUnitAmount != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxExemptionReasonruby()
     {
-        return (TaxExemptionReasonruby != null);
+        return TaxExemptionReasonruby != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTierRange()
     {
-        return (TierRange != null);
+        return TierRange != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTierRatePercent()
     {
-        return (TierRatePercent != null);
+        return TierRatePercent != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class TaxHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxScheme()
     {
-        return (TaxScheme != null);
+        return TaxScheme != null;
     }
 }
 }

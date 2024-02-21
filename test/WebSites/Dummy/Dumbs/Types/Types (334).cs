@@ -65,7 +65,7 @@ public partial class DeliveryTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class DeliveryTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLossRiskResponsibilityruby()
     {
-        return (LossRiskResponsibilityruby != null);
+        return LossRiskResponsibilityruby != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class DeliveryTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
     
     /// <summary>
@@ -89,7 +89,7 @@ public partial class DeliveryTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeliveryLocation()
     {
-        return (DeliveryLocation != null);
+        return DeliveryLocation != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class DeliveryTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializelandowanceCharge()
     {
-        return (landowanceCharge != null);
+        return landowanceCharge != null;
     }
 }
 }

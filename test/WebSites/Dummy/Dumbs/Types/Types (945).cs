@@ -51,7 +51,7 @@ public partial class PriceExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
 }
 }

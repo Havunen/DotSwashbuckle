@@ -89,7 +89,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMecha()
     {
-        return (MinimumMecha != null);
+        return MinimumMecha != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMecha()
     {
-        return (MaximumMecha != null);
+        return MaximumMecha != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualDeliveryDate()
     {
-        return (ActualDeliveryDate != null);
+        return ActualDeliveryDate != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualDeliveryTime()
     {
-        return (ActualDeliveryTime != null);
+        return ActualDeliveryTime != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLDFoDeliveryDate()
     {
-        return (LDFoDeliveryDate != null);
+        return LDFoDeliveryDate != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLDFoDeliveryTime()
     {
-        return (LDFoDeliveryTime != null);
+        return LDFoDeliveryTime != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReleaseID()
     {
-        return (ReleaseID != null);
+        return ReleaseID != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTrackingID()
     {
-        return (TrackingID != null);
+        return TrackingID != null;
     }
     
     /// <summary>
@@ -169,7 +169,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeliveryinternet()
     {
-        return (Deliveryinternet != null);
+        return Deliveryinternet != null;
     }
     
     /// <summary>
@@ -177,7 +177,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeliveryLocation()
     {
-        return (DeliveryLocation != null);
+        return DeliveryLocation != null;
     }
     
     /// <summary>
@@ -185,7 +185,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAlternativeDeliveryLocation()
     {
-        return (AlternativeDeliveryLocation != null);
+        return AlternativeDeliveryLocation != null;
     }
     
     /// <summary>
@@ -193,7 +193,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDeliveryPeriod()
     {
-        return (RequesqweDeliveryPeriod != null);
+        return RequesqweDeliveryPeriod != null;
     }
     
     /// <summary>
@@ -201,7 +201,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePromisedDeliveryPeriod()
     {
-        return (PromisedDeliveryPeriod != null);
+        return PromisedDeliveryPeriod != null;
     }
     
     /// <summary>
@@ -209,7 +209,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweDeliveryPeriod()
     {
-        return (AstimaqweDeliveryPeriod != null);
+        return AstimaqweDeliveryPeriod != null;
     }
     
     /// <summary>
@@ -217,7 +217,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCarrierParty()
     {
-        return (CarrierParty != null);
+        return CarrierParty != null;
     }
     
     /// <summary>
@@ -225,7 +225,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeliveryParty()
     {
-        return (DeliveryParty != null);
+        return DeliveryParty != null;
     }
     
     /// <summary>
@@ -233,7 +233,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatch()
     {
-        return (Despatch != null);
+        return Despatch != null;
     }
     
     /// <summary>
@@ -241,7 +241,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumDeliveryUnit()
     {
-        return (MinimumDeliveryUnit != null);
+        return MinimumDeliveryUnit != null;
     }
     
     /// <summary>
@@ -249,7 +249,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumDeliveryUnit()
     {
-        return (MaximumDeliveryUnit != null);
+        return MaximumDeliveryUnit != null;
     }
     
     /// <summary>
@@ -257,7 +257,7 @@ public partial class DeliveryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipment()
     {
-        return (Shipment != null);
+        return Shipment != null;
     }
 }
 }

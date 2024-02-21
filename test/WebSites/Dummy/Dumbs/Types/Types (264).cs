@@ -49,7 +49,7 @@ public partial class soapingRepresentationTypeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRepresentationTyperuby()
     {
-        return (RepresentationTyperuby != null);
+        return RepresentationTyperuby != null;
     }
 }
 }

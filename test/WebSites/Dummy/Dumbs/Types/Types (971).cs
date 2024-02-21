@@ -38,7 +38,7 @@ public partial class dummypctmDetailsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAssetHammeryruby()
     {
-        return (AssetHammeryruby != null);
+        return AssetHammeryruby != null;
     }
 }
 }

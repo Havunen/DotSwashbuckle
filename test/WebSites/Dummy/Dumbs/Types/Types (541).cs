@@ -59,7 +59,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportEmergencyCardruby()
     {
-        return (TransportEmergencyCardruby != null);
+        return TransportEmergencyCardruby != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackingconclusionruby()
     {
-        return (Packingconclusionruby != null);
+        return Packingconclusionruby != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRegulationruby()
     {
-        return (HazardousRegulationruby != null);
+        return HazardousRegulationruby != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInhalationbusinessxivirtualTrafficZoneruby()
     {
-        return (InhalationbusinessxivirtualTrafficZoneruby != null);
+        return InhalationbusinessxivirtualTrafficZoneruby != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportDenierruby()
     {
-        return (TransportDenierruby != null);
+        return TransportDenierruby != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumTemperature()
     {
-        return (MaximumTemperature != null);
+        return MaximumTemperature != null;
     }
     
     /// <summary>
@@ -107,7 +107,7 @@ public partial class HazardousGoodsTransitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumTemperature()
     {
-        return (MinimumTemperature != null);
+        return MinimumTemperature != null;
     }
 }
 }

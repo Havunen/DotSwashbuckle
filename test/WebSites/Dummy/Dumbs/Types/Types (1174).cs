@@ -63,7 +63,7 @@ public partial class ShipbusinessShipDistilleryRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class ShipbusinessShipDistilleryRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePeriod()
     {
-        return (Period != null);
+        return Period != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class ShipbusinessShipDistilleryRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocation()
     {
-        return (Location != null);
+        return Location != null;
     }
 }
 }

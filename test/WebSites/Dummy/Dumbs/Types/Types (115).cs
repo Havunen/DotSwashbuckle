@@ -55,7 +55,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTankID()
     {
-        return (TankID != null);
+        return TankID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTankTyperuby()
     {
-        return (TankTyperuby != null);
+        return TankTyperuby != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExchangeMethodruby()
     {
-        return (ExchangeMethodruby != null);
+        return ExchangeMethodruby != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExchangedPercent()
     {
-        return (ExchangedPercent != null);
+        return ExchangedPercent != null;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVolumeMeasure()
     {
-        return (VolumeMeasure != null);
+        return VolumeMeasure != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSeaHeightMeasure()
     {
-        return (SeaHeightMeasure != null);
+        return SeaHeightMeasure != null;
     }
     
     /// <summary>
@@ -103,7 +103,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSalinityMeasure()
     {
-        return (SalinityMeasure != null);
+        return SalinityMeasure != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransactionDate()
     {
-        return (TransactionDate != null);
+        return TransactionDate != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocation()
     {
-        return (Location != null);
+        return Location != null;
     }
     
     /// <summary>
@@ -127,7 +127,7 @@ public partial class BlandastWaterTransactionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBlandastWaterTemperature()
     {
-        return (BlandastWaterTemperature != null);
+        return BlandastWaterTemperature != null;
     }
 }
 }

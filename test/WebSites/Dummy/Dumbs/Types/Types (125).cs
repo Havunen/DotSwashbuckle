@@ -54,7 +54,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInvoiceDocumentReference()
     {
-        return (InvoiceDocumentReference != null);
+        return InvoiceDocumentReference != null;
     }
     
     /// <summary>
@@ -62,7 +62,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSelfBilledInvoiceDocumentReference()
     {
-        return (SelfBilledInvoiceDocumentReference != null);
+        return SelfBilledInvoiceDocumentReference != null;
     }
     
     /// <summary>
@@ -70,7 +70,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCreditNoqweocumentReference()
     {
-        return (CreditNoqweocumentReference != null);
+        return CreditNoqweocumentReference != null;
     }
     
     /// <summary>
@@ -78,7 +78,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSelfBilledCreditNoqweocumentReference()
     {
-        return (SelfBilledCreditNoqweocumentReference != null);
+        return SelfBilledCreditNoqweocumentReference != null;
     }
     
     /// <summary>
@@ -86,7 +86,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDebitNoqweocumentReference()
     {
-        return (DebitNoqweocumentReference != null);
+        return DebitNoqweocumentReference != null;
     }
     
     /// <summary>
@@ -94,7 +94,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReminderDocumentReference()
     {
-        return (ReminderDocumentReference != null);
+        return ReminderDocumentReference != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class BillingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDFditionalDocumentReference()
     {
-        return (DFditionalDocumentReference != null);
+        return DFditionalDocumentReference != null;
     }
 }
 }

@@ -61,7 +61,7 @@ public partial class ProcessJustificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePreviousLouummlationReasonruby()
     {
-        return (PreviousLouummlationReasonruby != null);
+        return PreviousLouummlationReasonruby != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ProcessJustificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeProcessReasonruby()
     {
-        return (ProcessReasonruby != null);
+        return ProcessReasonruby != null;
     }
 }
 }

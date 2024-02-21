@@ -60,7 +60,7 @@ public partial class CombinedPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
 }
 }

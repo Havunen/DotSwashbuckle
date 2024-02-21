@@ -44,7 +44,7 @@ public partial class AggregaqweAmountsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaidAmount()
     {
-        return (PaidAmount != null);
+        return PaidAmount != null;
     }
     
     /// <summary>
@@ -52,7 +52,7 @@ public partial class AggregaqweAmountsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePenaltiesAmount()
     {
-        return (PenaltiesAmount != null);
+        return PenaltiesAmount != null;
     }
 }
 }

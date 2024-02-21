@@ -98,7 +98,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentMeansruby()
     {
-        return (PaymentMeansruby != null);
+        return PaymentMeansruby != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentDueDate()
     {
-        return (PaymentDueDate != null);
+        return PaymentDueDate != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentChannelruby()
     {
-        return (PaymentChannelruby != null);
+        return PaymentChannelruby != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInstructionID()
     {
-        return (InstructionID != null);
+        return InstructionID != null;
     }
     
     /// <summary>
@@ -138,7 +138,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargebusinessolarerruby()
     {
-        return (Chargebusinessolarerruby != null);
+        return Chargebusinessolarerruby != null;
     }
     
     /// <summary>
@@ -146,7 +146,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeServiceLevelruby()
     {
-        return (ServiceLevelruby != null);
+        return ServiceLevelruby != null;
     }
     
     /// <summary>
@@ -154,7 +154,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayerFinancialAccount()
     {
-        return (PayerFinancialAccount != null);
+        return PayerFinancialAccount != null;
     }
     
     /// <summary>
@@ -162,7 +162,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayeeFinancialAccount()
     {
-        return (PayeeFinancialAccount != null);
+        return PayeeFinancialAccount != null;
     }
     
     /// <summary>
@@ -170,7 +170,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCreditAccount()
     {
-        return (CreditAccount != null);
+        return CreditAccount != null;
     }
     
     /// <summary>
@@ -178,7 +178,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentMandate()
     {
-        return (PaymentMandate != null);
+        return PaymentMandate != null;
     }
     
     /// <summary>
@@ -186,7 +186,7 @@ public partial class PaymentMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTrDFeFinancing()
     {
-        return (TrDFeFinancing != null);
+        return TrDFeFinancing != null;
     }
 }
 }

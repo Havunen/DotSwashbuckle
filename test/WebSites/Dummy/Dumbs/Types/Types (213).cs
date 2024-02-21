@@ -43,7 +43,7 @@ public partial class CommunicationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChannelruby()
     {
-        return (Channelruby != null);
+        return Channelruby != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class CommunicationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChannel()
     {
-        return (Channel != null);
+        return Channel != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class CommunicationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValue()
     {
-        return (Value != null);
+        return Value != null;
     }
 }
 }

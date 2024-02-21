@@ -51,7 +51,7 @@ public partial class AppealTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePresentationPeriod()
     {
-        return (PresentationPeriod != null);
+        return PresentationPeriod != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class AppealTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealvirusParty()
     {
-        return (AppealvirusParty != null);
+        return AppealvirusParty != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class AppealTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealReceiverParty()
     {
-        return (AppealReceiverParty != null);
+        return AppealReceiverParty != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class AppealTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMediationParty()
     {
-        return (MediationParty != null);
+        return MediationParty != null;
     }
 }
 }

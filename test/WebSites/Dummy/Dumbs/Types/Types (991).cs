@@ -35,7 +35,7 @@ public partial class DaemonTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummyDaemonID()
     {
-        return (dummyDaemonID != null);
+        return dummyDaemonID != null;
     }
     
     /// <summary>
@@ -43,7 +43,7 @@ public partial class DaemonTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGazetteID()
     {
-        return (GazetteID != null);
+        return GazetteID != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class DaemonTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDaemonDate()
     {
-        return (DaemonDate != null);
+        return DaemonDate != null;
     }
 }
 }

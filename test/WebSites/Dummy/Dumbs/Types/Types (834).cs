@@ -113,7 +113,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReturnableMaterialIndicabusinessr()
     {
-        return (ReturnableMaterialIndicabusinessr != null);
+        return ReturnableMaterialIndicabusinessr != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackageLevelruby()
     {
-        return (PackageLevelruby != null);
+        return PackageLevelruby != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackagingTyperuby()
     {
-        return (PackagingTyperuby != null);
+        return PackagingTyperuby != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTraceID()
     {
-        return (TraceID != null);
+        return TraceID != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContainingTransportEquipment()
     {
-        return (ContainingTransportEquipment != null);
+        return ContainingTransportEquipment != null;
     }
     
     /// <summary>
@@ -169,7 +169,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDelivery()
     {
-        return (Delivery != null);
+        return Delivery != null;
     }
     
     /// <summary>
@@ -177,7 +177,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePickup()
     {
-        return (Pickup != null);
+        return Pickup != null;
     }
     
     /// <summary>
@@ -185,7 +185,7 @@ public partial class PackageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatch()
     {
-        return (Despatch != null);
+        return Despatch != null;
     }
 }
 }

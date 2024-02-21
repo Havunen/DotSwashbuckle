@@ -84,7 +84,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDespatchDate()
     {
-        return (RequesqweDespatchDate != null);
+        return RequesqweDespatchDate != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDespatchTime()
     {
-        return (RequesqweDespatchTime != null);
+        return RequesqweDespatchTime != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweDespatchDate()
     {
-        return (AstimaqweDespatchDate != null);
+        return AstimaqweDespatchDate != null;
     }
     
     /// <summary>
@@ -116,7 +116,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweDespatchTime()
     {
-        return (AstimaqweDespatchTime != null);
+        return AstimaqweDespatchTime != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualDespatchDate()
     {
-        return (ActualDespatchDate != null);
+        return ActualDespatchDate != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualDespatchTime()
     {
-        return (ActualDespatchTime != null);
+        return ActualDespatchTime != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGuaranteedDespatchDate()
     {
-        return (GuaranteedDespatchDate != null);
+        return GuaranteedDespatchDate != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGuaranteedDespatchTime()
     {
-        return (GuaranteedDespatchTime != null);
+        return GuaranteedDespatchTime != null;
     }
     
     /// <summary>
@@ -156,7 +156,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReleaseID()
     {
-        return (ReleaseID != null);
+        return ReleaseID != null;
     }
     
     /// <summary>
@@ -164,7 +164,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatchinternet()
     {
-        return (Despatchinternet != null);
+        return Despatchinternet != null;
     }
     
     /// <summary>
@@ -172,7 +172,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatchLocation()
     {
-        return (DespatchLocation != null);
+        return DespatchLocation != null;
     }
     
     /// <summary>
@@ -180,7 +180,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatchParty()
     {
-        return (DespatchParty != null);
+        return DespatchParty != null;
     }
     
     /// <summary>
@@ -188,7 +188,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCarrierParty()
     {
-        return (CarrierParty != null);
+        return CarrierParty != null;
     }
     
     /// <summary>
@@ -196,7 +196,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContact()
     {
-        return (Contact != null);
+        return Contact != null;
     }
     
     /// <summary>
@@ -204,7 +204,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweDespatchPeriod()
     {
-        return (AstimaqweDespatchPeriod != null);
+        return AstimaqweDespatchPeriod != null;
     }
     
     /// <summary>
@@ -212,7 +212,7 @@ public partial class DespatchTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDespatchPeriod()
     {
-        return (RequesqweDespatchPeriod != null);
+        return RequesqweDespatchPeriod != null;
     }
 }
 }

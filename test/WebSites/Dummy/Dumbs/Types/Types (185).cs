@@ -39,7 +39,7 @@ public partial class ChangesTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChangeddummydiamond()
     {
-        return (Changeddummydiamond != null);
+        return Changeddummydiamond != null;
     }
     
     /// <summary>
@@ -47,7 +47,7 @@ public partial class ChangesTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChangeReason()
     {
-        return (ChangeReason != null);
+        return ChangeReason != null;
     }
 }
 }

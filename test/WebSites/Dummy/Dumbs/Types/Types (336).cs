@@ -45,7 +45,7 @@ public partial class DeliveryUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBatchMecha()
     {
-        return (BatchMecha != null);
+        return BatchMecha != null;
     }
     
     /// <summary>
@@ -53,7 +53,7 @@ public partial class DeliveryUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsumerUnitMecha()
     {
-        return (ConsumerUnitMecha != null);
+        return ConsumerUnitMecha != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class DeliveryUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
 }
 }

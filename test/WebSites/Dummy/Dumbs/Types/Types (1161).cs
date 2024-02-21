@@ -40,7 +40,7 @@ public partial class ShareholderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePartecipationPercent()
     {
-        return (PartecipationPercent != null);
+        return PartecipationPercent != null;
     }
     
     /// <summary>
@@ -48,7 +48,7 @@ public partial class ShareholderPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
 }
 }

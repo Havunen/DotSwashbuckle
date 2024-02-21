@@ -59,7 +59,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineExtensionAmount()
     {
-        return (LineExtensionAmount != null);
+        return LineExtensionAmount != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxExclusiveAmount()
     {
-        return (TaxExclusiveAmount != null);
+        return TaxExclusiveAmount != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxInclusiveAmount()
     {
-        return (TaxInclusiveAmount != null);
+        return TaxInclusiveAmount != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializelandowancebusinesstalAmount()
     {
-        return (landowancebusinesstalAmount != null);
+        return landowancebusinesstalAmount != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargebusinesstalAmount()
     {
-        return (ChargebusinesstalAmount != null);
+        return ChargebusinesstalAmount != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWithholdingTaxbusinesstalAmount()
     {
-        return (WithholdingTaxbusinesstalAmount != null);
+        return WithholdingTaxbusinesstalAmount != null;
     }
     
     /// <summary>
@@ -107,7 +107,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrepaidAmount()
     {
-        return (PrepaidAmount != null);
+        return PrepaidAmount != null;
     }
     
     /// <summary>
@@ -115,7 +115,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayableRoundingAmount()
     {
-        return (PayableRoundingAmount != null);
+        return PayableRoundingAmount != null;
     }
     
     /// <summary>
@@ -123,7 +123,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayableAmount()
     {
-        return (PayableAmount != null);
+        return PayableAmount != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class MonetarybusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayableAlternativeAmount()
     {
-        return (PayableAlternativeAmount != null);
+        return PayableAlternativeAmount != null;
     }
 }
 }

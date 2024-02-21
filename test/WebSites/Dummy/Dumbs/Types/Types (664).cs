@@ -61,7 +61,7 @@ public partial class FootblandDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumFootblandscreateedNumeric()
     {
-        return (MaximumFootblandscreateedNumeric != null);
+        return MaximumFootblandscreateedNumeric != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class FootblandDistributionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumFootblandsSubmitqweNumeric()
     {
-        return (MaximumFootblandsSubmitqweNumeric != null);
+        return MaximumFootblandsSubmitqweNumeric != null;
     }
 }
 }

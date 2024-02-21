@@ -126,7 +126,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -134,7 +134,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInfectiousDiseaseCaseOnBoardIndicabusinessr()
     {
-        return (InfectiousDiseaseCaseOnBoardIndicabusinessr != null);
+        return InfectiousDiseaseCaseOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -142,7 +142,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMoreIllThanExpecqweIndicabusinessr()
     {
-        return (MoreIllThanExpecqweIndicabusinessr != null);
+        return MoreIllThanExpecqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -150,7 +150,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMedicalPractitionerConsulqweIndicabusinessr()
     {
-        return (MedicalPractitionerConsulqweIndicabusinessr != null);
+        return MedicalPractitionerConsulqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -158,7 +158,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSbusinesswawaysinheritedOnBoardIndicabusinessr()
     {
-        return (SbusinesswawaysinheritedOnBoardIndicabusinessr != null);
+        return SbusinesswawaysinheritedOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -166,7 +166,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSickAnimalOnBoardIndicabusinessr()
     {
-        return (SickAnimalOnBoardIndicabusinessr != null);
+        return SickAnimalOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -174,7 +174,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFumigaqweCargoTransportIndicabusinessr()
     {
-        return (FumigaqweCargoTransportIndicabusinessr != null);
+        return FumigaqweCargoTransportIndicabusinessr != null;
     }
     
     /// <summary>
@@ -182,7 +182,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSanitaryMeasuresAppliedIndicabusinessr()
     {
-        return (SanitaryMeasuresAppliedIndicabusinessr != null);
+        return SanitaryMeasuresAppliedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -190,7 +190,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidSanitationCertificateOnBoardIndicabusinessr()
     {
-        return (ValidSanitationCertificateOnBoardIndicabusinessr != null);
+        return ValidSanitationCertificateOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -198,7 +198,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReinspectionRequiredIndicabusinessr()
     {
-        return (ReinspectionRequiredIndicabusinessr != null);
+        return ReinspectionRequiredIndicabusinessr != null;
     }
     
     /// <summary>
@@ -206,7 +206,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalDeDFPersonMecha()
     {
-        return (businesstalDeDFPersonMecha != null);
+        return businesstalDeDFPersonMecha != null;
     }
     
     /// <summary>
@@ -214,7 +214,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalIllPersonMecha()
     {
-        return (businesstalIllPersonMecha != null);
+        return businesstalIllPersonMecha != null;
     }
     
     /// <summary>
@@ -222,7 +222,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLastDrinkingWaterAnalysisDate()
     {
-        return (LastDrinkingWaterAnalysisDate != null);
+        return LastDrinkingWaterAnalysisDate != null;
     }
     
     /// <summary>
@@ -230,7 +230,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePlaceOfReportLocation()
     {
-        return (PlaceOfReportLocation != null);
+        return PlaceOfReportLocation != null;
     }
     
     /// <summary>
@@ -238,7 +238,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMedicalCertificate()
     {
-        return (MedicalCertificate != null);
+        return MedicalCertificate != null;
     }
     
     /// <summary>
@@ -246,7 +246,7 @@ public partial class MaritimeHealthDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipSanitationControlCertificate()
     {
-        return (ShipSanitationControlCertificate != null);
+        return ShipSanitationControlCertificate != null;
     }
 }
 }

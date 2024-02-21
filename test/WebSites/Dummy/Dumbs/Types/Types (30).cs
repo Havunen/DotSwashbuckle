@@ -116,7 +116,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeinternetTyperuby()
     {
-        return (internetTyperuby != null);
+        return internetTyperuby != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeinternetFormatruby()
     {
-        return (internetFormatruby != null);
+        return internetFormatruby != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePostbox()
     {
-        return (Postbox != null);
+        return Postbox != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFloor()
     {
-        return (Floor != null);
+        return Floor != null;
     }
     
     /// <summary>
@@ -156,7 +156,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRoom()
     {
-        return (Room != null);
+        return Room != null;
     }
     
     /// <summary>
@@ -164,7 +164,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStreetName()
     {
-        return (StreetName != null);
+        return StreetName != null;
     }
     
     /// <summary>
@@ -172,7 +172,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDFditionalStreetName()
     {
-        return (DFditionalStreetName != null);
+        return DFditionalStreetName != null;
     }
     
     /// <summary>
@@ -180,7 +180,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBlockName()
     {
-        return (BlockName != null);
+        return BlockName != null;
     }
     
     /// <summary>
@@ -188,7 +188,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBuildingName()
     {
-        return (BuildingName != null);
+        return BuildingName != null;
     }
     
     /// <summary>
@@ -196,7 +196,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBuildingNumbusinessolr()
     {
-        return (BuildingNumbusinessolr != null);
+        return BuildingNumbusinessolr != null;
     }
     
     /// <summary>
@@ -204,7 +204,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInhouseobj()
     {
-        return (Inhouseobj != null);
+        return Inhouseobj != null;
     }
     
     /// <summary>
@@ -212,7 +212,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOak()
     {
-        return (Oak != null);
+        return Oak != null;
     }
     
     /// <summary>
@@ -220,7 +220,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMarkAttention()
     {
-        return (MarkAttention != null);
+        return MarkAttention != null;
     }
     
     /// <summary>
@@ -228,7 +228,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMarkCare()
     {
-        return (MarkCare != null);
+        return MarkCare != null;
     }
     
     /// <summary>
@@ -236,7 +236,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePFootblandIdentification()
     {
-        return (PFootblandIdentification != null);
+        return PFootblandIdentification != null;
     }
     
     /// <summary>
@@ -244,7 +244,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializevirtualTrafficSubdivisionName()
     {
-        return (virtualTrafficSubdivisionName != null);
+        return virtualTrafficSubdivisionName != null;
     }
     
     /// <summary>
@@ -252,7 +252,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializevirtualTrafficName()
     {
-        return (virtualTrafficName != null);
+        return virtualTrafficName != null;
     }
     
     /// <summary>
@@ -260,7 +260,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVirtualZone()
     {
-        return (VirtualZone != null);
+        return VirtualZone != null;
     }
     
     /// <summary>
@@ -268,7 +268,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCountrySubpirate()
     {
-        return (CountrySubpirate != null);
+        return CountrySubpirate != null;
     }
     
     /// <summary>
@@ -276,7 +276,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCountrySubpirateruby()
     {
-        return (CountrySubpirateruby != null);
+        return CountrySubpirateruby != null;
     }
     
     /// <summary>
@@ -284,7 +284,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRegion()
     {
-        return (Region != null);
+        return Region != null;
     }
     
     /// <summary>
@@ -292,7 +292,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDistrict()
     {
-        return (District != null);
+        return District != null;
     }
     
     /// <summary>
@@ -300,7 +300,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTimezoneOffset()
     {
-        return (TimezoneOffset != null);
+        return TimezoneOffset != null;
     }
     
     /// <summary>
@@ -308,7 +308,7 @@ public partial class internetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCountry()
     {
-        return (Country != null);
+        return Country != null;
     }
 }
 }

@@ -56,7 +56,7 @@ public partial class FinancialGuaranteeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGuaranteeTyperuby()
     {
-        return (GuaranteeTyperuby != null);
+        return GuaranteeTyperuby != null;
     }
     
     /// <summary>
@@ -64,7 +64,7 @@ public partial class FinancialGuaranteeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLiabilityAmount()
     {
-        return (LiabilityAmount != null);
+        return LiabilityAmount != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class FinancialGuaranteeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmountRate()
     {
-        return (AmountRate != null);
+        return AmountRate != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class FinancialGuaranteeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConstitutionPeriod()
     {
-        return (ConstitutionPeriod != null);
+        return ConstitutionPeriod != null;
     }
 }
 }

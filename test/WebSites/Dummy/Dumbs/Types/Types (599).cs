@@ -234,7 +234,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackMecha()
     {
-        return (PackMecha != null);
+        return PackMecha != null;
     }
     
     /// <summary>
@@ -242,7 +242,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackSizeNumeric()
     {
-        return (PackSizeNumeric != null);
+        return PackSizeNumeric != null;
     }
     
     /// <summary>
@@ -250,7 +250,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCatalogueIndicabusinessr()
     {
-        return (CatalogueIndicabusinessr != null);
+        return CatalogueIndicabusinessr != null;
     }
     
     /// <summary>
@@ -258,7 +258,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -266,7 +266,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
     
     /// <summary>
@@ -274,7 +274,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBuyersItemIdentification()
     {
-        return (BuyersItemIdentification != null);
+        return BuyersItemIdentification != null;
     }
     
     /// <summary>
@@ -282,7 +282,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSellersItemIdentification()
     {
-        return (SellersItemIdentification != null);
+        return SellersItemIdentification != null;
     }
     
     /// <summary>
@@ -290,7 +290,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStandardItemIdentification()
     {
-        return (StandardItemIdentification != null);
+        return StandardItemIdentification != null;
     }
     
     /// <summary>
@@ -298,7 +298,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCatalogueItemIdentification()
     {
-        return (CatalogueItemIdentification != null);
+        return CatalogueItemIdentification != null;
     }
     
     /// <summary>
@@ -306,7 +306,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCatalogueDocumentReference()
     {
-        return (CatalogueDocumentReference != null);
+        return CatalogueDocumentReference != null;
     }
     
     /// <summary>
@@ -314,7 +314,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginCountry()
     {
-        return (OriginCountry != null);
+        return OriginCountry != null;
     }
     
     /// <summary>
@@ -322,7 +322,7 @@ public partial class ItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializevirusContentProviderParty()
     {
-        return (virusContentProviderParty != null);
+        return virusContentProviderParty != null;
     }
 }
 }

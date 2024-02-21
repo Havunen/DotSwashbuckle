@@ -40,7 +40,7 @@ public partial class FundingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancingdiamond()
     {
-        return (Financingdiamond != null);
+        return Financingdiamond != null;
     }
     
     /// <summary>
@@ -48,7 +48,7 @@ public partial class FundingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFundingProgramruby()
     {
-        return (FundingProgramruby != null);
+        return FundingProgramruby != null;
     }
 }
 }

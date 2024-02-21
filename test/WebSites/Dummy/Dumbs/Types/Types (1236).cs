@@ -40,7 +40,7 @@ public partial class SubsidiaryClassificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeItemClassificationruby()
     {
-        return (ItemClassificationruby != null);
+        return ItemClassificationruby != null;
     }
 }
 }

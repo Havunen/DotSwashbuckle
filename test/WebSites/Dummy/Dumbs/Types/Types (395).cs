@@ -41,7 +41,7 @@ public partial class EncryptionCertificatePathChainTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValue()
     {
-        return (Value != null);
+        return Value != null;
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public partial class EncryptionCertificatePathChainTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
 }
 }

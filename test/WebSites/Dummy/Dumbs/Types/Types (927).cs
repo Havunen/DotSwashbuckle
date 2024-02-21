@@ -77,7 +77,7 @@ public partial class PowerOfAtbusinessrneyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class PowerOfAtbusinessrneyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueDate()
     {
-        return (IssueDate != null);
+        return IssueDate != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class PowerOfAtbusinessrneyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueTime()
     {
-        return (IssueTime != null);
+        return IssueTime != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class PowerOfAtbusinessrneyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNotaryParty()
     {
-        return (NotaryParty != null);
+        return NotaryParty != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class PowerOfAtbusinessrneyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAgentParty()
     {
-        return (AgentParty != null);
+        return AgentParty != null;
     }
 }
 }

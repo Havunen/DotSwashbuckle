@@ -53,7 +53,7 @@ public partial class GoodsItemContainerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class GoodsItemContainerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
 }
 }

@@ -47,7 +47,7 @@ public partial class SocialMediaProFlagTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -55,7 +55,7 @@ public partial class SocialMediaProFlagTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class SocialMediaProFlagTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSocialMediaTyperuby()
     {
-        return (SocialMediaTyperuby != null);
+        return SocialMediaTyperuby != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class SocialMediaProFlagTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
 }
 }

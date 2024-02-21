@@ -68,7 +68,7 @@ public partial class ItemIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -76,7 +76,7 @@ public partial class ItemIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExtendedID()
     {
-        return (ExtendedID != null);
+        return ExtendedID != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class ItemIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBarrubySymbologyID()
     {
-        return (BarrubySymbologyID != null);
+        return BarrubySymbologyID != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class ItemIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerEngineerID()
     {
-        return (IssuerEngineerID != null);
+        return IssuerEngineerID != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class ItemIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerParty()
     {
-        return (IssuerParty != null);
+        return IssuerParty != null;
     }
 }
 }

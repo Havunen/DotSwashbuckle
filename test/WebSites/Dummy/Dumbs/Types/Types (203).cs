@@ -92,7 +92,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLastRevisionDate()
     {
-        return (LastRevisionDate != null);
+        return LastRevisionDate != null;
     }
     
     /// <summary>
@@ -116,7 +116,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLastRevisionTime()
     {
-        return (LastRevisionTime != null);
+        return LastRevisionTime != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAgencyID()
     {
-        return (AgencyID != null);
+        return AgencyID != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAgencyName()
     {
-        return (AgencyName != null);
+        return AgencyName != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVersionID()
     {
-        return (VersionID != null);
+        return VersionID != null;
     }
     
     /// <summary>
@@ -156,7 +156,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
     
     /// <summary>
@@ -164,7 +164,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSchemSlimeRI()
     {
-        return (SchemSlimeRI != null);
+        return SchemSlimeRI != null;
     }
     
     /// <summary>
@@ -172,7 +172,7 @@ public partial class ClassificationSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCatID()
     {
-        return (CatID != null);
+        return CatID != null;
     }
 }
 }

@@ -46,7 +46,7 @@ public partial class WebSiteAccessTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
     
     /// <summary>
@@ -54,7 +54,7 @@ public partial class WebSiteAccessTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeworm()
     {
-        return (worm != null);
+        return worm != null;
     }
     
     /// <summary>
@@ -62,7 +62,7 @@ public partial class WebSiteAccessTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLogin()
     {
-        return (Login != null);
+        return Login != null;
     }
 }
 }

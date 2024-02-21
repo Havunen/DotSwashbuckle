@@ -41,7 +41,7 @@ public partial class dummypctmsapphireFootblandReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
 }
 }

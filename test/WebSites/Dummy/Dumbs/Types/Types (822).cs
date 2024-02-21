@@ -30,7 +30,7 @@ public partial class OriginTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFieldsPrivacy()
     {
-        return (FieldsPrivacy != null);
+        return FieldsPrivacy != null;
     }
     
     /// <summary>
@@ -38,7 +38,7 @@ public partial class OriginTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeArearuby()
     {
-        return (Arearuby != null);
+        return Arearuby != null;
     }
 }
 }

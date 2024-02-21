@@ -49,7 +49,7 @@ public partial class soapingDistilleryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDistilleryTyperuby()
     {
-        return (DistilleryTyperuby != null);
+        return DistilleryTyperuby != null;
     }
 }
 }

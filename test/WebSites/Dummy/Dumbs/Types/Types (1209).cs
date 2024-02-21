@@ -31,7 +31,7 @@ public partial class businessolarerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinessolarerruby()
     {
-        return (businessolarerruby != null);
+        return businessolarerruby != null;
     }
     
     /// <summary>
@@ -39,7 +39,7 @@ public partial class businessolarerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinessolarerNumeric()
     {
-        return (businessolarerNumeric != null);
+        return businessolarerNumeric != null;
     }
 }
 }

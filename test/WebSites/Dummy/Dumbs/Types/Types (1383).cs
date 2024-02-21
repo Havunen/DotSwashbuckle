@@ -170,7 +170,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportServiceruby()
     {
-        return (TransportServiceruby != null);
+        return TransportServiceruby != null;
     }
     
     /// <summary>
@@ -178,7 +178,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTariffClassruby()
     {
-        return (TariffClassruby != null);
+        return TariffClassruby != null;
     }
     
     /// <summary>
@@ -186,7 +186,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriority()
     {
-        return (Priority != null);
+        return Priority != null;
     }
     
     /// <summary>
@@ -194,7 +194,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreightRateClassruby()
     {
-        return (FreightRateClassruby != null);
+        return FreightRateClassruby != null;
     }
     
     /// <summary>
@@ -202,7 +202,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportationServiceDetailsURI()
     {
-        return (TransportationServiceDetailsURI != null);
+        return TransportationServiceDetailsURI != null;
     }
     
     /// <summary>
@@ -210,7 +210,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNominationDate()
     {
-        return (NominationDate != null);
+        return NominationDate != null;
     }
     
     /// <summary>
@@ -218,7 +218,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNominationTime()
     {
-        return (NominationTime != null);
+        return NominationTime != null;
     }
     
     /// <summary>
@@ -226,7 +226,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -234,7 +234,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSequenceNumeric()
     {
-        return (SequenceNumeric != null);
+        return SequenceNumeric != null;
     }
     
     /// <summary>
@@ -242,7 +242,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalCapavirtualTrafficDimension()
     {
-        return (businesstalCapavirtualTrafficDimension != null);
+        return businesstalCapavirtualTrafficDimension != null;
     }
     
     /// <summary>
@@ -250,7 +250,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeResponsibleTransportServiceProviderParty()
     {
-        return (ResponsibleTransportServiceProviderParty != null);
+        return ResponsibleTransportServiceProviderParty != null;
     }
     
     /// <summary>
@@ -258,7 +258,7 @@ public partial class TransportationServiceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweDurationPeriod()
     {
-        return (AstimaqweDurationPeriod != null);
+        return AstimaqweDurationPeriod != null;
     }
 }
 }

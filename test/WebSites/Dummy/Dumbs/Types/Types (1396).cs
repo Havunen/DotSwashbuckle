@@ -215,7 +215,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -223,7 +223,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportHandlingUnitTyperuby()
     {
-        return (TransportHandlingUnitTyperuby != null);
+        return TransportHandlingUnitTyperuby != null;
     }
     
     /// <summary>
@@ -231,7 +231,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHandlingruby()
     {
-        return (Handlingruby != null);
+        return Handlingruby != null;
     }
     
     /// <summary>
@@ -239,7 +239,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
     
     /// <summary>
@@ -247,7 +247,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalGoodsItemMecha()
     {
-        return (businesstalGoodsItemMecha != null);
+        return businesstalGoodsItemMecha != null;
     }
     
     /// <summary>
@@ -255,7 +255,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalPackageMecha()
     {
-        return (businesstalPackageMecha != null);
+        return businesstalPackageMecha != null;
     }
     
     /// <summary>
@@ -263,7 +263,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTraceID()
     {
-        return (TraceID != null);
+        return TraceID != null;
     }
     
     /// <summary>
@@ -271,7 +271,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumTemperature()
     {
-        return (MinimumTemperature != null);
+        return MinimumTemperature != null;
     }
     
     /// <summary>
@@ -279,7 +279,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumTemperature()
     {
-        return (MaximumTemperature != null);
+        return MaximumTemperature != null;
     }
     
     /// <summary>
@@ -287,7 +287,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFloorSpaceMeasurementDimension()
     {
-        return (FloorSpaceMeasurementDimension != null);
+        return FloorSpaceMeasurementDimension != null;
     }
     
     /// <summary>
@@ -295,7 +295,7 @@ public partial class TransportHandlingUnitTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePlandetSpaceMeasurementDimension()
     {
-        return (PlandetSpaceMeasurementDimension != null);
+        return PlandetSpaceMeasurementDimension != null;
     }
 }
 }

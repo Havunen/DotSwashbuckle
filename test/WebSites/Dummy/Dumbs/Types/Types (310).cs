@@ -61,7 +61,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeApplicableTerribusinessryinternet()
     {
-        return (ApplicableTerribusinessryinternet != null);
+        return ApplicableTerribusinessryinternet != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipment()
     {
-        return (Shipment != null);
+        return Shipment != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsExibusinessfficeLocation()
     {
-        return (CusbusinessmsExibusinessfficeLocation != null);
+        return CusbusinessmsExibusinessfficeLocation != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerParty()
     {
-        return (IssuerParty != null);
+        return IssuerParty != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsignorParty()
     {
-        return (ConsignorParty != null);
+        return ConsignorParty != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsigneeParty()
     {
-        return (ConsigneeParty != null);
+        return ConsigneeParty != null;
     }
     
     /// <summary>
@@ -125,7 +125,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreightForwarderParty()
     {
-        return (FreightForwarderParty != null);
+        return FreightForwarderParty != null;
     }
     
     /// <summary>
@@ -133,7 +133,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsParty()
     {
-        return (CusbusinessmsParty != null);
+        return CusbusinessmsParty != null;
     }
     
     /// <summary>
@@ -141,7 +141,7 @@ public partial class CusbusinessmsDeclarationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePreviousCusbusinessmsDeclaration()
     {
-        return (PreviousCusbusinessmsDeclaration != null);
+        return PreviousCusbusinessmsDeclaration != null;
     }
 }
 }

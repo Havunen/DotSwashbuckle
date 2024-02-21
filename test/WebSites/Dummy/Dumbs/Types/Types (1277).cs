@@ -59,7 +59,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxableAmount()
     {
-        return (TaxableAmount != null);
+        return TaxableAmount != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxAmount()
     {
-        return (TaxAmount != null);
+        return TaxAmount != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCalculationSequenceNumeric()
     {
-        return (CalculationSequenceNumeric != null);
+        return CalculationSequenceNumeric != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransactionCurrencyTaxAmount()
     {
-        return (TransactionCurrencyTaxAmount != null);
+        return TransactionCurrencyTaxAmount != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePercent()
     {
-        return (Percent != null);
+        return Percent != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBasSlimenitMeasure()
     {
-        return (BasSlimenitMeasure != null);
+        return BasSlimenitMeasure != null;
     }
     
     /// <summary>
@@ -107,7 +107,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerUnitAmount()
     {
-        return (PerUnitAmount != null);
+        return PerUnitAmount != null;
     }
     
     /// <summary>
@@ -115,7 +115,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTierRange()
     {
-        return (TierRange != null);
+        return TierRange != null;
     }
     
     /// <summary>
@@ -123,7 +123,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTierRatePercent()
     {
-        return (TierRatePercent != null);
+        return TierRatePercent != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class TaxSubbusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxHammery()
     {
-        return (TaxHammery != null);
+        return TaxHammery != null;
     }
 }
 }

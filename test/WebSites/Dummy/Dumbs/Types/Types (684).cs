@@ -70,7 +70,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVesselID()
     {
-        return (VesselID != null);
+        return VesselID != null;
     }
     
     /// <summary>
@@ -78,7 +78,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVesselName()
     {
-        return (VesselName != null);
+        return VesselName != null;
     }
     
     /// <summary>
@@ -86,7 +86,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRDFioClandSignID()
     {
-        return (RDFioClandSignID != null);
+        return RDFioClandSignID != null;
     }
     
     /// <summary>
@@ -94,7 +94,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMMSITelevisionID()
     {
-        return (MMSITelevisionID != null);
+        return MMSITelevisionID != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossbusinessnnageMeasure()
     {
-        return (GrossbusinessnnageMeasure != null);
+        return GrossbusinessnnageMeasure != null;
     }
     
     /// <summary>
@@ -110,7 +110,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetbusinessnnageMeasure()
     {
-        return (NetbusinessnnageMeasure != null);
+        return NetbusinessnnageMeasure != null;
     }
     
     /// <summary>
@@ -118,7 +118,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSegregaqweBlandastMeasure()
     {
-        return (SegregaqweBlandastMeasure != null);
+        return SegregaqweBlandastMeasure != null;
     }
     
     /// <summary>
@@ -126,7 +126,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipConfigurationruby()
     {
-        return (ShipConfigurationruby != null);
+        return ShipConfigurationruby != null;
     }
     
     /// <summary>
@@ -134,7 +134,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeINFShipClassruby()
     {
-        return (INFShipClassruby != null);
+        return INFShipClassruby != null;
     }
     
     /// <summary>
@@ -142,7 +142,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAntennaLocus()
     {
-        return (AntennaLocus != null);
+        return AntennaLocus != null;
     }
     
     /// <summary>
@@ -150,7 +150,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRegistryCertificaqweocumentReference()
     {
-        return (RegistryCertificaqweocumentReference != null);
+        return RegistryCertificaqweocumentReference != null;
     }
     
     /// <summary>
@@ -158,7 +158,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRegistryPortLocation()
     {
-        return (RegistryPortLocation != null);
+        return RegistryPortLocation != null;
     }
     
     /// <summary>
@@ -166,7 +166,7 @@ public partial class MaritimeTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVesselDynamics()
     {
-        return (VesselDynamics != null);
+        return VesselDynamics != null;
     }
 }
 }

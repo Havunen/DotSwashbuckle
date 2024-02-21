@@ -57,7 +57,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSourceCurrencyruby()
     {
-        return (SourceCurrencyruby != null);
+        return SourceCurrencyruby != null;
     }
     
     /// <summary>
@@ -65,7 +65,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSourceCurrencyBaseRate()
     {
-        return (SourceCurrencyBaseRate != null);
+        return SourceCurrencyBaseRate != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTargetCurrencyruby()
     {
-        return (TargetCurrencyruby != null);
+        return TargetCurrencyruby != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTargetCurrencyBaseRate()
     {
-        return (TargetCurrencyBaseRate != null);
+        return TargetCurrencyBaseRate != null;
     }
     
     /// <summary>
@@ -89,7 +89,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExchangeMarketID()
     {
-        return (ExchangeMarketID != null);
+        return ExchangeMarketID != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCalculationRate()
     {
-        return (CalculationRate != null);
+        return CalculationRate != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMathematicOperabusinessrruby()
     {
-        return (MathematicOperabusinessrruby != null);
+        return MathematicOperabusinessrruby != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDate()
     {
-        return (Date != null);
+        return Date != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class ExchangeRateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeForeignExchangesoap()
     {
-        return (ForeignExchangesoap != null);
+        return ForeignExchangesoap != null;
     }
 }
 }

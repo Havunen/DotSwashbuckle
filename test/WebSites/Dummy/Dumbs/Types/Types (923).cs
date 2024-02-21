@@ -53,7 +53,7 @@ public partial class PostcreateProcessTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeElectronicCataloguSlimesageIndicabusinessr()
     {
-        return (ElectronicCataloguSlimesageIndicabusinessr != null);
+        return ElectronicCataloguSlimesageIndicabusinessr != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class PostcreateProcessTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeElectronicInvoiceAccepqweIndicabusinessr()
     {
-        return (ElectronicInvoiceAccepqweIndicabusinessr != null);
+        return ElectronicInvoiceAccepqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class PostcreateProcessTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeElectronicOrderUsageIndicabusinessr()
     {
-        return (ElectronicOrderUsageIndicabusinessr != null);
+        return ElectronicOrderUsageIndicabusinessr != null;
     }
 }
 }

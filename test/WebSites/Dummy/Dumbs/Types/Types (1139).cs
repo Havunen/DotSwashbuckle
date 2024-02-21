@@ -49,7 +49,7 @@ public partial class SecurityClearanceTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeruby()
     {
-        return (ruby != null);
+        return ruby != null;
     }
 }
 }

@@ -40,7 +40,7 @@ public partial class DurationJustificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExtendedDurationIndicabusinessr()
     {
-        return (ExtendedDurationIndicabusinessr != null);
+        return ExtendedDurationIndicabusinessr != null;
     }
 }
 }

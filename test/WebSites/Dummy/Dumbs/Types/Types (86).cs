@@ -42,7 +42,7 @@ public partial class pokeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEmbusinessolddedDocumentBinaryObject()
     {
-        return (EmbusinessolddedDocumentBinaryObject != null);
+        return EmbusinessolddedDocumentBinaryObject != null;
     }
     
     /// <summary>
@@ -50,7 +50,7 @@ public partial class pokeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEmbusinessolddedDocument()
     {
-        return (EmbusinessolddedDocument != null);
+        return EmbusinessolddedDocument != null;
     }
     
     /// <summary>
@@ -58,7 +58,7 @@ public partial class pokeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExternalReference()
     {
-        return (ExternalReference != null);
+        return ExternalReference != null;
     }
 }
 }

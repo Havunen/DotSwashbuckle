@@ -50,7 +50,7 @@ public partial class BusinessPartyGroupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGroupTyperuby()
     {
-        return (GroupTyperuby != null);
+        return GroupTyperuby != null;
     }
 }
 }

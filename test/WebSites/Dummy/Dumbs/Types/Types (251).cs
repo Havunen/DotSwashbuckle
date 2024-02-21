@@ -71,7 +71,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeJobBet()
     {
-        return (JobBet != null);
+        return JobBet != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOak()
     {
-        return (Oak != null);
+        return Oak != null;
     }
     
     /// <summary>
@@ -103,7 +103,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTeleLecture()
     {
-        return (TeleLecture != null);
+        return TeleLecture != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTelefax()
     {
-        return (Telefax != null);
+        return Telefax != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class ContactTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeElectronicobj()
     {
-        return (Electronicobj != null);
+        return Electronicobj != null;
     }
 }
 }

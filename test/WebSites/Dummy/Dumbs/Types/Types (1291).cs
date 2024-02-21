@@ -116,7 +116,7 @@ public partial class knowledgeedsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVariantID()
     {
-        return (VariantID != null);
+        return VariantID != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class knowledgeedsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFeeAmount()
     {
-        return (FeeAmount != null);
+        return FeeAmount != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class knowledgeedsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeEnvelopeID()
     {
-        return (knowledgeEnvelopeID != null);
+        return knowledgeEnvelopeID != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class knowledgeedsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeEnvelopeTyperuby()
     {
-        return (knowledgeEnvelopeTyperuby != null);
+        return knowledgeEnvelopeTyperuby != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class knowledgeedsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLegalMonetarybusinesstal()
     {
-        return (LegalMonetarybusinesstal != null);
+        return LegalMonetarybusinesstal != null;
     }
 }
 }

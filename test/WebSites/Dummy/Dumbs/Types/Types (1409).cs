@@ -31,7 +31,7 @@ public partial class UBLExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExtensionContent()
     {
-        return (ExtensionContent != null);
+        return ExtensionContent != null;
     }
 }
 }

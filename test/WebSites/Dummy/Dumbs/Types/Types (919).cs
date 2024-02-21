@@ -105,7 +105,7 @@ public partial class PortClandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class PortClandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpecqweAnchorageIndicabusinessr()
     {
-        return (ExpecqweAnchorageIndicabusinessr != null);
+        return ExpecqweAnchorageIndicabusinessr != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class PortClandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePositionInPortID()
     {
-        return (PositionInPortID != null);
+        return PositionInPortID != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class PortClandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrimaryPortClandPurpose()
     {
-        return (PrimaryPortClandPurpose != null);
+        return PrimaryPortClandPurpose != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class PortClandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweArrivalEvent()
     {
-        return (RequesqweArrivalEvent != null);
+        return RequesqweArrivalEvent != null;
     }
 }
 }

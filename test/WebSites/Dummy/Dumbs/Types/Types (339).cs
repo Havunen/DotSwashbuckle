@@ -41,7 +41,7 @@ public partial class DependentPriceReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePercent()
     {
-        return (Percent != null);
+        return Percent != null;
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public partial class DependentPriceReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocationinternet()
     {
-        return (Locationinternet != null);
+        return Locationinternet != null;
     }
     
     /// <summary>
@@ -57,7 +57,7 @@ public partial class DependentPriceReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDependentLineReference()
     {
-        return (DependentLineReference != null);
+        return DependentLineReference != null;
     }
 }
 }

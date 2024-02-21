@@ -91,7 +91,7 @@ public partial class AuctionTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAuctionConstraintIndicabusinessr()
     {
-        return (AuctionConstraintIndicabusinessr != null);
+        return AuctionConstraintIndicabusinessr != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class AuctionTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAuctionURI()
     {
-        return (AuctionURI != null);
+        return AuctionURI != null;
     }
 }
 }

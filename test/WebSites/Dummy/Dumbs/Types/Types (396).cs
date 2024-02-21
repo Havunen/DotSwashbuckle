@@ -62,7 +62,7 @@ public partial class EncryptionDataTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMessagEDummyat()
     {
-        return (MessagEDummyat != null);
+        return MessagEDummyat != null;
     }
     
     /// <summary>
@@ -70,7 +70,7 @@ public partial class EncryptionDataTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEncryptionCertificatepoke()
     {
-        return (EncryptionCertificatepoke != null);
+        return EncryptionCertificatepoke != null;
     }
 }
 }

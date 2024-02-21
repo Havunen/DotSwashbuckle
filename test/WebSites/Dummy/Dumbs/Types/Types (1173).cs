@@ -56,7 +56,7 @@ public partial class ShipSbusinessreArticleTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -64,7 +64,7 @@ public partial class ShipSbusinessreArticleTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class ShipSbusinessreArticleTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class ShipSbusinessreArticleTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSbusinesswage()
     {
-        return (Sbusinesswage != null);
+        return Sbusinesswage != null;
     }
 }
 }

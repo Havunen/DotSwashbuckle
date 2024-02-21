@@ -49,7 +49,7 @@ public partial class soapingPartyTypeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePartyTyperuby()
     {
-        return (PartyTyperuby != null);
+        return PartyTyperuby != null;
     }
 }
 }

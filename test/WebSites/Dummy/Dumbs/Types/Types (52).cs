@@ -124,7 +124,7 @@ public partial class AmountTypeXsd
         {
             return true;
         }
-        return (Value != default(decimal));
+        return Value != default(decimal);
     }
     
     /// <summary>

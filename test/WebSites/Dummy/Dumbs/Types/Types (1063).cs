@@ -40,7 +40,7 @@ public partial class RenewalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
     
     /// <summary>
@@ -48,7 +48,7 @@ public partial class RenewalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePeriod()
     {
-        return (Period != null);
+        return Period != null;
     }
 }
 }

@@ -41,7 +41,7 @@ public partial class EncryptionSymmetricAlgorithmTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public partial class EncryptionSymmetricAlgorithmTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOID()
     {
-        return (OID != null);
+        return OID != null;
     }
 }
 }

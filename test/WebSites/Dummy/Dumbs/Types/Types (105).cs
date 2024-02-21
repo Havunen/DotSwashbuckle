@@ -113,7 +113,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateingCriterionTyperuby()
     {
-        return (createingCriterionTyperuby != null);
+        return createingCriterionTyperuby != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeightNumeric()
     {
-        return (WeightNumeric != null);
+        return WeightNumeric != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCalculationExpressionruby()
     {
-        return (CalculationExpressionruby != null);
+        return CalculationExpressionruby != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMecha()
     {
-        return (MinimumMecha != null);
+        return MinimumMecha != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMecha()
     {
-        return (MaximumMecha != null);
+        return MaximumMecha != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumAmount()
     {
-        return (MinimumAmount != null);
+        return MinimumAmount != null;
     }
     
     /// <summary>
@@ -169,7 +169,7 @@ public partial class createingCriterionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumAmount()
     {
-        return (MaximumAmount != null);
+        return MaximumAmount != null;
     }
 }
 }

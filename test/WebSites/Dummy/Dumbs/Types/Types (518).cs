@@ -194,7 +194,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -202,7 +202,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSequenceNumbusinessolrID()
     {
-        return (SequenceNumbusinessolrID != null);
+        return SequenceNumbusinessolrID != null;
     }
     
     /// <summary>
@@ -210,7 +210,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
     
     /// <summary>
@@ -218,7 +218,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredCusbusinessmsValueAmount()
     {
-        return (DeclaredCusbusinessmsValueAmount != null);
+        return DeclaredCusbusinessmsValueAmount != null;
     }
     
     /// <summary>
@@ -226,7 +226,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredForCarriageValueAmount()
     {
-        return (DeclaredForCarriageValueAmount != null);
+        return DeclaredForCarriageValueAmount != null;
     }
     
     /// <summary>
@@ -234,7 +234,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredbusinessolarerValueAmount()
     {
-        return (DeclaredbusinessolarerValueAmount != null);
+        return DeclaredbusinessolarerValueAmount != null;
     }
     
     /// <summary>
@@ -242,7 +242,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreeOnBoardValueAmount()
     {
-        return (FreeOnBoardValueAmount != null);
+        return FreeOnBoardValueAmount != null;
     }
     
     /// <summary>
@@ -250,7 +250,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInsuranceValueAmount()
     {
-        return (InsuranceValueAmount != null);
+        return InsuranceValueAmount != null;
     }
     
     /// <summary>
@@ -258,7 +258,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueAmount()
     {
-        return (ValueAmount != null);
+        return ValueAmount != null;
     }
     
     /// <summary>
@@ -266,7 +266,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossWeightMeasure()
     {
-        return (GrossWeightMeasure != null);
+        return GrossWeightMeasure != null;
     }
     
     /// <summary>
@@ -274,7 +274,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetWeightMeasure()
     {
-        return (NetWeightMeasure != null);
+        return NetWeightMeasure != null;
     }
     
     /// <summary>
@@ -282,7 +282,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetNetWeightMeasure()
     {
-        return (NetNetWeightMeasure != null);
+        return NetNetWeightMeasure != null;
     }
     
     /// <summary>
@@ -290,7 +290,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargeableWeightMeasure()
     {
-        return (ChargeableWeightMeasure != null);
+        return ChargeableWeightMeasure != null;
     }
     
     /// <summary>
@@ -298,7 +298,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossVolumeMeasure()
     {
-        return (GrossVolumeMeasure != null);
+        return GrossVolumeMeasure != null;
     }
     
     /// <summary>
@@ -306,7 +306,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetVolumeMeasure()
     {
-        return (NetVolumeMeasure != null);
+        return NetVolumeMeasure != null;
     }
     
     /// <summary>
@@ -314,7 +314,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -322,7 +322,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePreferenceCriterionruby()
     {
-        return (PreferenceCriterionruby != null);
+        return PreferenceCriterionruby != null;
     }
     
     /// <summary>
@@ -330,7 +330,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequiredCusbusinessmsID()
     {
-        return (RequiredCusbusinessmsID != null);
+        return RequiredCusbusinessmsID != null;
     }
     
     /// <summary>
@@ -338,7 +338,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsGotcharuby()
     {
-        return (CusbusinessmsGotcharuby != null);
+        return CusbusinessmsGotcharuby != null;
     }
     
     /// <summary>
@@ -346,7 +346,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsKeyboardruby()
     {
-        return (CusbusinessmsKeyboardruby != null);
+        return CusbusinessmsKeyboardruby != null;
     }
     
     /// <summary>
@@ -354,7 +354,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsTariffMecha()
     {
-        return (CusbusinessmsTariffMecha != null);
+        return CusbusinessmsTariffMecha != null;
     }
     
     /// <summary>
@@ -362,7 +362,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmsImportClassifiedIndicabusinessr()
     {
-        return (CusbusinessmsImportClassifiedIndicabusinessr != null);
+        return CusbusinessmsImportClassifiedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -370,7 +370,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargeableMecha()
     {
-        return (ChargeableMecha != null);
+        return ChargeableMecha != null;
     }
     
     /// <summary>
@@ -378,7 +378,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReturnableMecha()
     {
-        return (ReturnableMecha != null);
+        return ReturnableMecha != null;
     }
     
     /// <summary>
@@ -386,7 +386,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTraceID()
     {
-        return (TraceID != null);
+        return TraceID != null;
     }
     
     /// <summary>
@@ -394,7 +394,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrigininternet()
     {
-        return (Origininternet != null);
+        return Origininternet != null;
     }
     
     /// <summary>
@@ -402,7 +402,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDelivery()
     {
-        return (Delivery != null);
+        return Delivery != null;
     }
     
     /// <summary>
@@ -410,7 +410,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePickup()
     {
-        return (Pickup != null);
+        return Pickup != null;
     }
     
     /// <summary>
@@ -418,7 +418,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDespatch()
     {
-        return (Despatch != null);
+        return Despatch != null;
     }
     
     /// <summary>
@@ -426,7 +426,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipmentDocumentReference()
     {
-        return (ShipmentDocumentReference != null);
+        return ShipmentDocumentReference != null;
     }
     
     /// <summary>
@@ -434,7 +434,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumTemperature()
     {
-        return (MinimumTemperature != null);
+        return MinimumTemperature != null;
     }
     
     /// <summary>
@@ -442,7 +442,7 @@ public partial class GoodsItemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumTemperature()
     {
-        return (MaximumTemperature != null);
+        return MaximumTemperature != null;
     }
 }
 }

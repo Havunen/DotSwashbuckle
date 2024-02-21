@@ -43,7 +43,7 @@ public partial class GroupFrameworkTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGroupFrameworkMaximumValueAmount()
     {
-        return (GroupFrameworkMaximumValueAmount != null);
+        return GroupFrameworkMaximumValueAmount != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class GroupFrameworkTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGroupFrameworkReAstimaqweValueAmount()
     {
-        return (GroupFrameworkReAstimaqweValueAmount != null);
+        return GroupFrameworkReAstimaqweValueAmount != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class GroupFrameworkTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeFootbland()
     {
-        return (knowledgeFootbland != null);
+        return knowledgeFootbland != null;
     }
 }
 }

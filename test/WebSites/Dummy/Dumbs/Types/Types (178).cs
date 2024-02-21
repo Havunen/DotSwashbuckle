@@ -84,7 +84,7 @@ public partial class CertificateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class CertificateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCertificateTyperuby()
     {
-        return (CertificateTyperuby != null);
+        return CertificateTyperuby != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class CertificateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerParty()
     {
-        return (IssuerParty != null);
+        return IssuerParty != null;
     }
 }
 }

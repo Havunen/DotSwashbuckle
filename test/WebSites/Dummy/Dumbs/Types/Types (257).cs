@@ -59,7 +59,7 @@ public partial class soapExecutionRequirementTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExecutionRequirementruby()
     {
-        return (ExecutionRequirementruby != null);
+        return ExecutionRequirementruby != null;
     }
 }
 }

@@ -29,7 +29,7 @@ public partial class knowledgeReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
 }
 }

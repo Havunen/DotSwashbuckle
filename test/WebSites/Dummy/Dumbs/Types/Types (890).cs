@@ -87,7 +87,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrepaidPaymentReferenceID()
     {
-        return (PrepaidPaymentReferenceID != null);
+        return PrepaidPaymentReferenceID != null;
     }
     
     /// <summary>
@@ -103,7 +103,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReferenceEventruby()
     {
-        return (ReferenceEventruby != null);
+        return ReferenceEventruby != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSettlementDiscountPercent()
     {
-        return (SettlementDiscountPercent != null);
+        return SettlementDiscountPercent != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePenaltySurchargePercent()
     {
-        return (PenaltySurchargePercent != null);
+        return PenaltySurchargePercent != null;
     }
     
     /// <summary>
@@ -127,7 +127,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentPercent()
     {
-        return (PaymentPercent != null);
+        return PaymentPercent != null;
     }
     
     /// <summary>
@@ -135,7 +135,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
     
     /// <summary>
@@ -143,7 +143,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSettlementDiscountAmount()
     {
-        return (SettlementDiscountAmount != null);
+        return SettlementDiscountAmount != null;
     }
     
     /// <summary>
@@ -151,7 +151,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePenaltyAmount()
     {
-        return (PenaltyAmount != null);
+        return PenaltyAmount != null;
     }
     
     /// <summary>
@@ -159,7 +159,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentTermsDetailsURI()
     {
-        return (PaymentTermsDetailsURI != null);
+        return PaymentTermsDetailsURI != null;
     }
     
     /// <summary>
@@ -167,7 +167,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentDueDate()
     {
-        return (PaymentDueDate != null);
+        return PaymentDueDate != null;
     }
     
     /// <summary>
@@ -175,7 +175,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInstlandmentDueDate()
     {
-        return (InstlandmentDueDate != null);
+        return InstlandmentDueDate != null;
     }
     
     /// <summary>
@@ -183,7 +183,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInvoicingPartyReference()
     {
-        return (InvoicingPartyReference != null);
+        return InvoicingPartyReference != null;
     }
     
     /// <summary>
@@ -191,7 +191,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSettlementPeriod()
     {
-        return (SettlementPeriod != null);
+        return SettlementPeriod != null;
     }
     
     /// <summary>
@@ -199,7 +199,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePenaltyPeriod()
     {
-        return (PenaltyPeriod != null);
+        return PenaltyPeriod != null;
     }
     
     /// <summary>
@@ -207,7 +207,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExchangeRate()
     {
-        return (ExchangeRate != null);
+        return ExchangeRate != null;
     }
     
     /// <summary>
@@ -215,7 +215,7 @@ public partial class PaymentTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
 }
 }

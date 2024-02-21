@@ -107,7 +107,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -115,7 +115,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -123,7 +123,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMecha()
     {
-        return (MinimumMecha != null);
+        return MinimumMecha != null;
     }
     
     /// <summary>
@@ -139,7 +139,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMecha()
     {
-        return (MaximumMecha != null);
+        return MaximumMecha != null;
     }
     
     /// <summary>
@@ -147,7 +147,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxIncludedIndicabusinessr()
     {
-        return (TaxIncludedIndicabusinessr != null);
+        return TaxIncludedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -155,7 +155,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumAmount()
     {
-        return (MinimumAmount != null);
+        return MinimumAmount != null;
     }
     
     /// <summary>
@@ -163,7 +163,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumAmount()
     {
-        return (MaximumAmount != null);
+        return MaximumAmount != null;
     }
     
     /// <summary>
@@ -171,7 +171,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweAmount()
     {
-        return (AstimaqweAmount != null);
+        return AstimaqweAmount != null;
     }
     
     /// <summary>
@@ -179,7 +179,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWarrantyValidityPeriod()
     {
-        return (WarrantyValidityPeriod != null);
+        return WarrantyValidityPeriod != null;
     }
     
     /// <summary>
@@ -187,7 +187,7 @@ public partial class actualForknowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeItem()
     {
-        return (Item != null);
+        return Item != null;
     }
 }
 }

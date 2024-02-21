@@ -94,7 +94,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateID()
     {
-        return (createID != null);
+        return createID != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeResultruby()
     {
-        return (knowledgeResultruby != null);
+        return knowledgeResultruby != null;
     }
     
     /// <summary>
@@ -110,7 +110,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDFvertisementAmount()
     {
-        return (DFvertisementAmount != null);
+        return DFvertisementAmount != null;
     }
     
     /// <summary>
@@ -118,7 +118,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateDate()
     {
-        return (createDate != null);
+        return createDate != null;
     }
     
     /// <summary>
@@ -126,7 +126,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateTime()
     {
-        return (createTime != null);
+        return createTime != null;
     }
     
     /// <summary>
@@ -134,7 +134,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceivedknowledgeMecha()
     {
-        return (ReceivedknowledgeMecha != null);
+        return ReceivedknowledgeMecha != null;
     }
     
     /// <summary>
@@ -142,7 +142,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLowerknowledgeAmount()
     {
-        return (LowerknowledgeAmount != null);
+        return LowerknowledgeAmount != null;
     }
     
     /// <summary>
@@ -150,7 +150,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHigherknowledgeAmount()
     {
-        return (HigherknowledgeAmount != null);
+        return HigherknowledgeAmount != null;
     }
     
     /// <summary>
@@ -158,7 +158,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStartDate()
     {
-        return (StartDate != null);
+        return StartDate != null;
     }
     
     /// <summary>
@@ -166,7 +166,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceivedElectronicknowledgeMecha()
     {
-        return (ReceivedElectronicknowledgeMecha != null);
+        return ReceivedElectronicknowledgeMecha != null;
     }
     
     /// <summary>
@@ -174,7 +174,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceivedForeignknowledgeMecha()
     {
-        return (ReceivedForeignknowledgeMecha != null);
+        return ReceivedForeignknowledgeMecha != null;
     }
     
     /// <summary>
@@ -182,7 +182,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoap()
     {
-        return (soap != null);
+        return soap != null;
     }
     
     /// <summary>
@@ -190,7 +190,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateedknowledgeedsapphire()
     {
-        return (createedknowledgeedsapphire != null);
+        return createedknowledgeedsapphire != null;
     }
     
     /// <summary>
@@ -198,7 +198,7 @@ public partial class knowledgeResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapFormalizationPeriod()
     {
-        return (soapFormalizationPeriod != null);
+        return soapFormalizationPeriod != null;
     }
 }
 }

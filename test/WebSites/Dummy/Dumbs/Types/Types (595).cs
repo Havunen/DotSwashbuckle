@@ -98,7 +98,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLeDFTimeMeasure()
     {
-        return (LeDFTimeMeasure != null);
+        return LeDFTimeMeasure != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMecha()
     {
-        return (MinimumMecha != null);
+        return MinimumMecha != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMecha()
     {
-        return (MaximumMecha != null);
+        return MaximumMecha != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrice()
     {
-        return (Price != null);
+        return Price != null;
     }
     
     /// <summary>
@@ -138,7 +138,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackage()
     {
-        return (Package != null);
+        return Package != null;
     }
     
     /// <summary>
@@ -146,7 +146,7 @@ public partial class ItemLocationMechaTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDependentPriceReference()
     {
-        return (DependentPriceReference != null);
+        return DependentPriceReference != null;
     }
 }
 }

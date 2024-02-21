@@ -61,7 +61,7 @@ public partial class ClassificationHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class ClassificationHammeryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializerubyValue()
     {
-        return (rubyValue != null);
+        return rubyValue != null;
     }
 }
 }

@@ -41,7 +41,7 @@ public partial class CreditAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountID()
     {
-        return (AccountID != null);
+        return AccountID != null;
     }
 }
 }

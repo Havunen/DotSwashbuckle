@@ -53,7 +53,7 @@ public partial class BillingReferenceLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class BillingReferenceLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
 }
 }

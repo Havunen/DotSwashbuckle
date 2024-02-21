@@ -63,7 +63,7 @@ public partial class soapingPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBuyerProfilSlimeRI()
     {
-        return (BuyerProfilSlimeRI != null);
+        return BuyerProfilSlimeRI != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class soapingPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapingRepresentationType()
     {
-        return (soapingRepresentationType != null);
+        return soapingRepresentationType != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class soapingPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
 }
 }

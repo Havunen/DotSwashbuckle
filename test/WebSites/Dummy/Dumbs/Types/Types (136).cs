@@ -51,7 +51,7 @@ public partial class BudgetAccountLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class BudgetAccountLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalAmount()
     {
-        return (businesstalAmount != null);
+        return businesstalAmount != null;
     }
 }
 }

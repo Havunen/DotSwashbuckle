@@ -52,7 +52,7 @@ public partial class FootblandsGroupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFootblandsGroupID()
     {
-        return (FootblandsGroupID != null);
+        return FootblandsGroupID != null;
     }
 }
 }

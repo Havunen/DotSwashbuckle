@@ -92,7 +92,7 @@ public partial class dummyResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalAmount()
     {
-        return (businesstalAmount != null);
+        return businesstalAmount != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class dummyResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOverlandApproximateFrameworksoapsAmount()
     {
-        return (OverlandApproximateFrameworksoapsAmount != null);
+        return OverlandApproximateFrameworksoapsAmount != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class dummyResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOverlandMaximumFrameworksoapsAmount()
     {
-        return (OverlandMaximumFrameworksoapsAmount != null);
+        return OverlandMaximumFrameworksoapsAmount != null;
     }
 }
 }

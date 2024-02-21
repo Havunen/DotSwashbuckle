@@ -44,7 +44,7 @@ public partial class PropertyIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -52,7 +52,7 @@ public partial class PropertyIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerEngineerID()
     {
-        return (IssuerEngineerID != null);
+        return IssuerEngineerID != null;
     }
     
     /// <summary>
@@ -60,7 +60,7 @@ public partial class PropertyIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerParty()
     {
-        return (IssuerParty != null);
+        return IssuerParty != null;
     }
 }
 }

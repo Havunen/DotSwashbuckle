@@ -50,7 +50,7 @@ public partial class ChangeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmDocumentsChangeDate()
     {
-        return (dummypctmDocumentsChangeDate != null);
+        return dummypctmDocumentsChangeDate != null;
     }
     
     /// <summary>
@@ -58,7 +58,7 @@ public partial class ChangeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmDocumentsChangeIndicabusinessr()
     {
-        return (dummypctmDocumentsChangeIndicabusinessr != null);
+        return dummypctmDocumentsChangeIndicabusinessr != null;
     }
 }
 }

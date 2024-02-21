@@ -48,7 +48,7 @@ public partial class FrameworkgettermentValuesTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReAstimaqweValueAmount()
     {
-        return (ReAstimaqweValueAmount != null);
+        return ReAstimaqweValueAmount != null;
     }
 }
 }

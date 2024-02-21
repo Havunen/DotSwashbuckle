@@ -417,7 +417,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -425,7 +425,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCarrierAssignedID()
     {
-        return (CarrierAssignedID != null);
+        return CarrierAssignedID != null;
     }
     
     /// <summary>
@@ -433,7 +433,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsigneeAssignedID()
     {
-        return (ConsigneeAssignedID != null);
+        return ConsigneeAssignedID != null;
     }
     
     /// <summary>
@@ -441,7 +441,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsignorAssignedID()
     {
-        return (ConsignorAssignedID != null);
+        return ConsignorAssignedID != null;
     }
     
     /// <summary>
@@ -449,7 +449,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreightForwarderAssignedID()
     {
-        return (FreightForwarderAssignedID != null);
+        return FreightForwarderAssignedID != null;
     }
     
     /// <summary>
@@ -457,7 +457,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBrokerAssignedID()
     {
-        return (BrokerAssignedID != null);
+        return BrokerAssignedID != null;
     }
     
     /// <summary>
@@ -465,7 +465,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContracqweCarrierAssignedID()
     {
-        return (ContracqweCarrierAssignedID != null);
+        return ContracqweCarrierAssignedID != null;
     }
     
     /// <summary>
@@ -473,7 +473,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerformingCarrierAssignedID()
     {
-        return (PerformingCarrierAssignedID != null);
+        return PerformingCarrierAssignedID != null;
     }
     
     /// <summary>
@@ -481,7 +481,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalInvoiceAmount()
     {
-        return (businesstalInvoiceAmount != null);
+        return businesstalInvoiceAmount != null;
     }
     
     /// <summary>
@@ -489,7 +489,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredCusbusinessmsValueAmount()
     {
-        return (DeclaredCusbusinessmsValueAmount != null);
+        return DeclaredCusbusinessmsValueAmount != null;
     }
     
     /// <summary>
@@ -497,7 +497,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTariffruby()
     {
-        return (Tariffruby != null);
+        return Tariffruby != null;
     }
     
     /// <summary>
@@ -505,7 +505,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInsurancePremiumAmount()
     {
-        return (InsurancePremiumAmount != null);
+        return InsurancePremiumAmount != null;
     }
     
     /// <summary>
@@ -513,7 +513,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossWeightMeasure()
     {
-        return (GrossWeightMeasure != null);
+        return GrossWeightMeasure != null;
     }
     
     /// <summary>
@@ -521,7 +521,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetWeightMeasure()
     {
-        return (NetWeightMeasure != null);
+        return NetWeightMeasure != null;
     }
     
     /// <summary>
@@ -529,7 +529,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetNetWeightMeasure()
     {
-        return (NetNetWeightMeasure != null);
+        return NetNetWeightMeasure != null;
     }
     
     /// <summary>
@@ -537,7 +537,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargeableWeightMeasure()
     {
-        return (ChargeableWeightMeasure != null);
+        return ChargeableWeightMeasure != null;
     }
     
     /// <summary>
@@ -545,7 +545,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossVolumeMeasure()
     {
-        return (GrossVolumeMeasure != null);
+        return GrossVolumeMeasure != null;
     }
     
     /// <summary>
@@ -553,7 +553,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetVolumeMeasure()
     {
-        return (NetVolumeMeasure != null);
+        return NetVolumeMeasure != null;
     }
     
     /// <summary>
@@ -561,7 +561,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLoDFingLengthMeasure()
     {
-        return (LoDFingLengthMeasure != null);
+        return LoDFingLengthMeasure != null;
     }
     
     /// <summary>
@@ -569,7 +569,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousRiskIndicabusinessr()
     {
-        return (HazardousRiskIndicabusinessr != null);
+        return HazardousRiskIndicabusinessr != null;
     }
     
     /// <summary>
@@ -577,7 +577,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAnimalFoodIndicabusinessr()
     {
-        return (AnimalFoodIndicabusinessr != null);
+        return AnimalFoodIndicabusinessr != null;
     }
     
     /// <summary>
@@ -585,7 +585,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHumanFoodIndicabusinessr()
     {
-        return (HumanFoodIndicabusinessr != null);
+        return HumanFoodIndicabusinessr != null;
     }
     
     /// <summary>
@@ -593,7 +593,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLivesbusinessckIndicabusinessr()
     {
-        return (LivesbusinessckIndicabusinessr != null);
+        return LivesbusinessckIndicabusinessr != null;
     }
     
     /// <summary>
@@ -601,7 +601,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBulkCargoIndicabusinessr()
     {
-        return (BulkCargoIndicabusinessr != null);
+        return BulkCargoIndicabusinessr != null;
     }
     
     /// <summary>
@@ -609,7 +609,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContainerizedIndicabusinessr()
     {
-        return (ContainerizedIndicabusinessr != null);
+        return ContainerizedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -617,7 +617,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGeneralCargoIndicabusinessr()
     {
-        return (GeneralCargoIndicabusinessr != null);
+        return GeneralCargoIndicabusinessr != null;
     }
     
     /// <summary>
@@ -625,7 +625,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSpecialSecurityIndicabusinessr()
     {
-        return (SpecialSecurityIndicabusinessr != null);
+        return SpecialSecurityIndicabusinessr != null;
     }
     
     /// <summary>
@@ -633,7 +633,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeThirdPartyPayerIndicabusinessr()
     {
-        return (ThirdPartyPayerIndicabusinessr != null);
+        return ThirdPartyPayerIndicabusinessr != null;
     }
     
     /// <summary>
@@ -641,7 +641,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSequenceID()
     {
-        return (SequenceID != null);
+        return SequenceID != null;
     }
     
     /// <summary>
@@ -649,7 +649,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShippingPriorityLevelruby()
     {
-        return (ShippingPriorityLevelruby != null);
+        return ShippingPriorityLevelruby != null;
     }
     
     /// <summary>
@@ -657,7 +657,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHandlingruby()
     {
-        return (Handlingruby != null);
+        return Handlingruby != null;
     }
     
     /// <summary>
@@ -665,7 +665,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalGoodsItemMecha()
     {
-        return (businesstalGoodsItemMecha != null);
+        return businesstalGoodsItemMecha != null;
     }
     
     /// <summary>
@@ -673,7 +673,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalTransportHandlingUnitMecha()
     {
-        return (businesstalTransportHandlingUnitMecha != null);
+        return businesstalTransportHandlingUnitMecha != null;
     }
     
     /// <summary>
@@ -681,7 +681,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInsuranceValueAmount()
     {
-        return (InsuranceValueAmount != null);
+        return InsuranceValueAmount != null;
     }
     
     /// <summary>
@@ -689,7 +689,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredForCarriageValueAmount()
     {
-        return (DeclaredForCarriageValueAmount != null);
+        return DeclaredForCarriageValueAmount != null;
     }
     
     /// <summary>
@@ -697,7 +697,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredbusinessolarerValueAmount()
     {
-        return (DeclaredbusinessolarerValueAmount != null);
+        return DeclaredbusinessolarerValueAmount != null;
     }
     
     /// <summary>
@@ -705,7 +705,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreeOnBoardValueAmount()
     {
-        return (FreeOnBoardValueAmount != null);
+        return FreeOnBoardValueAmount != null;
     }
     
     /// <summary>
@@ -713,7 +713,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSplitConsignmentIndicabusinessr()
     {
-        return (SplitConsignmentIndicabusinessr != null);
+        return SplitConsignmentIndicabusinessr != null;
     }
     
     /// <summary>
@@ -721,7 +721,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsignmentMecha()
     {
-        return (ConsignmentMecha != null);
+        return ConsignmentMecha != null;
     }
     
     /// <summary>
@@ -729,7 +729,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsolidatableIndicabusinessr()
     {
-        return (ConsolidatableIndicabusinessr != null);
+        return ConsolidatableIndicabusinessr != null;
     }
     
     /// <summary>
@@ -737,7 +737,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLoDFingSequenceID()
     {
-        return (LoDFingSequenceID != null);
+        return LoDFingSequenceID != null;
     }
     
     /// <summary>
@@ -745,7 +745,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChildConsignmentMecha()
     {
-        return (ChildConsignmentMecha != null);
+        return ChildConsignmentMecha != null;
     }
     
     /// <summary>
@@ -753,7 +753,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalPackagesMecha()
     {
-        return (businesstalPackagesMecha != null);
+        return businesstalPackagesMecha != null;
     }
     
     /// <summary>
@@ -761,7 +761,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqwePickupTransportEvent()
     {
-        return (RequesqwePickupTransportEvent != null);
+        return RequesqwePickupTransportEvent != null;
     }
     
     /// <summary>
@@ -769,7 +769,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDeliveryTransportEvent()
     {
-        return (RequesqweDeliveryTransportEvent != null);
+        return RequesqweDeliveryTransportEvent != null;
     }
     
     /// <summary>
@@ -777,7 +777,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedumnedPickupTransportEvent()
     {
-        return (dumnedPickupTransportEvent != null);
+        return dumnedPickupTransportEvent != null;
     }
     
     /// <summary>
@@ -785,7 +785,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedumnedDeliveryTransportEvent()
     {
-        return (dumnedDeliveryTransportEvent != null);
+        return dumnedDeliveryTransportEvent != null;
     }
     
     /// <summary>
@@ -793,7 +793,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualPickupTransportEvent()
     {
-        return (ActualPickupTransportEvent != null);
+        return ActualPickupTransportEvent != null;
     }
     
     /// <summary>
@@ -801,7 +801,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualDeliveryTransportEvent()
     {
-        return (ActualDeliveryTransportEvent != null);
+        return ActualDeliveryTransportEvent != null;
     }
     
     /// <summary>
@@ -809,7 +809,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsigneeParty()
     {
-        return (ConsigneeParty != null);
+        return ConsigneeParty != null;
     }
     
     /// <summary>
@@ -817,7 +817,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExporterParty()
     {
-        return (ExporterParty != null);
+        return ExporterParty != null;
     }
     
     /// <summary>
@@ -825,7 +825,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsignorParty()
     {
-        return (ConsignorParty != null);
+        return ConsignorParty != null;
     }
     
     /// <summary>
@@ -833,7 +833,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeImporterParty()
     {
-        return (ImporterParty != null);
+        return ImporterParty != null;
     }
     
     /// <summary>
@@ -841,7 +841,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCarrierParty()
     {
-        return (CarrierParty != null);
+        return CarrierParty != null;
     }
     
     /// <summary>
@@ -849,7 +849,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreightForwarderParty()
     {
-        return (FreightForwarderParty != null);
+        return FreightForwarderParty != null;
     }
     
     /// <summary>
@@ -857,7 +857,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNotifyParty()
     {
-        return (NotifyParty != null);
+        return NotifyParty != null;
     }
     
     /// <summary>
@@ -865,7 +865,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginalDespatchParty()
     {
-        return (OriginalDespatchParty != null);
+        return OriginalDespatchParty != null;
     }
     
     /// <summary>
@@ -873,7 +873,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinalDeliveryParty()
     {
-        return (FinalDeliveryParty != null);
+        return FinalDeliveryParty != null;
     }
     
     /// <summary>
@@ -881,7 +881,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerformingCarrierParty()
     {
-        return (PerformingCarrierParty != null);
+        return PerformingCarrierParty != null;
     }
     
     /// <summary>
@@ -889,7 +889,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSubstituteCarrierParty()
     {
-        return (SubstituteCarrierParty != null);
+        return SubstituteCarrierParty != null;
     }
     
     /// <summary>
@@ -897,7 +897,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLogisticsOperabusinessrParty()
     {
-        return (LogisticsOperabusinessrParty != null);
+        return LogisticsOperabusinessrParty != null;
     }
     
     /// <summary>
@@ -905,7 +905,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportDFvDFDrParty()
     {
-        return (TransportDFvDFDrParty != null);
+        return TransportDFvDFDrParty != null;
     }
     
     /// <summary>
@@ -913,7 +913,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHazardousItemNotificationParty()
     {
-        return (HazardousItemNotificationParty != null);
+        return HazardousItemNotificationParty != null;
     }
     
     /// <summary>
@@ -921,7 +921,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInsuranceParty()
     {
-        return (InsuranceParty != null);
+        return InsuranceParty != null;
     }
     
     /// <summary>
@@ -929,7 +929,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMortgageHolderParty()
     {
-        return (MortgageHolderParty != null);
+        return MortgageHolderParty != null;
     }
     
     /// <summary>
@@ -937,7 +937,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBillOfLDFingHolderParty()
     {
-        return (BillOfLDFingHolderParty != null);
+        return BillOfLDFingHolderParty != null;
     }
     
     /// <summary>
@@ -945,7 +945,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginalDepartureCountry()
     {
-        return (OriginalDepartureCountry != null);
+        return OriginalDepartureCountry != null;
     }
     
     /// <summary>
@@ -953,7 +953,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinalDestinationCountry()
     {
-        return (FinalDestinationCountry != null);
+        return FinalDestinationCountry != null;
     }
     
     /// <summary>
@@ -961,7 +961,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportsoap()
     {
-        return (Transportsoap != null);
+        return Transportsoap != null;
     }
     
     /// <summary>
@@ -969,7 +969,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginalDespatchTransportationService()
     {
-        return (OriginalDespatchTransportationService != null);
+        return OriginalDespatchTransportationService != null;
     }
     
     /// <summary>
@@ -977,7 +977,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinalDeliveryTransportationService()
     {
-        return (FinalDeliveryTransportationService != null);
+        return FinalDeliveryTransportationService != null;
     }
     
     /// <summary>
@@ -985,7 +985,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeliveryTerms()
     {
-        return (DeliveryTerms != null);
+        return DeliveryTerms != null;
     }
     
     /// <summary>
@@ -993,7 +993,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentTerms()
     {
-        return (PaymentTerms != null);
+        return PaymentTerms != null;
     }
     
     /// <summary>
@@ -1001,7 +1001,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCollectPaymentTerms()
     {
-        return (CollectPaymentTerms != null);
+        return CollectPaymentTerms != null;
     }
     
     /// <summary>
@@ -1009,7 +1009,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDisbursementPaymentTerms()
     {
-        return (DisbursementPaymentTerms != null);
+        return DisbursementPaymentTerms != null;
     }
     
     /// <summary>
@@ -1017,7 +1017,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrepaidPaymentTerms()
     {
-        return (PrepaidPaymentTerms != null);
+        return PrepaidPaymentTerms != null;
     }
     
     /// <summary>
@@ -1025,7 +1025,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFirstArrivalPortLocation()
     {
-        return (FirstArrivalPortLocation != null);
+        return FirstArrivalPortLocation != null;
     }
     
     /// <summary>
@@ -1033,7 +1033,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLastExitPortLocation()
     {
-        return (LastExitPortLocation != null);
+        return LastExitPortLocation != null;
     }
     
     /// <summary>
@@ -1041,7 +1041,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfEntryLocation()
     {
-        return (OfficeOfEntryLocation != null);
+        return OfficeOfEntryLocation != null;
     }
     
     /// <summary>
@@ -1049,7 +1049,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfSubSequentilandyEntryLocation()
     {
-        return (OfficeOfSubSequentilandyEntryLocation != null);
+        return OfficeOfSubSequentilandyEntryLocation != null;
     }
     
     /// <summary>
@@ -1057,7 +1057,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfExitLocation()
     {
-        return (OfficeOfExitLocation != null);
+        return OfficeOfExitLocation != null;
     }
     
     /// <summary>
@@ -1065,7 +1065,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfDepartureLocation()
     {
-        return (OfficeOfDepartureLocation != null);
+        return OfficeOfDepartureLocation != null;
     }
     
     /// <summary>
@@ -1073,7 +1073,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfDestinationLocation()
     {
-        return (OfficeOfDestinationLocation != null);
+        return OfficeOfDestinationLocation != null;
     }
     
     /// <summary>
@@ -1081,7 +1081,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfImportLocation()
     {
-        return (OfficeOfImportLocation != null);
+        return OfficeOfImportLocation != null;
     }
     
     /// <summary>
@@ -1089,7 +1089,7 @@ public partial class ConsignmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOfficeOfExportLocation()
     {
-        return (OfficeOfExportLocation != null);
+        return OfficeOfExportLocation != null;
     }
 }
 }

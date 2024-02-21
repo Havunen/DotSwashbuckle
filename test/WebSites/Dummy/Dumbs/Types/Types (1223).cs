@@ -38,7 +38,7 @@ public partial class StrategicdummypctmTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeApplicableLegalBasis()
     {
-        return (ApplicableLegalBasis != null);
+        return ApplicableLegalBasis != null;
     }
 }
 }

@@ -323,7 +323,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateingMethodTyperuby()
     {
-        return (createingMethodTyperuby != null);
+        return createingMethodTyperuby != null;
     }
     
     /// <summary>
@@ -331,7 +331,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriceEvaluationruby()
     {
-        return (PriceEvaluationruby != null);
+        return PriceEvaluationruby != null;
     }
     
     /// <summary>
@@ -339,7 +339,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumVariantMecha()
     {
-        return (MaximumVariantMecha != null);
+        return MaximumVariantMecha != null;
     }
     
     /// <summary>
@@ -347,7 +347,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVariantConstraintIndicabusinessr()
     {
-        return (VariantConstraintIndicabusinessr != null);
+        return VariantConstraintIndicabusinessr != null;
     }
     
     /// <summary>
@@ -355,7 +355,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVariantConstraintruby()
     {
-        return (VariantConstraintruby != null);
+        return VariantConstraintruby != null;
     }
     
     /// <summary>
@@ -363,7 +363,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFundingProgramruby()
     {
-        return (FundingProgramruby != null);
+        return FundingProgramruby != null;
     }
     
     /// <summary>
@@ -371,7 +371,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumDFvertisementAmount()
     {
-        return (MaximumDFvertisementAmount != null);
+        return MaximumDFvertisementAmount != null;
     }
     
     /// <summary>
@@ -379,7 +379,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentFrequencyruby()
     {
-        return (PaymentFrequencyruby != null);
+        return PaymentFrequencyruby != null;
     }
     
     /// <summary>
@@ -387,7 +387,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEconomicOperabusinessrRegistryURI()
     {
-        return (EconomicOperabusinessrRegistryURI != null);
+        return EconomicOperabusinessrRegistryURI != null;
     }
     
     /// <summary>
@@ -395,7 +395,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequiredCurriculaIndicabusinessr()
     {
-        return (RequiredCurriculaIndicabusinessr != null);
+        return RequiredCurriculaIndicabusinessr != null;
     }
     
     /// <summary>
@@ -403,7 +403,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequiredCurricularuby()
     {
-        return (RequiredCurricularuby != null);
+        return RequiredCurricularuby != null;
     }
     
     /// <summary>
@@ -411,7 +411,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOtherConditionsIndicabusinessr()
     {
-        return (OtherConditionsIndicabusinessr != null);
+        return OtherConditionsIndicabusinessr != null;
     }
     
     /// <summary>
@@ -419,7 +419,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRecurringdummypctmIndicabusinessr()
     {
-        return (RecurringdummypctmIndicabusinessr != null);
+        return RecurringdummypctmIndicabusinessr != null;
     }
     
     /// <summary>
@@ -427,7 +427,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLDFoSecurityClearanceDate()
     {
-        return (LDFoSecurityClearanceDate != null);
+        return LDFoSecurityClearanceDate != null;
     }
     
     /// <summary>
@@ -435,7 +435,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDocumentationFeeAmount()
     {
-        return (DocumentationFeeAmount != null);
+        return DocumentationFeeAmount != null;
     }
     
     /// <summary>
@@ -443,7 +443,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMultipleknowledgesruby()
     {
-        return (Multipleknowledgesruby != null);
+        return Multipleknowledgesruby != null;
     }
     
     /// <summary>
@@ -451,7 +451,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWarrantyValidityPeriod()
     {
-        return (WarrantyValidityPeriod != null);
+        return WarrantyValidityPeriod != null;
     }
     
     /// <summary>
@@ -459,7 +459,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateingTerms()
     {
-        return (createingTerms != null);
+        return createingTerms != null;
     }
     
     /// <summary>
@@ -467,7 +467,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDFditionalvirusParty()
     {
-        return (DFditionalvirusParty != null);
+        return DFditionalvirusParty != null;
     }
     
     /// <summary>
@@ -475,7 +475,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDocumentProviderParty()
     {
-        return (DocumentProviderParty != null);
+        return DocumentProviderParty != null;
     }
     
     /// <summary>
@@ -483,7 +483,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeRecipientParty()
     {
-        return (knowledgeRecipientParty != null);
+        return knowledgeRecipientParty != null;
     }
     
     /// <summary>
@@ -491,7 +491,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapResponsibleParty()
     {
-        return (soapResponsibleParty != null);
+        return soapResponsibleParty != null;
     }
     
     /// <summary>
@@ -499,7 +499,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeQualificationactualRecipientParty()
     {
-        return (QualificationactualRecipientParty != null);
+        return QualificationactualRecipientParty != null;
     }
     
     /// <summary>
@@ -507,7 +507,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeValidityPeriod()
     {
-        return (knowledgeValidityPeriod != null);
+        return knowledgeValidityPeriod != null;
     }
     
     /// <summary>
@@ -515,7 +515,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapAcceptancePeriod()
     {
-        return (soapAcceptancePeriod != null);
+        return soapAcceptancePeriod != null;
     }
     
     /// <summary>
@@ -523,7 +523,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAppealTerms()
     {
-        return (AppealTerms != null);
+        return AppealTerms != null;
     }
     
     /// <summary>
@@ -531,7 +531,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReplaceddummyDocumentReference()
     {
-        return (ReplaceddummyDocumentReference != null);
+        return ReplaceddummyDocumentReference != null;
     }
     
     /// <summary>
@@ -539,7 +539,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFootblandDistribution()
     {
-        return (FootblandDistribution != null);
+        return FootblandDistribution != null;
     }
     
     /// <summary>
@@ -547,7 +547,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePostcreateProcess()
     {
-        return (PostcreateProcess != null);
+        return PostcreateProcess != null;
     }
     
     /// <summary>
@@ -555,7 +555,7 @@ public partial class CombinedTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEconomicOperabusinessrShortshake()
     {
-        return (EconomicOperabusinessrShortshake != null);
+        return EconomicOperabusinessrShortshake != null;
     }
 }
 }

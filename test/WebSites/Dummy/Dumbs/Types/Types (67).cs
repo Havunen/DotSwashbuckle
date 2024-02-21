@@ -29,7 +29,7 @@ public partial class AppealRemedyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRemedyTyperuby()
     {
-        return (RemedyTyperuby != null);
+        return RemedyTyperuby != null;
     }
 }
 }

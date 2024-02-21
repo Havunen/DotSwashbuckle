@@ -78,7 +78,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIdentificationID()
     {
-        return (IdentificationID != null);
+        return IdentificationID != null;
     }
     
     /// <summary>
@@ -86,7 +86,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOccurrenceDate()
     {
-        return (OccurrenceDate != null);
+        return OccurrenceDate != null;
     }
     
     /// <summary>
@@ -94,7 +94,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOccurrenceTime()
     {
-        return (OccurrenceTime != null);
+        return OccurrenceTime != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTyperuby()
     {
-        return (Typeruby != null);
+        return Typeruby != null;
     }
     
     /// <summary>
@@ -110,7 +110,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompletionIndicabusinessr()
     {
-        return (CompletionIndicabusinessr != null);
+        return CompletionIndicabusinessr != null;
     }
     
     /// <summary>
@@ -118,7 +118,7 @@ public partial class EventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOccurenceLocation()
     {
-        return (OccurenceLocation != null);
+        return OccurenceLocation != null;
     }
 }
 }

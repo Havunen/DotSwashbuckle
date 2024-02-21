@@ -42,7 +42,7 @@ public partial class BudgetAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -50,7 +50,7 @@ public partial class BudgetAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBudgetYearNumeric()
     {
-        return (BudgetYearNumeric != null);
+        return BudgetYearNumeric != null;
     }
     
     /// <summary>
@@ -58,7 +58,7 @@ public partial class BudgetAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequiredClassificationScheme()
     {
-        return (RequiredClassificationScheme != null);
+        return RequiredClassificationScheme != null;
     }
 }
 }

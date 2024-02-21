@@ -59,7 +59,7 @@ public partial class PortClandPurposeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePurposeTyperuby()
     {
-        return (PurposeTyperuby != null);
+        return PurposeTyperuby != null;
     }
 }
 }

@@ -124,7 +124,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineExtensionAmount()
     {
-        return (LineExtensionAmount != null);
+        return LineExtensionAmount != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxInclusiveLineExtensionAmount()
     {
-        return (TaxInclusiveLineExtensionAmount != null);
+        return TaxInclusiveLineExtensionAmount != null;
     }
     
     /// <summary>
@@ -156,7 +156,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalTaxAmount()
     {
-        return (businesstalTaxAmount != null);
+        return businesstalTaxAmount != null;
     }
     
     /// <summary>
@@ -164,7 +164,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrderablSlimenit()
     {
-        return (OrderablSlimenit != null);
+        return OrderablSlimenit != null;
     }
     
     /// <summary>
@@ -172,7 +172,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeContentUnitMecha()
     {
-        return (ContentUnitMecha != null);
+        return ContentUnitMecha != null;
     }
     
     /// <summary>
@@ -180,7 +180,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrderMechaIncrementNumeric()
     {
-        return (OrderMechaIncrementNumeric != null);
+        return OrderMechaIncrementNumeric != null;
     }
     
     /// <summary>
@@ -188,7 +188,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumOrderMecha()
     {
-        return (MinimumOrderMecha != null);
+        return MinimumOrderMecha != null;
     }
     
     /// <summary>
@@ -196,7 +196,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumOrderMecha()
     {
-        return (MaximumOrderMecha != null);
+        return MaximumOrderMecha != null;
     }
     
     /// <summary>
@@ -204,7 +204,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePackLevelruby()
     {
-        return (PackLevelruby != null);
+        return PackLevelruby != null;
     }
     
     /// <summary>
@@ -212,7 +212,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeItem()
     {
-        return (Item != null);
+        return Item != null;
     }
     
     /// <summary>
@@ -220,7 +220,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWarrantyParty()
     {
-        return (WarrantyParty != null);
+        return WarrantyParty != null;
     }
     
     /// <summary>
@@ -228,7 +228,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWarrantyValidityPeriod()
     {
-        return (WarrantyValidityPeriod != null);
+        return WarrantyValidityPeriod != null;
     }
     
     /// <summary>
@@ -236,7 +236,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLibraryLineReference()
     {
-        return (LibraryLineReference != null);
+        return LibraryLineReference != null;
     }
     
     /// <summary>
@@ -244,7 +244,7 @@ public partial class knowledgeLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLibraryDocumentReference()
     {
-        return (LibraryDocumentReference != null);
+        return LibraryDocumentReference != null;
     }
 }
 }

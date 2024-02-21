@@ -104,7 +104,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -112,7 +112,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidISSCIndicabusinessr()
     {
-        return (ValidISSCIndicabusinessr != null);
+        return ValidISSCIndicabusinessr != null;
     }
     
     /// <summary>
@@ -120,7 +120,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeISSCExpiryDate()
     {
-        return (ISSCExpiryDate != null);
+        return ISSCExpiryDate != null;
     }
     
     /// <summary>
@@ -128,7 +128,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSSPOnBoardIndicabusinessr()
     {
-        return (SSPOnBoardIndicabusinessr != null);
+        return SSPOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -136,7 +136,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSSPSecurityMeasuresAppliedIndicabusinessr()
     {
-        return (SSPSecurityMeasuresAppliedIndicabusinessr != null);
+        return SSPSecurityMeasuresAppliedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -144,7 +144,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCurrenbusinessperatingSecurityLevelruby()
     {
-        return (CurrenbusinessperatingSecurityLevelruby != null);
+        return CurrenbusinessperatingSecurityLevelruby != null;
     }
     
     /// <summary>
@@ -152,7 +152,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReportLocation()
     {
-        return (ReportLocation != null);
+        return ReportLocation != null;
     }
     
     /// <summary>
@@ -160,7 +160,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeISSCIssuerParty()
     {
-        return (ISSCIssuerParty != null);
+        return ISSCIssuerParty != null;
     }
     
     /// <summary>
@@ -168,7 +168,7 @@ public partial class ISPSRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSecurityOfficerPerson()
     {
-        return (SecurityOfficerPerson != null);
+        return SecurityOfficerPerson != null;
     }
 }
 }

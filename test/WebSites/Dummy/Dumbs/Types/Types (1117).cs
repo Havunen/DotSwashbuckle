@@ -41,7 +41,7 @@ public partial class RoDFTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLicensePlateID()
     {
-        return (LicensePlateID != null);
+        return LicensePlateID != null;
     }
 }
 }

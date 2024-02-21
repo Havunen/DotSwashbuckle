@@ -57,7 +57,7 @@ public partial class DimensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAttributeID()
     {
-        return (AttributeID != null);
+        return AttributeID != null;
     }
     
     /// <summary>
@@ -65,7 +65,7 @@ public partial class DimensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMeasure()
     {
-        return (Measure != null);
+        return Measure != null;
     }
     
     /// <summary>
@@ -73,7 +73,7 @@ public partial class DimensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMeasure()
     {
-        return (MinimumMeasure != null);
+        return MinimumMeasure != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class DimensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMeasure()
     {
-        return (MaximumMeasure != null);
+        return MaximumMeasure != null;
     }
 }
 }

@@ -127,7 +127,7 @@ public partial class createingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeightingAlgorithmruby()
     {
-        return (WeightingAlgorithmruby != null);
+        return WeightingAlgorithmruby != null;
     }
     
     /// <summary>
@@ -135,7 +135,7 @@ public partial class createingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrizeIndicabusinessr()
     {
-        return (PrizeIndicabusinessr != null);
+        return PrizeIndicabusinessr != null;
     }
     
     /// <summary>
@@ -143,7 +143,7 @@ public partial class createingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFollowupsoapIndicabusinessr()
     {
-        return (FollowupsoapIndicabusinessr != null);
+        return FollowupsoapIndicabusinessr != null;
     }
     
     /// <summary>
@@ -151,7 +151,7 @@ public partial class createingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBindingOnBuyerIndicabusinessr()
     {
-        return (BindingOnBuyerIndicabusinessr != null);
+        return BindingOnBuyerIndicabusinessr != null;
     }
     
     /// <summary>
@@ -159,7 +159,7 @@ public partial class createingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNoFurtherNegotiationIndicabusinessr()
     {
-        return (NoFurtherNegotiationIndicabusinessr != null);
+        return NoFurtherNegotiationIndicabusinessr != null;
     }
 }
 }

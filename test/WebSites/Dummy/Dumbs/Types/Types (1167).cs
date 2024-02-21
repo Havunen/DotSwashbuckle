@@ -167,7 +167,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -175,7 +175,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShippingPriorityLevelruby()
     {
-        return (ShippingPriorityLevelruby != null);
+        return ShippingPriorityLevelruby != null;
     }
     
     /// <summary>
@@ -183,7 +183,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHandlingruby()
     {
-        return (Handlingruby != null);
+        return Handlingruby != null;
     }
     
     /// <summary>
@@ -191,7 +191,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossWeightMeasure()
     {
-        return (GrossWeightMeasure != null);
+        return GrossWeightMeasure != null;
     }
     
     /// <summary>
@@ -199,7 +199,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetWeightMeasure()
     {
-        return (NetWeightMeasure != null);
+        return NetWeightMeasure != null;
     }
     
     /// <summary>
@@ -207,7 +207,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetNetWeightMeasure()
     {
-        return (NetNetWeightMeasure != null);
+        return NetNetWeightMeasure != null;
     }
     
     /// <summary>
@@ -215,7 +215,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossVolumeMeasure()
     {
-        return (GrossVolumeMeasure != null);
+        return GrossVolumeMeasure != null;
     }
     
     /// <summary>
@@ -223,7 +223,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetVolumeMeasure()
     {
-        return (NetVolumeMeasure != null);
+        return NetVolumeMeasure != null;
     }
     
     /// <summary>
@@ -231,7 +231,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalGoodsItemMecha()
     {
-        return (businesstalGoodsItemMecha != null);
+        return businesstalGoodsItemMecha != null;
     }
     
     /// <summary>
@@ -239,7 +239,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalTransportHandlingUnitMecha()
     {
-        return (businesstalTransportHandlingUnitMecha != null);
+        return businesstalTransportHandlingUnitMecha != null;
     }
     
     /// <summary>
@@ -247,7 +247,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeInsuranceValueAmount()
     {
-        return (InsuranceValueAmount != null);
+        return InsuranceValueAmount != null;
     }
     
     /// <summary>
@@ -255,7 +255,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredCusbusinessmsValueAmount()
     {
-        return (DeclaredCusbusinessmsValueAmount != null);
+        return DeclaredCusbusinessmsValueAmount != null;
     }
     
     /// <summary>
@@ -263,7 +263,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredForCarriageValueAmount()
     {
-        return (DeclaredForCarriageValueAmount != null);
+        return DeclaredForCarriageValueAmount != null;
     }
     
     /// <summary>
@@ -271,7 +271,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDeclaredbusinessolarerValueAmount()
     {
-        return (DeclaredbusinessolarerValueAmount != null);
+        return DeclaredbusinessolarerValueAmount != null;
     }
     
     /// <summary>
@@ -279,7 +279,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFreeOnBoardValueAmount()
     {
-        return (FreeOnBoardValueAmount != null);
+        return FreeOnBoardValueAmount != null;
     }
     
     /// <summary>
@@ -287,7 +287,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSplitConsignmentIndicabusinessr()
     {
-        return (SplitConsignmentIndicabusinessr != null);
+        return SplitConsignmentIndicabusinessr != null;
     }
     
     /// <summary>
@@ -295,7 +295,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConsignmentMecha()
     {
-        return (ConsignmentMecha != null);
+        return ConsignmentMecha != null;
     }
     
     /// <summary>
@@ -303,7 +303,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDelivery()
     {
-        return (Delivery != null);
+        return Delivery != null;
     }
     
     /// <summary>
@@ -311,7 +311,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReturninternet()
     {
-        return (Returninternet != null);
+        return Returninternet != null;
     }
     
     /// <summary>
@@ -319,7 +319,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrigininternet()
     {
-        return (Origininternet != null);
+        return Origininternet != null;
     }
     
     /// <summary>
@@ -327,7 +327,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFirstArrivalPortLocation()
     {
-        return (FirstArrivalPortLocation != null);
+        return FirstArrivalPortLocation != null;
     }
     
     /// <summary>
@@ -335,7 +335,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLastExitPortLocation()
     {
-        return (LastExitPortLocation != null);
+        return LastExitPortLocation != null;
     }
     
     /// <summary>
@@ -343,7 +343,7 @@ public partial class ShipmentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExportCountry()
     {
-        return (ExportCountry != null);
+        return ExportCountry != null;
     }
 }
 }

@@ -46,7 +46,7 @@ public partial class LineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineID()
     {
-        return (LineID != null);
+        return LineID != null;
     }
     
     /// <summary>
@@ -54,7 +54,7 @@ public partial class LineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -62,7 +62,7 @@ public partial class LineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineGotcharuby()
     {
-        return (LineGotcharuby != null);
+        return LineGotcharuby != null;
     }
     
     /// <summary>
@@ -70,7 +70,7 @@ public partial class LineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDocumentReference()
     {
-        return (DocumentReference != null);
+        return DocumentReference != null;
     }
 }
 }

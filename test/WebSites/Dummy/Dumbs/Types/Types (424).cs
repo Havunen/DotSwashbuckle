@@ -77,7 +77,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEvidenceTyperuby()
     {
-        return (EvidenceTyperuby != null);
+        return EvidenceTyperuby != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConfidentialityLevelruby()
     {
-        return (ConfidentialityLevelruby != null);
+        return ConfidentialityLevelruby != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEvidenceIssuingParty()
     {
-        return (EvidenceIssuingParty != null);
+        return EvidenceIssuingParty != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class EvidenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCat()
     {
-        return (Cat != null);
+        return Cat != null;
     }
 }
 }

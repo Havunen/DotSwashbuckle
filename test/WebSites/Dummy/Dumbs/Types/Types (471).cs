@@ -51,7 +51,7 @@ public partial class FeeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFeeTyperuby()
     {
-        return (FeeTyperuby != null);
+        return FeeTyperuby != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class FeeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFeeAmount()
     {
-        return (FeeAmount != null);
+        return FeeAmount != null;
     }
 }
 }

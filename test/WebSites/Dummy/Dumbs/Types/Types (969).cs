@@ -49,7 +49,7 @@ public partial class dummypctmDFditionalTypeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmTyperuby()
     {
-        return (dummypctmTyperuby != null);
+        return dummypctmTyperuby != null;
     }
 }
 }

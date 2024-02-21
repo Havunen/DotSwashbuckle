@@ -61,7 +61,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAliasName()
     {
-        return (AliasName != null);
+        return AliasName != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountTyperuby()
     {
-        return (AccountTyperuby != null);
+        return AccountTyperuby != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountFormatruby()
     {
-        return (AccountFormatruby != null);
+        return AccountFormatruby != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCurrencyruby()
     {
-        return (Currencyruby != null);
+        return Currencyruby != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancialInstitutionBranch()
     {
-        return (FinancialInstitutionBranch != null);
+        return FinancialInstitutionBranch != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class FinancialAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCountry()
     {
-        return (Country != null);
+        return Country != null;
     }
 }
 }

@@ -90,7 +90,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIdentificationID()
     {
-        return (IdentificationID != null);
+        return IdentificationID != null;
     }
     
     /// <summary>
@@ -98,7 +98,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOccurrenceDate()
     {
-        return (OccurrenceDate != null);
+        return OccurrenceDate != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOccurrenceTime()
     {
-        return (OccurrenceTime != null);
+        return OccurrenceTime != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportEventTyperuby()
     {
-        return (TransportEventTyperuby != null);
+        return TransportEventTyperuby != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompletionIndicabusinessr()
     {
-        return (CompletionIndicabusinessr != null);
+        return CompletionIndicabusinessr != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReporqweShipment()
     {
-        return (ReporqweShipment != null);
+        return ReporqweShipment != null;
     }
     
     /// <summary>
@@ -138,7 +138,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocation()
     {
-        return (Location != null);
+        return Location != null;
     }
     
     /// <summary>
@@ -146,7 +146,7 @@ public partial class TransportEventTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSignature()
     {
-        return (Signature != null);
+        return Signature != null;
     }
 }
 }

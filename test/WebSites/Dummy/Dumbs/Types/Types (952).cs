@@ -48,7 +48,7 @@ public partial class PricingReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginalItemLocationMecha()
     {
-        return (OriginalItemLocationMecha != null);
+        return OriginalItemLocationMecha != null;
     }
 }
 }

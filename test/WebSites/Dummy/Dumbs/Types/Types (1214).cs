@@ -103,7 +103,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeConditionruby()
     {
-        return (Conditionruby != null);
+        return Conditionruby != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeReferenceDate()
     {
-        return (ReferenceDate != null);
+        return ReferenceDate != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeReferenceTime()
     {
-        return (ReferenceTime != null);
+        return ReferenceTime != null;
     }
     
     /// <summary>
@@ -127,7 +127,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeGotchaReasonruby()
     {
-        return (GotchaReasonruby != null);
+        return GotchaReasonruby != null;
     }
     
     /// <summary>
@@ -135,7 +135,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeSequenceID()
     {
-        return (SequenceID != null);
+        return SequenceID != null;
     }
     
     /// <summary>
@@ -143,7 +143,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeIndicationIndicabusinessr()
     {
-        return (IndicationIndicabusinessr != null);
+        return IndicationIndicabusinessr != null;
     }
     
     /// <summary>
@@ -151,7 +151,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializePercent()
     {
-        return (Percent != null);
+        return Percent != null;
     }
     
     /// <summary>
@@ -159,7 +159,7 @@ public partial class GotchaType1Xsd
     /// </summary>
     public virtual bool ShouldSerializeReliabilityPercent()
     {
-        return (ReliabilityPercent != null);
+        return ReliabilityPercent != null;
     }
 }
 }

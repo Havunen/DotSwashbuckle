@@ -43,7 +43,7 @@ public partial class RailTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTrainID()
     {
-        return (TrainID != null);
+        return TrainID != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class RailTransportTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRailCarID()
     {
-        return (RailCarID != null);
+        return RailCarID != null;
     }
 }
 }

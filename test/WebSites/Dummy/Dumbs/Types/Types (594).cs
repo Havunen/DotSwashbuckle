@@ -60,7 +60,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeProductTraceID()
     {
-        return (ProductTraceID != null);
+        return ProductTraceID != null;
     }
     
     /// <summary>
@@ -68,7 +68,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeManufactureDate()
     {
-        return (ManufactureDate != null);
+        return ManufactureDate != null;
     }
     
     /// <summary>
@@ -76,7 +76,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeManufactureTime()
     {
-        return (ManufactureTime != null);
+        return ManufactureTime != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinessolstbusinessolforeDate()
     {
-        return (businessolstbusinessolforeDate != null);
+        return businessolstbusinessolforeDate != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTelevisionID()
     {
-        return (TelevisionID != null);
+        return TelevisionID != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSerialID()
     {
-        return (SerialID != null);
+        return SerialID != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class ItemInstanceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFootblandIdentification()
     {
-        return (FootblandIdentification != null);
+        return FootblandIdentification != null;
     }
 }
 }

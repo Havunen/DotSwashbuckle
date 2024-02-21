@@ -64,7 +64,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrimaryAccountNumbusinessolrID()
     {
-        return (PrimaryAccountNumbusinessolrID != null);
+        return PrimaryAccountNumbusinessolrID != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNetworkID()
     {
-        return (NetworkID != null);
+        return NetworkID != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCardTyperuby()
     {
-        return (CardTyperuby != null);
+        return CardTyperuby != null;
     }
     
     /// <summary>
@@ -88,7 +88,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityStartDate()
     {
-        return (ValidityStartDate != null);
+        return ValidityStartDate != null;
     }
     
     /// <summary>
@@ -96,7 +96,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpiryDate()
     {
-        return (ExpiryDate != null);
+        return ExpiryDate != null;
     }
     
     /// <summary>
@@ -104,7 +104,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssuerID()
     {
-        return (IssuerID != null);
+        return IssuerID != null;
     }
     
     /// <summary>
@@ -112,7 +112,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueNumbusinessolrID()
     {
-        return (IssueNumbusinessolrID != null);
+        return IssueNumbusinessolrID != null;
     }
     
     /// <summary>
@@ -120,7 +120,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCV2ID()
     {
-        return (CV2ID != null);
+        return CV2ID != null;
     }
     
     /// <summary>
@@ -128,7 +128,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCardChipruby()
     {
-        return (CardChipruby != null);
+        return CardChipruby != null;
     }
     
     /// <summary>
@@ -136,7 +136,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChipWaterflandID()
     {
-        return (ChipWaterflandID != null);
+        return ChipWaterflandID != null;
     }
     
     /// <summary>
@@ -144,7 +144,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHolderName()
     {
-        return (HolderName != null);
+        return HolderName != null;
     }
     
     /// <summary>
@@ -152,7 +152,7 @@ public partial class CardAccountTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRoleruby()
     {
-        return (Roleruby != null);
+        return Roleruby != null;
     }
 }
 }

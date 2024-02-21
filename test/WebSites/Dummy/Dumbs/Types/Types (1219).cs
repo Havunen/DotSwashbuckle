@@ -59,7 +59,7 @@ public partial class SbusinesswageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocationID()
     {
-        return (LocationID != null);
+        return LocationID != null;
     }
 }
 }

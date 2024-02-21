@@ -51,7 +51,7 @@ public partial class soapingSystemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class soapingSystemTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapingSystemTyperuby()
     {
-        return (soapingSystemTyperuby != null);
+        return soapingSystemTyperuby != null;
     }
 }
 }

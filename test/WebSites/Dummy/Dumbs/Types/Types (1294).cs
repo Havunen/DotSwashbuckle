@@ -123,7 +123,7 @@ public partial class knowledgeerQualificationactualTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompanyLegalFormruby()
     {
-        return (CompanyLegalFormruby != null);
+        return CompanyLegalFormruby != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class knowledgeerQualificationactualTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOperatingYearsMecha()
     {
-        return (OperatingYearsMecha != null);
+        return OperatingYearsMecha != null;
     }
     
     /// <summary>
@@ -139,7 +139,7 @@ public partial class knowledgeerQualificationactualTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEmployeeMecha()
     {
-        return (EmployeeMecha != null);
+        return EmployeeMecha != null;
     }
 }
 }

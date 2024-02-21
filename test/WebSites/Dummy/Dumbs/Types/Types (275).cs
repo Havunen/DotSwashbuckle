@@ -98,7 +98,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueDate()
     {
-        return (IssueDate != null);
+        return IssueDate != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueTime()
     {
-        return (IssueTime != null);
+        return IssueTime != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNominationDate()
     {
-        return (NominationDate != null);
+        return NominationDate != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNominationTime()
     {
-        return (NominationTime != null);
+        return NominationTime != null;
     }
     
     /// <summary>
@@ -138,7 +138,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapTyperuby()
     {
-        return (soapTyperuby != null);
+        return soapTyperuby != null;
     }
     
     /// <summary>
@@ -146,7 +146,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapType1()
     {
-        return (soapType != null);
+        return soapType != null;
     }
     
     /// <summary>
@@ -154,7 +154,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVersionID()
     {
-        return (VersionID != null);
+        return VersionID != null;
     }
     
     /// <summary>
@@ -162,7 +162,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeModificationReasonruby()
     {
-        return (ModificationReasonruby != null);
+        return ModificationReasonruby != null;
     }
     
     /// <summary>
@@ -170,7 +170,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
     
     /// <summary>
@@ -178,7 +178,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNominationPeriod()
     {
-        return (NominationPeriod != null);
+        return NominationPeriod != null;
     }
     
     /// <summary>
@@ -186,7 +186,7 @@ public partial class soapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapualDelivery()
     {
-        return (soapualDelivery != null);
+        return soapualDelivery != null;
     }
 }
 }

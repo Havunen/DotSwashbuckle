@@ -31,7 +31,7 @@ public partial class ParameterTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParameterruby()
     {
-        return (Parameterruby != null);
+        return Parameterruby != null;
     }
     
     /// <summary>
@@ -39,7 +39,7 @@ public partial class ParameterTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParameterNumeric()
     {
-        return (ParameterNumeric != null);
+        return ParameterNumeric != null;
     }
 }
 }

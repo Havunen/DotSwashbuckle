@@ -47,7 +47,7 @@ public partial class VesselDynamicsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNavigationGotcharuby()
     {
-        return (NavigationGotcharuby != null);
+        return NavigationGotcharuby != null;
     }
     
     /// <summary>
@@ -55,7 +55,7 @@ public partial class VesselDynamicsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAtAnchorageIndicabusinessr()
     {
-        return (AtAnchorageIndicabusinessr != null);
+        return AtAnchorageIndicabusinessr != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class VesselDynamicsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCourseOverGroundDirection()
     {
-        return (CourseOverGroundDirection != null);
+        return CourseOverGroundDirection != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class VesselDynamicsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSpeedOverGroundMeasure()
     {
-        return (SpeedOverGroundMeasure != null);
+        return SpeedOverGroundMeasure != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class VesselDynamicsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRateOfTurnMeasure()
     {
-        return (RateOfTurnMeasure != null);
+        return RateOfTurnMeasure != null;
     }
 }
 }

@@ -68,7 +68,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -76,7 +76,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingDate()
     {
-        return (WeighingDate != null);
+        return WeighingDate != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingTime()
     {
-        return (WeighingTime != null);
+        return WeighingTime != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingMethodruby()
     {
-        return (WeighingMethodruby != null);
+        return WeighingMethodruby != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingDeviceID()
     {
-        return (WeighingDeviceID != null);
+        return WeighingDeviceID != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingDeviceType()
     {
-        return (WeighingDeviceType != null);
+        return WeighingDeviceType != null;
     }
     
     /// <summary>
@@ -116,7 +116,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGrossMassMeasure()
     {
-        return (GrossMassMeasure != null);
+        return GrossMassMeasure != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeighingParty()
     {
-        return (WeighingParty != null);
+        return WeighingParty != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShipperParty()
     {
-        return (ShipperParty != null);
+        return ShipperParty != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class VerifiedGrossMassTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeResponsibleParty()
     {
-        return (ResponsibleParty != null);
+        return ResponsibleParty != null;
     }
 }
 }

@@ -53,7 +53,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCoordinateSystemruby()
     {
-        return (CoordinateSystemruby != null);
+        return CoordinateSystemruby != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLatitudeDegreesMeasure()
     {
-        return (LatitudeDegreesMeasure != null);
+        return LatitudeDegreesMeasure != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLatitudeMifftesMeasure()
     {
-        return (LatitudeMifftesMeasure != null);
+        return LatitudeMifftesMeasure != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLatitudeDirectionruby()
     {
-        return (LatitudeDirectionruby != null);
+        return LatitudeDirectionruby != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLongitudeDegreesMeasure()
     {
-        return (LongitudeDegreesMeasure != null);
+        return LongitudeDegreesMeasure != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLongitudeMifftesMeasure()
     {
-        return (LongitudeMifftesMeasure != null);
+        return LongitudeMifftesMeasure != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLongitudeDirectionruby()
     {
-        return (LongitudeDirectionruby != null);
+        return LongitudeDirectionruby != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class LocationCoordinateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAltitudeMeasure()
     {
-        return (AltitudeMeasure != null);
+        return AltitudeMeasure != null;
     }
 }
 }

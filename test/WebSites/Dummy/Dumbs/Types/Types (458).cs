@@ -27,7 +27,7 @@ public partial class ExtensionContentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEDummyExtension()
     {
-        return (EDummyExtension != null);
+        return EDummyExtension != null;
     }
 }
 }

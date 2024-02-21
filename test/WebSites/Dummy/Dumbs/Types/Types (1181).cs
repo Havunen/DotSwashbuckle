@@ -66,7 +66,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -74,7 +74,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReasonruby()
     {
-        return (Reasonruby != null);
+        return Reasonruby != null;
     }
     
     /// <summary>
@@ -82,7 +82,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidationDate()
     {
-        return (ValidationDate != null);
+        return ValidationDate != null;
     }
     
     /// <summary>
@@ -90,7 +90,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidationTime()
     {
-        return (ValidationTime != null);
+        return ValidationTime != null;
     }
     
     /// <summary>
@@ -98,7 +98,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidabusinessrID()
     {
-        return (ValidabusinessrID != null);
+        return ValidabusinessrID != null;
     }
     
     /// <summary>
@@ -106,7 +106,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCanonicalizationMethod()
     {
-        return (CanonicalizationMethod != null);
+        return CanonicalizationMethod != null;
     }
     
     /// <summary>
@@ -114,7 +114,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSignatureMethod()
     {
-        return (SignatureMethod != null);
+        return SignatureMethod != null;
     }
     
     /// <summary>
@@ -122,7 +122,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSignabusinessryParty()
     {
-        return (SignabusinessryParty != null);
+        return SignabusinessryParty != null;
     }
     
     /// <summary>
@@ -130,7 +130,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDigitalSignaturepoke()
     {
-        return (DigitalSignaturepoke != null);
+        return DigitalSignaturepoke != null;
     }
     
     /// <summary>
@@ -138,7 +138,7 @@ public partial class SignatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOriginalDocumentReference()
     {
-        return (OriginalDocumentReference != null);
+        return OriginalDocumentReference != null;
     }
 }
 }

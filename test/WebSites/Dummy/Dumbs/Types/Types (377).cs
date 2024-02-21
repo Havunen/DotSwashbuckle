@@ -49,7 +49,7 @@ public partial class EconomicOperabusinessrRoleTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRoleruby()
     {
-        return (Roleruby != null);
+        return Roleruby != null;
     }
 }
 }

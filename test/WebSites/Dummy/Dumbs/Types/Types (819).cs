@@ -58,7 +58,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGroupLeDFIndicabusinessr()
     {
-        return (GroupLeDFIndicabusinessr != null);
+        return GroupLeDFIndicabusinessr != null;
     }
     
     /// <summary>
@@ -66,7 +66,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAcquiringCPBIndicabusinessr()
     {
-        return (AcquiringCPBIndicabusinessr != null);
+        return AcquiringCPBIndicabusinessr != null;
     }
     
     /// <summary>
@@ -74,7 +74,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateingCPBIndicabusinessr()
     {
-        return (createingCPBIndicabusinessr != null);
+        return createingCPBIndicabusinessr != null;
     }
     
     /// <summary>
@@ -82,7 +82,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLisqweOnRegulaqweMarketIndicabusinessr()
     {
-        return (LisqweOnRegulaqweMarketIndicabusinessr != null);
+        return LisqweOnRegulaqweMarketIndicabusinessr != null;
     }
     
     /// <summary>
@@ -90,7 +90,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNaturalPersonIndicabusinessr()
     {
-        return (NaturalPersonIndicabusinessr != null);
+        return NaturalPersonIndicabusinessr != null;
     }
     
     /// <summary>
@@ -98,7 +98,7 @@ public partial class OrganizationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompany()
     {
-        return (Company != null);
+        return Company != null;
     }
 }
 }

@@ -93,7 +93,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeChargeIndicabusinessr()
     {
-        return (ChargeIndicabusinessr != null);
+        return ChargeIndicabusinessr != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializelandowanceChargeReasonruby()
     {
-        return (landowanceChargeReasonruby != null);
+        return landowanceChargeReasonruby != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMultiplierFacbusinessrNumeric()
     {
-        return (MultiplierFacbusinessrNumeric != null);
+        return MultiplierFacbusinessrNumeric != null;
     }
     
     /// <summary>
@@ -125,7 +125,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePrepaidIndicabusinessr()
     {
-        return (PrepaidIndicabusinessr != null);
+        return PrepaidIndicabusinessr != null;
     }
     
     /// <summary>
@@ -133,7 +133,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSequenceNumeric()
     {
-        return (SequenceNumeric != null);
+        return SequenceNumeric != null;
     }
     
     /// <summary>
@@ -141,7 +141,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
     
     /// <summary>
@@ -149,7 +149,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBaseAmount()
     {
-        return (BaseAmount != null);
+        return BaseAmount != null;
     }
     
     /// <summary>
@@ -157,7 +157,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountingCostruby()
     {
-        return (AccountingCostruby != null);
+        return AccountingCostruby != null;
     }
     
     /// <summary>
@@ -165,7 +165,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAccountingCost()
     {
-        return (AccountingCost != null);
+        return AccountingCost != null;
     }
     
     /// <summary>
@@ -173,7 +173,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePerUnitAmount()
     {
-        return (PerUnitAmount != null);
+        return PerUnitAmount != null;
     }
     
     /// <summary>
@@ -181,7 +181,7 @@ public partial class landowanceChargeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxbusinesstal()
     {
-        return (Taxbusinesstal != null);
+        return Taxbusinesstal != null;
     }
 }
 }

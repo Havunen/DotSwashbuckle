@@ -44,7 +44,7 @@ public partial class AssetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAssetSignificance()
     {
-        return (AssetSignificance != null);
+        return AssetSignificance != null;
     }
     
     /// <summary>
@@ -52,7 +52,7 @@ public partial class AssetTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAssetPredominance()
     {
-        return (AssetPredominance != null);
+        return AssetPredominance != null;
     }
 }
 }

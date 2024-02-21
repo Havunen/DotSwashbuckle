@@ -71,7 +71,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweOverlandsoapAmount()
     {
-        return (AstimaqweOverlandsoapAmount != null);
+        return AstimaqweOverlandsoapAmount != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweOverlandFrameworksoapsAmount()
     {
-        return (AstimaqweOverlandFrameworksoapsAmount != null);
+        return AstimaqweOverlandFrameworksoapsAmount != null;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalAmount()
     {
-        return (businesstalAmount != null);
+        return businesstalAmount != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxIncludedIndicabusinessr()
     {
-        return (TaxIncludedIndicabusinessr != null);
+        return TaxIncludedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -103,7 +103,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumAmount()
     {
-        return (MinimumAmount != null);
+        return MinimumAmount != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumAmount()
     {
-        return (MaximumAmount != null);
+        return MaximumAmount != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class RequesqweknowledgebusinesstalTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAverageSubsequentsoapAmount()
     {
-        return (AverageSubsequentsoapAmount != null);
+        return AverageSubsequentsoapAmount != null;
     }
 }
 }

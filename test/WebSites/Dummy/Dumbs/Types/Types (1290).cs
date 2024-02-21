@@ -53,7 +53,7 @@ public partial class TemperatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAttributeID()
     {
-        return (AttributeID != null);
+        return AttributeID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class TemperatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMeasure()
     {
-        return (Measure != null);
+        return Measure != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class TemperatureTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMeasureruby()
     {
-        return (Measureruby != null);
+        return Measureruby != null;
     }
 }
 }

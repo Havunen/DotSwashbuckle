@@ -201,7 +201,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeFrameworkMaximumAmount()
     {
-        return (FrameworkMaximumAmount != null);
+        return FrameworkMaximumAmount != null;
     }
     
     /// <summary>
@@ -209,7 +209,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeKeyboardRelaunchIndicabusinessr()
     {
-        return (KeyboardRelaunchIndicabusinessr != null);
+        return KeyboardRelaunchIndicabusinessr != null;
     }
     
     /// <summary>
@@ -217,7 +217,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeTransmissionDate()
     {
-        return (TransmissionDate != null);
+        return TransmissionDate != null;
     }
     
     /// <summary>
@@ -225,7 +225,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeTransmissionTime()
     {
-        return (TransmissionTime != null);
+        return TransmissionTime != null;
     }
     
     /// <summary>
@@ -233,7 +233,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeAnswerReceptionPeriod()
     {
-        return (AnswerReceptionPeriod != null);
+        return AnswerReceptionPeriod != null;
     }
     
     /// <summary>
@@ -241,7 +241,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeChanges()
     {
-        return (Changes != null);
+        return Changes != null;
     }
     
     /// <summary>
@@ -249,7 +249,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeInterestExpressionReceptionPeriod()
     {
-        return (InterestExpressionReceptionPeriod != null);
+        return InterestExpressionReceptionPeriod != null;
     }
     
     /// <summary>
@@ -257,7 +257,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializedummyResult()
     {
-        return (dummyResult != null);
+        return dummyResult != null;
     }
     
     /// <summary>
@@ -265,7 +265,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializedummySubType()
     {
-        return (dummySubType != null);
+        return dummySubType != null;
     }
     
     /// <summary>
@@ -273,7 +273,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeOrganizations()
     {
-        return (Organizations != null);
+        return Organizations != null;
     }
     
     /// <summary>
@@ -281,7 +281,7 @@ public partial class EDummyExtensionXsd
     /// </summary>
     public virtual bool ShouldSerializeDaemon()
     {
-        return (Daemon != null);
+        return Daemon != null;
     }
 }
 }

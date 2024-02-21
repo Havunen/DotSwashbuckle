@@ -67,7 +67,7 @@ public partial class PeriodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStartDate()
     {
-        return (StartDate != null);
+        return StartDate != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class PeriodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStartTime()
     {
-        return (StartTime != null);
+        return StartTime != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class PeriodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEndDate()
     {
-        return (EndDate != null);
+        return EndDate != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class PeriodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEndTime()
     {
-        return (EndTime != null);
+        return EndTime != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class PeriodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDurationMeasure()
     {
-        return (DurationMeasure != null);
+        return DurationMeasure != null;
     }
 }
 }

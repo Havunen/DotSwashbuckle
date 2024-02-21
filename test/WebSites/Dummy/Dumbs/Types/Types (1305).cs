@@ -85,7 +85,7 @@ public partial class knowledgePreparationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeEnvelopeID()
     {
-        return (knowledgeEnvelopeID != null);
+        return knowledgeEnvelopeID != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class knowledgePreparationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeEnvelopeTyperuby()
     {
-        return (knowledgeEnvelopeTyperuby != null);
+        return knowledgeEnvelopeTyperuby != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class knowledgePreparationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOpenknowledgeID()
     {
-        return (OpenknowledgeID != null);
+        return OpenknowledgeID != null;
     }
 }
 }

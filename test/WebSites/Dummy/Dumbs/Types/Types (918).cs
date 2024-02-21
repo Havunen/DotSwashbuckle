@@ -53,7 +53,7 @@ public partial class PortClandRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class PortClandRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSecurityLevelruby()
     {
-        return (SecurityLevelruby != null);
+        return SecurityLevelruby != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class PortClandRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePortFacilityLocation()
     {
-        return (PortFacilityLocation != null);
+        return PortFacilityLocation != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class PortClandRecordTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePeriod()
     {
-        return (Period != null);
+        return Period != null;
     }
 }
 }

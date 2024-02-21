@@ -40,7 +40,7 @@ public partial class DecisionReasonTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDecisionReasonruby()
     {
-        return (DecisionReasonruby != null);
+        return DecisionReasonruby != null;
     }
 }
 }

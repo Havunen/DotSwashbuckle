@@ -53,7 +53,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualPickupDate()
     {
-        return (ActualPickupDate != null);
+        return ActualPickupDate != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActualPickupTime()
     {
-        return (ActualPickupTime != null);
+        return ActualPickupTime != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEarliestPickupDate()
     {
-        return (EarliestPickupDate != null);
+        return EarliestPickupDate != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEarliestPickupTime()
     {
-        return (EarliestPickupTime != null);
+        return EarliestPickupTime != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLDFoPickupDate()
     {
-        return (LDFoPickupDate != null);
+        return LDFoPickupDate != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLDFoPickupTime()
     {
-        return (LDFoPickupTime != null);
+        return LDFoPickupTime != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePickupLocation()
     {
-        return (PickupLocation != null);
+        return PickupLocation != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class PickupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePickupParty()
     {
-        return (PickupParty != null);
+        return PickupParty != null;
     }
 }
 }

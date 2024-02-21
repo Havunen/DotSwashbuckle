@@ -76,7 +76,7 @@ public partial class FrameworkgettermentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpecqweOperabusinessrMecha()
     {
-        return (ExpecqweOperabusinessrMecha != null);
+        return ExpecqweOperabusinessrMecha != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class FrameworkgettermentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumOperabusinessrMecha()
     {
-        return (MaximumOperabusinessrMecha != null);
+        return MaximumOperabusinessrMecha != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class FrameworkgettermentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweMaximumValueAmount()
     {
-        return (AstimaqweMaximumValueAmount != null);
+        return AstimaqweMaximumValueAmount != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class FrameworkgettermentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumValueAmount()
     {
-        return (MaximumValueAmount != null);
+        return MaximumValueAmount != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class FrameworkgettermentTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDurationPeriod()
     {
-        return (DurationPeriod != null);
+        return DurationPeriod != null;
     }
 }
 }

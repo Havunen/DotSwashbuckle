@@ -50,7 +50,7 @@ public partial class CrewPersonEffectTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCrewPerson()
     {
-        return (CrewPerson != null);
+        return CrewPerson != null;
     }
 }
 }

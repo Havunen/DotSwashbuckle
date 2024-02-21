@@ -60,7 +60,7 @@ public partial class knowledgeRequirementTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTemplaqweocumentReference()
     {
-        return (TemplaqweocumentReference != null);
+        return TemplaqweocumentReference != null;
     }
 }
 }

@@ -59,7 +59,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRate()
     {
-        return (Rate != null);
+        return Rate != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimenknownPriceIndicabusinessr()
     {
-        return (UnknownPriceIndicabusinessr != null);
+        return UnknownPriceIndicabusinessr != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSubsoapingConditionsruby()
     {
-        return (SubsoapingConditionsruby != null);
+        return SubsoapingConditionsruby != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumPercent()
     {
-        return (MaximumPercent != null);
+        return MaximumPercent != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class SubsoapTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumPercent()
     {
-        return (MinimumPercent != null);
+        return MinimumPercent != null;
     }
 }
 }

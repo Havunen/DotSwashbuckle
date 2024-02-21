@@ -31,7 +31,7 @@ public partial class knowledgeerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -39,7 +39,7 @@ public partial class knowledgeerTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGroupLeDFIndicabusinessr()
     {
-        return (GroupLeDFIndicabusinessr != null);
+        return GroupLeDFIndicabusinessr != null;
     }
 }
 }

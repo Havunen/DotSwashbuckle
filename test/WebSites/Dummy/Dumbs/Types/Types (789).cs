@@ -38,7 +38,7 @@ public partial class dummySubTypeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSubTyperuby()
     {
-        return (SubTyperuby != null);
+        return SubTyperuby != null;
     }
 }
 }

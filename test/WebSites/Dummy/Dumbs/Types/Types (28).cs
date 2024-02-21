@@ -41,7 +41,7 @@ public partial class internetLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLine()
     {
-        return (Line != null);
+        return Line != null;
     }
 }
 }

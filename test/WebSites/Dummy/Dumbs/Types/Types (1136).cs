@@ -55,7 +55,7 @@ public partial class SecondaryHazardTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class SecondaryHazardTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePlacardNotation()
     {
-        return (PlacardNotation != null);
+        return PlacardNotation != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class SecondaryHazardTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePlacardEndorsement()
     {
-        return (PlacardEndorsement != null);
+        return PlacardEndorsement != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class SecondaryHazardTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEmergencyKeyboardsruby()
     {
-        return (EmergencyKeyboardsruby != null);
+        return EmergencyKeyboardsruby != null;
     }
 }
 }

@@ -55,7 +55,7 @@ public partial class TaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -63,7 +63,7 @@ public partial class TaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class TaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxTyperuby()
     {
-        return (TaxTyperuby != null);
+        return TaxTyperuby != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class TaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCurrencyruby()
     {
-        return (Currencyruby != null);
+        return Currencyruby != null;
     }
 }
 }

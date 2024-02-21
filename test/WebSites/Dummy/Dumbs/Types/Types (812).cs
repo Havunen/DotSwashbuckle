@@ -48,7 +48,7 @@ public partial class OrderLineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineID()
     {
-        return (LineID != null);
+        return LineID != null;
     }
     
     /// <summary>
@@ -56,7 +56,7 @@ public partial class OrderLineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSalesOrderLineID()
     {
-        return (SalesOrderLineID != null);
+        return SalesOrderLineID != null;
     }
     
     /// <summary>
@@ -64,7 +64,7 @@ public partial class OrderLineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class OrderLineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLineGotcharuby()
     {
-        return (LineGotcharuby != null);
+        return LineGotcharuby != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class OrderLineReferenceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrderReference()
     {
-        return (OrderReference != null);
+        return OrderReference != null;
     }
 }
 }

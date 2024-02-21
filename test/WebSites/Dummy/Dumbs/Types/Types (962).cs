@@ -53,7 +53,7 @@ public partial class PrizeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRankruby()
     {
-        return (Rankruby != null);
+        return Rankruby != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class PrizeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueAmount()
     {
-        return (ValueAmount != null);
+        return ValueAmount != null;
     }
 }
 }

@@ -91,7 +91,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateDate()
     {
-        return (createDate != null);
+        return createDate != null;
     }
     
     /// <summary>
@@ -107,7 +107,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueDate()
     {
-        return (IssueDate != null);
+        return IssueDate != null;
     }
     
     /// <summary>
@@ -115,7 +115,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeRI()
     {
-        return (URI != null);
+        return URI != null;
     }
     
     /// <summary>
@@ -123,7 +123,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapFrameworkIndicabusinessr()
     {
-        return (soapFrameworkIndicabusinessr != null);
+        return soapFrameworkIndicabusinessr != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummyDocumentReference()
     {
-        return (dummyDocumentReference != null);
+        return dummyDocumentReference != null;
     }
     
     /// <summary>
@@ -139,7 +139,7 @@ public partial class SettledsoapTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDurationJustification()
     {
-        return (DurationJustification != null);
+        return DurationJustification != null;
     }
 }
 }

@@ -42,7 +42,7 @@ public partial class WinningPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRank()
     {
-        return (Rank != null);
+        return Rank != null;
     }
     
     /// <summary>
@@ -50,7 +50,7 @@ public partial class WinningPartyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeParty()
     {
-        return (Party != null);
+        return Party != null;
     }
 }
 }

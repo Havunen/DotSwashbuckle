@@ -160,7 +160,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeBLVersionID()
     {
-        return (UBLVersionID != null);
+        return UBLVersionID != null;
     }
     
     /// <summary>
@@ -168,7 +168,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCusbusinessmizationID()
     {
-        return (CusbusinessmizationID != null);
+        return CusbusinessmizationID != null;
     }
     
     /// <summary>
@@ -176,7 +176,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeProFlagID()
     {
-        return (ProFlagID != null);
+        return ProFlagID != null;
     }
     
     /// <summary>
@@ -184,7 +184,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeProFlagExecutionID()
     {
-        return (ProFlagExecutionID != null);
+        return ProFlagExecutionID != null;
     }
     
     /// <summary>
@@ -192,7 +192,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -200,7 +200,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBeamIndicabusinessr()
     {
-        return (BeamIndicabusinessr != null);
+        return BeamIndicabusinessr != null;
     }
     
     /// <summary>
@@ -208,7 +208,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -216,7 +216,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapFolderID()
     {
-        return (soapFolderID != null);
+        return soapFolderID != null;
     }
     
     /// <summary>
@@ -224,7 +224,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueDate()
     {
-        return (IssueDate != null);
+        return IssueDate != null;
     }
     
     /// <summary>
@@ -232,7 +232,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIssueTime()
     {
-        return (IssueTime != null);
+        return IssueTime != null;
     }
     
     /// <summary>
@@ -240,7 +240,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeVersionID()
     {
-        return (VersionID != null);
+        return VersionID != null;
     }
     
     /// <summary>
@@ -248,7 +248,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePreviousVersionID()
     {
-        return (PreviousVersionID != null);
+        return PreviousVersionID != null;
     }
     
     /// <summary>
@@ -256,7 +256,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDaemonDate()
     {
-        return (RequesqweDaemonDate != null);
+        return RequesqweDaemonDate != null;
     }
     
     /// <summary>
@@ -264,7 +264,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedumnedDate()
     {
-        return (dumnedDate != null);
+        return dumnedDate != null;
     }
     
     /// <summary>
@@ -272,7 +272,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummyTyperuby()
     {
-        return (dummyTyperuby != null);
+        return dummyTyperuby != null;
     }
     
     /// <summary>
@@ -280,7 +280,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummyCatruby()
     {
-        return (dummyCatruby != null);
+        return dummyCatruby != null;
     }
     
     /// <summary>
@@ -288,7 +288,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceiverParty()
     {
-        return (ReceiverParty != null);
+        return ReceiverParty != null;
     }
     
     /// <summary>
@@ -296,7 +296,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCombinedTerms()
     {
-        return (CombinedTerms != null);
+        return CombinedTerms != null;
     }
     
     /// <summary>
@@ -304,7 +304,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCombinedProcess()
     {
-        return (CombinedProcess != null);
+        return CombinedProcess != null;
     }
     
     /// <summary>
@@ -312,7 +312,7 @@ public partial class PriorvirusdummyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmsapphire()
     {
-        return (dummypctmsapphire != null);
+        return dummypctmsapphire != null;
     }
 }
 }

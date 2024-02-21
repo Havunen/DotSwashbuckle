@@ -126,7 +126,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -134,7 +134,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimeUID()
     {
-        return (UUID != null);
+        return UUID != null;
     }
     
     /// <summary>
@@ -142,7 +142,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceivedMecha()
     {
-        return (ReceivedMecha != null);
+        return ReceivedMecha != null;
     }
     
     /// <summary>
@@ -150,7 +150,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShortMecha()
     {
-        return (ShortMecha != null);
+        return ShortMecha != null;
     }
     
     /// <summary>
@@ -158,7 +158,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeShortageActionruby()
     {
-        return (ShortageActionruby != null);
+        return ShortageActionruby != null;
     }
     
     /// <summary>
@@ -166,7 +166,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRejecqweMecha()
     {
-        return (RejecqweMecha != null);
+        return RejecqweMecha != null;
     }
     
     /// <summary>
@@ -174,7 +174,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRejectReasonruby()
     {
-        return (RejectReasonruby != null);
+        return RejectReasonruby != null;
     }
     
     /// <summary>
@@ -182,7 +182,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRejectActionruby()
     {
-        return (RejectActionruby != null);
+        return RejectActionruby != null;
     }
     
     /// <summary>
@@ -190,7 +190,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMechDFiscrepancyruby()
     {
-        return (MechDFiscrepancyruby != null);
+        return MechDFiscrepancyruby != null;
     }
     
     /// <summary>
@@ -198,7 +198,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOversupplyMecha()
     {
-        return (OversupplyMecha != null);
+        return OversupplyMecha != null;
     }
     
     /// <summary>
@@ -206,7 +206,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReceivedDate()
     {
-        return (ReceivedDate != null);
+        return ReceivedDate != null;
     }
     
     /// <summary>
@@ -214,7 +214,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTimingComplaintruby()
     {
-        return (TimingComplaintruby != null);
+        return TimingComplaintruby != null;
     }
     
     /// <summary>
@@ -222,7 +222,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTimingComplaint()
     {
-        return (TimingComplaint != null);
+        return TimingComplaint != null;
     }
     
     /// <summary>
@@ -230,7 +230,7 @@ public partial class ReceiptLineTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrderLineReference()
     {
-        return (OrderLineReference != null);
+        return OrderLineReference != null;
     }
 }
 }

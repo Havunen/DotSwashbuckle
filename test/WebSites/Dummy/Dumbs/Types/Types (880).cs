@@ -61,7 +61,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMandateTyperuby()
     {
-        return (MandateTyperuby != null);
+        return MandateTyperuby != null;
     }
     
     /// <summary>
@@ -77,7 +77,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumPaymentInstructionsNumeric()
     {
-        return (MaximumPaymentInstructionsNumeric != null);
+        return MaximumPaymentInstructionsNumeric != null;
     }
     
     /// <summary>
@@ -85,7 +85,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumPaidAmount()
     {
-        return (MaximumPaidAmount != null);
+        return MaximumPaidAmount != null;
     }
     
     /// <summary>
@@ -93,7 +93,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSignatureID()
     {
-        return (SignatureID != null);
+        return SignatureID != null;
     }
     
     /// <summary>
@@ -101,7 +101,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayerParty()
     {
-        return (PayerParty != null);
+        return PayerParty != null;
     }
     
     /// <summary>
@@ -109,7 +109,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePayerFinancialAccount()
     {
-        return (PayerFinancialAccount != null);
+        return PayerFinancialAccount != null;
     }
     
     /// <summary>
@@ -117,7 +117,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
     
     /// <summary>
@@ -125,7 +125,7 @@ public partial class PaymentMandateTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePaymentReversalPeriod()
     {
-        return (PaymentReversalPeriod != null);
+        return PaymentReversalPeriod != null;
     }
 }
 }

@@ -112,7 +112,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -120,7 +120,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRankruby()
     {
-        return (Rankruby != null);
+        return Rankruby != null;
     }
     
     /// <summary>
@@ -128,7 +128,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePublicTransportationCumulaqweDistance()
     {
-        return (PublicTransportationCumulaqweDistance != null);
+        return PublicTransportationCumulaqweDistance != null;
     }
     
     /// <summary>
@@ -136,7 +136,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeRankedIndicabusinessr()
     {
-        return (knowledgeRankedIndicabusinessr != null);
+        return knowledgeRankedIndicabusinessr != null;
     }
     
     /// <summary>
@@ -144,7 +144,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeVariantIndicabusinessr()
     {
-        return (knowledgeVariantIndicabusinessr != null);
+        return knowledgeVariantIndicabusinessr != null;
     }
     
     /// <summary>
@@ -152,7 +152,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLegalMonetarybusinesstal()
     {
-        return (LegalMonetarybusinesstal != null);
+        return LegalMonetarybusinesstal != null;
     }
     
     /// <summary>
@@ -160,7 +160,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAggregaqweAmounts()
     {
-        return (AggregaqweAmounts != null);
+        return AggregaqweAmounts != null;
     }
     
     /// <summary>
@@ -168,7 +168,7 @@ public partial class FootblandknowledgeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeConcessionRevenue()
     {
-        return (ConcessionRevenue != null);
+        return ConcessionRevenue != null;
     }
 }
 }

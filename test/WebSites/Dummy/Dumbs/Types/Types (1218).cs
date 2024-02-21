@@ -71,7 +71,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeGateID()
     {
-        return (GateID != null);
+        return GateID != null;
     }
     
     /// <summary>
@@ -95,7 +95,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAirassertPercent()
     {
-        return (AirassertPercent != null);
+        return AirassertPercent != null;
     }
     
     /// <summary>
@@ -103,7 +103,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHumidityPercent()
     {
-        return (HumidityPercent != null);
+        return HumidityPercent != null;
     }
     
     /// <summary>
@@ -111,7 +111,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAnimalFoodGetGodIndicabusinessr()
     {
-        return (AnimalFoodGetGodIndicabusinessr != null);
+        return AnimalFoodGetGodIndicabusinessr != null;
     }
     
     /// <summary>
@@ -119,7 +119,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHumanFoodGetGodIndicabusinessr()
     {
-        return (HumanFoodGetGodIndicabusinessr != null);
+        return HumanFoodGetGodIndicabusinessr != null;
     }
     
     /// <summary>
@@ -127,7 +127,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDangerousGoodsGetGodIndicabusinessr()
     {
-        return (DangerousGoodsGetGodIndicabusinessr != null);
+        return DangerousGoodsGetGodIndicabusinessr != null;
     }
     
     /// <summary>
@@ -135,7 +135,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRefrigeraqweIndicabusinessr()
     {
-        return (RefrigeraqweIndicabusinessr != null);
+        return RefrigeraqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -143,7 +143,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePowerIndicabusinessr()
     {
-        return (PowerIndicabusinessr != null);
+        return PowerIndicabusinessr != null;
     }
     
     /// <summary>
@@ -151,7 +151,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumTemperature()
     {
-        return (MinimumTemperature != null);
+        return MinimumTemperature != null;
     }
     
     /// <summary>
@@ -159,7 +159,7 @@ public partial class boxTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumTemperature()
     {
-        return (MaximumTemperature != null);
+        return MaximumTemperature != null;
     }
 }
 }

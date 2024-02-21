@@ -41,7 +41,7 @@ public partial class ItemPropertyRangeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumValue()
     {
-        return (MinimumValue != null);
+        return MinimumValue != null;
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public partial class ItemPropertyRangeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumValue()
     {
-        return (MaximumValue != null);
+        return MaximumValue != null;
     }
 }
 }

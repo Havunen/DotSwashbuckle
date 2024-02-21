@@ -40,7 +40,7 @@ public partial class knowledgeSubsoapingRequirementsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeSubsoapingRequirementsruby()
     {
-        return (knowledgeSubsoapingRequirementsruby != null);
+        return knowledgeSubsoapingRequirementsruby != null;
     }
 }
 }

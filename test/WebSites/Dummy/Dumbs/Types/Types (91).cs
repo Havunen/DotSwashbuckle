@@ -60,7 +60,7 @@ public partial class DenierTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePurposeruby()
     {
-        return (Purposeruby != null);
+        return Purposeruby != null;
     }
     
     /// <summary>
@@ -68,7 +68,7 @@ public partial class DenierTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidityPeriod()
     {
-        return (ValidityPeriod != null);
+        return ValidityPeriod != null;
     }
 }
 }

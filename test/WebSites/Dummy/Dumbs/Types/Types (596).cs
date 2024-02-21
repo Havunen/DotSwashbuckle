@@ -45,7 +45,7 @@ public partial class ItemPropertyGroupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -53,7 +53,7 @@ public partial class ItemPropertyGroupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class ItemPropertyGroupTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeImportanceruby()
     {
-        return (Importanceruby != null);
+        return Importanceruby != null;
     }
 }
 }

@@ -64,7 +64,7 @@ public partial class EnvironmentalEmissionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeEnvironmentalEmissionTyperuby()
     {
-        return (EnvironmentalEmissionTyperuby != null);
+        return EnvironmentalEmissionTyperuby != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class EnvironmentalEmissionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueMeasure()
     {
-        return (ValueMeasure != null);
+        return ValueMeasure != null;
     }
 }
 }

@@ -91,7 +91,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriceAmount()
     {
-        return (PriceAmount != null);
+        return PriceAmount != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeBaseMecha()
     {
-        return (BaseMecha != null);
+        return BaseMecha != null;
     }
     
     /// <summary>
@@ -107,7 +107,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriceTyperuby()
     {
-        return (PriceTyperuby != null);
+        return PriceTyperuby != null;
     }
     
     /// <summary>
@@ -115,7 +115,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriceType()
     {
-        return (PriceType != null);
+        return PriceType != null;
     }
     
     /// <summary>
@@ -123,7 +123,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOrderablSlimenitFacbusinessrRate()
     {
-        return (OrderablSlimenitFacbusinessrRate != null);
+        return OrderablSlimenitFacbusinessrRate != null;
     }
     
     /// <summary>
@@ -131,7 +131,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePriceshake()
     {
-        return (Priceshake != null);
+        return Priceshake != null;
     }
     
     /// <summary>
@@ -139,7 +139,7 @@ public partial class PriceTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePricingExchangeRate()
     {
-        return (PricingExchangeRate != null);
+        return PricingExchangeRate != null;
     }
 }
 }

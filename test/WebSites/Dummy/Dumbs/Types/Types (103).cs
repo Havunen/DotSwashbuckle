@@ -75,7 +75,7 @@ public partial class createingCriterionlongermessageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class createingCriterionlongermessageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializecreateingCriterionID()
     {
-        return (createingCriterionID != null);
+        return createingCriterionID != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class createingCriterionlongermessageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMecha()
     {
-        return (Mecha != null);
+        return Mecha != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class createingCriterionlongermessageTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAmount()
     {
-        return (Amount != null);
+        return Amount != null;
     }
 }
 }

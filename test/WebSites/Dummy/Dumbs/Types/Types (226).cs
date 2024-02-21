@@ -58,7 +58,7 @@ public partial class ConcessionRevenueTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRevenuSlimeserAmount()
     {
-        return (RevenuSlimeserAmount != null);
+        return RevenuSlimeserAmount != null;
     }
 }
 }

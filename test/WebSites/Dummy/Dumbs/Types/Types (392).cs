@@ -43,7 +43,7 @@ public partial class EmissionCalculationMethodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCalculationMethodruby()
     {
-        return (CalculationMethodruby != null);
+        return CalculationMethodruby != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class EmissionCalculationMethodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFullnessIndicationruby()
     {
-        return (FullnessIndicationruby != null);
+        return FullnessIndicationruby != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class EmissionCalculationMethodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMeasurementFromLocation()
     {
-        return (MeasurementFromLocation != null);
+        return MeasurementFromLocation != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class EmissionCalculationMethodTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMeasurementbusinessLocation()
     {
-        return (MeasurementbusinessLocation != null);
+        return MeasurementbusinessLocation != null;
     }
 }
 }

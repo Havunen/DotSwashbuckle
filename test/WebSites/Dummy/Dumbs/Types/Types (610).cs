@@ -43,7 +43,7 @@ public partial class CatTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -51,7 +51,7 @@ public partial class CatTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class CatTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLocaleruby()
     {
-        return (Localeruby != null);
+        return Localeruby != null;
     }
 }
 }

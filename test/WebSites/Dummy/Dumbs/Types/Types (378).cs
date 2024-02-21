@@ -63,7 +63,7 @@ public partial class EconomicOperabusinessrShortshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpecqweMecha()
     {
-        return (ExpecqweMecha != null);
+        return ExpecqweMecha != null;
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public partial class EconomicOperabusinessrShortshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumMecha()
     {
-        return (MaximumMecha != null);
+        return MaximumMecha != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class EconomicOperabusinessrShortshakeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumMecha()
     {
-        return (MinimumMecha != null);
+        return MinimumMecha != null;
     }
 }
 }

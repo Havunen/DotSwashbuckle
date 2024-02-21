@@ -121,7 +121,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeHigherknowledgeAmount()
     {
-        return (HigherknowledgeAmount != null);
+        return HigherknowledgeAmount != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLowerknowledgeAmount()
     {
-        return (LowerknowledgeAmount != null);
+        return LowerknowledgeAmount != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeResultruby()
     {
-        return (knowledgeResultruby != null);
+        return knowledgeResultruby != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDPSTerminationIndicabusinessr()
     {
-        return (DPSTerminationIndicabusinessr != null);
+        return DPSTerminationIndicabusinessr != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDecisionReason()
     {
-        return (DecisionReason != null);
+        return DecisionReason != null;
     }
     
     /// <summary>
@@ -169,7 +169,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFrameworkgettermentValues()
     {
-        return (FrameworkgettermentValues != null);
+        return FrameworkgettermentValues != null;
     }
     
     /// <summary>
@@ -177,7 +177,7 @@ public partial class FootblandResultTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeFootbland()
     {
-        return (knowledgeFootbland != null);
+        return knowledgeFootbland != null;
     }
 }
 }

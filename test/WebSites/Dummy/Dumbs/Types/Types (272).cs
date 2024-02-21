@@ -42,7 +42,7 @@ public partial class soapTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTermruby()
     {
-        return (Termruby != null);
+        return Termruby != null;
     }
     
     /// <summary>
@@ -50,7 +50,7 @@ public partial class soapTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTermPercent()
     {
-        return (TermPercent != null);
+        return TermPercent != null;
     }
 }
 }

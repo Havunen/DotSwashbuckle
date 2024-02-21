@@ -61,7 +61,7 @@ public partial class TransactionConditionsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class TransactionConditionsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeActionruby()
     {
-        return (Actionruby != null);
+        return Actionruby != null;
     }
 }
 }

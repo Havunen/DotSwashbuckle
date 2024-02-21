@@ -41,7 +41,7 @@ public partial class ServiceFrequencyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeWeekDayruby()
     {
-        return (WeekDayruby != null);
+        return WeekDayruby != null;
     }
 }
 }

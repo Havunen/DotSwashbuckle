@@ -73,7 +73,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeJourneyID()
     {
-        return (JourneyID != null);
+        return JourneyID != null;
     }
     
     /// <summary>
@@ -81,7 +81,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTelevisionNationalityID()
     {
-        return (TelevisionNationalityID != null);
+        return TelevisionNationalityID != null;
     }
     
     /// <summary>
@@ -89,7 +89,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDirectionruby()
     {
-        return (Directionruby != null);
+        return Directionruby != null;
     }
     
     /// <summary>
@@ -97,7 +97,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTransportMeansTyperuby()
     {
-        return (TransportMeansTyperuby != null);
+        return TransportMeansTyperuby != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTrDFeServiceruby()
     {
-        return (TrDFeServiceruby != null);
+        return TrDFeServiceruby != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSbusinesswage()
     {
-        return (Sbusinesswage != null);
+        return Sbusinesswage != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAirTransport()
     {
-        return (AirTransport != null);
+        return AirTransport != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRoDFTransport()
     {
-        return (RoDFTransport != null);
+        return RoDFTransport != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRailTransport()
     {
-        return (RailTransport != null);
+        return RailTransport != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaritimeTransport()
     {
-        return (MaritimeTransport != null);
+        return MaritimeTransport != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class TransportMeansTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOwnerParty()
     {
-        return (OwnerParty != null);
+        return OwnerParty != null;
     }
 }
 }

@@ -64,7 +64,7 @@ public partial class soapExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMinimumNumbusinessolrNumeric()
     {
-        return (MinimumNumbusinessolrNumeric != null);
+        return MinimumNumbusinessolrNumeric != null;
     }
     
     /// <summary>
@@ -72,7 +72,7 @@ public partial class soapExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeMaximumNumbusinessolrNumeric()
     {
-        return (MaximumNumbusinessolrNumeric != null);
+        return MaximumNumbusinessolrNumeric != null;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public partial class soapExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRenewalsIndicabusinessr()
     {
-        return (RenewalsIndicabusinessr != null);
+        return RenewalsIndicabusinessr != null;
     }
     
     /// <summary>
@@ -88,7 +88,7 @@ public partial class soapExtensionTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeOptionValidityPeriod()
     {
-        return (OptionValidityPeriod != null);
+        return OptionValidityPeriod != null;
     }
 }
 }

@@ -58,7 +58,7 @@ public partial class SubsoapingTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTermAmount()
     {
-        return (TermAmount != null);
+        return TermAmount != null;
     }
     
     /// <summary>
@@ -66,7 +66,7 @@ public partial class SubsoapingTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTermPercent()
     {
-        return (TermPercent != null);
+        return TermPercent != null;
     }
     
     /// <summary>
@@ -74,7 +74,7 @@ public partial class SubsoapingTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTermruby()
     {
-        return (Termruby != null);
+        return Termruby != null;
     }
     
     /// <summary>
@@ -82,7 +82,7 @@ public partial class SubsoapingTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializePercentageKnownIndicabusinessr()
     {
-        return (PercentageKnownIndicabusinessr != null);
+        return PercentageKnownIndicabusinessr != null;
     }
     
     /// <summary>
@@ -90,7 +90,7 @@ public partial class SubsoapingTermTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueKnownIndicabusinessr()
     {
-        return (ValueKnownIndicabusinessr != null);
+        return ValueKnownIndicabusinessr != null;
     }
 }
 }

@@ -66,7 +66,7 @@ public partial class TrDFeFinancingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -74,7 +74,7 @@ public partial class TrDFeFinancingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancingInstrumentruby()
     {
-        return (FinancingInstrumentruby != null);
+        return FinancingInstrumentruby != null;
     }
     
     /// <summary>
@@ -82,7 +82,7 @@ public partial class TrDFeFinancingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapDocumentReference()
     {
-        return (soapDocumentReference != null);
+        return soapDocumentReference != null;
     }
     
     /// <summary>
@@ -90,7 +90,7 @@ public partial class TrDFeFinancingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancingParty()
     {
-        return (FinancingParty != null);
+        return FinancingParty != null;
     }
     
     /// <summary>
@@ -98,7 +98,7 @@ public partial class TrDFeFinancingTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFinancingFinancialAccount()
     {
-        return (FinancingFinancialAccount != null);
+        return FinancingFinancialAccount != null;
     }
 }
 }

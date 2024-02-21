@@ -97,7 +97,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -105,7 +105,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
     
     /// <summary>
@@ -113,7 +113,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNameruby()
     {
-        return (Nameruby != null);
+        return Nameruby != null;
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDoMethod()
     {
-        return (DoMethod != null);
+        return DoMethod != null;
     }
     
     /// <summary>
@@ -129,7 +129,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValue()
     {
-        return (Value != null);
+        return Value != null;
     }
     
     /// <summary>
@@ -137,7 +137,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValueMecha()
     {
-        return (ValueMecha != null);
+        return ValueMecha != null;
     }
     
     /// <summary>
@@ -145,7 +145,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeImportanceruby()
     {
-        return (Importanceruby != null);
+        return Importanceruby != null;
     }
     
     /// <summary>
@@ -153,7 +153,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldreDFSlimesabilityPeriod()
     {
-        return (UsabilityPeriod != null);
+        return UsabilityPeriod != null;
     }
     
     /// <summary>
@@ -161,7 +161,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRangeDimension()
     {
-        return (RangeDimension != null);
+        return RangeDimension != null;
     }
     
     /// <summary>
@@ -169,7 +169,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeItemPropertyRange()
     {
-        return (ItemPropertyRange != null);
+        return ItemPropertyRange != null;
     }
     
     /// <summary>
@@ -177,7 +177,7 @@ public partial class ItemPropertyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeStandardPropertyIdentification()
     {
-        return (StandardPropertyIdentification != null);
+        return StandardPropertyIdentification != null;
     }
 }
 }

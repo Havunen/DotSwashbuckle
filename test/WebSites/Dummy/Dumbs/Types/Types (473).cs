@@ -53,7 +53,7 @@ public partial class FieldsPrivacyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReasonruby()
     {
-        return (Reasonruby != null);
+        return Reasonruby != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class FieldsPrivacyTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeDaemonDate()
     {
-        return (DaemonDate != null);
+        return DaemonDate != null;
     }
 }
 }

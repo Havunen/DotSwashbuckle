@@ -94,7 +94,7 @@ public partial class dummypctmsapphireFootblandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -102,7 +102,7 @@ public partial class dummypctmsapphireFootblandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCombinedTerms()
     {
-        return (CombinedTerms != null);
+        return CombinedTerms != null;
     }
     
     /// <summary>
@@ -110,7 +110,7 @@ public partial class dummypctmsapphireFootblandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCombinedProcess()
     {
-        return (CombinedProcess != null);
+        return CombinedProcess != null;
     }
     
     /// <summary>
@@ -118,7 +118,7 @@ public partial class dummypctmsapphireFootblandTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmsapphire()
     {
-        return (dummypctmsapphire != null);
+        return dummypctmsapphire != null;
     }
 }
 }

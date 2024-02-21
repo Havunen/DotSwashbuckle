@@ -45,7 +45,7 @@ public partial class CommodityClassificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeNatureruby()
     {
-        return (Natureruby != null);
+        return Natureruby != null;
     }
     
     /// <summary>
@@ -53,7 +53,7 @@ public partial class CommodityClassificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCargoTyperuby()
     {
-        return (CargoTyperuby != null);
+        return CargoTyperuby != null;
     }
     
     /// <summary>
@@ -61,7 +61,7 @@ public partial class CommodityClassificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCommodityruby()
     {
-        return (Commodityruby != null);
+        return Commodityruby != null;
     }
     
     /// <summary>
@@ -69,7 +69,7 @@ public partial class CommodityClassificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeItemClassificationruby()
     {
-        return (ItemClassificationruby != null);
+        return ItemClassificationruby != null;
     }
 }
 }

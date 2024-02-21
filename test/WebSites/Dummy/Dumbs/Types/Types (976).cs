@@ -146,7 +146,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -154,7 +154,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmTyperuby()
     {
-        return (dummypctmTyperuby != null);
+        return dummypctmTyperuby != null;
     }
     
     /// <summary>
@@ -162,7 +162,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedummypctmSubTyperuby()
     {
-        return (dummypctmSubTyperuby != null);
+        return dummypctmSubTyperuby != null;
     }
     
     /// <summary>
@@ -170,7 +170,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeQualityControlruby()
     {
-        return (QualityControlruby != null);
+        return QualityControlruby != null;
     }
     
     /// <summary>
@@ -178,7 +178,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequiredFeeAmount()
     {
-        return (RequiredFeeAmount != null);
+        return RequiredFeeAmount != null;
     }
     
     /// <summary>
@@ -186,7 +186,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweDeliveryDate()
     {
-        return (RequesqweDeliveryDate != null);
+        return RequesqweDeliveryDate != null;
     }
     
     /// <summary>
@@ -194,7 +194,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeAstimaqweOverlandsoapMecha()
     {
-        return (AstimaqweOverlandsoapMecha != null);
+        return AstimaqweOverlandsoapMecha != null;
     }
     
     /// <summary>
@@ -202,7 +202,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSMESuitableIndicabusinessr()
     {
-        return (SMESuitableIndicabusinessr != null);
+        return SMESuitableIndicabusinessr != null;
     }
     
     /// <summary>
@@ -210,7 +210,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeRequesqweknowledgebusinesstal()
     {
-        return (Requesqweknowledgebusinesstal != null);
+        return Requesqweknowledgebusinesstal != null;
     }
     
     /// <summary>
@@ -218,7 +218,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializedumnedPeriod()
     {
-        return (dumnedPeriod != null);
+        return dumnedPeriod != null;
     }
     
     /// <summary>
@@ -226,7 +226,7 @@ public partial class dummypctmsapphireTypeXsd
     /// </summary>
     public virtual bool ShouldSerializesoapExtension()
     {
-        return (soapExtension != null);
+        return soapExtension != null;
     }
 }
 }

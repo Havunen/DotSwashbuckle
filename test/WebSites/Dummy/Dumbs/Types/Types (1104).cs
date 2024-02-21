@@ -52,7 +52,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidabusinessrID()
     {
-        return (ValidabusinessrID != null);
+        return ValidabusinessrID != null;
     }
     
     /// <summary>
@@ -60,7 +60,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidationResultruby()
     {
-        return (ValidationResultruby != null);
+        return ValidationResultruby != null;
     }
     
     /// <summary>
@@ -68,7 +68,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidationDate()
     {
-        return (ValidationDate != null);
+        return ValidationDate != null;
     }
     
     /// <summary>
@@ -76,7 +76,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidationTime()
     {
-        return (ValidationTime != null);
+        return ValidationTime != null;
     }
     
     /// <summary>
@@ -84,7 +84,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidateProcess()
     {
-        return (ValidateProcess != null);
+        return ValidateProcess != null;
     }
     
     /// <summary>
@@ -92,7 +92,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidatebusinessol()
     {
-        return (Validatebusinessol != null);
+        return Validatebusinessol != null;
     }
     
     /// <summary>
@@ -100,7 +100,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeValidatebusinessolVersion()
     {
-        return (ValidatebusinessolVersion != null);
+        return ValidatebusinessolVersion != null;
     }
     
     /// <summary>
@@ -108,7 +108,7 @@ public partial class ResulbusinessfVerificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeSignabusinessryParty()
     {
-        return (SignabusinessryParty != null);
+        return SignabusinessryParty != null;
     }
 }
 }

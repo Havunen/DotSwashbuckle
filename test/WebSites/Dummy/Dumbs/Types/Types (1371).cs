@@ -50,7 +50,7 @@ public partial class TrDFingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeReference()
     {
-        return (Reference != null);
+        return Reference != null;
     }
     
     /// <summary>
@@ -58,7 +58,7 @@ public partial class TrDFingTermsTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeApplicableinternet()
     {
-        return (Applicableinternet != null);
+        return Applicableinternet != null;
     }
 }
 }

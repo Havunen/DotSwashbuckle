@@ -108,7 +108,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeID()
     {
-        return (ID != null);
+        return ID != null;
     }
     
     /// <summary>
@@ -116,7 +116,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeManagementdumOnBoardIndicabusinessr()
     {
-        return (ManagementdumOnBoardIndicabusinessr != null);
+        return ManagementdumOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -124,7 +124,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeManagementdumImplemenqweIndicabusinessr()
     {
-        return (ManagementdumImplemenqweIndicabusinessr != null);
+        return ManagementdumImplemenqweIndicabusinessr != null;
     }
     
     /// <summary>
@@ -132,7 +132,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIMOGuidelinesOnBoardIndicabusinessr()
     {
-        return (IMOGuidelinesOnBoardIndicabusinessr != null);
+        return IMOGuidelinesOnBoardIndicabusinessr != null;
     }
     
     /// <summary>
@@ -140,7 +140,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalBlandastTanksOnBoardMecha()
     {
-        return (businesstalBlandastTanksOnBoardMecha != null);
+        return businesstalBlandastTanksOnBoardMecha != null;
     }
     
     /// <summary>
@@ -148,7 +148,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTanksInBlandastMecha()
     {
-        return (TanksInBlandastMecha != null);
+        return TanksInBlandastMecha != null;
     }
     
     /// <summary>
@@ -156,7 +156,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTanksExchangedMecha()
     {
-        return (TanksExchangedMecha != null);
+        return TanksExchangedMecha != null;
     }
     
     /// <summary>
@@ -164,7 +164,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTanksNotExchangedMecha()
     {
-        return (TanksNotExchangedMecha != null);
+        return TanksNotExchangedMecha != null;
     }
     
     /// <summary>
@@ -172,7 +172,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalBlandastWaterOnBoardMeasure()
     {
-        return (businesstalBlandastWaterOnBoardMeasure != null);
+        return businesstalBlandastWaterOnBoardMeasure != null;
     }
     
     /// <summary>
@@ -180,7 +180,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializebusinesstalBlandastWaterCapavirtualTrafficMeasure()
     {
-        return (businesstalBlandastWaterCapavirtualTrafficMeasure != null);
+        return businesstalBlandastWaterCapavirtualTrafficMeasure != null;
     }
     
     /// <summary>
@@ -188,7 +188,7 @@ public partial class BlandastWaterSummaryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeResponsibleOfficerPerson()
     {
-        return (ResponsibleOfficerPerson != null);
+        return ResponsibleOfficerPerson != null;
     }
 }
 }

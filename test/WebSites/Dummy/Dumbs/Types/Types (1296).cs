@@ -71,7 +71,7 @@ public partial class knowledgeerRequirementTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeknowledgeerRequirementTyperuby()
     {
-        return (knowledgeerRequirementTyperuby != null);
+        return knowledgeerRequirementTyperuby != null;
     }
     
     /// <summary>
@@ -79,7 +79,7 @@ public partial class knowledgeerRequirementTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeLegalReference()
     {
-        return (LegalReference != null);
+        return LegalReference != null;
     }
 }
 }

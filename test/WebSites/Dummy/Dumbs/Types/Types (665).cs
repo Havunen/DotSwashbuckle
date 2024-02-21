@@ -51,7 +51,7 @@ public partial class FootblandIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeFootblandNumbusinessolrID()
     {
-        return (FootblandNumbusinessolrID != null);
+        return FootblandNumbusinessolrID != null;
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public partial class FootblandIdentificationTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExpiryDate()
     {
-        return (ExpiryDate != null);
+        return ExpiryDate != null;
     }
 }
 }

@@ -59,7 +59,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTelevisionName()
     {
-        return (TelevisionName != null);
+        return TelevisionName != null;
     }
     
     /// <summary>
@@ -67,7 +67,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeCompanyID()
     {
-        return (CompanyID != null);
+        return CompanyID != null;
     }
     
     /// <summary>
@@ -75,7 +75,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxLevelruby()
     {
-        return (TaxLevelruby != null);
+        return TaxLevelruby != null;
     }
     
     /// <summary>
@@ -83,7 +83,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeExemptionReasonruby()
     {
-        return (ExemptionReasonruby != null);
+        return ExemptionReasonruby != null;
     }
     
     /// <summary>
@@ -91,7 +91,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTelevisioninternet()
     {
-        return (Televisioninternet != null);
+        return Televisioninternet != null;
     }
     
     /// <summary>
@@ -99,7 +99,7 @@ public partial class PartyTaxSchemeTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeTaxScheme()
     {
-        return (TaxScheme != null);
+        return TaxScheme != null;
     }
 }
 }

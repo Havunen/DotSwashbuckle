@@ -41,7 +41,7 @@ public partial class CountryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeIdentificationruby()
     {
-        return (Identificationruby != null);
+        return Identificationruby != null;
     }
     
     /// <summary>
@@ -49,7 +49,7 @@ public partial class CountryTypeXsd
     /// </summary>
     public virtual bool ShouldSerializeName()
     {
-        return (Name != null);
+        return Name != null;
     }
 }
 }
