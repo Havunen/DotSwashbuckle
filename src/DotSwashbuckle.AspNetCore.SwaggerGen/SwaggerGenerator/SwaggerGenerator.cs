@@ -282,6 +282,18 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                         apiParameter.PropertyInfo(),
                         apiParameter.ParameterInfo(),
                         apiParameter.RouteInfo);
+
+                    var filterContext = new ParameterFilterContext(
+                        apiParameter,
+                        _schemaGenerator,
+                        schemaRepository,
+                        apiParameter.PropertyInfo(),
+                        apiParameter.ParameterInfo());
+
+                    foreach (var filter in _options.ParameterFilters)
+                    {
+                        filter.Apply(parameter, filterContext);
+                    }
                 }
             }
 
@@ -290,6 +302,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             {
                 foreach (var content in requestContentTypes)
                 {
+                    RequestBodyFilterContext filterContext = null;
                     var fromBodyParam = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.IsFromBody());
                     if (fromBodyParam is not null)
                     {
@@ -297,7 +310,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                             fromBodyParam.Type,
                             schemaRepository,
                             fromBodyParam.PropertyInfo(),
-                            fromBodyParam.ParameterInfo());
+                            fromBodyParam.ParameterInfo()
+                        );
+
+                        filterContext = new RequestBodyFilterContext(
+                            bodyParameterDescription: fromBodyParam,
+                            formParameterDescriptions: null,
+                            schemaGenerator: _schemaGenerator,
+                            schemaRepository: schemaRepository
+                        );
                     }
                     else
                     {
@@ -313,9 +334,21 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                                 entry => entry.Key,
                                 entry => new OpenApiEncoding { Style = ParameterStyle.Form }
                             );
+                            filterContext = new RequestBodyFilterContext(
+                                bodyParameterDescription: null,
+                                formParameterDescriptions: fromFormParam,
+                                schemaGenerator: _schemaGenerator,
+                                schemaRepository: schemaRepository);
                         }
                     }
 
+                    if (filterContext != null)
+                    {
+                        foreach (var filter in _options.RequestBodyFilters)
+                        {
+                            filter.Apply(operation.RequestBody, filterContext);
+                        }
+                    }
                 }
             }
 

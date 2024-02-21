@@ -1331,6 +1331,56 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         }
 
         [Fact]
+        public void GetSwagger_SupportsOption_ParameterFilters_WithMetaData()
+        {
+            var apiDesc = ApiDescriptionFactory.Create<FakeController>(
+                c => nameof(c.ActionWithParameter),
+                groupName: "v1",
+                httpMethod: "POST",
+                relativePath: "resource",
+                parameterDescriptions: new[]
+                {
+                    new ApiParameterDescription { Name = "param", Source = BindingSource.Query }
+                });
+            apiDesc.ActionDescriptor.EndpointMetadata = new List<object>()
+            {
+                new OpenApiOperation
+                {
+                    Parameters = new List<OpenApiParameter>() {
+                        new OpenApiParameter
+                        {
+                            Name = "param",
+                            Content = new Dictionary<string, OpenApiMediaType>
+                            {
+                            }
+                        }
+                    }
+                }
+            };
+            var subject = Subject(
+                apiDescriptions: new[] { apiDesc },
+                options: Options.Create<SwaggerGeneratorOptions>(new SwaggerGeneratorOptions
+                {
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
+                    {
+                        ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
+                    },
+                    ParameterFilters = new List<IParameterFilter>
+                    {
+                        new TestParameterFilter()
+                    }
+                })
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+            Assert.Equal(2, operation.Parameters[0].Extensions.Count());
+            Assert.Equal("bar", ((OpenApiString)operation.Parameters[0].Extensions["X-foo"]).Value);
+            Assert.Equal("v1", ((OpenApiString)operation.Parameters[0].Extensions["X-docName"]).Value);
+        }
+
+        [Fact]
         public void GetSwagger_SupportsOption_RequestBodyFilters()
         {
             var subject = Subject(
@@ -1346,6 +1396,59 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             new ApiParameterDescription { Name = "param", Source = BindingSource.Body }
                         })
                 },
+                options: Options.Create(new SwaggerGeneratorOptions
+                {
+                    SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
+                    {
+                        ["v1"] = new OpenApiInfo { Version = "V1", Title = "Test API" }
+                    },
+                    RequestBodyFilters = new List<IRequestBodyFilter>
+                    {
+                        new TestRequestBodyFilter()
+                    }
+                })
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+            Assert.Equal(2, operation.RequestBody.Extensions.Count);
+            Assert.Equal("bar", ((OpenApiString)operation.RequestBody.Extensions["X-foo"]).Value);
+            Assert.Equal("v1", ((OpenApiString)operation.RequestBody.Extensions["X-docName"]).Value);
+        }
+
+        [Fact]
+        public void GetSwagger_SupportsOption_RequestBodyFilters_WithMetaData()
+        {
+            var apiDesc = ApiDescriptionFactory.Create<FakeController>(
+                c => nameof(c.ActionWithParameter),
+                groupName: "v1",
+                httpMethod: "POST",
+                relativePath: "resource",
+                parameterDescriptions: new[]
+                {
+                    new ApiParameterDescription { Name = "param", Source = BindingSource.Body }
+                });
+            apiDesc.ActionDescriptor.EndpointMetadata = new List<object>()
+            {
+                new OpenApiOperation
+                {
+                    RequestBody = new OpenApiRequestBody
+                    {
+                        Content = new Dictionary<string, OpenApiMediaType>
+                        {
+                            ["multipart/form-data"] = new OpenApiMediaType
+                            {
+                                // These values are null
+                                Schema = null,
+                                Encoding = null
+                            }
+                        }
+                    }
+                }
+            };
+            var subject = Subject(
+                apiDescriptions: new[] { apiDesc },
                 options: Options.Create(new SwaggerGeneratorOptions
                 {
                     SwaggerDocs = new Dictionary<string, OpenApiInfo>(StringComparer.Ordinal)
