@@ -150,8 +150,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         }
 
         public string Name { get; } 
-        public bool IsRequired { get; }
-        public bool IsNullable { get; }
+        public bool IsRequired { get; internal set; }
+        public bool IsNullable { get; internal set; }
         public bool IsReadOnly { get; }
         public bool IsWriteOnly { get; }
         public Type MemberType { get; }

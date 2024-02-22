@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net;
+using DotSwashbuckle.AspNetCore.SwaggerGen.Test.Fixtures;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -79,6 +80,47 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
             Assert.Equal(expectedSchemaType, schema.Type);
             Assert.Equal(expectedFormat, schema.Format);
+        }
+
+        [Theory]
+        [InlineData(typeof(TestRecordMixedSwapped), nameof(TestRecordMixedSwapped.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordMixedSwapped), nameof(TestRecordMixedSwapped.OptionalString), true, false)]
+        [InlineData(typeof(TestClass), nameof(TestClass.RequiredString), false, true)]
+        [InlineData(typeof(TestClass), nameof(TestClass.OptionalString), true, false)]
+        [InlineData(typeof(TestRecord), nameof(TestRecord.RequiredString), false, true)]
+        [InlineData(typeof(TestRecord), nameof(TestRecord.OptionalString), true, false)]
+        [InlineData(typeof(TestRecordMixed), nameof(TestRecordMixed.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordMixed), nameof(TestRecordMixed.OptionalString), true, false)]
+        [InlineData(typeof(TestRecordInitOptional), nameof(TestRecordInitOptional.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordInitOptional), nameof(TestRecordInitOptional.OptionalString), true, false)]
+        [InlineData(typeof(TestRecordInitRequired), nameof(TestRecordInitRequired.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordInitRequired), nameof(TestRecordInitRequired.OptionalString), true, false)]
+        [InlineData(typeof(TestRecordPrimary), nameof(TestRecordPrimary.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordPrimary), nameof(TestRecordPrimary.OptionalString), true, false)]
+        [InlineData(typeof(TestRecordPrimaryInverse), nameof(TestRecordPrimaryInverse.RequiredString), false, true)]
+        [InlineData(typeof(TestRecordPrimaryInverse), nameof(TestRecordPrimaryInverse.OptionalString), true, false)]
+        [InlineData(typeof(TestValueRecordPrimary), nameof(TestValueRecordPrimary.RequiredString), false, true)]
+        [InlineData(typeof(TestValueRecordPrimary), nameof(TestValueRecordPrimary.OptionalString), true, false)]
+        [InlineData(typeof(TestValueRecordPrimaryInverse), nameof(TestValueRecordPrimaryInverse.RequiredString), false, true)]
+        [InlineData(typeof(TestValueRecordPrimaryInverse), nameof(TestValueRecordPrimaryInverse.OptionalString), true, false)]
+        public void TestNullable_And_Required_When_SupportNonNullableReferenceTypes_Enabled(
+            Type type,
+            string propertyName,
+            bool expectedNullable,
+            bool expectedRequired
+        )
+        {
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = Subject(
+                configureGenerator: c => c.SupportNonNullableReferenceTypes = true
+            ).GenerateSchema(type, schemaRepository);
+
+            Assert.NotNull(referenceSchema.Reference);
+            var schema = schemaRepository.Schemas[referenceSchema.Reference.Id];
+            schema.Properties.TryGetValue(propertyName, out var propertySchema);
+            Assert.Equal(expectedNullable, propertySchema.Nullable);
+            Assert.Equal(expectedRequired, schema.Required.Contains(propertyName));
         }
 
         [Theory]
