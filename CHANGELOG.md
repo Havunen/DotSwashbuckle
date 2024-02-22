@@ -1,3 +1,6 @@
+# v3.0.6
+- Mark non-nullable properties required when SupportNonNullableReferenceTypes is enabled and property is declared non-nullable. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2623 for https://github.com/Havunen/DotSwashbuckle/issues/3
+
 # v3.0.5
 - Adds support for RequestBodyFilters and ParameterFilters when constructing schema from Metadata fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2613 and https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2561
 - Fixes an issue where IFormFile parameters are incorrectly generated when WithOpenApi() extension method is used ref: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2625
