@@ -408,14 +408,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             var isRequired = apiParameter.IsRequiredParameter();
 
-            var schema = apiParameter.ModelMetadata != null
-                ? GenerateSchema(
-                    apiParameter.Type,
-                    schemaRepository,
-                    apiParameter.PropertyInfo(),
-                    apiParameter.ParameterInfo(),
-                    apiParameter.RouteInfo)
-                : new OpenApiSchema { Type = "string" };
+            var type = apiParameter.ModelMetadata?.ModelType ?? apiParameter.Type;
+
+            var schema = type != null ? GenerateSchema(
+                type,
+                schemaRepository,
+                apiParameter.PropertyInfo(),
+                apiParameter.ParameterInfo(),
+                apiParameter.RouteInfo
+            ) : new OpenApiSchema() {Type = "string"};
 
             var parameter = new OpenApiParameter
             {
@@ -513,11 +514,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             var isRequired = bodyParameter.IsRequiredParameter();
 
-            var schema = GenerateSchema(
-                bodyParameter.Type,
+            var type = bodyParameter.ModelMetadata?.ModelType ?? bodyParameter.Type;
+            var schema = type != null ? GenerateSchema(
+                type,
                 schemaRepository,
                 bodyParameter.PropertyInfo(),
-                bodyParameter.ParameterInfo());
+                bodyParameter.ParameterInfo()
+            ) : new OpenApiSchema() { Type = "string" };
 
             return new OpenApiRequestBody
             {
@@ -591,13 +594,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                     ? formParameter.Name.ToCamelCase()
                     : formParameter.Name;
 
-                var schema = formParameter.ModelMetadata != null
-                    ? GenerateSchema(
-                        formParameter.Type,
-                        schemaRepository,
-                        formParameter.PropertyInfo(),
-                        formParameter.ParameterInfo())
-                    : new OpenApiSchema { Type = "string" };
+                var type = formParameter.ModelMetadata?.ModelType ?? formParameter.Type;
+                var schema = type != null ? GenerateSchema(
+                    type,
+                    schemaRepository,
+                    formParameter.PropertyInfo(),
+                    formParameter.ParameterInfo()
+                ) : new OpenApiSchema() { Type = "string" };
 
                 properties.Add(name, schema);
 

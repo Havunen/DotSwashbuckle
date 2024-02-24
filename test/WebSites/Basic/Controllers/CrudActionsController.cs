@@ -86,6 +86,17 @@ namespace Basic.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet("status", Name = "GetStatus")]
+        public void GetStatus(ProductStatus status)
+        {
+        }
+
+        [HttpPost("status", Name = "GetStatus")]
+        public ProductStatus PostStatus([FromBody] ProductStatus status)
+        {
+            return status;
+        }
     }
 
     public enum ProductStatus

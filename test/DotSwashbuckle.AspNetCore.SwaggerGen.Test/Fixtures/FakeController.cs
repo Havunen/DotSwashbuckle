@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using DotSwashbuckle.AspNetCore.TestSupport;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -18,6 +19,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
         public void ActionWithParameter(string param)
         { }
+
+        public IntEnum ActionWithEnumParameter(IntEnum param)
+        {
+            return param;
+        }
 
         public void ActionWithMultipleParameters(string param1, int param2)
         { }

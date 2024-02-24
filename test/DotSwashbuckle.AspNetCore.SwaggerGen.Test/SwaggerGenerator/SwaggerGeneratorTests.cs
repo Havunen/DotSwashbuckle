@@ -371,6 +371,109 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         }
 
         [Fact]
+        public void GetSwagger_SetsEnumRef_IfParameterIsEnum()
+        {
+            var methodInfo = typeof(FakeController).GetMethod(nameof(FakeController.ActionWithEnumParameter));
+            var actionDescriptor = new ActionDescriptor
+            {
+                EndpointMetadata = null,
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
+                }
+            };
+            var subject = Subject(
+                apiDescriptions: new[]
+                {
+                    ApiDescriptionFactory.Create(actionDescriptor, methodInfo, groupName: "v1", httpMethod: "POST",
+                        relativePath: "resource",
+                        parameterDescriptions: new[]
+                        {
+                            new ApiParameterDescription
+                            {
+                                Name = "param",
+                                Source = BindingSource.Query,
+                                Type = typeof(string), // The type comes as string
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(IntEnum)),
+                            }
+                        },
+                        supportedResponseTypes: new []
+                        {
+                            new ApiResponseType
+                            {
+                                ApiResponseFormats = new [] { new ApiResponseFormat { MediaType = "application/json" } },
+                                StatusCode = 200,
+                            },
+                        }
+                    )
+                }
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+
+
+            Assert.Equal("IntEnum", operation.Responses["200"].Content.First().Value.Schema.Reference.Id);
+            Assert.Equal("IntEnum", operation.Parameters.First().Schema.Reference.Id);
+            Assert.Equal(ReferenceType.Schema, operation.Parameters.First().Schema.Reference.Type);
+            Assert.Equal(3, document.Components.Schemas["IntEnum"].Enum.Count);
+        }
+
+        [Fact]
+        public void GetSwagger_SetsEnumRef_IfRequestBodyIsEnum()
+        {
+            var methodInfo = typeof(FakeController).GetMethod(nameof(FakeController.ActionWithEnumParameter));
+            var actionDescriptor = new ActionDescriptor
+            {
+                EndpointMetadata = null,
+                RouteValues = new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["controller"] = methodInfo.DeclaringType.Name.Replace("Controller", string.Empty)
+                }
+            };
+            var subject = Subject(
+                apiDescriptions: new[]
+                {
+                    ApiDescriptionFactory.Create(actionDescriptor, methodInfo, groupName: "v1", httpMethod: "POST",
+                        relativePath: "resource",
+                        parameterDescriptions: new[]
+                        {
+                            new ApiParameterDescription
+                            {
+                                Name = "param",
+                                Source = BindingSource.Body,
+                                Type = typeof(string), // The type comes as string
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(IntEnum)),
+                            }
+                        },
+                        supportedRequestFormats: new[]
+                        {
+                            new ApiRequestFormat { MediaType = "application/json" }
+                        },
+                        supportedResponseTypes: new []
+                        {
+                            new ApiResponseType
+                            {
+                                ApiResponseFormats = new [] { new ApiResponseFormat { MediaType = "application/json" } },
+                                StatusCode = 200,
+                            },
+                        }
+                    )
+                }
+            );
+
+            var document = subject.GetSwagger("v1");
+
+            var operation = document.Paths["/resource"].Operations[OperationType.Post];
+
+
+            Assert.Equal("IntEnum", operation.Responses["200"].Content.First().Value.Schema.Reference.Id);
+            Assert.Equal("IntEnum", operation.RequestBody.Content.First().Value.Schema.Reference.Id);
+            Assert.Equal(3, document.Components.Schemas["IntEnum"].Enum.Count);
+        }
+
+        [Fact]
         public void GetSwagger_SetsDeprecated_IfActionHasObsoleteAttribute()
         {
             var subject = Subject(
