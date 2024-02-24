@@ -309,21 +309,45 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         private OpenApiSchema CreatePrimitiveSchema(DataContract dataContract, bool isNullable)
         {
+            var underlyingType = dataContract.UnderlyingType;
             var schema = new OpenApiSchema
             {
                 Type = dataContract.DataType.ToString().ToLower(CultureInfo.InvariantCulture),
                 Format = dataContract.DataFormat,
-                Nullable = isNullable || Nullable.GetUnderlyingType(dataContract.UnderlyingType) != null
+                Nullable = isNullable || Nullable.GetUnderlyingType(underlyingType) != null
             };
 
-            if (dataContract.UnderlyingType.IsEnum)
+            if (underlyingType.IsEnum)
             {
-                schema.Enum = dataContract.UnderlyingType.GetEnumValues()
+                schema.Enum = underlyingType.GetEnumValues()
                     .Cast<object>()
                     .Select(value => dataContract.JsonConverter(value))
                     .Distinct()
                     .Select(valueAsJson => OpenApiAnyFactory.CreateFromJson(valueAsJson))
                     .ToList();
+            }
+
+            if (dataContract.DataType == DataType.Integer)
+            {
+                if (underlyingType == typeof(ushort))
+                {
+                    schema.Minimum = 0;
+                    schema.Maximum = ushort.MaxValue;
+                } else if (underlyingType == typeof(uint))
+                {
+                    schema.Minimum = 0;
+                    schema.Maximum = uint.MaxValue;
+                } else if (underlyingType == typeof(ulong))
+                {
+                    schema.Minimum = 0;
+                    schema.Maximum = ulong.MaxValue;
+                } else if (underlyingType == typeof(UInt128))
+                {
+                    schema.Minimum = 0;
+                    // OpenApiMaximum property is too small to represent UInt128.MaxValue
+                    //schema.Maximum = UInt128.MaxValue;
+                }
+
             }
 
             return schema;

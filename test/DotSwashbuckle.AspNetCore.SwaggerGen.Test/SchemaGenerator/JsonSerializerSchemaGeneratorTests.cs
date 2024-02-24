@@ -49,7 +49,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(short), "integer", "int32", false)]
         [InlineData(typeof(ushort), "integer", "int32", false)]
         [InlineData(typeof(int), "integer", "int32", false)]
-        [InlineData(typeof(uint), "integer", "int32", false)]
+        [InlineData(typeof(uint), "integer", "int64", false)]
         [InlineData(typeof(long), "integer", "int64", false)]
         [InlineData(typeof(ulong), "integer", "int64", false)]
         [InlineData(typeof(float), "number", "float", false)]
@@ -67,6 +67,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         [InlineData(typeof(Version), "string", null, false)]
         [InlineData(typeof(bool?), "boolean", null, true)]
         [InlineData(typeof(int?), "integer", "int32", true)]
+        [InlineData(typeof(uint?), "integer", "int64", true)]
         [InlineData(typeof(Int128?), "integer", "int128", true)]
         [InlineData(typeof(UInt128?), "integer", "int128", true)]
         [InlineData(typeof(DateTime?), "string", "date-time", true)]
@@ -123,6 +124,51 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             schema.Properties.TryGetValue(propertyName, out var propertySchema);
             Assert.Equal(expectedNullable, propertySchema.Nullable);
             Assert.Equal(expectedRequired, schema.Required.Contains(propertyName));
+        }
+
+        [Theory]
+        [InlineData(typeof(ushort), "integer", "int32", ushort.MaxValue, false)]
+        [InlineData(typeof(uint), "integer", "int64", uint.MaxValue, false)]
+        [InlineData(typeof(ulong), "integer", "int64", ulong.MaxValue, false)]
+        [InlineData(typeof(ushort?), "integer", "int32", ushort.MaxValue, true)]
+        [InlineData(typeof(uint?), "integer", "int64", uint.MaxValue, true)]
+        [InlineData(typeof(ulong?), "integer", "int64", ulong.MaxValue, true)]
+        public void UnsignedIntegerTypes_HaveMinAndMax_DefinedInSchema(
+            Type type,
+            string schemaType,
+            string schemaFormat,
+            decimal max,
+            bool nullable
+        )
+        {
+            var schema = Subject().GenerateSchema(type, new SchemaRepository());
+
+            Assert.Equal(schemaType, schema.Type);
+            Assert.Equal(schemaFormat, schema.Format);
+            Assert.Equal(0, schema.Minimum);
+            Assert.Equal(max, schema.Maximum);
+            Assert.Equal(nullable, schema.Nullable);
+        }
+
+        [Fact]
+        public void UInt128_HaveMinAndMax_DefinedInSchema()
+        {
+            var schema = Subject().GenerateSchema(typeof(UInt128), new SchemaRepository());
+
+            Assert.Equal("integer", schema.Type);
+            Assert.Equal("int128", schema.Format);
+            Assert.Equal(0, schema.Minimum);
+            Assert.Equal(null, schema.Maximum);
+            Assert.Equal(false, schema.Nullable);
+
+
+            schema = Subject().GenerateSchema(typeof(UInt128?), new SchemaRepository());
+
+            Assert.Equal("integer", schema.Type);
+            Assert.Equal("int128", schema.Format);
+            Assert.Equal(0, schema.Minimum);
+            Assert.Equal(null, schema.Maximum);
+            Assert.Equal(true, schema.Nullable);
         }
 
         [Theory]
