@@ -53,6 +53,8 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         [InlineData(typeof(float), "number", "float", false)]
         [InlineData(typeof(double), "number", "double", false)]
         [InlineData(typeof(decimal), "number", "double", false)]
+        [InlineData(typeof(Int128), "integer", "int128", false)]
+        [InlineData(typeof(UInt128), "integer", "int128", false)]
         [InlineData(typeof(string), "string", null, false)]
         [InlineData(typeof(char), "string", null, false)]
         [InlineData(typeof(byte[]), "string", "byte", false)]
@@ -63,6 +65,8 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         [InlineData(typeof(Version), "string", null, false)]
         [InlineData(typeof(bool?), "boolean", null, true)]
         [InlineData(typeof(int?), "integer", "int32", true)]
+        [InlineData(typeof(Int128?), "integer", "int128", true)]
+        [InlineData(typeof(UInt128?), "integer", "int128", true)]
         [InlineData(typeof(DateTime?), "string", "date-time", true)]
         public void GenerateSchema_GeneratesPrimitiveSchema_IfPrimitiveOrNullablePrimitiveType(
             Type type,
