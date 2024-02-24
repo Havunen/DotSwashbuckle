@@ -1,3 +1,6 @@
+# v3.0.7
+- always prefer `modelMetaData.Type` over `parameter.Type` to support Enums. Fixes https://github.com/Havunen/DotSwashbuckle/issues/7
+
 # v3.0.6
 - Mark non-nullable properties required when SupportNonNullableReferenceTypes is enabled and property is declared non-nullable. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2623 for https://github.com/Havunen/DotSwashbuckle/issues/3
 
