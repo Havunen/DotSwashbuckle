@@ -19,6 +19,7 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
         [InlineData(typeof(GenericControllers.Startup), new[] { "v1" })]
         [InlineData(typeof(MultipleVersions.Startup), new[] { "1.0", "2.0" })]
         [InlineData(typeof(OAuth2Integration.Startup), new[] { "v1" })]
+        [InlineData(typeof(Dummy.Startup), new[] { "v1", "doc-v1", "doc-v2", "doc-v3", "doc-v4", "doc-v5", "doc-v6", "doc-v7", "doc-v8", "doc-v9" })]
         public void DocumentProvider_ExposesAllDocumentNames(Type startupType, string[] expectedNames)
         {
             var testSite = new TestSite(startupType);
@@ -33,6 +34,17 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
 
         [Theory]
         [InlineData(typeof(Basic.Startup), "v1")]
+        // Dummy could be added here once all the tests are passing
+        //[InlineData(typeof(Dummy.Startup), "v1")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v1")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v2")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v3")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v4")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v5")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v6")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v7")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v8")]
+        //[InlineData(typeof(Dummy.Startup), "doc-v9")]
         [InlineData(typeof(CustomUIConfig.Startup), "v1")]
         [InlineData(typeof(CustomUIIndex.Startup), "v1")]
         [InlineData(typeof(GenericControllers.Startup), "v1")]
