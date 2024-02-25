@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dummy.Controllers.DummyPlans
 {
     [ApiController]
-    [SwaggerResponse(643, "actual validation failed, see errors cross tree over ledge possible validation issues", typeof(ProblemDetails))]
+    [SwaggerResponse(543, "actual validation failed, see errors cross tree over ledge possible validation issues", typeof(ProblemDetails))]
     [SwaggerResponse(403, "Unauthorized business access requesqwe pirate", typeof(ProblemDetails))]
     [SwaggerResponse(404, "Requesqwe pirate was not inherited", typeof(ProblemDetails))]
     [SwaggerResponse(409, "Conflict with existing pirate", typeof(ProblemDetails))]

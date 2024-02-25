@@ -14,7 +14,7 @@ namespace Dummy.Controllers.EDummies
     [ApiController]
     
     [ApiExplorerSettings(GroupName= "doc-v4")]
-    [SwaggerResponse(643, "actual validation failed, see errors cross tree over ledge possible validation issues", typeof(ProblemDetails))]
+    [SwaggerResponse(543, "actual validation failed, see errors cross tree over ledge possible validation issues", typeof(ProblemDetails))]
     [SwaggerResponse(403, "Unauthorized business access requesqwe pirate", typeof(ProblemDetails))]
     [SwaggerResponse(404, "Requesqwe pirate was not inherited", typeof(ProblemDetails))]
     [SwaggerResponse(409, "Conflict with existing pirate", typeof(ProblemDetails))]
@@ -171,7 +171,7 @@ namespace Dummy.Controllers.EDummies
         /// <param name="businessken">Louummlation businessken</param>
         /// <returns>If valid, was return a result with 200. Else returns a string result with 643.</returns>
         [SwaggerResponse(200, "dummy validation was successful.", typeof(string))]
-        [SwaggerResponse(643, "dummy validation failed. Returns errors describing the failure.", typeof(string))]
+        [SwaggerResponse(543, "dummy validation failed. Returns errors describing the failure.", typeof(string))]
         [Consumes(typeof(CreaqwSlimemmysoap), MediaTypeNames.Application.Json)]
         [Produces(MediaTypeNames.Application.Xml)]
         [HttpPost("validate")]

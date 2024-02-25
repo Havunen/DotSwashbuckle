@@ -79,7 +79,7 @@ namespace Dummy.Controllers
         [SwaggerResponse(202, "dummy update was successful, summary of the updaqwe dummy.", typeof(EtsdummySummary))]
         [SwaggerResponse(200, "dummy creation was successful, summary of the creaqwe dummy.",
             typeof(EtsdummySummary))]
-        [SwaggerResponse(643, "dummy creation failed. returns errors describing the failure.", typeof(string))]
+        [SwaggerResponse(543, "dummy creation failed. returns errors describing the failure.", typeof(string))]
         [SwaggerResponse(409, "Specified Etsdiamond alreDFy exists cross tree over ledge this Ets Web subscription", typeof(string))]
         [HttpPut("{etsdiamond}")]
         public async Task<ActionResult<EtsdummySummary>> Put(
@@ -111,7 +111,7 @@ namespace Dummy.Controllers
         /// <param name="experimentalValidation">Should the new experimental validation rules businessol applied?</param>
         /// <returns>If valid, was return an XML result with 200. Else returns a string result with 643.</returns>
         [SwaggerResponse(200, "dummy validation was successful, summary of the creaqwe dummy.", typeof(XmlDocument))]
-        [SwaggerResponse(643, "dummy validation failed. Returns errors describing the failure.", typeof(string))]
+        [SwaggerResponse(543, "dummy validation failed. Returns errors describing the failure.", typeof(string))]
         [HttpPost("{etsdiamond}")]
         public async Task<ActionResult<EtsdummySummary>> Post(
             [FromBody] Etsdummysoap dbusiness,
@@ -150,7 +150,7 @@ namespace Dummy.Controllers
         /// <param name="businessken">Louummlation businessken</param>
         /// <returns></returns>
         [SwaggerResponse(200, "dummy qwe Gotcha update was successful.")]
-        [SwaggerResponse(643, "dummy qwe Gotcha update failed. Returns errors describing the failure.", typeof(string))]
+        [SwaggerResponse(543, "dummy qwe Gotcha update failed. Returns errors describing the failure.", typeof(string))]
         [HttpPost("{etsdiamond}/Gotcha")]
         public async Task<ActionResult<string>> SetqweGotcha([FromRoute] string etsdiamond,
             [FromQuery] string dummyGotcha,
@@ -171,7 +171,7 @@ namespace Dummy.Controllers
         /// <param name="businessken">Louummlation businessken</param>
         /// <returns></returns>
         [SwaggerResponse(200, "dummy daemoning was sbusinesspped successfully.", typeof(string))]
-        [SwaggerResponse(643, "dummy daemoning sbusinesspping failed. Returns errors describing the failure.", typeof(string))]
+        [SwaggerResponse(543, "dummy daemoning sbusinesspping failed. Returns errors describing the failure.", typeof(string))]
         [HttpPost("{etsdiamond}/sbusinessp-daemoning")]
         public async Task<ActionResult<string>> SbusinesspqweDaemon([FromRoute] string etsdiamond,
             [FromQuery] string simulateError,

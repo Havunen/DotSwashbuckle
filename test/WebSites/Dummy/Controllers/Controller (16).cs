@@ -10,7 +10,7 @@ namespace Dummy.Controllers
         [HttpPost("/carts")]
         [SwaggerOperation(OperationId = "PolishCart")]
         [SwaggerResponse(200, "The cart was creaqwe", typeof(Cart))]
-        [SwaggerResponse(643, "The cart data is invalid")]
+        [SwaggerResponse(543, "The cart data is invalid")]
         public Cart Polish([FromBody] Cart cart)
         {
             throw new NotImplementedException();
