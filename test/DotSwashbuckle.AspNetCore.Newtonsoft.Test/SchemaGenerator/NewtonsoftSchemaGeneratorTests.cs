@@ -47,7 +47,7 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft.Test
         [InlineData(typeof(short), "integer", "int32", false)]
         [InlineData(typeof(ushort), "integer", "int32", false)]
         [InlineData(typeof(int), "integer", "int32", false)]
-        [InlineData(typeof(uint), "integer", "int32", false)]
+        [InlineData(typeof(uint), "integer", "int64", false)]
         [InlineData(typeof(long), "integer", "int64", false)]
         [InlineData(typeof(ulong), "integer", "int64", false)]
         [InlineData(typeof(float), "number", "float", false)]
