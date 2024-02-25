@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Basic.Controllers
@@ -97,6 +98,28 @@ namespace Basic.Controllers
         {
             return status;
         }
+
+        [HttpGet("GetDoc")]
+        [Consumes(typeof(IChild), MediaTypeNames.Application.Json)]
+        [Produces(typeof(IChild))]
+        public IActionResult GetDoc([FromQuery] IChild query)
+        {
+            return null;
+        }
+    }
+
+    /// <summary>The parent.</summary>
+    public interface IParent
+    {
+        /// <summary>The parent value.</summary>
+        string? ParentValue { get; set; }
+    }
+
+    /// <summary>The child.</summary>
+    public interface IChild : IParent
+    {
+        /// <summary>The child value.</summary>
+        string? Value { get; set; }
     }
 
     public enum ProductStatus
