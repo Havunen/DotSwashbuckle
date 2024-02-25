@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Mime;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Basic.Controllers
@@ -105,6 +109,43 @@ namespace Basic.Controllers
         public IActionResult GetDoc([FromQuery] IChild query)
         {
             return null;
+        }
+
+        [HttpPost("GetDoc2")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAll(GetData.Query query)
+        {
+            return null;
+        }
+
+        /// <summary> Request the forecast of a specific day. </summary>
+        /// <param name="date" example="2023-01-24">Date of the requested forecast. </param>
+        [HttpGet("weather/{date}")]
+        public Results<Ok<WeatherForecast>, NotFound> GetWeather(DateOnly date)
+        {
+            return TypedResults.Ok(new WeatherForecast());
+        }
+
+        /// <summary> Request the forecast of a specific day. </summary>
+        /// <param name="date" example="2023-01-24">Date of the requested forecast. </param>
+        [HttpGet("weather/async/{date}")]
+        public async Task<Results<Ok<WeatherForecast>, NotFound>> GetWeatherAsync(DateOnly date)
+        {
+            return TypedResults.Ok(await Task.FromResult(new WeatherForecast()));
+        }
+    }
+
+    public class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+    }
+
+    public class GetData
+    {
+        public class Query
+        {
+            public int MyParameter { get; set; }
         }
     }
 

@@ -10,8 +10,11 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.OpenApi.Models;
 using DotSwashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
@@ -416,7 +419,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 apiParameter.PropertyInfo(),
                 apiParameter.ParameterInfo(),
                 apiParameter.RouteInfo
-            ) : new OpenApiSchema() {Type = "string"};
+            ) : new OpenApiSchema() { Type = "string" };
 
             var parameter = new OpenApiParameter
             {
@@ -616,11 +619,51 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             };
         }
 
+        private IList<ApiResponseType> GetResponseTypes(
+            ApiDescription apiDescription
+        )
+        {
+            var supportedResponseTypes = new List<ApiResponseType>(apiDescription.SupportedResponseTypes);
+
+            if (apiDescription.ActionDescriptor is ControllerActionDescriptor controllerActionDescriptor)
+            {
+                var returnType = UnwrapTask(controllerActionDescriptor.MethodInfo.ReturnType);
+
+                if (typeof(IEndpointMetadataProvider).IsAssignableFrom(returnType))
+                {
+                    var populateMetadataMethod = returnType.GetMethod("Microsoft.AspNetCore.Http.Metadata.IEndpointMetadataProvider.PopulateMetadata", BindingFlags.Static | BindingFlags.NonPublic);
+
+                    if (populateMetadataMethod != null)
+                    {
+                        var endpointBuilder = new MetadataEndpointBuilder();
+                        populateMetadataMethod.Invoke(null, [controllerActionDescriptor.MethodInfo, endpointBuilder]);
+
+                        var responseTypes = endpointBuilder.Metadata.Cast<IProducesResponseTypeMetadata>().ToList();
+
+                        foreach (var responseType in responseTypes)
+                        {
+                            supportedResponseTypes.Add(
+                                new ApiResponseType()
+                                {
+                                    IsDefaultResponse = false,
+                                    Type = responseType.Type,
+                                    StatusCode = responseType.StatusCode,
+                                    ApiResponseFormats = responseType.ContentTypes.Select(contentType => new ApiResponseFormat { MediaType = contentType }).ToList()
+                                });
+                        }
+                    }
+                }
+
+            }
+
+            return supportedResponseTypes;
+        }
+
         private OpenApiResponses GenerateResponses(
             ApiDescription apiDescription,
             SchemaRepository schemaRepository)
         {
-            var supportedResponseTypes = apiDescription.SupportedResponseTypes
+            var supportedResponseTypes = GetResponseTypes(apiDescription)
                 .DefaultIfEmpty(new ApiResponseType { StatusCode = 200 });
 
             var responses = new OpenApiResponses();
@@ -657,7 +700,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private IEnumerable<string> InferResponseContentTypes(ApiDescription apiDescription, ApiResponseType apiResponseType)
         {
             // If there's no associated model, return an empty list (i.e. no content)
-            if (apiResponseType.ModelMetadata == null) return Enumerable.Empty<string>();
+            if (apiResponseType.Type == null || apiResponseType.Type == typeof(void)) return Enumerable.Empty<string>();
 
             // If there's content types explicitly specified via ProducesAttribute, use them
             var explicitContentTypes = apiDescription.CustomAttributes().OfType<ProducesAttribute>()
@@ -727,5 +770,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             new KeyValuePair<string, string>("5\\d{2}", "Server Error"),
             new KeyValuePair<string, string>("default", "Error")
         };
+
+        private static Type UnwrapTask(Type type)
+            => type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Task<>)
+                ? type.GetGenericArguments()[0]
+                : type;
+
+        private sealed class MetadataEndpointBuilder : EndpointBuilder
+        {
+            public override Endpoint Build() => null!;
+        }
     }
 }
