@@ -1,3 +1,9 @@
+# v3.0.8
+- Adds support for HttpResults https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2595
+- Fixes an issue where interface chain is not checked for parameters, this resolves issue: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2596
+- Added minimum and maximum constraint for unsigned integers to more accurately declare them in the schema. UInt128 maximum value is left as null because OpenApi maximum field is too small to support it. Changed uint to use int64 format because int32 is too small to represent its upper limit. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2582
+- Adds support for Int128 and UInt128 and unify STJ and Newtonsoft Primitive types and formats lookup dictionary to reduce code duplication. Fixes https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2611
+
 # v3.0.7
 - always prefer `modelMetaData.Type` over `parameter.Type` to support Enums. Fixes https://github.com/Havunen/DotSwashbuckle/issues/7
 
