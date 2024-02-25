@@ -8,7 +8,7 @@ namespace Basic.Swagger
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
-            operation.Extensions.Add("x-purpose", new OpenApiString("test"));
+            operation.Extensions["x-purpose"] = new OpenApiString("test");
         }
     }
 }
