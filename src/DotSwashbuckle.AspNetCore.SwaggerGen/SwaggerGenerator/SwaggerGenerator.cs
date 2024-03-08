@@ -563,7 +563,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             IEnumerable<ApiParameterDescription> formParameters)
         {
             var contentTypes = InferRequestContentTypes(apiDescription);
-            contentTypes = contentTypes.Any() ? contentTypes : new[] { "multipart/form-data" };
+            contentTypes = contentTypes.Any() ? contentTypes : new[] { "multipart/form-data", "application/x-www-form-urlencoded" };
 
             var schema = GenerateSchemaFromFormParameters(formParameters, schemaRepository);
 
