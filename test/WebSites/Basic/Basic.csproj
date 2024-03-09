@@ -8,20 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\DataAnnotationsController.cs" />
-    <Compile Remove="Controllers\DefaultValuesAttribute.cs" />
-    <Compile Remove="Controllers\DynamicTypesController.cs" />
-    <Compile Remove="Controllers\FilesController.cs" />
-    <Compile Remove="Controllers\FromFormParamsController.cs" />
-    <Compile Remove="Controllers\FromQueryParamsController.cs" />
-    <Compile Remove="Controllers\JsonAnnotationsController.cs" />
-    <Compile Remove="Controllers\PolymorphicTypesController.cs" />
-    <Compile Remove="Controllers\ResponseTypeAnnotationsController.cs" />
-    <Compile Remove="Controllers\SwaggerAnnotationsController.cs" />
-    <Compile Remove="Controllers\UnboundParamsController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2" />
   </ItemGroup>
 
