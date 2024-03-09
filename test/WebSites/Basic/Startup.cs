@@ -92,6 +92,10 @@ namespace Basic
                 endpoints.MapGet("/formpost/minimalGet", ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
                         => TypedResults.NoContent())
                     .WithOpenApi();
+
+                endpoints.MapPost("/formpost/fromheader", ([FromHeader(Name = "x-api-version")] string apiVersion)
+                        => TypedResults.NoContent())
+                    .WithOpenApi();
             });
 
 

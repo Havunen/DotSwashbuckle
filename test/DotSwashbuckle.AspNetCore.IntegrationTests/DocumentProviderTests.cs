@@ -104,9 +104,6 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
             await using var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             await documentProvider.GenerateAsync(documentName, stringWriter);
 
-            
-		    await documentProvider.GenerateAsync(documentName, stringWriter);
-
 			// Get the generated Swagger JSON as a string
 			var swaggerJson = stringWriter.ToString();
 
