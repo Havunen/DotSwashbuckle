@@ -1656,6 +1656,148 @@
         },
         "x-purpose": "test"
       }
+    },
+    "/xmlComments/xmlPost": {
+      "post": {
+        "tags": [
+          "XmlComment"
+        ],
+        "summary": "Initialize request to api.",
+        "parameters": [
+          {
+            "name": "timeStamp",
+            "in": "query",
+            "description": "the moment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Id of the request returned by POST.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "201": {
+            "description": "The created status.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occurred. Message is returned.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected exception while communicating with API.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
     }
   },
   "components": {
@@ -1756,6 +1898,18 @@
         },
         "additionalProperties": false,
         "description": "The child."
+      },
+      "MyRequest": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
       },
       "Order": {
         "required": [
@@ -3660,6 +3814,148 @@
         },
         "x-purpose": "test"
       }
+    },
+    "/xmlComments/xmlPost": {
+      "post": {
+        "tags": [
+          "XmlComment"
+        ],
+        "summary": "Initialize request to api.",
+        "parameters": [
+          {
+            "name": "timeStamp",
+            "in": "query",
+            "description": "the moment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Id of the request returned by POST.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequest"
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "201": {
+            "description": "The created status.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occurred. Message is returned.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected exception while communicating with API.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
     }
   },
   "components": {
@@ -3760,6 +4056,18 @@
         },
         "additionalProperties": false,
         "description": "The child."
+      },
+      "MyRequest": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
       },
       "Order": {
         "required": [
