@@ -7,6 +7,249 @@
     "version": "v1"
   },
   "paths": {
+    "/requestWithNestedChild": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestWithNestedChild"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/requestWithNonNestedChild": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestWithNonNestedChild"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/minimalPost": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/minimalGet": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/fromheader": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
     "/products": {
       "post": {
         "tags": [
@@ -1829,6 +2072,20 @@
         "description": "The cart type",
         "format": "int32"
       },
+      "Child": {
+        "type": "object",
+        "properties": {
+          "nonNullable": {
+            "type": "string",
+            "nullable": true
+          },
+          "nullable": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Circle": {
         "required": [
           "radius"
@@ -1907,6 +2164,20 @@
         "properties": {
           "id": {
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NestedChild": {
+        "type": "object",
+        "properties": {
+          "nonNullable": {
+            "type": "string",
+            "nullable": true
+          },
+          "nullable": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2023,6 +2294,24 @@
           "width": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestWithNestedChild": {
+        "type": "object",
+        "properties": {
+          "child": {
+            "$ref": "#/components/schemas/NestedChild"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestWithNonNestedChild": {
+        "type": "object",
+        "properties": {
+          "child": {
+            "$ref": "#/components/schemas/Child"
           }
         },
         "additionalProperties": false

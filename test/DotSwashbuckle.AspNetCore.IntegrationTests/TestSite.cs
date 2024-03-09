@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DotSwashbuckle.AspNetCore.IntegrationTests
 {
@@ -24,6 +25,11 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
                 .UseEnvironment("Development")
                 .UseContentRoot(siteContentRoot)
                 .UseStartup(_startupType);
+
+            builder.ConfigureServices(x =>
+            {
+                x.AddEndpointsApiExplorer();
+            });
 
             return new TestServer(builder);
         }
