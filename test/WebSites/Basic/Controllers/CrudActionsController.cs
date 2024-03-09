@@ -132,6 +132,17 @@ namespace Basic.Controllers
         {
             return TypedResults.Ok(await Task.FromResult(new WeatherForecast()));
         }
+
+        [HttpPost("/formpost/regularPost")]
+        public Ok<WeatherForecast> Save([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts) {
+            return TypedResults.Ok(new WeatherForecast());
+        }
+
+        [HttpGet("/formpost/regularGet")]
+        public Ok<WeatherForecast> Save1([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
+        {
+            return TypedResults.Ok(new WeatherForecast());
+        }
     }
 
     public class WeatherForecast

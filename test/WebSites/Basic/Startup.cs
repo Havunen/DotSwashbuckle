@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using Basic.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Localization;
 using Basic.Swagger;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Basic
 {
@@ -81,6 +84,14 @@ namespace Basic
                 });
                 endpoints.MapPost("/requestWithNestedChild", (Requests.RequestWithNestedChild request) => "ok");
                 endpoints.MapPost("/requestWithNonNestedChild", (Requests.RequestWithNonNestedChild request) => "ok");
+
+                endpoints.MapPost("/formpost/minimalPost", ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
+                        => TypedResults.NoContent())
+                    .WithOpenApi();
+
+                endpoints.MapGet("/formpost/minimalGet", ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
+                        => TypedResults.NoContent())
+                    .WithOpenApi();
             });
 
 

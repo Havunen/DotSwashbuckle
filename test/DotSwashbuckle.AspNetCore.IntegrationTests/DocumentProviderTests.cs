@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.ApiDescriptions;
 using Microsoft.OpenApi.Readers;
 using DotSwashbuckle.AspNetCore.Swagger;
+using Snapshooter;
+using Snapshooter.Xunit;
 using Xunit;
 
 namespace DotSwashbuckle.AspNetCore.IntegrationTests
@@ -70,6 +72,46 @@ namespace DotSwashbuckle.AspNetCore.IntegrationTests
                 Assert.NotNull(diagnostic);
                 Assert.Empty(diagnostic.Errors);
             }
+        }
+
+
+        [Theory]
+        [InlineData(typeof(Basic.Startup), "v1")]
+        // Dummy could be added here once all the tests are passing
+        [InlineData(typeof(Dummy.Startup), "v1")]
+        [InlineData(typeof(Dummy.Startup), "doc-v1")]
+        [InlineData(typeof(Dummy.Startup), "doc-v2")]
+        [InlineData(typeof(Dummy.Startup), "doc-v3")]
+        [InlineData(typeof(Dummy.Startup), "doc-v4")]
+        [InlineData(typeof(Dummy.Startup), "doc-v5")]
+        [InlineData(typeof(Dummy.Startup), "doc-v6")]
+        [InlineData(typeof(Dummy.Startup), "doc-v7")]
+        [InlineData(typeof(Dummy.Startup), "doc-v8")]
+        [InlineData(typeof(Dummy.Startup), "doc-v9")]
+        [InlineData(typeof(CustomUIConfig.Startup), "v1")]
+        [InlineData(typeof(CustomUIIndex.Startup), "v1")]
+        [InlineData(typeof(GenericControllers.Startup), "v1")]
+        [InlineData(typeof(MultipleVersions.Startup), "2.0")]
+        [InlineData(typeof(OAuth2Integration.Startup), "v1")]
+        public async Task Examples_SwaggerJson_SnapshotMatches(Type startupType, string documentName)
+        {
+            var testSite = new TestSite(startupType);
+            var server = testSite.BuildServer();
+            var services = server.Host.Services;
+
+            var documentProvider = (IDocumentProvider)services.GetService(typeof(IDocumentProvider));
+
+            await using var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            await documentProvider.GenerateAsync(documentName, stringWriter);
+
+            
+		    await documentProvider.GenerateAsync(documentName, stringWriter);
+
+			// Get the generated Swagger JSON as a string
+			var swaggerJson = stringWriter.ToString();
+
+			// Assert that the generated Swagger JSON matches the snapshot
+			Snapshot.Match(swaggerJson, SnapshotNameExtension.Create(startupType.FullName + documentName));
         }
 
         [Fact]

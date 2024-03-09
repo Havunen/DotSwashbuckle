@@ -835,7 +835,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
 
             var operation = document.Paths["/resource"].Operations[OperationType.Post];
             Assert.NotNull(operation.RequestBody);
-            Assert.Equal(new[] { "multipart/form-data" }, operation.RequestBody.Content.Keys);
+            Assert.Equal(new[] { "multipart/form-data", "application/x-www-form-urlencoded" }, operation.RequestBody.Content.Keys);
             var mediaType = operation.RequestBody.Content["multipart/form-data"];
             Assert.NotNull(mediaType.Schema);
             Assert.Equal(new[] { "param1", "param2" }, mediaType.Schema.Properties.Keys);

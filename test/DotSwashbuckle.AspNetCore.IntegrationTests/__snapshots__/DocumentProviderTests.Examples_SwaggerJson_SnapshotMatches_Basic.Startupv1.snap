@@ -1,0 +1,1665 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Test API V1",
+    "description": "A sample API for testing DotSwashbuckle",
+    "termsOfService": "http://tempuri.org/terms",
+    "version": "v1"
+  },
+  "paths": {
+    "/products": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Creates a product",
+        "description": "## Heading 1\r\n\r\n    POST /products\r\n    {\r\n        \"id\": \"123\",\r\n        \"description\": \"Some product\"\r\n    }",
+        "operationId": "CreateProduct",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      },
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Searches the collection of products by description key words",
+        "operationId": "SearchProducts",
+        "parameters": [
+          {
+            "name": "kw",
+            "in": "query",
+            "description": "A list of search terms",
+            "schema": {
+              "type": "string",
+              "default": "foobar"
+            },
+            "example": "hello"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Returns a specific product",
+        "operationId": "GetProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 111
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      },
+      "put": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates all properties of a specific product",
+        "operationId": "UpdateProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 222
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "patch": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates some properties of a specific product",
+        "operationId": "PatchProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 333
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "delete": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Deletes a specific product",
+        "operationId": "DeleteProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 444
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/status": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "operationId": "GetStatus",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ProductStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "operationId": "GetStatus",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductStatus"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/GetDoc": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "description": "The child value.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parentValue",
+            "in": "query",
+            "description": "The parent value.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IChild"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/GetDoc2": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "myParameter",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/weather/{date}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Request the forecast of a specific day.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date of the requested forecast.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2023-01-24"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/weather/async/{date}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Request the forecast of a specific day.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date of the requested forecast.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2023-01-24"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/regularPost": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/regularGet": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IChild": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "The child value.",
+            "nullable": true
+          },
+          "parentValue": {
+            "type": "string",
+            "description": "The parent value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The child."
+      },
+      "Product": {
+        "required": [
+          "description",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Uniquely identifies the product",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Describes the product"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ProductStatus"
+          },
+          "status2": {
+            "$ref": "#/components/schemas/ProductStatus"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a product",
+        "example": {
+          "id": 123,
+          "description": "foobar",
+          "price": 14.37
+        }
+      },
+      "ProductStatus": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WeatherForecast": {
+        "required": [
+          "date",
+          "temperatureC"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Test API V1",
+    "description": "A sample API for testing DotSwashbuckle",
+    "termsOfService": "http://tempuri.org/terms",
+    "version": "v1"
+  },
+  "paths": {
+    "/products": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Creates a product",
+        "description": "## Heading 1\r\n\r\n    POST /products\r\n    {\r\n        \"id\": \"123\",\r\n        \"description\": \"Some product\"\r\n    }",
+        "operationId": "CreateProduct",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      },
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Searches the collection of products by description key words",
+        "operationId": "SearchProducts",
+        "parameters": [
+          {
+            "name": "kw",
+            "in": "query",
+            "description": "A list of search terms",
+            "schema": {
+              "type": "string",
+              "default": "foobar"
+            },
+            "example": "hello"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Returns a specific product",
+        "operationId": "GetProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 111
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      },
+      "put": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates all properties of a specific product",
+        "operationId": "UpdateProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 222
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "patch": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates some properties of a specific product",
+        "operationId": "PatchProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 333
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "delete": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Deletes a specific product",
+        "operationId": "DeleteProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 444
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/status": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "operationId": "GetStatus",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ProductStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      },
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "operationId": "GetStatus",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductStatus"
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductStatus"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/GetDoc": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "description": "The child value.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parentValue",
+            "in": "query",
+            "description": "The parent value.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IChild"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/GetDoc2": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "myParameter",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/weather/{date}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Request the forecast of a specific day.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date of the requested forecast.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2023-01-24"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/products/weather/async/{date}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Request the forecast of a specific day.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date of the requested forecast.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2023-01-24"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/regularPost": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/regularGet": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "temperatureC": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer",
+                    "description": "Uniquely identifies the product",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Describes the product"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  },
+                  "status2": {
+                    "$ref": "#/components/schemas/ProductStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "date": {
+                  "style": "form"
+                },
+                "temperatureC": {
+                  "style": "form"
+                },
+                "summary": {
+                  "style": "form"
+                },
+                "id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "status": {
+                  "style": "form"
+                },
+                "status2": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WeatherForecast"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IChild": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "The child value.",
+            "nullable": true
+          },
+          "parentValue": {
+            "type": "string",
+            "description": "The parent value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The child."
+      },
+      "Product": {
+        "required": [
+          "description",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Uniquely identifies the product",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Describes the product"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ProductStatus"
+          },
+          "status2": {
+            "$ref": "#/components/schemas/ProductStatus"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a product",
+        "example": {
+          "id": 123,
+          "description": "foobar",
+          "price": 14.37
+        }
+      },
+      "ProductStatus": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WeatherForecast": {
+        "required": [
+          "date",
+          "temperatureC"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

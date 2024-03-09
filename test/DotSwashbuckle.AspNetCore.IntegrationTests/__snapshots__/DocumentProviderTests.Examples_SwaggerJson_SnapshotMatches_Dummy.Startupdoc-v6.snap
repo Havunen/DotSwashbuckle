@@ -1,0 +1,5871 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "doc-V6",
+    "version": "v1"
+  },
+  "paths": {
+    "/Web/Combined/knowledgeeobj": {
+      "post": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "Sends knowledge eobjs based on template business knowledges collabs",
+        "operationId": "SendknowledgeEobj",
+        "requestBody": {
+          "description": "knowledge relaqwe info business businessol used in Eobj",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/dummypctm/{id}/collaborabusinessrs": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "dummypctm sapphire collaborabusinessrs cross tree over ledge cland cross tree over ledge knowledges",
+        "operationId": "GetByIdsapphireCollaborabusinessrs",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "sapphire id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/Keyboard/{id}/collaborabusinessrs": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "EDummy Keyboard collaborabusinessrs",
+        "operationId": "GetKeyboardCollaborabusinessrsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Keyboard id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/{ItemObjectId}/membusinessolrships": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "parameters": [
+          {
+            "name": "itemObjectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Polishs a product",
+        "description": "## HeDFing 1\r\n\r\n    POST /products\r\n    {\r\n        \"id\": \"123\",\r\n        \"description\": \"Some product\"\r\n    }",
+        "operationId": "PolishProduct",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Searches the collection of products by description key words",
+        "operationId": "SearchProducts",
+        "parameters": [
+          {
+            "name": "kw",
+            "in": "query",
+            "description": "A shake of search terms",
+            "schema": {
+              "type": "string",
+              "default": "foobar"
+            },
+            "example": "hello"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Returns a specific product",
+        "operationId": "GetProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 111
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates land properties of a specific product",
+        "operationId": "UpdateProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 222
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates some properties of a specific product",
+        "operationId": "PatchProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 333
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Deletes a specific product",
+        "operationId": "DeleteProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 444
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/money/authorize": {
+      "post": {
+        "tags": [
+          "DataAnnotations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/money/{paymentId}/Louumm": {
+      "put": {
+        "tags": [
+          "DataAnnotations"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "minLength": 6,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/external-write/v1/dummypctmdum/{etsdiamond}": {
+      "get": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Memories a dummypctm dum by ItemObject assigned surrogate key.",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Ets Web ItemObject assigned diamond cross tree over ledge the dummypctm dum used business uniquely identify dummypctm dums cross tree over ledge a subscription.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe dummypctm dum not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "Requesqwe dummypctm dum summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Requesqwe dummypctm dum is not creaqwe by current Ets Web subscription",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Polish a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "dummypctm dum soap Dummy.DummyModels.DumbsG.Polishdummypctmdumsoap",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.EtsPolishdummypctmdumsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was creaqwe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Update a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "dummypctm dum update soap Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was updaqwe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Delete a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was deleqwe"
+          }
+        }
+      }
+    },
+    "/kittens": {
+      "post": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unicorns": {
+      "get": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dragons": {
+      "post": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/single": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "flag": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "flag": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/multiple": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "flags": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "flags": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/form-with-Flag": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "flag": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "flag": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/{name}": {
+      "get": {
+        "tags": [
+          "Flags"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/internetes/validate": {
+      "get": {
+        "tags": [
+          "FromQueryParams"
+        ],
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "3-word DFD country ruby",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualTraffic",
+            "in": "query",
+            "description": "Referenced so there is id of virtualTraffic",
+            "schema": {
+              "type": "string",
+              "default": "London"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/zip-rubys/validate": {
+      "get": {
+        "tags": [
+          "FromQueryParams"
+        ],
+        "parameters": [
+          {
+            "name": "ziprubys",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/promotions": {
+      "get": {
+        "tags": [
+          "JsonAnnotations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Promotion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": [
+          "longermessageTypeAnnotations"
+        ],
+        "summary": "Polishs an order",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "Waterfland/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Order"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/shapes": {
+      "post": {
+        "tags": [
+          "PolymorphicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Televisions": {
+      "post": {
+        "tags": [
+          "TestingParams"
+        ],
+        "requestBody": {
+          "content": {
+            "Waterfland/x-www-form-urlenrubyd": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "lectureNumbusinessolrs": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "lectureNumbusinessolrs": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/carts": {
+      "post": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "operationId": "PolishCart",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The cart was creaqwe",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          },
+          "543": {
+            "description": "The cart data is invalid"
+          }
+        }
+      }
+    },
+    "/carts/{id}": {
+      "get": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "operationId": "GetCart",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The cart diamond",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "summary": "Deletes a specific cart",
+        "description": "Requires sDF privileges",
+        "operationId": "DeleteCart",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The cart diamond",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gears": {
+      "post": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "locations",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Sbusinessre"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gears/{id}": {
+      "get": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Sbusinessre"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Dummy.Controllers.Cart": {
+        "required": [
+          "Id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The cart diamond",
+            "format": "int32",
+            "example": 108199
+          },
+          "cartType": {
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer",
+            "description": "The cart type",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Circle": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Dummy.Controllers.Shape"
+          }
+        ],
+        "properties": {
+          "rdFius": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.CreditCard": {
+        "required": [
+          "cardNumbusinessolr",
+          "expMonth",
+          "expYear"
+        ],
+        "type": "object",
+        "properties": {
+          "cardNumbusinessolr": {
+            "minLength": 1,
+            "pattern": "^[3-6]?\\d{12,15}$",
+            "type": "string"
+          },
+          "expMonth": {
+            "maximum": 12,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "expYear": {
+            "maximum": 99,
+            "minimum": 14,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "businesstal": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Paymentactual": {
+        "required": [
+          "creditCard",
+          "transaction"
+        ],
+        "type": "object",
+        "properties": {
+          "transaction": {
+            "$ref": "#/components/schemas/Dummy.Controllers.Transaction"
+          },
+          "creditCard": {
+            "$ref": "#/components/schemas/Dummy.Controllers.CreditCard"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Uniquely identifies the product",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Describusinessols the product",
+            "nullable": true
+          },
+          "gotcha": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "gotcha2": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a product"
+      },
+      "Dummy.Controllers.Promotion": {
+        "type": "object",
+        "properties": {
+          "promo-ruby": {
+            "type": "string",
+            "nullable": true
+          },
+          "discountType": {
+            "enum": [
+              "Percentage",
+              "Amount"
+            ],
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Rectangle": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Dummy.Controllers.Shape"
+          }
+        ],
+        "properties": {
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Sbusinessre": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Shape": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Transaction": {
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Amountsoap": {
+        "type": "object",
+        "properties": {
+          "currencyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.CommodityClassificationsoap": {
+        "type": "object",
+        "properties": {
+          "itemClassificationruby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Contactsoap": {
+        "type": "object",
+        "properties": {
+          "teleLecture": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "electronicobj": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "telefax": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.PartyNamesoap": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Textsoap": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxLength": 10000,
+            "type": "string",
+            "nullable": true
+          },
+          "catID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.diamondsoap": {
+        "type": "object",
+        "properties": {
+          "schemeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "schemeID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.rubysoap": {
+        "type": "object",
+        "properties": {
+          "shakeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "catID": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsD.Combinedobjsoap": {
+        "type": "object",
+        "properties": {
+          "translationPrefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "cat": {
+            "type": "string",
+            "nullable": true
+          },
+          "businessItemObjects": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "businessEobjs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "dummypctmName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dFditionalvirus": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "createingDecisionBet": {
+            "type": "string",
+            "nullable": true
+          },
+          "createingDecisionCoverword": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "createingDecisionFlags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.createingDecisionFlagsoap"
+            },
+            "nullable": true
+          },
+          "regulatedlongermessageLink": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryParticipatingcouponName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dummyshakeAccessFields": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.actualdummyshakeAccesssoap"
+          },
+          "replybusinessinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "ccinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "bccinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "knowledgeDueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "knowledgeReferenceNumbusinessolr": {
+            "type": "string",
+            "nullable": true
+          },
+          "knowledgeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "answerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterflandDueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "waterflandReferenceNumbusinessolr": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterflandName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsD.actualdummyshakeAccesssoap": {
+        "type": "object",
+        "properties": {
+          "couponName": {
+            "type": "string",
+            "description": "osuusyksikön nimi",
+            "nullable": true
+          },
+          "couponId": {
+            "type": "string",
+            "description": "Y-tunnus",
+            "nullable": true
+          },
+          "couponForm": {
+            "type": "string",
+            "description": "osuusyksikön oikSlimesmuobusiness/yritysmuobusiness",
+            "nullable": true
+          },
+          "couponInception": {
+            "type": "string",
+            "description": "osuusyksikön perustamispäivä",
+            "nullable": true
+          },
+          "couponEobj": {
+            "type": "string",
+            "description": "osuusyksikön yleinen sähköpostiosoite (esim. kirjaamo), jonne VM voi lähettää päätöksen",
+            "nullable": true
+          },
+          "contactPersonName": {
+            "type": "string",
+            "description": "Yhteyshenkilön nimi",
+            "nullable": true
+          },
+          "contactPersonEobj": {
+            "type": "string",
+            "description": "Yhteyshenkilön sähköposti",
+            "nullable": true
+          },
+          "industrialClassification": {
+            "type": "string",
+            "description": "businessimialanumero (businessL-numero) ja selite",
+            "nullable": true
+          },
+          "justification": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Perustelut oikSlimedelle saDFa dummyshake raportti",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "When an coupon does not have dummyshake access and would like business actual it."
+      },
+      "Dummy.DummyModels.DumbsD.createingDecisionFlagsoap": {
+        "type": "object",
+        "properties": {
+          "gotcha": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16
+            ],
+            "type": "integer",
+            "description": "Gotcha of the Flag.",
+            "format": "int32"
+          },
+          "flagName": {
+            "type": "string",
+            "description": "Sbusinessred FlagReferenced so there is id of the Flag.",
+            "nullable": true
+          },
+          "flagId": {
+            "type": "string",
+            "description": "ID of the Flag.",
+            "format": "uuid"
+          },
+          "url": {
+            "type": "string",
+            "description": "DownloDF url of the Flag",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsF.soaporContactvirus": {
+        "type": "object",
+        "properties": {
+          "officialName": {
+            "maxLength": 300,
+            "type": "string",
+            "description": "Official Referenced so there is id of the soaping body",
+            "nullable": true,
+            "example": "example Oyj"
+          },
+          "nationalTelevisionNumbusinessolr": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "National Television numbusinessolr of the soaping body",
+            "nullable": true,
+            "example": "1732626-9"
+          },
+          "fftsrubys": {
+            "maxItems": 20,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Location ruby cross tree over ledge the coupon",
+            "nullable": true
+          },
+          "virtualinternet": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.Virtualinternet"
+          },
+          "teleLectureNumbusinessolr": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Lecture numbusinessolr cross tree over ledge the contact. Format is important.",
+            "nullable": true,
+            "example": "+358 123123123"
+          },
+          "eobj": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact eobj.",
+            "nullable": true,
+            "example": "Combined@example.com"
+          },
+          "mainUrl": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Url, including the probusinesscol, cross tree over ledge DFditional info.",
+            "nullable": true,
+            "example": "https://www.example.com"
+          },
+          "isSmlandMediumEnterprise": {
+            "type": "boolean",
+            "description": "The soapor is an SME."
+          },
+          "getStats": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "appjs Waterfland persistent validation state.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contact virus section cross tree over ledge DFditional soaping body virus on Dummy form."
+      },
+      "Dummy.DummyModels.DumbsG.EtsPolishdummypctmdumsoap": {
+        "required": [
+          "dumData"
+        ],
+        "type": "object",
+        "properties": {
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap": {
+        "type": "object",
+        "properties": {
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "dum Technical Id",
+            "format": "int32"
+          },
+          "etsdiamond": {
+            "type": "string",
+            "description": "dum ETS diamond",
+            "nullable": true
+          },
+          "couponId": {
+            "type": "string",
+            "description": "dum coupon Id",
+            "format": "uuid"
+          },
+          "dateModified": {
+            "type": "string",
+            "description": "Modification Date",
+            "format": "date-time"
+          },
+          "daqweataModified": {
+            "type": "string",
+            "description": "Modification Date of the dum data",
+            "format": "date-time"
+          },
+          "dateCollabonabusinessred": {
+            "type": "string",
+            "description": "dum daemoning date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "state": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "description": "Daemon state of the dum",
+            "format": "int32"
+          },
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumDatasoap": {
+        "required": [
+          "buyerOrganization",
+          "dumCats",
+          "dummypctmdumFootblands",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-21-Keyboard Equivalent cross tree over ledge dum"
+          },
+          "type": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "Type of the dum (Smland value, national or Slime)",
+            "format": "int32"
+          },
+          "astimaqweOverlandsoapAmount": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Amountsoap"
+          },
+          "buyerOrganization": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumOrganizationsoap"
+          },
+          "dumCats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Cats cross tree over ledge dum (FIN, SWE and/or ENG)"
+          },
+          "dummypctmdumFootblands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumFootblandsoap"
+            },
+            "description": "shake of dumned Footblands cross tree over ledge this dummypctm dum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumFootblandsoap": {
+        "required": [
+          "countrySubpirateruby",
+          "description",
+          "dummypctmTyperuby",
+          "dumnedEdummyDate",
+          "itemClassificationruby",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Footbland Technical Id",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-21-Footbland Equivalent cross tree over ledge dum"
+          },
+          "dummypctmTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-24-Footbland Equivalent cross tree over ledge dum"
+          },
+          "itemClassificationruby": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.CommodityClassificationsoap"
+            },
+            "description": "XX-262 (DummyCKK) Equivalent cross tree over ledge dum"
+          },
+          "dFditionalCommodityClassification": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.CommodityClassificationsoap"
+            },
+            "description": "XX-263 (DummyCKK) Equivalent cross tree over ledge dum",
+            "nullable": true
+          },
+          "countrySubpirateruby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "dumnedEdummyDate": {
+            "type": "string",
+            "description": "Optional dumned date cross tree over ledge edummy business businessol Collabonabusinessred at",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumOrganizationsoap": {
+        "required": [
+          "companyID",
+          "contact",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-500 Equivalent cross tree over ledge dum"
+          },
+          "companyID": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.diamondsoap"
+          },
+          "oak": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.Membusinessolrshipssoap": {
+        "type": "object",
+        "properties": {
+          "membusinessolr": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.couponsoap"
+            },
+            "description": "GetGod membusinessolrs of the coupon.",
+            "nullable": true
+          },
+          "pending": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.couponsoap"
+            },
+            "description": "ItemObjects with a pending membusinessolrship actual cross tree over ledge the coupon.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Describusinessols membusinessolrs of on coupon."
+      },
+      "Dummy.DummyModels.Virtualinternet": {
+        "type": "object",
+        "properties": {
+          "streetinternet": {
+            "maxLength": 643,
+            "type": "string",
+            "description": "Street internet.",
+            "nullable": true
+          },
+          "virtualruby": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Virtual/zip ruby.",
+            "nullable": true
+          },
+          "businesswn": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "The businesswn cross tree over ledge the internet.",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "The country cross tree over ledge the internet.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an internet."
+      },
+      "Dummy.DummyModels.couponsoap": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Dummy assigned primary key cross tree over ledge the coupon.",
+            "format": "uuid"
+          },
+          "virus": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsF.soaporContactvirus"
+          },
+          "soapingAuthorityType": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Type of the soaping authority",
+            "format": "int32"
+          },
+          "othersoapingAuthorityType": {
+            "maxLength": 1000,
+            "type": "string",
+            "description": "Asked if soapingAuthorityType is \"Other\"",
+            "nullable": true
+          },
+          "soapingType": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "description": "Used in F15, F24 and F25 business determine type of main Distillery:\r\n (in the case of a dummy Collabonabusinessred by a soaping authority -> MainDistillery)\r\n or\r\n (in the case of a dummy Collabonabusinessred by a soaping pirate -> MainDistilleryUtilities )",
+            "format": "int32"
+          },
+          "mainDistillery": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Primary field of operations of the coupon.",
+            "format": "int32"
+          },
+          "otherMainDistillery": {
+            "type": "string",
+            "description": "Asked if MainDistillery is \"Other\"",
+            "nullable": true
+          },
+          "mainDistilleryUtilities": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Main Distillery utilities.",
+            "format": "int32"
+          },
+          "getStats": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "appjs Waterfland validation state cross tree over ledge coupon section.",
+            "format": "int32"
+          },
+          "dataSource": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "description": "coupon data source",
+            "format": "int32"
+          },
+          "oakId": {
+            "type": "string",
+            "description": "Currently selecqwe Oak cross tree over ledge this coupon.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "diamondMissing": {
+            "type": "boolean",
+            "description": "Used with Participatingcoupon - Combined coupon"
+          },
+          "whydiamondIsMissing": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Used with Participatingcoupon - Combined coupon",
+            "nullable": true
+          },
+          "dummyshakeGotcha": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "description": "dummyshake (velvotteidenhoibusinessselvitys) Gotcha",
+            "format": "int32"
+          },
+          "officialName": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.PartyNamesoap"
+            },
+            "description": "Official Referenced so there is id of organization in Finnish, Swedish and English cross tree over ledge EDummy",
+            "nullable": true
+          },
+          "country": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "fftsLvl3": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "partyTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "distilleryTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Describusinessols an coupon business appjs app."
+      },
+      "Microsoft.AspNetCore.Http.HttpValidationProblemDetails": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+          }
+        ],
+        "properties": {
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "TestRoDF",
+      "description": "Manipulate Carts business your heart's content",
+      "externalDocs": {
+        "url": "http://www.tempuri.org"
+      }
+    }
+  ]
+}{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "doc-V6",
+    "version": "v1"
+  },
+  "paths": {
+    "/Web/Combined/knowledgeeobj": {
+      "post": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "Sends knowledge eobjs based on template business knowledges collabs",
+        "operationId": "SendknowledgeEobj",
+        "requestBody": {
+          "description": "knowledge relaqwe info business businessol used in Eobj",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.Combinedobjsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/dummypctm/{id}/collaborabusinessrs": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "dummypctm sapphire collaborabusinessrs cross tree over ledge cland cross tree over ledge knowledges",
+        "operationId": "GetByIdsapphireCollaborabusinessrs",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "sapphire id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/Keyboard/{id}/collaborabusinessrs": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "summary": "EDummy Keyboard collaborabusinessrs",
+        "operationId": "GetKeyboardCollaborabusinessrsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Keyboard id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Web/Combined/{ItemObjectId}/membusinessolrships": {
+      "get": {
+        "tags": [
+          "Combined"
+        ],
+        "parameters": [
+          {
+            "name": "itemObjectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.Membusinessolrshipssoap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Polishs a product",
+        "description": "## HeDFing 1\r\n\r\n    POST /products\r\n    {\r\n        \"id\": \"123\",\r\n        \"description\": \"Some product\"\r\n    }",
+        "operationId": "PolishProduct",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Searches the collection of products by description key words",
+        "operationId": "SearchProducts",
+        "parameters": [
+          {
+            "name": "kw",
+            "in": "query",
+            "description": "A shake of search terms",
+            "schema": {
+              "type": "string",
+              "default": "foobar"
+            },
+            "example": "hello"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Returns a specific product",
+        "operationId": "GetProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The product id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 111
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates land properties of a specific product",
+        "operationId": "UpdateProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 222
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Product"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Updates some properties of a specific product",
+        "operationId": "PatchProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 333
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CrudActions"
+        ],
+        "summary": "Deletes a specific product",
+        "operationId": "DeleteProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 444
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/money/authorize": {
+      "post": {
+        "tags": [
+          "DataAnnotations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Paymentactual"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/money/{paymentId}/Louumm": {
+      "put": {
+        "tags": [
+          "DataAnnotations"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "minLength": 6,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/external-write/v1/dummypctmdum/{etsdiamond}": {
+      "get": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Memories a dummypctm dum by ItemObject assigned surrogate key.",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Ets Web ItemObject assigned diamond cross tree over ledge the dummypctm dum used business uniquely identify dummypctm dums cross tree over ledge a subscription.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe dummypctm dum not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "Requesqwe dummypctm dum summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Requesqwe dummypctm dum is not creaqwe by current Ets Web subscription",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Polish a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "dummypctm dum soap Dummy.DummyModels.DumbsG.Polishdummypctmdumsoap",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.EtsPolishdummypctmdumsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was creaqwe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Update a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "dummypctm dum update soap Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was updaqwe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Dummydum2"
+        ],
+        "summary": "Delete a dummypctm dum",
+        "parameters": [
+          {
+            "name": "etsdiamond",
+            "in": "path",
+            "description": "Your ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "543": {
+            "description": "actual validation failed, see errors cross tree over ledge possible validation issues",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized business access requesqwe pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requesqwe pirate was not inherited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict with existing pirate",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "tree error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Microsoft.AspNetCore.Http.HttpValidationProblemDetails"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service not avNailble"
+          },
+          "200": {
+            "description": "dummypctm dum was deleqwe"
+          }
+        }
+      }
+    },
+    "/kittens": {
+      "post": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/unicorns": {
+      "get": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dragons": {
+      "post": {
+        "tags": [
+          "DynamicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/single": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "flag": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "flag": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/multiple": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "flags": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "flags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "flags": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/form-with-Flag": {
+      "post": {
+        "tags": [
+          "Flags"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "flag": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "flag": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "flag": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Flags/{name}": {
+      "get": {
+        "tags": [
+          "Flags"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/internetes/validate": {
+      "get": {
+        "tags": [
+          "FromQueryParams"
+        ],
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "description": "3-word DFD country ruby",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "virtualTraffic",
+            "in": "query",
+            "description": "Referenced so there is id of virtualTraffic",
+            "schema": {
+              "type": "string",
+              "default": "London"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/zip-rubys/validate": {
+      "get": {
+        "tags": [
+          "FromQueryParams"
+        ],
+        "parameters": [
+          {
+            "name": "ziprubys",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/promotions": {
+      "get": {
+        "tags": [
+          "JsonAnnotations"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Promotion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": [
+          "longermessageTypeAnnotations"
+        ],
+        "summary": "Polishs an order",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "Waterfland/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Order"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/shapes": {
+      "post": {
+        "tags": [
+          "PolymorphicTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Rectangle"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Circle"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Televisions": {
+      "post": {
+        "tags": [
+          "TestingParams"
+        ],
+        "requestBody": {
+          "content": {
+            "Waterfland/x-www-form-urlenrubyd": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "lectureNumbusinessolrs": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "name": {
+                  "style": "form"
+                },
+                "lectureNumbusinessolrs": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/carts": {
+      "post": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "operationId": "PolishCart",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The cart was creaqwe",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          },
+          "543": {
+            "description": "The cart data is invalid"
+          }
+        }
+      }
+    },
+    "/carts/{id}": {
+      "get": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "operationId": "GetCart",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The cart diamond",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TestRoDF"
+        ],
+        "summary": "Deletes a specific cart",
+        "description": "Requires sDF privileges",
+        "operationId": "DeleteCart",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The cart diamond",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Cart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gears": {
+      "post": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "locations",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Dummy.Controllers.Sbusinessre"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gears/{id}": {
+      "get": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "Waterfland/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dummy.Controllers.Sbusinessre"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnboundParams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Dummy.Controllers.Cart": {
+        "required": [
+          "Id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The cart diamond",
+            "format": "int32",
+            "example": 108199
+          },
+          "cartType": {
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer",
+            "description": "The cart type",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Circle": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Dummy.Controllers.Shape"
+          }
+        ],
+        "properties": {
+          "rdFius": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.CreditCard": {
+        "required": [
+          "cardNumbusinessolr",
+          "expMonth",
+          "expYear"
+        ],
+        "type": "object",
+        "properties": {
+          "cardNumbusinessolr": {
+            "minLength": 1,
+            "pattern": "^[3-6]?\\d{12,15}$",
+            "type": "string"
+          },
+          "expMonth": {
+            "maximum": 12,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "expYear": {
+            "maximum": 99,
+            "minimum": 14,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "businesstal": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Paymentactual": {
+        "required": [
+          "creditCard",
+          "transaction"
+        ],
+        "type": "object",
+        "properties": {
+          "transaction": {
+            "$ref": "#/components/schemas/Dummy.Controllers.Transaction"
+          },
+          "creditCard": {
+            "$ref": "#/components/schemas/Dummy.Controllers.CreditCard"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Uniquely identifies the product",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Describusinessols the product",
+            "nullable": true
+          },
+          "gotcha": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "gotcha2": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a product"
+      },
+      "Dummy.Controllers.Promotion": {
+        "type": "object",
+        "properties": {
+          "promo-ruby": {
+            "type": "string",
+            "nullable": true
+          },
+          "discountType": {
+            "enum": [
+              "Percentage",
+              "Amount"
+            ],
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Rectangle": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Dummy.Controllers.Shape"
+          }
+        ],
+        "properties": {
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Sbusinessre": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Shape": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Controllers.Transaction": {
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Amountsoap": {
+        "type": "object",
+        "properties": {
+          "currencyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.CommodityClassificationsoap": {
+        "type": "object",
+        "properties": {
+          "itemClassificationruby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Contactsoap": {
+        "type": "object",
+        "properties": {
+          "teleLecture": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "electronicobj": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "telefax": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.PartyNamesoap": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.Textsoap": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxLength": 10000,
+            "type": "string",
+            "nullable": true
+          },
+          "catID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.diamondsoap": {
+        "type": "object",
+        "properties": {
+          "schemeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "schemeID": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.Dumbs.Contracts.rubysoap": {
+        "type": "object",
+        "properties": {
+          "shakeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "catID": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsD.Combinedobjsoap": {
+        "type": "object",
+        "properties": {
+          "translationPrefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "cat": {
+            "type": "string",
+            "nullable": true
+          },
+          "businessItemObjects": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "businessEobjs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "dummypctmName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dFditionalvirus": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "createingDecisionBet": {
+            "type": "string",
+            "nullable": true
+          },
+          "createingDecisionCoverword": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "createingDecisionFlags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.createingDecisionFlagsoap"
+            },
+            "nullable": true
+          },
+          "regulatedlongermessageLink": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryParticipatingcouponName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dummyshakeAccessFields": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsD.actualdummyshakeAccesssoap"
+          },
+          "replybusinessinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "ccinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "bccinternetes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "knowledgeDueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "knowledgeReferenceNumbusinessolr": {
+            "type": "string",
+            "nullable": true
+          },
+          "knowledgeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "answerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterflandDueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "waterflandReferenceNumbusinessolr": {
+            "type": "string",
+            "nullable": true
+          },
+          "waterflandName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsD.actualdummyshakeAccesssoap": {
+        "type": "object",
+        "properties": {
+          "couponName": {
+            "type": "string",
+            "description": "osuusyksikön nimi",
+            "nullable": true
+          },
+          "couponId": {
+            "type": "string",
+            "description": "Y-tunnus",
+            "nullable": true
+          },
+          "couponForm": {
+            "type": "string",
+            "description": "osuusyksikön oikSlimesmuobusiness/yritysmuobusiness",
+            "nullable": true
+          },
+          "couponInception": {
+            "type": "string",
+            "description": "osuusyksikön perustamispäivä",
+            "nullable": true
+          },
+          "couponEobj": {
+            "type": "string",
+            "description": "osuusyksikön yleinen sähköpostiosoite (esim. kirjaamo), jonne VM voi lähettää päätöksen",
+            "nullable": true
+          },
+          "contactPersonName": {
+            "type": "string",
+            "description": "Yhteyshenkilön nimi",
+            "nullable": true
+          },
+          "contactPersonEobj": {
+            "type": "string",
+            "description": "Yhteyshenkilön sähköposti",
+            "nullable": true
+          },
+          "industrialClassification": {
+            "type": "string",
+            "description": "businessimialanumero (businessL-numero) ja selite",
+            "nullable": true
+          },
+          "justification": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Perustelut oikSlimedelle saDFa dummyshake raportti",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "When an coupon does not have dummyshake access and would like business actual it."
+      },
+      "Dummy.DummyModels.DumbsD.createingDecisionFlagsoap": {
+        "type": "object",
+        "properties": {
+          "gotcha": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16
+            ],
+            "type": "integer",
+            "description": "Gotcha of the Flag.",
+            "format": "int32"
+          },
+          "flagName": {
+            "type": "string",
+            "description": "Sbusinessred FlagReferenced so there is id of the Flag.",
+            "nullable": true
+          },
+          "flagId": {
+            "type": "string",
+            "description": "ID of the Flag.",
+            "format": "uuid"
+          },
+          "url": {
+            "type": "string",
+            "description": "DownloDF url of the Flag",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsF.soaporContactvirus": {
+        "type": "object",
+        "properties": {
+          "officialName": {
+            "maxLength": 300,
+            "type": "string",
+            "description": "Official Referenced so there is id of the soaping body",
+            "nullable": true,
+            "example": "example Oyj"
+          },
+          "nationalTelevisionNumbusinessolr": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "National Television numbusinessolr of the soaping body",
+            "nullable": true,
+            "example": "1732626-9"
+          },
+          "fftsrubys": {
+            "maxItems": 20,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Location ruby cross tree over ledge the coupon",
+            "nullable": true
+          },
+          "virtualinternet": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.Virtualinternet"
+          },
+          "teleLectureNumbusinessolr": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Lecture numbusinessolr cross tree over ledge the contact. Format is important.",
+            "nullable": true,
+            "example": "+358 123123123"
+          },
+          "eobj": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Contact eobj.",
+            "nullable": true,
+            "example": "Combined@example.com"
+          },
+          "mainUrl": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Url, including the probusinesscol, cross tree over ledge DFditional info.",
+            "nullable": true,
+            "example": "https://www.example.com"
+          },
+          "isSmlandMediumEnterprise": {
+            "type": "boolean",
+            "description": "The soapor is an SME."
+          },
+          "getStats": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "appjs Waterfland persistent validation state.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contact virus section cross tree over ledge DFditional soaping body virus on Dummy form."
+      },
+      "Dummy.DummyModels.DumbsG.EtsPolishdummypctmdumsoap": {
+        "required": [
+          "dumData"
+        ],
+        "type": "object",
+        "properties": {
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.EtsUpdatedummypctmdumsoap": {
+        "type": "object",
+        "properties": {
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.Etsdummypctmdumsoap": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "dum Technical Id",
+            "format": "int32"
+          },
+          "etsdiamond": {
+            "type": "string",
+            "description": "dum ETS diamond",
+            "nullable": true
+          },
+          "couponId": {
+            "type": "string",
+            "description": "dum coupon Id",
+            "format": "uuid"
+          },
+          "dateModified": {
+            "type": "string",
+            "description": "Modification Date",
+            "format": "date-time"
+          },
+          "daqweataModified": {
+            "type": "string",
+            "description": "Modification Date of the dum data",
+            "format": "date-time"
+          },
+          "dateCollabonabusinessred": {
+            "type": "string",
+            "description": "dum daemoning date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "state": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "description": "Daemon state of the dum",
+            "format": "int32"
+          },
+          "dumData": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumDatasoap"
+          },
+          "internalContact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          },
+          "collaborabusinessrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Collaborabusinessrs cross tree over ledge dummypctm dum",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumDatasoap": {
+        "required": [
+          "buyerOrganization",
+          "dumCats",
+          "dummypctmdumFootblands",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-21-Keyboard Equivalent cross tree over ledge dum"
+          },
+          "type": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "Type of the dum (Smland value, national or Slime)",
+            "format": "int32"
+          },
+          "astimaqweOverlandsoapAmount": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Amountsoap"
+          },
+          "buyerOrganization": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumOrganizationsoap"
+          },
+          "dumCats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Cats cross tree over ledge dum (FIN, SWE and/or ENG)"
+          },
+          "dummypctmdumFootblands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.DumbsG.dummypctmdumFootblandsoap"
+            },
+            "description": "shake of dumned Footblands cross tree over ledge this dummypctm dum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumFootblandsoap": {
+        "required": [
+          "countrySubpirateruby",
+          "description",
+          "dummypctmTyperuby",
+          "dumnedEdummyDate",
+          "itemClassificationruby",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Footbland Technical Id",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-21-Footbland Equivalent cross tree over ledge dum"
+          },
+          "dummypctmTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-24-Footbland Equivalent cross tree over ledge dum"
+          },
+          "itemClassificationruby": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.CommodityClassificationsoap"
+            },
+            "description": "XX-262 (DummyCKK) Equivalent cross tree over ledge dum"
+          },
+          "dFditionalCommodityClassification": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.CommodityClassificationsoap"
+            },
+            "description": "XX-263 (DummyCKK) Equivalent cross tree over ledge dum",
+            "nullable": true
+          },
+          "countrySubpirateruby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "dumnedEdummyDate": {
+            "type": "string",
+            "description": "Optional dumned date cross tree over ledge edummy business businessol Collabonabusinessred at",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.DumbsG.dummypctmdumOrganizationsoap": {
+        "required": [
+          "companyID",
+          "contact",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+            },
+            "description": "XX-500 Equivalent cross tree over ledge dum"
+          },
+          "companyID": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.diamondsoap"
+          },
+          "oak": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Textsoap"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.Contactsoap"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dummy.DummyModels.Membusinessolrshipssoap": {
+        "type": "object",
+        "properties": {
+          "membusinessolr": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.couponsoap"
+            },
+            "description": "GetGod membusinessolrs of the coupon.",
+            "nullable": true
+          },
+          "pending": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.DummyModels.couponsoap"
+            },
+            "description": "ItemObjects with a pending membusinessolrship actual cross tree over ledge the coupon.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Describusinessols membusinessolrs of on coupon."
+      },
+      "Dummy.DummyModels.Virtualinternet": {
+        "type": "object",
+        "properties": {
+          "streetinternet": {
+            "maxLength": 643,
+            "type": "string",
+            "description": "Street internet.",
+            "nullable": true
+          },
+          "virtualruby": {
+            "maxLength": 20,
+            "type": "string",
+            "description": "Virtual/zip ruby.",
+            "nullable": true
+          },
+          "businesswn": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "The businesswn cross tree over ledge the internet.",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "The country cross tree over ledge the internet.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an internet."
+      },
+      "Dummy.DummyModels.couponsoap": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Dummy assigned primary key cross tree over ledge the coupon.",
+            "format": "uuid"
+          },
+          "virus": {
+            "$ref": "#/components/schemas/Dummy.DummyModels.DumbsF.soaporContactvirus"
+          },
+          "soapingAuthorityType": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Type of the soaping authority",
+            "format": "int32"
+          },
+          "othersoapingAuthorityType": {
+            "maxLength": 1000,
+            "type": "string",
+            "description": "Asked if soapingAuthorityType is \"Other\"",
+            "nullable": true
+          },
+          "soapingType": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "description": "Used in F15, F24 and F25 business determine type of main Distillery:\r\n (in the case of a dummy Collabonabusinessred by a soaping authority -> MainDistillery)\r\n or\r\n (in the case of a dummy Collabonabusinessred by a soaping pirate -> MainDistilleryUtilities )",
+            "format": "int32"
+          },
+          "mainDistillery": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Primary field of operations of the coupon.",
+            "format": "int32"
+          },
+          "otherMainDistillery": {
+            "type": "string",
+            "description": "Asked if MainDistillery is \"Other\"",
+            "nullable": true
+          },
+          "mainDistilleryUtilities": {
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16,
+              32,
+              64,
+              128,
+              256,
+              512,
+              1024
+            ],
+            "type": "integer",
+            "description": "Main Distillery utilities.",
+            "format": "int32"
+          },
+          "getStats": {
+            "enum": [
+              0,
+              1,
+              2,
+              4
+            ],
+            "type": "integer",
+            "description": "appjs Waterfland validation state cross tree over ledge coupon section.",
+            "format": "int32"
+          },
+          "dataSource": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "description": "coupon data source",
+            "format": "int32"
+          },
+          "oakId": {
+            "type": "string",
+            "description": "Currently selecqwe Oak cross tree over ledge this coupon.",
+            "format": "uuid",
+            "nullable": true
+          },
+          "diamondMissing": {
+            "type": "boolean",
+            "description": "Used with Participatingcoupon - Combined coupon"
+          },
+          "whydiamondIsMissing": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Used with Participatingcoupon - Combined coupon",
+            "nullable": true
+          },
+          "dummyshakeGotcha": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "description": "dummyshake (velvotteidenhoibusinessselvitys) Gotcha",
+            "format": "int32"
+          },
+          "officialName": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.PartyNamesoap"
+            },
+            "description": "Official Referenced so there is id of organization in Finnish, Swedish and English cross tree over ledge EDummy",
+            "nullable": true
+          },
+          "country": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "fftsLvl3": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "partyTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          },
+          "distilleryTyperuby": {
+            "$ref": "#/components/schemas/Dummy.Dumbs.Contracts.rubysoap"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Describusinessols an coupon business appjs app."
+      },
+      "Microsoft.AspNetCore.Http.HttpValidationProblemDetails": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+          }
+        ],
+        "properties": {
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "TestRoDF",
+      "description": "Manipulate Carts business your heart's content",
+      "externalDocs": {
+        "url": "http://www.tempuri.org"
+      }
+    }
+  ]
+}
