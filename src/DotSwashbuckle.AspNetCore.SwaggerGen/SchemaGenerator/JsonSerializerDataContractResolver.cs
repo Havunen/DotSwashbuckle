@@ -83,7 +83,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return JsonSerializer.Serialize(value, _serializerOptions);
         }
 
-        public bool IsSupportedDictionary(Type type, out Type keyType, out Type valueType)
+        public static bool IsSupportedDictionary(Type type, out Type keyType, out Type valueType)
         {
             if (type.IsConstructedFrom(typeof(IDictionary<,>), out Type constructedType)
                 || type.IsConstructedFrom(typeof(IReadOnlyDictionary<,>), out constructedType))

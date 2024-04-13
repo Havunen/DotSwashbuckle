@@ -72,6 +72,15 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                     jsonConverter: JsonConverterFunc);
             }
 
+            if (JsonSerializerDataContractResolver.IsSupportedDictionary(type, out Type _, out Type valueType1))
+            {
+                return DataContract.ForDictionary(
+                    underlyingType: type,
+                    valueType: valueType1,
+                    keys: null, // STJ doesn't currently support dictionaries with enum key types
+                    jsonConverter: JsonConverterFunc);
+            }
+
             if (JsonSerializerDataContractResolver.IsSupportedCollection(type, out Type itemType))
             {
                 return DataContract.ForArray(
