@@ -1,3 +1,9 @@
+# v3.0.9
+- Adds support for IDictionary and IAsyncEnumerable types to Newtonsoft JSON based schemas
+- Adds "application/x-www-form-urlencoded" as an additional default content type for FromForm parameters
+- Nuget dependencies updated
+- Improved test coverage
+
 # v3.0.8
 - Adds support for HttpResults https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2595
 - Fixes an issue where interface chain is not checked for parameters, this resolves issue: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2596
