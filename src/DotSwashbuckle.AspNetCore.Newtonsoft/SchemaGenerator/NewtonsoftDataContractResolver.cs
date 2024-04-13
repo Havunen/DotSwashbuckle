@@ -72,12 +72,17 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                     jsonConverter: JsonConverterFunc);
             }
 
-            if (JsonSerializerDataContractResolver.IsSupportedDictionary(type, out Type _, out Type valueType1))
+            if (jsonContract is JsonDictionaryContract jsonDictionaryContract)
             {
+                var keyType = jsonDictionaryContract.DictionaryKeyType ?? typeof(object);
+                var valueType = jsonDictionaryContract.DictionaryValueType ?? typeof(object);
+
+                var keys = readDictionaryKeyTypes(keyType);
+
                 return DataContract.ForDictionary(
-                    underlyingType: type,
-                    valueType: valueType1,
-                    keys: null, // STJ doesn't currently support dictionaries with enum key types
+                    underlyingType: jsonDictionaryContract.UnderlyingType,
+                    valueType: valueType,
+                    keys: keys,
                     jsonConverter: JsonConverterFunc);
             }
 
@@ -89,28 +94,13 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                     jsonConverter: JsonConverterFunc);
             }
 
-            if (jsonContract is JsonDictionaryContract jsonDictionaryContract)
+            if (JsonSerializerDataContractResolver.IsSupportedDictionary(type, out Type keyType1, out Type valueType1))
             {
-                var keyType = jsonDictionaryContract.DictionaryKeyType ?? typeof(object);
-                var valueType = jsonDictionaryContract.DictionaryValueType ?? typeof(object);
-
-                IEnumerable<string> keys = null;
-
-                if (keyType.IsEnum)
-                {
-                    // This is a special case where we know the possible key values
-                    var enumValuesAsJson = keyType.GetEnumValues()
-                        .Cast<object>()
-                        .Select(value => JsonConverterFunc(value));
-
-                    keys = enumValuesAsJson.Any(json => json.StartsWith("\""))
-                        ? enumValuesAsJson.Select(json => json.Replace("\"", string.Empty))
-                        : keyType.GetEnumNames();
-                }
+                var keys = readDictionaryKeyTypes(keyType1);
 
                 return DataContract.ForDictionary(
-                    underlyingType: jsonDictionaryContract.UnderlyingType,
-                    valueType: valueType,
+                    underlyingType: type,
+                    valueType: valueType1,
                     keys: keys,
                     jsonConverter: JsonConverterFunc);
             }
@@ -143,6 +133,25 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
             return DataContract.ForDynamic(
                 underlyingType: type,
                 jsonConverter: JsonConverterFunc);
+        }
+
+        private IEnumerable<string> readDictionaryKeyTypes(Type keyType)
+        {
+            IEnumerable<string> keys = null;
+
+            if (keyType.IsEnum)
+            {
+                // This is a special case where we know the possible key values
+                var enumValuesAsJson = keyType.GetEnumValues()
+                    .Cast<object>()
+                    .Select(value => JsonConverterFunc(value));
+
+                keys = enumValuesAsJson.Any(json => json.StartsWith("\""))
+                    ? enumValuesAsJson.Select(json => json.Replace("\"", string.Empty))
+                    : keyType.GetEnumNames();
+            }
+
+            return keys;
         }
 
         private string JsonConverterFunc(object value)
