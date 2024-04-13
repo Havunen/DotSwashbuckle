@@ -103,7 +103,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return false;
         }
 
-        public bool IsSupportedCollection(Type type, out Type itemType)
+        public static bool IsSupportedCollection(Type type, out Type itemType)
         {
             if (type.IsConstructedFrom(typeof(IEnumerable<>), out Type constructedType))
             {

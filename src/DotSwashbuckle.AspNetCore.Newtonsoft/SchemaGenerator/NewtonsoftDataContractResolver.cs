@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
+using System.Collections;
 
 namespace DotSwashbuckle.AspNetCore.Newtonsoft
 {
@@ -68,6 +69,14 @@ namespace DotSwashbuckle.AspNetCore.Newtonsoft
                 return DataContract.ForArray(
                     underlyingType: jsonArrayContract.UnderlyingType,
                     itemType: jsonArrayContract.CollectionItemType ?? typeof(object),
+                    jsonConverter: JsonConverterFunc);
+            }
+
+            if (JsonSerializerDataContractResolver.IsSupportedCollection(type, out Type itemType))
+            {
+                return DataContract.ForArray(
+                    underlyingType: type,
+                    itemType: itemType,
                     jsonConverter: JsonConverterFunc);
             }
 
