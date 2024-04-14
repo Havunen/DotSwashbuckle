@@ -19,6 +19,27 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
         public DataContract GetDataContractForType(Type type)
         {
+            var resolvedJsonTypeInfo = type != null ? _serializerOptions.TypeInfoResolver?.GetTypeInfo(type, _serializerOptions) : null;
+
+            if (resolvedJsonTypeInfo != null)
+            {
+                if (CommonFormats.PrimitiveTypesAndFormats.TryGetValue(type, out var primitiveTypeAndFormat2))
+                {
+                    return DataContract.ForPrimitive(
+                        underlyingType: type,
+                        dataType: primitiveTypeAndFormat2.Item1,
+                        dataFormat: primitiveTypeAndFormat2.Item2,
+                        jsonConverter: JsonConverterFunc);
+                }
+
+                // create data contract from resolveTypeInfo
+                return DataContract.ForJsonTypeInfo(
+                    resolvedJsonTypeInfo,
+                    reflectionProperties: GetDataPropertiesFor(type, out Type extensionDataType2),
+                    extensionDataType: extensionDataType2,
+                    jsonConverter: JsonConverterFunc);
+            }
+
             if (type.IsOneOf(typeof(object), typeof(JsonDocument), typeof(JsonElement)))
             {
                 return DataContract.ForDynamic(

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization.Metadata;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
@@ -66,6 +68,41 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 objectTypeNameProperty: typeNameProperty,
                 objectTypeNameValue: typeNameValue,
                 jsonConverter: jsonConverter);
+        }
+
+        public static DataContract ForJsonTypeInfo(
+            JsonTypeInfo jsonTypeInfo,
+            IEnumerable<DataProperty> reflectionProperties,
+            Type extensionDataType,
+            Func<object, string> jsonConverter = null
+        )
+        {
+            return new DataContract(
+                jsonTypeInfo.Type,
+                jsonTypeInfo.Kind switch
+                {
+                    JsonTypeInfoKind.Object => DataType.Object,
+                    JsonTypeInfoKind.Dictionary => DataType.Dictionary,
+                    JsonTypeInfoKind.Enumerable => DataType.Array,
+                    JsonTypeInfoKind.None => DataType.Unknown,
+                },
+                jsonConverter: jsonConverter,
+                objectProperties: jsonTypeInfo.Properties.Select(p =>
+                    {
+                        var reflectedProperty = reflectionProperties.FirstOrDefault(rp => string.Equals(rp.Name, p.Name, StringComparison.Ordinal));
+
+                        return new DataProperty(
+                            p.Name,
+                            p.PropertyType,
+                            p.IsRequired,
+                            p.PropertyType.IsReferenceOrNullableType(),
+                            reflectedProperty?.IsReadOnly == true,
+                            reflectedProperty?.IsWriteOnly == true,
+                            reflectedProperty?.MemberInfo
+                        );
+                    }
+                )
+            );
         }
 
         public static DataContract ForDynamic(

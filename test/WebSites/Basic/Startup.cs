@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Text.Json.Serialization.Metadata;
 using Basic.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +28,16 @@ namespace Basic
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(c =>
+            {
+                c.JsonSerializerOptions.TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+                {
+                    Modifiers =
+                    {
+                        new PropertyModifiers(typeof(SecretHolder)).ModifyTypeInfo
+                    }
+                };
+            });
 
             services.AddSwaggerGen(c =>
             {
