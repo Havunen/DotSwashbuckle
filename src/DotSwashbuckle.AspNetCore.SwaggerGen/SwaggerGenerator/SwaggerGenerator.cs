@@ -279,19 +279,22 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 var apiParameter = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.Name == parameter.Name && !desc.IsFromBody() && !desc.IsFromForm());
                 if (apiParameter is not null)
                 {
+                    var propInfo = apiParameter.PropertyInfo();
+                    var paramInfo = apiParameter.ParameterInfo();
+
                     parameter.Schema = GenerateSchema(
                         apiParameter.Type,
                         schemaRepository,
-                        apiParameter.PropertyInfo(),
-                        apiParameter.ParameterInfo(),
+                        propInfo,
+                        paramInfo,
                         apiParameter.RouteInfo);
 
                     var filterContext = new ParameterFilterContext(
                         apiParameter,
                         _schemaGenerator,
                         schemaRepository,
-                        apiParameter.PropertyInfo(),
-                        apiParameter.ParameterInfo());
+                        propInfo,
+                        paramInfo);
 
                     foreach (var filter in _options.ParameterFilters)
                     {
@@ -411,13 +414,24 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             var isRequired = apiParameter.IsRequiredParameter();
 
-            var type = apiParameter.ModelMetadata?.ModelType ?? apiParameter.Type;
+            var propInfo = apiParameter.PropertyInfo();
+            var paramInfo = apiParameter.ParameterInfo();
+
+            Type type;
+            if (paramInfo != null && paramInfo.ParameterType == apiParameter.Type)
+            {
+                type = apiParameter.Type;
+            }
+            else
+            {
+                type = apiParameter.ModelMetadata?.ModelType ?? apiParameter.Type;
+            }
 
             var schema = type != null ? GenerateSchema(
                 type,
                 schemaRepository,
-                apiParameter.PropertyInfo(),
-                apiParameter.ParameterInfo(),
+                propInfo,
+                paramInfo,
                 apiParameter.RouteInfo
             ) : new OpenApiSchema() { Type = "string" };
 
@@ -433,8 +447,9 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 apiParameter,
                 _schemaGenerator,
                 schemaRepository,
-                apiParameter.PropertyInfo(),
-                apiParameter.ParameterInfo());
+                propInfo,
+                paramInfo
+            );
 
             foreach (var filter in _options.ParameterFilters)
             {

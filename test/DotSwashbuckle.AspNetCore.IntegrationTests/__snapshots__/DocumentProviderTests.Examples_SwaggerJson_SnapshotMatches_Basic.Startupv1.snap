@@ -25,6 +25,37 @@
         },
         "responses": {
           "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/requestWithNestedChild2": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestWithNestedChild"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
             "description": "Success",
             "content": {
               "text/plain": {
@@ -56,6 +87,37 @@
         },
         "responses": {
           "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/requestWithNonNestedChild2": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestWithNonNestedChild"
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "200": {
             "description": "Success",
             "content": {
               "text/plain": {
@@ -70,6 +132,85 @@
       }
     },
     "/formpost/minimalPost": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-purpose": "test"
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/minimalPost2": {
       "post": {
         "tags": [
           "Basic"
@@ -227,6 +368,84 @@
         "x-purpose": "test"
       }
     },
+    "/formpost/minimalGet2": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "ts",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "address",
+                  "person"
+                ],
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              },
+              "encoding": {
+                "person": {
+                  "style": "form"
+                },
+                "address": {
+                  "style": "form"
+                }
+              }
+            }
+          },
+          "x-purpose": "test"
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
     "/formpost/fromheader": {
       "post": {
         "tags": [
@@ -245,6 +464,151 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/formpost/fromheader2": {
+      "post": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/asparameter/openapi/enum": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "ConditionStateFromQuery",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ConditionState"
+            }
+          },
+          {
+            "name": "ConditionStateAsParameters",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ConditionState"
+            }
+          },
+          {
+            "name": "SomeId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            }
+          },
+          {
+            "name": "SomeFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SomeDecimal",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
+    "/asparameter/openapi/enum2": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "parameters": [
+          {
+            "name": "conditionStateFromQuery",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ConditionState"
+            }
+          },
+          {
+            "name": "conditionStateAsParameters",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ConditionState"
+            }
+          },
+          {
+            "name": "someId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            }
+          },
+          {
+            "name": "someFilter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "someDecimal",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "x-purpose": "test"
@@ -2103,6 +2467,16 @@
           }
         },
         "additionalProperties": false
+      },
+      "ConditionState": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32",
+        "nullable": true
       },
       "CreditCard": {
         "required": [

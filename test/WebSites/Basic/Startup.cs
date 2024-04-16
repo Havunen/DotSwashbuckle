@@ -29,6 +29,8 @@ namespace Basic
         {
             services.AddControllers();
 
+            services.AddEndpointsApiExplorer();
+
             services.AddSwaggerGen(c =>
             {
                 c.SupportNonNullableReferenceTypes();
@@ -82,10 +84,17 @@ namespace Basic
                 {
                     c.SerializeAsV2 = true;
                 });
-                endpoints.MapPost("/requestWithNestedChild", (Requests.RequestWithNestedChild request) => "ok");
-                endpoints.MapPost("/requestWithNonNestedChild", (Requests.RequestWithNonNestedChild request) => "ok");
+
+                endpoints.MapPost("/requestWithNestedChild", (Requests.RequestWithNestedChild request) => "ok").WithOpenApi();
+                endpoints.MapPost("/requestWithNestedChild2", (Requests.RequestWithNestedChild request) => "ok");
+                endpoints.MapPost("/requestWithNonNestedChild", (Requests.RequestWithNonNestedChild request) => "ok").WithOpenApi();
+                endpoints.MapPost("/requestWithNonNestedChild2", (Requests.RequestWithNonNestedChild request) => "ok");
 
                 endpoints.MapPost("/formpost/minimalPost", ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
+                        => TypedResults.NoContent())
+                    .WithOpenApi();
+
+                endpoints.MapPost("/formpost/minimalPost2", ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
                         => TypedResults.NoContent())
                     .WithOpenApi();
 
@@ -93,9 +102,28 @@ namespace Basic
                         => TypedResults.NoContent())
                     .WithOpenApi();
 
+                endpoints.MapGet("/formpost/minimalGet2",
+                    ([FromForm] WeatherForecast person, [FromForm] Product address, [FromQuery] string ts)
+                        => TypedResults.NoContent());
+
                 endpoints.MapPost("/formpost/fromheader", ([FromHeader(Name = "x-api-version")] string apiVersion)
                         => TypedResults.NoContent())
                     .WithOpenApi();
+
+                endpoints.MapPost("/formpost/fromheader2", ([FromHeader(Name = "x-api-version")] string apiVersion)
+                    => TypedResults.NoContent());
+
+                endpoints.MapGet("/asparameter/openapi/enum", ([FromQuery] ConditionState? ConditionStateFromQuery,
+                    [AsParameters] RequestModel model) =>
+                {
+                    return $"{ConditionStateFromQuery}, {model.ConditionStateAsParameters}";
+                }).WithOpenApi();
+
+                endpoints.MapGet("/asparameter/openapi/enum2", ([FromQuery] ConditionState? ConditionStateFromQuery,
+                    [AsParameters] RequestModel model) =>
+                {
+                    return $"{ConditionStateFromQuery}, {model.ConditionStateAsParameters}";
+                });
             });
 
 
@@ -132,5 +160,21 @@ namespace Basic
             public record RequestWithNonNestedChild(Child Child);
             public record Child(string NonNullable, string? Nullable);
         }
+
+        public class RequestModel
+        {
+            public ConditionState? ConditionStateAsParameters { get; init; }
+            public Guid? SomeId { get; set; }
+            public string? SomeFilter { get; set; }
+            public decimal SomeDecimal { get; set; }
+        }
+
+        public enum ConditionState
+        {
+            Both,
+            False,
+            True
+        }
+
     }
 }

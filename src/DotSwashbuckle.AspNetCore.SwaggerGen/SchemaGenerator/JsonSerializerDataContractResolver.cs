@@ -127,15 +127,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return false;
         }
 
+        private static readonly BindingFlags InstanceBindingAttr = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic;
+
         private IEnumerable<DataProperty> GetDataPropertiesFor(Type objectType, out Type extensionDataType)
         {
             extensionDataType = null;
 
-            const BindingFlags PublicBindingAttr = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-
             var publicProperties = objectType.IsInterface
-                ? new[] { objectType }.Concat(objectType.GetInterfaces()).SelectMany(i => i.GetProperties(PublicBindingAttr))
-                : objectType.GetProperties(PublicBindingAttr);
+                ? new[] { objectType }.Concat(objectType.GetInterfaces()).SelectMany(i => i.GetProperties(InstanceBindingAttr))
+                : objectType.GetProperties(InstanceBindingAttr);
 
             var applicableProperties = publicProperties
                 .Where(property =>
