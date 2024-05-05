@@ -7,10 +7,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public static class XmlCommentsTextHelper
     {
-        private static Regex RefTagPattern = new Regex(@"<(see|paramref) (name|cref|langword)=""([TPF]{1}:)?(?<display>.+?)"" ?/>");
-        private static Regex CodeTagPattern = new Regex(@"<c>(?<display>.+?)</c>");
+        private static Regex RefTagPattern = new Regex(@"<(see|paramref) (name|cref|langword)=""([TPF]{1}:)?(?<display>.+?)"" ?/>", RegexOptions.Compiled);
+        private static Regex CodeTagPattern = new Regex(@"<c>(?<display>.+?)</c>", RegexOptions.Compiled);
         private static Regex MultilineCodeTagPattern = new Regex(@"<code>(?<display>.+?)</code>", RegexOptions.Singleline);
         private static Regex ParaTagPattern = new Regex(@"<para>(?<display>.+?)</para>", RegexOptions.Singleline);
+        private static Regex HrefPattern = new Regex(@"<see href=\""(.*)\"">(.*)<\/see>", RegexOptions.Compiled);
 
         public static string Humanize(string text)
         {
@@ -22,6 +23,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             return text
                 .NormalizeIndentation()
                 .HumanizeRefTags()
+                .HumanizeHrefTags()
                 .HumanizeCodeTags()
                 .HumanizeMultilineCodeTags()
                 .HumanizeParaTags()
@@ -90,6 +92,11 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
         private static string HumanizeRefTags(this string text)
         {
             return RefTagPattern.Replace(text, (match) => match.Groups["display"].Value);
+        }
+
+        private static string HumanizeHrefTags(this string text)
+        {
+            return HrefPattern.Replace(text, m => $"[{m.Groups[2].Value}]({m.Groups[1].Value})");
         }
 
         private static string HumanizeCodeTags(this string text)
