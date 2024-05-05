@@ -184,13 +184,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
                             {
                                 Name = illegalParameterName,
                                 Source = BindingSource.Header,
-                                ModelMetadata = ModelMetadataFactory.CreateForParameter(illegalParameter)
+                                ModelMetadata = ModelMetadataFactory.CreateForParameter(illegalParameter),
+                                Type = typeof(string)
                             },
                             new ApiParameterDescription
                             {
                                 Name = "param",
                                 Source = BindingSource.Header,
-                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(string))
+                                ModelMetadata = ModelMetadataFactory.CreateForType(typeof(string)),
+                                Type = typeof(string)
                             }
                         }),
                 }
