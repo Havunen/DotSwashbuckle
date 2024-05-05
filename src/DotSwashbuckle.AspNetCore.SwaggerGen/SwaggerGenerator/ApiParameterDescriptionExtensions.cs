@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -7,11 +8,19 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Net.Http.Headers;
 
 namespace DotSwashbuckle.AspNetCore.SwaggerGen
 {
     public static class ApiParameterDescriptionExtensions
     {
+        private static readonly HashSet<string> IllegalHeaderParameters = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            HeaderNames.Accept,
+            HeaderNames.Authorization,
+            HeaderNames.ContentType
+        };
+
         public static bool IsRequiredParameter(this ApiParameterDescription apiParameter)
         {
             // From the OpenAPI spec:
@@ -95,6 +104,13 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
 
             return source == BindingSource.Form || source == BindingSource.FormFile
                 || (elementType != null && typeof(IFormFile).IsAssignableFrom(elementType));
+        }
+
+        internal static bool IsIllegalHeaderParameter(this ApiParameterDescription apiParameter)
+        {
+            // Certain header parameters are not allowed and should be described using the corresponding OpenAPI keywords
+            // https://swagger.io/docs/specification/describing-parameters/#header-parameters
+            return apiParameter.Source == BindingSource.Header && IllegalHeaderParameters.Contains(apiParameter.Name);
         }
     }
 }

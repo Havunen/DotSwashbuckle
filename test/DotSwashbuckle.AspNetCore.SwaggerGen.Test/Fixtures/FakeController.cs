@@ -48,6 +48,15 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
         public void ActionWithParameterWithBindRequiredAttribute([BindRequired]string param)
         { }
 
+        public void ActionWithAcceptFromHeaderParameter([FromHeader] string accept, string param)
+        { }
+
+        public void ActionWithContentTypeFromHeaderParameter([FromHeader(Name = "Content-Type")] string contentType, string param)
+        { }
+
+        public void ActionWithAuthorizationFromHeaderParameter([FromHeader] string authorization, string param)
+        { }
+
         public void ActionWithIntParameter(int param)
         { }
 

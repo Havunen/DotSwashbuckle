@@ -1759,6 +1759,28 @@
         "x-purpose": "test"
       }
     },
+    "/country/validate": {
+      "get": {
+        "tags": [
+          "FromHeaderParams"
+        ],
+        "parameters": [
+          {
+            "name": "country",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-purpose": "test"
+      }
+    },
     "/addresses/validate": {
       "get": {
         "tags": [

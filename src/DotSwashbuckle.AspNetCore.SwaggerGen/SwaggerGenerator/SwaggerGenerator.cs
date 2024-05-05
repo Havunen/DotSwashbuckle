@@ -276,7 +276,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             // Schemas will be generated via DotSwashbuckle by default.
             foreach (var parameter in operation.Parameters)
             {
-                var apiParameter = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.Name == parameter.Name && !desc.IsFromBody() && !desc.IsFromForm());
+                var apiParameter = apiDescription.ParameterDescriptions.SingleOrDefault(desc => desc.Name == parameter.Name && !desc.IsFromBody() && !desc.IsFromForm() && !desc.IsIllegalHeaderParameter());
                 if (apiParameter is not null)
                 {
                     var propInfo = apiParameter.PropertyInfo();
@@ -392,7 +392,8 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 {
                     return !apiParam.IsFromBody() && !apiParam.IsFromForm()
                         && !apiParam.CustomAttributes().OfType<BindNeverAttribute>().Any()
-                        && (apiParam.ModelMetadata == null || apiParam.ModelMetadata.IsBindingAllowed);
+                        && (apiParam.ModelMetadata == null || apiParam.ModelMetadata.IsBindingAllowed)
+                        && !apiParam.IsIllegalHeaderParameter(); ;
                 });
 
             return applicableApiParameters
