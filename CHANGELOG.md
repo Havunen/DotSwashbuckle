@@ -1,3 +1,14 @@
+# v3.0.10
+- Redoc v2.1.4
+- SwaggerUI v5.17.2
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2392 Replace <see href="link">text</see> with Markdown link format
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2852, adds additional 5xx error responses
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2825 Generate Enum-Dictionary-Keys (analogous to Newtonsoft)
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2824/files removed redundant any check,
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2826 Correctly respect interfaces in GetInheritanceChain
+- ported https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/2784 Handle Stream and PipeReader content types correctly
+- Use parameterInfo to decide if to use apiExplorer ModelMetaData ModelType or apiParameter.Type. Fixes an issue where AsParameter Enums get incorrectly generated as strings https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2733
+
 # v3.0.9
 - Adds support for IDictionary and IAsyncEnumerable types to Newtonsoft JSON based schemas
 - Adds "application/x-www-form-urlencoded" as an additional default content type for FromForm parameters
