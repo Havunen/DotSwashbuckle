@@ -235,6 +235,14 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             };
         }
 
+        private static readonly Type[] BinaryStringTypes = new[]
+        {
+            typeof(IFormFile),
+            typeof(FileResult),
+            typeof(System.IO.Stream),
+            typeof(System.IO.Pipelines.PipeReader),
+        };
+
         private OpenApiSchema GenerateConcreteSchema(
             DataContract dataContract,
             SchemaRepository schemaRepository,
@@ -246,7 +254,7 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
                 return customSchemaFactory();
             }
 
-            if (dataContract.UnderlyingType.IsAssignableToOneOf(typeof(IFormFile), typeof(FileResult)))
+            if (dataContract.UnderlyingType.IsAssignableToOneOf(BinaryStringTypes))
             {
                 return new OpenApiSchema { Type = "string", Format = "binary" };
             }
