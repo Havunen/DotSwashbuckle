@@ -564,13 +564,10 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen
             if (explicitContentTypes.Any()) return explicitContentTypes;
 
             // If there's content types surfaced by ApiExplorer, use them
-            var apiExplorerContentTypes = apiDescription.SupportedRequestFormats
+            return apiDescription.SupportedRequestFormats
                 .Select(format => format.MediaType)
                 .Where(x => x != null)
                 .Distinct();
-            if (apiExplorerContentTypes.Any()) return apiExplorerContentTypes;
-
-            return Enumerable.Empty<string>();
         }
 
         private OpenApiRequestBody GenerateRequestBodyFromFormParameters(
