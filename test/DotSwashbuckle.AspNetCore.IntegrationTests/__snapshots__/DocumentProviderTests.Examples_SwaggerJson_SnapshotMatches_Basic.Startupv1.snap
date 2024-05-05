@@ -2538,14 +2538,14 @@
       "IChild": {
         "type": "object",
         "properties": {
-          "value": {
-            "type": "string",
-            "description": "The child value.",
-            "nullable": true
-          },
           "parentValue": {
             "type": "string",
             "description": "The parent value.",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "The child value.",
             "nullable": true
           }
         },

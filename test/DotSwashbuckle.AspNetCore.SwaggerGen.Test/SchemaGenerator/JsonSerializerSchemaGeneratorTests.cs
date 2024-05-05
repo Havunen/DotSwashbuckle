@@ -182,6 +182,20 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal(typeof(IntEnum).GetEnumNames(), referenceSchema.Properties.Keys);
         }
 
+
+        [Fact]
+        public void GenerateSchema_KeepMostDerivedType_IfTypeIsAnInterface()
+        {
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = Subject().GenerateSchema(typeof(INewBaseInterface), schemaRepository);
+
+            var schema = schemaRepository.Schemas[referenceSchema.Reference.Id];
+            Assert.Equal("integer", schema.Properties["BaseProperty"].Type);
+        }
+
+
+
         [Theory]
         [InlineData(typeof(IntEnum), "integer", "int32", "2", "4", "8")]
         [InlineData(typeof(LongEnum), "integer", "int64", "2", "4", "8")]
