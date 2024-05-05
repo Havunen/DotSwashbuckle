@@ -171,6 +171,17 @@ namespace DotSwashbuckle.AspNetCore.SwaggerGen.Test
             Assert.Equal(true, schema.Nullable);
         }
 
+        [Fact]
+        public void GenerateSchema_HonorsEnumDictionaryKeys_StringEnumConverter()
+        {
+            var subject = Subject();
+            var schemaRepository = new SchemaRepository();
+
+            var referenceSchema = subject.GenerateSchema(typeof(Dictionary<IntEnum, string>), schemaRepository);
+
+            Assert.Equal(typeof(IntEnum).GetEnumNames(), referenceSchema.Properties.Keys);
+        }
+
         [Theory]
         [InlineData(typeof(IntEnum), "integer", "int32", "2", "4", "8")]
         [InlineData(typeof(LongEnum), "integer", "int64", "2", "4", "8")]
