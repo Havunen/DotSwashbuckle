@@ -1,3 +1,8 @@
+# v3.0.11
+- Redoc v2.2.0
+- SwaggerUI v5.17.14
+- Internal dependencies updated
+
 # v3.0.10
 - Redoc v2.1.4
 - SwaggerUI v5.17.2
