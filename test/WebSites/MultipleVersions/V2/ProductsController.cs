@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using MultipleVersions.V1;
 

@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
+using Asp.Versioning.ApiExplorer;
 
 namespace MultipleVersions
 {
@@ -23,8 +23,7 @@ namespace MultipleVersions
         {
             services.AddControllers();
 
-            services.AddApiVersioning();
-            services.AddVersionedApiExplorer();
+            services.AddApiVersioning().AddApiExplorer();
 
             services.AddSwaggerGen();
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
