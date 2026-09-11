@@ -1,3 +1,6 @@
+# Swashbuckle development continues in the official repository https://github.com/domaindrivendev/swashbuckle.aspnetcore
+
+
 | :mega: This is fork of awesome Swashbuckle.AspNetCore! |
 |--------------|
 |* DotSwashbuckle supports only .NET 8 and newer versions |
